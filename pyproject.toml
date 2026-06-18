@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68.0", "setuptools-scm>=8.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "2026-06-18-iphone-video-to-splat"
+version = "0.1.0"
+description = "Training and rendering 3D Gaussian splats from video on Apple Silicon"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "gsplat-mlx @ file:///Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/gsplat-mlx",
+    "mlx>=0.31.0",
+    "numpy>=1.24.0",
+    "scipy>=1.10.0",
+    "pillow>=9.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-benchmark>=4.0",
+    "torch>=2.0",
+    "imageio>=2.20",
+    "ruff>=0.4.0",
+]
