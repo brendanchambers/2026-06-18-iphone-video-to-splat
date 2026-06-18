@@ -1,0 +1,2 @@
+/usr/bin/ar qc libgsplat.a "CMakeFiles/gsplat.dir/rasterizer/gsplat-metal/gsplat_metal.mm.o"
+/usr/bin/ranlib libgsplat.a

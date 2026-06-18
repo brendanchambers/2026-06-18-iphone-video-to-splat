@@ -1,0 +1,3 @@
+/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/opensplat/build/_deps/nanoflann-subbuild/CMakeFiles/nanoflann-populate.dir
+/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/opensplat/build/_deps/nanoflann-subbuild/CMakeFiles/edit_cache.dir
+/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/opensplat/build/_deps/nanoflann-subbuild/CMakeFiles/rebuild_cache.dir

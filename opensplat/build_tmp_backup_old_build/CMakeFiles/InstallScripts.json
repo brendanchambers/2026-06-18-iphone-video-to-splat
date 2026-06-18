@@ -1,0 +1,11 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/opensplat/build/cmake_install.cmake",
+		"/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/opensplat/build/_deps/nlohmann_json-build/cmake_install.cmake",
+		"/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/opensplat/build/_deps/nanoflann-build/cmake_install.cmake",
+		"/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/opensplat/build/_deps/cxxopts-build/cmake_install.cmake",
+		"/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/opensplat/build/_deps/cxxopts-build/include/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
