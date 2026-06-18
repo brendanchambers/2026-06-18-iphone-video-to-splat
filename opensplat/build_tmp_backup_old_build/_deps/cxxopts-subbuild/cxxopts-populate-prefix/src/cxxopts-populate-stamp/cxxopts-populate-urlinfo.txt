@@ -1,0 +1,12 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=url
+command=/opt/homebrew/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/opensplat/build/_deps/cxxopts-subbuild/cxxopts-populate-prefix/src/cxxopts-populate-stamp/download-cxxopts-populate.cmake;COMMAND;/opt/homebrew/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/opensplat/build/_deps/cxxopts-subbuild/cxxopts-populate-prefix/src/cxxopts-populate-stamp/verify-cxxopts-populate.cmake;COMMAND;/opt/homebrew/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/opensplat/build/_deps/cxxopts-subbuild/cxxopts-populate-prefix/src/cxxopts-populate-stamp/extract-cxxopts-populate.cmake
+source_dir=/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/opensplat/build/_deps/cxxopts-src
+work_dir=/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/opensplat/build/_deps
+url(s)=https://github.com/jarro2783/cxxopts/archive/refs/tags/v3.2.0.zip
+hash=
+      no_extract=
+

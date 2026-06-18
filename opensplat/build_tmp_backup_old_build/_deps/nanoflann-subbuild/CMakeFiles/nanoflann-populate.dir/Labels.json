@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/opensplat/build/_deps/nanoflann-subbuild/CMakeFiles/nanoflann-populate"
+		},
+		{
+			"file" : "/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/opensplat/build/_deps/nanoflann-subbuild/CMakeFiles/nanoflann-populate.rule"
+		},
+		{
+			"file" : "/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/opensplat/build/_deps/nanoflann-subbuild/CMakeFiles/nanoflann-populate-complete.rule"
+		},
+		{
+			"file" : "/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/opensplat/build/_deps/nanoflann-subbuild/nanoflann-populate-prefix/src/nanoflann-populate-stamp/nanoflann-populate-build.rule"
+		},
+		{
+			"file" : "/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/opensplat/build/_deps/nanoflann-subbuild/nanoflann-populate-prefix/src/nanoflann-populate-stamp/nanoflann-populate-configure.rule"
+		},
+		{
+			"file" : "/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/opensplat/build/_deps/nanoflann-subbuild/nanoflann-populate-prefix/src/nanoflann-populate-stamp/nanoflann-populate-download.rule"
+		},
+		{
+			"file" : "/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/opensplat/build/_deps/nanoflann-subbuild/nanoflann-populate-prefix/src/nanoflann-populate-stamp/nanoflann-populate-install.rule"
+		},
+		{
+			"file" : "/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/opensplat/build/_deps/nanoflann-subbuild/nanoflann-populate-prefix/src/nanoflann-populate-stamp/nanoflann-populate-mkdir.rule"
+		},
+		{
+			"file" : "/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/opensplat/build/_deps/nanoflann-subbuild/nanoflann-populate-prefix/src/nanoflann-populate-stamp/nanoflann-populate-patch.rule"
+		},
+		{
+			"file" : "/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/opensplat/build/_deps/nanoflann-subbuild/nanoflann-populate-prefix/src/nanoflann-populate-stamp/nanoflann-populate-test.rule"
+		},
+		{
+			"file" : "/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/opensplat/build/_deps/nanoflann-subbuild/nanoflann-populate-prefix/src/nanoflann-populate-stamp/nanoflann-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"nanoflann-populate"
+		],
+		"name" : "nanoflann-populate"
+	}
+}

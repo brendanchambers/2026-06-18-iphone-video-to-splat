@@ -62,7 +62,7 @@ colmap mapper \
 colmap image_undistorter \
     --image_path $IMAGES_DIR \
     --input_path $SPARSE_DIR/0 \
-    --output_path $SPARSE_DIR/0_undistorted \
+    --output_path "${PROJECT_DIR}/data/intermediates${EXPERIMENT_NAME}_distortion_corrected" \
     --output_type COLMAP
 
 echo "========================================================="

@@ -2,12 +2,15 @@
 # Paths are relative to the project root
 
 [data]
+# Experiment name
+experiment_name = "current_scene_distortion_corrected"
+
 # Input directories
-frames_dir = "data/intermediate/frames"
-sfm_dir = "data/intermediate/sfm"
+frames_dir = "data/intermediates/current_scene_distortion_corrected/images"
+sfm_dir = "data/intermediates/current_scene_distortion_corrected/sparse"
 
 # Output directory
-output_dir = "data/intermediate/gs/latest"
+output_dir = "data/intermediates/current_scene_distortion_corrected/gs"
 
 # Downscale factor for images (1 = full res, 2 = half res, etc.)
 downscale = 8
