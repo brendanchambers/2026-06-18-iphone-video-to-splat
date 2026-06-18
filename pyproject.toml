@@ -9,7 +9,6 @@ description = "Training and rendering 3D Gaussian splats from video on Apple Sil
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "gsplat-mlx @ file:///Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/gsplat-mlx",
     "mlx>=0.31.0",
     "numpy>=1.24.0",
     "scipy>=1.10.0",
