@@ -3,12 +3,8 @@
 # Exit immediately if a command exits with a non-zero status
 set -e
 
-# --- Configuration ---
-# VIDEO_PATH="$1"
-# PROJECT_DIR="$2"
-VIDEO_PATH="./data/incoming/gardenbed_2026-06-17.MOV"
-PROJECT_DIR="/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat"
-EXPERIMENT_NAME="current_scene"
+# Load environment variables
+source "$(dirname "$0")/.env"
 
 
 if [ -z "$VIDEO_PATH" ] || [ -z "$PROJECT_DIR" ]; then

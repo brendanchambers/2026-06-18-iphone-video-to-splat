@@ -82,56 +82,41 @@ The pipeline is optimized to run on Apple Silicon (M-series) Macs.
    which colmap
    ```
 
+## Configuration
+
+Before running the pipeline, configure the project by editing `.env`:
+
+```bash
+# .env
+PROJECT_DIR="/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat"
+VIDEO_PATH="./data/incoming/gardenbed_2026-06-17.MOV"
+EXPERIMENT_NAME="current_scene"
+```
+
+- `PROJECT_DIR`: Absolute path to the project directory
+- `VIDEO_PATH`: Relative path to input video from `PROJECT_DIR`
+- `EXPERIMENT_NAME`: Name for this experiment (used for output directory naming)
+
 ## Usage
 
-The pipeline consists of two main stages. All intermediate data is stored in `data/intermediates/`.
+The pipeline consists of two main stages. All intermediate data is stored in `data/intermediates/`. Both stages use `.env` for configuration.
 
 ### Stage 1: COLMAP SfM Processing
 
 Extract frames from the iPhone video, compute camera poses using SfM, and linearize distortion models.
 
-A complete script is available in `try_bash_colmap.sh` (from previous development). However, the script has path bugs that need fixing. For now, run the steps manually:
+Run the automated script:
 
 ```bash
-# Setup
-EXPERIMENT_NAME="current_scene"
-PROJECT_DIR=$(pwd)
-IMAGES_DIR="$PROJECT_DIR/data/intermediates/$EXPERIMENT_NAME/images"
-SPARSE_DIR="$PROJECT_DIR/data/intermediates/$EXPERIMENT_NAME/sparse"
-DATABASE_PATH="$PROJECT_DIR/data/intermediates/$EXPERIMENT_NAME/database.db"
-
-mkdir -p "$IMAGES_DIR"
-mkdir -p "$SPARSE_DIR"
-
-# Extract frames from iPhone video
-ffmpeg -i data/incoming/video.MOV -vf "fps=2" -q:v 2 "$IMAGES_DIR/frame_%04d.jpg"
-
-# Extract SIFT features
-colmap feature_extractor \
-  --database_path "$DATABASE_PATH" \
-  --image_path "$IMAGES_DIR" \
-  --ImageReader.camera_model "RADIAL" \
-  --ImageReader.single_camera 1
-
-# Match features between images
-colmap exhaustive_matcher \
-  --database_path "$DATABASE_PATH"
-
-# Run Structure-from-Motion reconstruction
-colmap mapper \
-  --database_path "$DATABASE_PATH" \
-  --image_path "$IMAGES_DIR" \
-  --output_path "$SPARSE_DIR"
-
-# Linearize distortion and undistort frames
-mkdir -p "$PROJECT_DIR/data/intermediates/${EXPERIMENT_NAME}_distortion_corrected"
-
-colmap image_undistorter \
-  --image_path "$IMAGES_DIR" \
-  --input_path "$SPARSE_DIR/0" \
-  --output_path "$PROJECT_DIR/data/intermediates/${EXPERIMENT_NAME}_distortion_corrected" \
-  --output_type COLMAP
+bash try_bash_colmap.sh
 ```
+
+This script will:
+1. Extract frames at 2 fps from the video specified in `.env`
+2. Run COLMAP feature extraction with RADIAL distortion model
+3. Perform exhaustive feature matching
+4. Compute Structure-from-Motion reconstruction
+5. Linearize camera distortion and undistort frames for OpenSplat
 
 **Output**:
 - `data/intermediates/current_scene/sparse/0/` - Raw SfM reconstruction
@@ -140,39 +125,38 @@ colmap image_undistorter \
 
 ### Stage 2: OpenSplat Training
 
-Train a 3D Gaussian Splat model using the distortion-corrected data.
+Train a 3D Gaussian Splat model using the distortion-corrected data from Stage 1:
 
 ```bash
-mkdir -p data/intermediates/current_scene_distortion_corrected/opensplat_output
-
-uv run python scripts/train_gaussian_splat.py \
-  --images_path data/intermediates/current_scene_distortion_corrected/images \
-  --sfm_path data/intermediates/current_scene_distortion_corrected/sparse/0 \
-  --output data/intermediates/current_scene_distortion_corrected/opensplat_output/model.ply
+bash try_bash_opensplat.sh
 ```
 
-**Configuration options** (edit `config.toml`):
-- `downscale`: Image downscaling factor (2-8x for memory efficiency)
-- `num_gaussians`: Number of Gaussians to train (100-10000)
-- `num_steps`: Training iterations (5000-50000)
-- `learning_rate`: Initial learning rate for optimizer
+This script will:
+1. Load camera poses and 3D points from COLMAP output
+2. Load distortion-corrected frames
+3. Initialize 3D Gaussians from the sparse point cloud
+4. Run training on Apple Metal GPU for 2000 iterations
+5. Save the trained model as PLY format
 
-## Configuration
+**Output**: `data/intermediates/{EXPERIMENT_NAME}_distortion_corrected/opensplat_output/scene.ply`
 
-The `config.toml` file contains training hyperparameters for Stage 3 (OpenSplat training):
+### Training Configuration
 
-```toml
-[training]
-num_gaussians = 500
-num_steps = 10000
-learning_rate = 0.001
-downscale = 4
+The `try_bash_opensplat.sh` script is configured for rapid iteration on the M4 MacBook Air with 2000 training steps. For production use, adjust the training parameters directly in the script (line 23):
+
+```bash
+$OPENSPLAT_BIN "$DATA_DIR" \
+  --colmap-image-path "$IMAGES_DIR" \
+  --output "$OUTPUT_DIR/scene.ply" \
+  --num-iters 2000          # Increase for better quality
 ```
 
-Adjust these values based on your hardware:
-- **24GB M4 MacBook Air**: `downscale=4`, `num_gaussians=500-1000`
-- **16GB M3 MacBook Air**: `downscale=8`, `num_gaussians=100-300`
-- **Higher-end Macs**: Can increase `num_gaussians` and reduce `downscale`
+Additional flags for optimization:
+- `--downscale-factor 2`: Scale images down by 2x for memory efficiency
+- `--num-downscales 3`: Progressive resolution schedule
+- `--ssim-weight 0.2`: Balance between SSIM and L1 loss
+- `--densify-grad-thresh 0.0002`: Gaussian splitting sensitivity
+- `--sh-degree 3`: Spherical harmonics degree (higher = more detail)
 
 ## Known Issues
 

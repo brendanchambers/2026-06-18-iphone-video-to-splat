@@ -1,7 +1,6 @@
 
 ## Project info
 We will be training and rendering a 3D Gaussian splat. The language will be python, with env managed with uv. The development and compute will happen on this macbook air M4 24GB laptop.
-
 ## Project Goal
 We will be attempting to create a 3D gaussian splat from extracted frames and structure from motion (`data/intermediate/frames` and `data/intermediate/sfm`). The computation will be happening on a macbook air M4 24gb. We will use opensplat to initialize and train the 3D gaussian splat (`https://github.com/pierotofy/opensplat`).
 
@@ -16,6 +15,9 @@ Notice there is an inner project repo named opensplat pasted into the project. A
 Use tee to pipe console output to the `logs` directory.
 
 ## Debugging Notes
+
+### Debugging movie
+We made a 4s .mov `gardenbed_test_4s_middle.mov` for rapid iteration during testing.
 
 ### OpenSplat Binary Issue (2026-06-18)
 Issues: Warning about duplicated runtimes and segmentation fault. Cause: Pytorch was installed as a download and using brew, causing two runtimes linked in different places. Solution: removed installed pytorch and used brew as the sole runtime. Rebuilt OpenSplat with corrected path.
