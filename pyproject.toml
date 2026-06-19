@@ -22,4 +22,5 @@ dev = [
     "torch>=2.0",
     "imageio>=2.20",
     "ruff>=0.4.0",
+    "opencv-python>=4.8.0",
 ]

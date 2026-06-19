@@ -151,6 +151,50 @@ Additional flags for optimization:
 - `--densify-grad-thresh 0.0002`: Gaussian splitting sensitivity
 - `--sh-degree 3`: Spherical harmonics degree (higher = more detail)
 
+## Visualization
+
+### Feature Extraction Visualization
+
+Visualize SIFT features extracted by COLMAP on each frame. Shows the 500 strongest features with optional orientation indicators:
+
+```bash
+uv run python scripts/visualize_colmap_features.py \
+  --colmap-dir data/intermediates/test_4s \
+  --output-dir data/intermediates/test_4s/annotated_images \
+  --max-features 500 \
+  --show-orientation
+```
+
+**Options:**
+- `--max-features N`: Show only the N strongest features (default: all)
+- `--show-orientation`: Draw orientation lines for each feature
+- `--circle-radius R`: Radius of feature circles in pixels (default: 5)
+- `--line-length L`: Length of orientation lines in pixels (default: 8)
+
+**Output**: Annotated images with green circles marking feature locations, blue lines showing orientation angles.
+
+### Feature Matching Visualization
+
+Visualize feature correspondences between image pairs from COLMAP exhaustive matching. Shows the 5 strongest matches with random colors:
+
+```bash
+uv run python scripts/visualize_feature_matches.py \
+  --colmap-dir data/intermediates/test_4s \
+  --output-dir data/intermediates/test_4s/match_visualizations \
+  --max-pairs 28 \
+  --max-matches 5
+```
+
+**Options:**
+- `--max-pairs N`: Visualize first N image pairs (default: all)
+- `--max-matches M`: Show only the M strongest feature matches per pair (default: 5)
+
+**Output**: Side-by-side image pairs with:
+- **Blue bounding box** around first image
+- **Orange bounding box** around second image
+- **Colored match lines** connecting corresponding features
+- **Semi-transparent images** (50% opacity) to highlight match lines
+
 ## Known Issues
 
 ### Memory Constraints
