@@ -7,6 +7,7 @@ source "$(dirname "$0")/.env"
 # Experiment configuration
 EXPERIMENT_POSTFIX="_distortion_corrected"
 FULL_EXPERIMENT_NAME="${EXPERIMENT_NAME}${EXPERIMENT_POSTFIX}"
+TIMESTAMP=$(date +"%Y%m%d_%H%M")
 
 # Path to compiled OpenSplat binary
 OPENSPLAT_BIN="${PROJECT_DIR}/opensplat/build/opensplat"
@@ -14,20 +15,29 @@ OPENSPLAT_BIN="${PROJECT_DIR}/opensplat/build/opensplat"
 # Define paths to COLMAP data and output folder
 DATA_DIR="${PROJECT_DIR}/data/intermediates/${FULL_EXPERIMENT_NAME}/sparse"
 IMAGES_DIR="${PROJECT_DIR}/data/intermediates/${FULL_EXPERIMENT_NAME}/images"
-OUTPUT_DIR="${PROJECT_DIR}/data/intermediates/${FULL_EXPERIMENT_NAME}/opensplat_output"
+OUTPUT_DIR="${PROJECT_DIR}/data/intermediates/${FULL_EXPERIMENT_NAME}/splats"
+OUTPUT_SUBDIR="${OUTPUT_DIR}/${NUM_ITERS}steps_${TIMESTAMP}"
 LOG_FILE="${PROJECT_DIR}/logs/opensplat_pipeline.log"
 
 echo "Starting OpenSplat training on M4 Metal GPU..."
 
 # Create output and logs directories if they don't exist
 mkdir -p "$OUTPUT_DIR"
+mkdir -p "$OUTPUT_SUBDIR"
 mkdir -p "$(dirname "$LOG_FILE")"
+
+# Generate semantic filename with iteration count, date, and time
+# Format: opensplat_output_numiters{NUM_ITERS}_{YYYYMMDD}_{HHMM}.ply
+
+OUTPUT_FILENAME="${EXPERIMENT_NAME}.ply"
+OUTPUT_PATH="${OUTPUT_SUBDIR}/${OUTPUT_FILENAME}"
 
 # Execute OpenSplat and log output (Adjust flags based on OpenSplat's CLI arguments)
 echo "Logging to: $LOG_FILE"
-$OPENSPLAT_BIN "$DATA_DIR" --colmap-image-path "$IMAGES_DIR" --output "$OUTPUT_DIR/scene.ply" --num-iters "$NUM_ITERS" | tee "$LOG_FILE"
+echo "Output will be saved to: $OUTPUT_PATH"
+$OPENSPLAT_BIN "$DATA_DIR" --colmap-image-path "$IMAGES_DIR" --output "$OUTPUT_PATH" --num-iters "$NUM_ITERS" | tee "$LOG_FILE"
 
-echo "Training complete! Output saved to $OUTPUT_DIR/scene.ply"
+echo "Training complete! Output saved to $OUTPUT_PATH"
 echo "Training log saved to $LOG_FILE"
 
 #### --- parameters in opensplat.cpp ---

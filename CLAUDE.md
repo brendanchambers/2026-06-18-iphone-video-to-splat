@@ -174,3 +174,31 @@ Step 1000: 0.143528 (100%)
 ```
 
 This is automatically captured by `launch_opensplat.sh` to `logs/opensplat_pipeline.log`.
+
+---
+
+## Semantic Naming for Gaussian Splat Models (2026-06-19)
+
+### Implementation
+Updated `launch_opensplat.sh` to automatically generate semantically meaningful filenames for saved models.
+
+**Filename Format:**
+```
+opensplat_output_numiters{NUM_ITERS}_{YYYYMMDD}_{HHMM}.ply
+```
+
+**Example outputs:**
+- `opensplat_output_numiters2000_20260619_1430.ply` (2000 iterations, June 19 2026, 2:30 PM)
+- `opensplat_output_numiters5000_20260619_1545.ply` (5000 iterations, June 19 2026, 3:45 PM)
+
+**Changes Made:**
+- Added timestamp generation using `date +"%Y%m%d_%H%M"` in `launch_opensplat.sh`
+- Build filename from: `opensplat_output_numiters${NUM_ITERS}_${TIMESTAMP}.ply`
+- Updated output messages to show the generated filename and timestamp
+- Updated `pipeline.sh` output messages to document the new naming scheme
+
+**Benefits:**
+- **Easy comparison**: Multiple training runs can be compared side-by-side with clear parameter information
+- **Unique files**: No risk of overwriting previous results
+- **Self-documenting**: Filename contains experiment parameters and when it was run
+- **Sortable**: Results are naturally sorted chronologically and by iteration count
