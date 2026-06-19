@@ -146,11 +146,13 @@ def draw_match_lines(
     box_color2 = (0, 165, 255)       # Orange for second image box
     box_thickness = 10
     box_alpha = 0.5
+    half_thickness = box_thickness // 2
 
     # Create overlay for transparent boxes
+    # Offset by half thickness to ensure both box edges are visible where they touch
     overlay = canvas.copy()
-    cv2.rectangle(overlay, (0, 0), (w1 - 1, h1 - 1), box_color1, thickness=box_thickness)
-    cv2.rectangle(overlay, (w1, 0), (w1 + w2 - 1, h2 - 1), box_color2, thickness=box_thickness)
+    cv2.rectangle(overlay, (half_thickness, half_thickness), (w1 - 1 - half_thickness, h1 - 1 - half_thickness), box_color1, thickness=box_thickness)
+    cv2.rectangle(overlay, (w1 + half_thickness, half_thickness), (w1 + w2 - 1 - half_thickness, h2 - 1 - half_thickness), box_color2, thickness=box_thickness)
 
     # Blend overlay with canvas for transparency
     cv2.addWeighted(overlay, box_alpha, canvas, 1 - box_alpha, 0, canvas)
@@ -174,7 +176,7 @@ def draw_match_lines(
         matches_to_draw = matches[strongest_indices]
 
     # Draw match lines with random colors and transparency
-    line_alpha = 0.95
+    line_alpha = 0.65
     for idx1, idx2 in matches_to_draw:
         if idx1 >= len(kp1) or idx2 >= len(kp2):
             continue

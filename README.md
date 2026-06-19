@@ -111,10 +111,13 @@ This script will:
 4. Compute Structure-from-Motion reconstruction
 5. Linearize camera distortion and undistort frames for OpenSplat
 
+All output is logged to `logs/colmap_pipeline.log`.
+
 **Output**:
 - `data/intermediates/current_scene/sparse/0/` - Raw SfM reconstruction
 - `data/intermediates/current_scene_distortion_corrected/images/` - Undistorted frames
 - `data/intermediates/current_scene_distortion_corrected/sparse/0/` - Distortion-corrected camera poses
+- `logs/colmap_pipeline.log` - Detailed pipeline execution log
 
 ### Stage 2: OpenSplat Training
 
@@ -128,10 +131,32 @@ This script will:
 1. Load camera poses and 3D points from COLMAP output
 2. Load distortion-corrected frames
 3. Initialize 3D Gaussians from the sparse point cloud
-4. Run training on Apple Metal GPU for 2000 iterations
+4. Run training on Apple Metal GPU for configured iterations
 5. Save the trained model as PLY format
 
-**Output**: `data/intermediates/{EXPERIMENT_NAME}_distortion_corrected/opensplat_output/scene.ply`
+All training output is logged to `logs/opensplat_pipeline.log`.
+
+**Outputs**:
+- `data/intermediates/{EXPERIMENT_NAME}_distortion_corrected/opensplat_output/scene.ply` - Trained Gaussian Splat model
+- `logs/opensplat_pipeline.log` - Training log with loss values at each step (used for visualization)
+
+### Running the Full Pipeline
+
+To run both stages sequentially, use the unified pipeline script:
+
+```bash
+bash pipeline.sh
+```
+
+This will:
+1. Execute the COLMAP SfM stage (Stage 1)
+2. Upon successful completion, execute the OpenSplat training stage (Stage 2)
+
+Pipeline logs:
+- `logs/colmap_pipeline.log` - COLMAP stage output
+- `logs/opensplat_pipeline.log` - OpenSplat training output
+
+If either stage fails, the pipeline stops and reports the error to help with debugging.
 
 ### Training Configuration
 
@@ -161,7 +186,7 @@ Visualize SIFT features extracted by COLMAP on each frame. Shows the 500 stronge
 uv run python scripts/visualize_colmap_features.py \
   --colmap-dir data/intermediates/test_4s \
   --output-dir data/intermediates/test_4s/annotated_images \
-  --max-features 500 \
+  --max-features 2000 \
   --show-orientation
 ```
 
@@ -178,11 +203,11 @@ uv run python scripts/visualize_colmap_features.py \
 Visualize feature correspondences between image pairs from COLMAP exhaustive matching. Shows the 5 strongest matches with random colors:
 
 ```bash
-uv run python scripts/visualize_feature_matches.py \
+uv run python scripts/visualize_colmap_feature_matches.py \
   --colmap-dir data/intermediates/test_4s \
   --output-dir data/intermediates/test_4s/match_visualizations \
-  --max-pairs 28 \
-  --max-matches 5
+  --max-pairs 10 \
+  --max-matches 25
 ```
 
 **Options:**
@@ -194,6 +219,29 @@ uv run python scripts/visualize_feature_matches.py \
 - **Orange bounding box** around second image
 - **Colored match lines** connecting corresponding features
 - **Semi-transparent images** (50% opacity) to highlight match lines
+
+### Training Loss Visualization
+
+Analyze the training loss curve from OpenSplat training. The script parses `logs/opensplat_pipeline.log` and generates a plot with both raw and smoothed loss values:
+
+```bash
+uv run python scripts/plot_training_loss.py
+```
+
+**Output**: `logs/training_loss.png` showing:
+- **Light blue line** with markers: Raw training loss at each step (80% opacity)
+- **Dark blue line**: Moving average (window size: 10 steps) for trend visualization (80% opacity)
+- **Statistics printed**: Min, max, and average loss values
+
+The log file is automatically created by `launch_opensplat.sh` during training with the format:
+```
+Step 10: 0.263509 (1%)
+Step 20: 0.29705 (2%)
+...
+Step 1000: 0.143528 (100%)
+```
+
+This visualization helps identify training convergence and detect potential overfitting or instability in the Gaussian Splat optimization.
 
 ## Known Issues
 

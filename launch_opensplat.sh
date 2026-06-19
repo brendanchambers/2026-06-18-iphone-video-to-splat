@@ -15,16 +15,20 @@ OPENSPLAT_BIN="${PROJECT_DIR}/opensplat/build/opensplat"
 DATA_DIR="${PROJECT_DIR}/data/intermediates/${FULL_EXPERIMENT_NAME}/sparse"
 IMAGES_DIR="${PROJECT_DIR}/data/intermediates/${FULL_EXPERIMENT_NAME}/images"
 OUTPUT_DIR="${PROJECT_DIR}/data/intermediates/${FULL_EXPERIMENT_NAME}/opensplat_output"
+LOG_FILE="${PROJECT_DIR}/logs/opensplat_pipeline.log"
 
 echo "Starting OpenSplat training on M4 Metal GPU..."
 
-# Create output directory if it doesn't exist
+# Create output and logs directories if they don't exist
 mkdir -p "$OUTPUT_DIR"
+mkdir -p "$(dirname "$LOG_FILE")"
 
-# Execute OpenSplat (Adjust flags based on OpenSplat's CLI arguments)
-$OPENSPLAT_BIN "$DATA_DIR" --colmap-image-path "$IMAGES_DIR" --output "$OUTPUT_DIR/scene.ply" --num-iters "$NUM_ITERS"
+# Execute OpenSplat and log output (Adjust flags based on OpenSplat's CLI arguments)
+echo "Logging to: $LOG_FILE"
+$OPENSPLAT_BIN "$DATA_DIR" --colmap-image-path "$IMAGES_DIR" --output "$OUTPUT_DIR/scene.ply" --num-iters "$NUM_ITERS" | tee "$LOG_FILE"
 
 echo "Training complete! Output saved to $OUTPUT_DIR/scene.ply"
+echo "Training log saved to $LOG_FILE"
 
 #### --- parameters in opensplat.cpp ---
 #         ("i,input", "Path to nerfstudio project", cxxopts::value<std::string>())

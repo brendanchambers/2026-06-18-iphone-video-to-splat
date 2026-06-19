@@ -138,3 +138,39 @@ Successfully tested COLMAP pipeline with 4-second test video extracted from midd
 - ✓ Sparse reconstruction: All 8 images registered, 3,980 points reconstructed
 - ✓ Distortion correction: Successful, undistorted images and poses written
 - ✓ Output structure: Correct paths created with proper directory hierarchy
+
+---
+
+## Training Loss Visualization (2026-06-19)
+
+### Implementation
+Created `scripts/plot_training_loss.py` to analyze and visualize OpenSplat training convergence.
+
+**Features:**
+- Parses training loss from `logs/opensplat_pipeline.log` (format: `Step N: loss (%)`)
+- Generates plot with:
+  - **Raw loss** (light blue, 80% opacity) with markers
+  - **Moving average** (dark blue, 80% opacity, window=10 steps)
+- Prints loss statistics (min, max, average)
+- Saves PNG plot to `logs/training_loss.png` at 150 DPI
+
+**Pipeline Integration:**
+- Updated `launch_opensplat.sh` to pipe OpenSplat output to `logs/opensplat_pipeline.log` using `tee`
+- Ensures log file is created automatically during training
+- Consistent with project's "use tee for logging" pattern
+
+**Usage:**
+```bash
+uv run python scripts/plot_training_loss.py
+```
+
+**Log Format:**
+The OpenSplat binary outputs loss at regular intervals in the format:
+```
+Step 10: 0.263509 (1%)
+Step 20: 0.29705 (2%)
+...
+Step 1000: 0.143528 (100%)
+```
+
+This is automatically captured by `launch_opensplat.sh` to `logs/opensplat_pipeline.log`.

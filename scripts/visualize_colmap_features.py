@@ -114,8 +114,12 @@ def draw_oriented_circles(
 
         # Optionally draw orientation line
         if show_orientation:
-            # Use column 5 as angle (in radians)
-            angle = kp[5] if len(kp) > 5 else 0
+            # COLMAP encodes SIFT orientation in columns 3 and 4 as sin/cos
+            # Compute angle using atan2(sin, cos)
+            if len(kp) > 4:
+                angle = np.arctan2(kp[3], kp[4])
+            else:
+                angle = 0
 
             # Draw orientation line from center outward
             end_x = int(x_int + line_length * np.cos(angle))
