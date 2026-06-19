@@ -20,6 +20,6 @@ OUTPUT_DIR="${PROJECT_ROOT}/data/intermediates/${FULL_EXPERIMENT_NAME}/opensplat
 echo "Starting OpenSplat training on M4 Metal GPU..."
 
 # Execute OpenSplat (Adjust flags based on OpenSplat's CLI arguments)
-$OPENSPLAT_BIN --input "$DATA_DIR" --colmap-image-path "$IMAGES_DIR" --output "$OUTPUT_DIR/scene.ply"
+$OPENSPLAT_BIN --input "$DATA_DIR" --colmap-image-path "$IMAGES_DIR" --output "$OUTPUT_DIR/scene.ply" -n 2000
 
 echo "Training complete! Output saved to $OUTPUT_DIR/scene.ply"
