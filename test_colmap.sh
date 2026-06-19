@@ -4,12 +4,9 @@
 set -e
 
 # --- Configuration ---
-# VIDEO_PATH="$1"
-# PROJECT_DIR="$2"
-VIDEO_PATH="./data/incoming/gardenbed_2026-06-17.MOV"
+VIDEO_PATH="./data/incoming/gardenbed_test_4s_middle.mov"
 PROJECT_DIR="/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat"
-EXPERIMENT_NAME="current_scene"
-
+EXPERIMENT_NAME="test_4s"
 
 if [ -z "$VIDEO_PATH" ] || [ -z "$PROJECT_DIR" ]; then
     echo "Usage: $0 <path_to_video.mov> <path_to_output_project_dir>"
@@ -27,6 +24,7 @@ mkdir -p "$SPARSE_DIR"
 echo "========================================================="
 echo "Starting COLMAP Pipeline for: $VIDEO_PATH"
 echo "Project Directory: $PROJECT_DIR"
+echo "Experiment: $EXPERIMENT_NAME"
 echo "========================================================="
 
 # --- Step 1: Extract Frames from Video ---
@@ -58,14 +56,17 @@ colmap mapper \
     --image_path "$IMAGES_DIR" \
     --output_path "$SPARSE_DIR"
 
+# --- Step 5: Distortion Correction ---
 # Creating undistorted poses for OpenSplat
+echo "--> Step 5: Undistorting images and poses..."
+DISTORTION_CORRECTED_DIR="${PROJECT_DIR}/data/intermediates/${EXPERIMENT_NAME}_distortion_corrected"
 colmap image_undistorter \
     --image_path "$IMAGES_DIR" \
     --input_path "$SPARSE_DIR/0" \
-    --output_path "${PROJECT_DIR}/data/intermediates/${EXPERIMENT_NAME}_distortion_corrected" \
+    --output_path "$DISTORTION_CORRECTED_DIR" \
     --output_type COLMAP
 
 echo "========================================================="
 echo "Pipeline complete!"
-echo "Your OpenSplat-ready dataset is located at: $PROJECT_DIR"
+echo "Distortion-corrected dataset is at: $DISTORTION_CORRECTED_DIR"
 echo "========================================================="

@@ -1,0 +1,170 @@
+=========================================================
+Starting COLMAP Pipeline for: ./data/incoming/gardenbed_test_4s_middle.mov
+Project Directory: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat
+Experiment: test_4s
+=========================================================
+--> Step 1: Extracting frames using ffmpeg...
+ffmpeg version 8.1.2 Copyright (c) 2000-2026 the FFmpeg developers
+  built with Apple clang version 17.0.0 (clang-1700.6.4.2)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/8.1.2 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      60. 26.102 / 60. 26.102
+  libavcodec     62. 28.102 / 62. 28.102
+  libavformat    62. 12.102 / 62. 12.102
+  libavdevice    62.  3.102 / 62.  3.102
+  libavfilter    11. 14.102 / 11. 14.102
+  libswscale      9.  5.102 /  9.  5.102
+  libswresample   6.  3.102 /  6.  3.102
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from './data/incoming/gardenbed_test_4s_middle.mov':
+  Metadata:
+    major_brand     : qt  
+    minor_version   : 512
+    compatible_brands: qt  
+    encoder         : Lavf62.12.102
+  Duration: 00:00:04.01, start: 0.000000, bitrate: 19786 kb/s
+  Stream #0:0[0x1]: Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1920, 19646 kb/s, 29.67 fps, 29.67 tbr, 11392 tbn (default)
+    Metadata:
+      handler_name    : Core Media Video
+      vendor_id       : FFMP
+      encoder         : Lavc62.28.102 libx264
+  Stream #0:1[0x2]: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 128 kb/s (default)
+    Metadata:
+      handler_name    : Core Media Audio
+      vendor_id       : [0][0][0][0]
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> mjpeg (native))
+Press [q] to stop, [?] for help
+Output #0, image2, to '/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/test_4s/images/frame_%04d.jpg':
+  Metadata:
+    major_brand     : qt  
+    minor_version   : 512
+    compatible_brands: qt  
+    encoder         : Lavf62.12.102
+  Stream #0:0: Video: mjpeg, yuv420p(pc, bt709, progressive), 1080x1920, q=2-31, 200 kb/s, 2 fps, 2 tbn (default)
+    Metadata:
+      encoder         : Lavc62.28.102 mjpeg
+      handler_name    : Core Media Video
+      vendor_id       : FFMP
+    Side data:
+      CPB properties: bitrate max/min/avg: 0/0/200000 buffer size: 0 vbv_delay: N/A
+[out#0/image2 @ 0x133605400] video:5173KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame=    8 fps=0.0 q=2.0 Lsize=N/A time=00:00:04.00 bitrate=N/A speed=18.1x elapsed=0:00:00.22    
+--> Step 2: Extracting image features...
+I20260619 14:47:03.808270 0x16fa6b000 feature_extraction.cc:504] === Feature extraction ===
+I20260619 14:47:03.860666 0x17006f000 sift.cc:757] Creating SIFT GPU feature extractor
+I20260619 14:47:04.041005 0x1700fb000 feature_extraction.cc:282] Processed file [1/8]
+I20260619 14:47:04.041024 0x1700fb000 feature_extraction.cc:285]   Name:            frame_0001.jpg
+I20260619 14:47:04.041027 0x1700fb000 feature_extraction.cc:294]   Dimensions:      1080 x 1920
+I20260619 14:47:04.041028 0x1700fb000 feature_extraction.cc:297]   Camera:          #1 - RADIAL
+I20260619 14:47:04.041030 0x1700fb000 feature_extraction.cc:300]   Focal Length:    2304.00px
+I20260619 14:47:04.041033 0x1700fb000 feature_extraction.cc:304]   Features:        13398 (SIFT)
+I20260619 14:47:04.105276 0x1700fb000 feature_extraction.cc:282] Processed file [2/8]
+I20260619 14:47:04.105295 0x1700fb000 feature_extraction.cc:285]   Name:            frame_0002.jpg
+I20260619 14:47:04.105298 0x1700fb000 feature_extraction.cc:294]   Dimensions:      1080 x 1920
+I20260619 14:47:04.105299 0x1700fb000 feature_extraction.cc:297]   Camera:          #1 - RADIAL
+I20260619 14:47:04.105301 0x1700fb000 feature_extraction.cc:300]   Focal Length:    2304.00px
+I20260619 14:47:04.105304 0x1700fb000 feature_extraction.cc:304]   Features:        8323 (SIFT)
+I20260619 14:47:04.167571 0x1700fb000 feature_extraction.cc:282] Processed file [3/8]
+I20260619 14:47:04.167594 0x1700fb000 feature_extraction.cc:285]   Name:            frame_0003.jpg
+I20260619 14:47:04.167597 0x1700fb000 feature_extraction.cc:294]   Dimensions:      1080 x 1920
+I20260619 14:47:04.167598 0x1700fb000 feature_extraction.cc:297]   Camera:          #1 - RADIAL
+I20260619 14:47:04.167601 0x1700fb000 feature_extraction.cc:300]   Focal Length:    2304.00px
+I20260619 14:47:04.167603 0x1700fb000 feature_extraction.cc:304]   Features:        9329 (SIFT)
+I20260619 14:47:04.232591 0x1700fb000 feature_extraction.cc:282] Processed file [4/8]
+I20260619 14:47:04.232611 0x1700fb000 feature_extraction.cc:285]   Name:            frame_0004.jpg
+I20260619 14:47:04.232613 0x1700fb000 feature_extraction.cc:294]   Dimensions:      1080 x 1920
+I20260619 14:47:04.232622 0x1700fb000 feature_extraction.cc:297]   Camera:          #1 - RADIAL
+I20260619 14:47:04.232625 0x1700fb000 feature_extraction.cc:300]   Focal Length:    2304.00px
+I20260619 14:47:04.232627 0x1700fb000 feature_extraction.cc:304]   Features:        10579 (SIFT)
+I20260619 14:47:04.297182 0x1700fb000 feature_extraction.cc:282] Processed file [5/8]
+I20260619 14:47:04.297228 0x1700fb000 feature_extraction.cc:285]   Name:            frame_0005.jpg
+I20260619 14:47:04.297269 0x1700fb000 feature_extraction.cc:294]   Dimensions:      1080 x 1920
+I20260619 14:47:04.297272 0x1700fb000 feature_extraction.cc:297]   Camera:          #1 - RADIAL
+I20260619 14:47:04.297276 0x1700fb000 feature_extraction.cc:300]   Focal Length:    2304.00px
+I20260619 14:47:04.297294 0x1700fb000 feature_extraction.cc:304]   Features:        13661 (SIFT)
+I20260619 14:47:04.361369 0x1700fb000 feature_extraction.cc:282] Processed file [6/8]
+I20260619 14:47:04.361400 0x1700fb000 feature_extraction.cc:285]   Name:            frame_0006.jpg
+I20260619 14:47:04.361402 0x1700fb000 feature_extraction.cc:294]   Dimensions:      1080 x 1920
+I20260619 14:47:04.361418 0x1700fb000 feature_extraction.cc:297]   Camera:          #1 - RADIAL
+I20260619 14:47:04.361425 0x1700fb000 feature_extraction.cc:300]   Focal Length:    2304.00px
+I20260619 14:47:04.361429 0x1700fb000 feature_extraction.cc:304]   Features:        8487 (SIFT)
+I20260619 14:47:04.427126 0x1700fb000 feature_extraction.cc:282] Processed file [7/8]
+I20260619 14:47:04.427149 0x1700fb000 feature_extraction.cc:285]   Name:            frame_0007.jpg
+I20260619 14:47:04.427151 0x1700fb000 feature_extraction.cc:294]   Dimensions:      1080 x 1920
+I20260619 14:47:04.427153 0x1700fb000 feature_extraction.cc:297]   Camera:          #1 - RADIAL
+I20260619 14:47:04.427155 0x1700fb000 feature_extraction.cc:300]   Focal Length:    2304.00px
+I20260619 14:47:04.427158 0x1700fb000 feature_extraction.cc:304]   Features:        13508 (SIFT)
+I20260619 14:47:04.489747 0x1700fb000 feature_extraction.cc:282] Processed file [8/8]
+I20260619 14:47:04.489814 0x1700fb000 feature_extraction.cc:285]   Name:            frame_0008.jpg
+I20260619 14:47:04.489818 0x1700fb000 feature_extraction.cc:294]   Dimensions:      1080 x 1920
+I20260619 14:47:04.489819 0x1700fb000 feature_extraction.cc:297]   Camera:          #1 - RADIAL
+I20260619 14:47:04.489821 0x1700fb000 feature_extraction.cc:300]   Focal Length:    2304.00px
+I20260619 14:47:04.489824 0x1700fb000 feature_extraction.cc:304]   Features:        12197 (SIFT)
+I20260619 14:47:04.495352 0x16fa6b000 timer.cc:90] Elapsed time: 0.011 [minutes]
+--> Step 3: Matching features (Exhaustive)...
+I20260619 14:47:04.695126 0x16f39b000 feature_matching.cc:195] === Feature matching & geometric verification ===
+I20260619 14:47:04.711772 0x16f427000 sift.cc:1559] Creating SIFT GPU feature matcher
+I20260619 14:47:04.735149 0x16f39b000 pairing.cc:180] Generating exhaustive image pairs...
+I20260619 14:47:04.735160 0x16f39b000 pairing.cc:213] Processing block [1/1, 1/1]
+I20260619 14:47:07.099844 0x16f39b000 feature_matching.cc:217] in 2.365s
+I20260619 14:47:07.099884 0x16f39b000 timer.cc:90] Elapsed time: 0.040 [minutes]
+--> Step 4: Generating 3D sparse reconstruction...
+I20260619 14:47:07.179870 0x1fde420c0 incremental_pipeline.cc:278] Loading database
+I20260619 14:47:07.180251 0x1fde420c0 database_cache.cc:72] Loading rigs...
+I20260619 14:47:07.180278 0x1fde420c0 database_cache.cc:82]  1 in 0.000s
+I20260619 14:47:07.180282 0x1fde420c0 database_cache.cc:90] Loading cameras...
+I20260619 14:47:07.180293 0x1fde420c0 database_cache.cc:108]  1 in 0.000s
+I20260619 14:47:07.180296 0x1fde420c0 database_cache.cc:116] Loading frames...
+I20260619 14:47:07.180316 0x1fde420c0 database_cache.cc:126]  8 in 0.000s
+I20260619 14:47:07.180319 0x1fde420c0 database_cache.cc:134] Loading matches...
+I20260619 14:47:07.180441 0x1fde420c0 database_cache.cc:139]  28 in 0.000s
+I20260619 14:47:07.180444 0x1fde420c0 database_cache.cc:147] Loading images...
+I20260619 14:47:07.181617 0x1fde420c0 database_cache.cc:241]  8 in 0.001s (connected 8, loaded 8)
+I20260619 14:47:07.181624 0x1fde420c0 database_cache.cc:255] Loading pose priors...
+I20260619 14:47:07.181631 0x1fde420c0 database_cache.cc:263]  0 in 0.000s
+I20260619 14:47:07.181633 0x1fde420c0 database_cache.cc:271] Building correspondence graph...
+I20260619 14:47:07.184377 0x1fde420c0 database_cache.cc:300]  in 0.003s (ignored 0)
+I20260619 14:47:07.184387 0x1fde420c0 timer.cc:90] Elapsed time: 0.000 [minutes]
+I20260619 14:47:07.185153 0x1fde420c0 incremental_pipeline.cc:390] Finding good initial image pair
+I20260619 14:47:07.202073 0x1fde420c0 incremental_pipeline.cc:414] Registering initial image pair #2 and #4
+I20260619 14:47:07.203364 0x1fde420c0 incremental_pipeline.cc:432] Global bundle adjustment
+I20260619 14:47:07.238146 0x1fde420c0 incremental_pipeline.cc:537] Registering image #3 (num_reg_frames=2)
+I20260619 14:47:07.238159 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 211 / 3407 points
+I20260619 14:47:07.298488 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+I20260619 14:47:07.323539 0x1fde420c0 incremental_pipeline.cc:537] Registering image #5 (num_reg_frames=3)
+I20260619 14:47:07.323550 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 969 / 4757 points
+I20260619 14:47:07.407878 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+I20260619 14:47:07.432786 0x1fde420c0 incremental_pipeline.cc:537] Registering image #6 (num_reg_frames=4)
+I20260619 14:47:07.432802 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 1341 / 3706 points
+I20260619 14:47:07.575537 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+I20260619 14:47:07.602313 0x1fde420c0 incremental_pipeline.cc:537] Registering image #7 (num_reg_frames=5)
+I20260619 14:47:07.602326 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 822 / 4597 points
+I20260619 14:47:07.715969 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+I20260619 14:47:07.770384 0x1fde420c0 incremental_pipeline.cc:537] Registering image #8 (num_reg_frames=6)
+I20260619 14:47:07.770400 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 975 / 4036 points
+I20260619 14:47:07.844483 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+I20260619 14:47:07.916912 0x1fde420c0 incremental_pipeline.cc:537] Registering image #1 (num_reg_frames=7)
+I20260619 14:47:07.916926 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 1020 / 3769 points
+I20260619 14:47:07.988486 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+I20260619 14:47:08.063278 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+I20260619 14:47:08.119934 0x1fde420c0 incremental_pipeline.cc:723] Keeping successful reconstruction
+I20260619 14:47:08.124299 0x1fde420c0 timer.cc:90] Elapsed time: 0.016 [minutes]
+--> Step 5: Undistorting images and poses...
+I20260619 14:47:08.175973 0x1fde420c0 image.cc:368] === Reading reconstruction ===
+I20260619 14:47:08.180082 0x1fde420c0 image.cc:371] => Reconstruction with 8 images and 3980 points
+I20260619 14:47:08.180106 0x1fde420c0 undistorters.cc:166] === Image undistortion ===
+I20260619 14:47:08.180392 0x1fde420c0 undistorters.cc:205] Undistorting image [1/8]
+I20260619 14:47:08.778482 0x1fde420c0 undistorters.cc:205] Undistorting image [2/8]
+I20260619 14:47:08.794993 0x1fde420c0 undistorters.cc:205] Undistorting image [3/8]
+I20260619 14:47:08.795009 0x1fde420c0 undistorters.cc:205] Undistorting image [4/8]
+I20260619 14:47:08.814051 0x1fde420c0 undistorters.cc:205] Undistorting image [5/8]
+I20260619 14:47:08.814070 0x1fde420c0 undistorters.cc:205] Undistorting image [6/8]
+I20260619 14:47:08.814072 0x1fde420c0 undistorters.cc:205] Undistorting image [7/8]
+I20260619 14:47:08.814075 0x1fde420c0 undistorters.cc:205] Undistorting image [8/8]
+I20260619 14:47:08.814077 0x1fde420c0 undistorters.cc:213] Writing reconstruction...
+I20260619 14:47:08.822515 0x1fde420c0 undistorters.cc:218] Writing configuration...
+I20260619 14:47:08.822707 0x1fde420c0 undistorters.cc:222] Writing scripts...
+I20260619 14:47:08.822933 0x1fde420c0 timer.cc:90] Elapsed time: 0.011 [minutes]
+=========================================================
+Pipeline complete!
+Distortion-corrected dataset is at: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/test_4s_distortion_corrected
+=========================================================

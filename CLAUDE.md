@@ -52,7 +52,7 @@ Issues: Warning about duplicated runtimes and segmentation fault. Cause: Pytorch
   - Already implemented via `colmap image_undistorter` in try_bash_colmap.sh
 
 ### Current blockers (see TODOs below):
-1. Path references and data organization bugs prevent pipeline from running
+1. ~~Path references and data organization bugs prevent pipeline from running~~ **FIXED**
 2. Scripts need cleanup and path validation with minimal test case
 
 ### Configuration notes:
@@ -106,3 +106,33 @@ Issues: Warning about duplicated runtimes and segmentation fault. Cause: Pytorch
     - Runs both COLMAP and OpenSplat stages sequentially
     - Uses consistent naming and path references
   - Make it work end-to-end with 8-frame test example
+
+---
+
+## Path Fixes Applied (2026-06-19)
+
+### Test Results
+Successfully tested COLMAP pipeline with 4-second test video extracted from middle of `gardenbed_2026-06-17.mov`:
+- Created: `data/incoming/gardenbed_test_4s_middle.mov` (4-second snippet)
+- Output: `data/intermediates/test_4s_distortion_corrected/`
+- Results: 8 frames extracted, 3,980 sparse points reconstructed, distortion correction completed
+
+### Bugs Fixed in try_bash_colmap.sh
+
+**Issue 1: Missing quotes around variable paths (Lines 63-64)**
+- **Problem**: `$IMAGES_DIR` and `$SPARSE_DIR` without quotes could fail if paths contain spaces
+- **Fixed**: Added quotes: `"$IMAGES_DIR"` and `"$SPARSE_DIR/0"`
+
+**Issue 2: Missing forward slash in path concatenation (Line 65)**
+- **Problem**: `${PROJECT_DIR}/data/intermediates${EXPERIMENT_NAME}_distortion_corrected`
+  - Created malformed path: `/path/data/intermediatestest_4s_distortion_corrected`
+  - Missing `/` between `intermediates` and experiment name
+- **Fixed**: Changed to: `${PROJECT_DIR}/data/intermediates/${EXPERIMENT_NAME}_distortion_corrected`
+
+### Verification
+- ✓ Frame extraction: 8 frames extracted at 2 fps
+- ✓ Feature extraction: SIFT features detected (8k-13k per image)
+- ✓ Feature matching: 28 image pairs matched exhaustively
+- ✓ Sparse reconstruction: All 8 images registered, 3,980 points reconstructed
+- ✓ Distortion correction: Successful, undistorted images and poses written
+- ✓ Output structure: Correct paths created with proper directory hierarchy
