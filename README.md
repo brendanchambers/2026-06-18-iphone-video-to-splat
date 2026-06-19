@@ -66,21 +66,14 @@ The pipeline is optimized to run on Apple Silicon (M-series) Macs.
 
 - macOS with Apple Silicon (M1/M2/M3/M4 or later)
 - Python 3.9+
-- COLMAP installed (`brew install colmap`)
+- COLMAP cloned into top level of project
+- OpenSplat cloned into top level of project
 - At least 16GB RAM (24GB recommended)
 - Disk space for video frames and models (~10-50GB depending on video length)
 
-## Installation
+## Setup
 
-1. **Clone the repository and install dependencies:**
-   ```bash
-   uv sync
-   ```
-
-2. **Verify COLMAP is installed:**
-   ```bash
-   which colmap
-   ```
+Build COLMAP and OpenSplat. Update .env to configure your run.
 
 ## Configuration
 
@@ -108,7 +101,7 @@ Extract frames from the iPhone video, compute camera poses using SfM, and linear
 Run the automated script:
 
 ```bash
-bash try_bash_colmap.sh
+bash launch_colmap.sh
 ```
 
 This script will:
@@ -128,7 +121,7 @@ This script will:
 Train a 3D Gaussian Splat model using the distortion-corrected data from Stage 1:
 
 ```bash
-bash try_bash_opensplat.sh
+bash launch_opensplat.sh
 ```
 
 This script will:
@@ -142,7 +135,7 @@ This script will:
 
 ### Training Configuration
 
-The `try_bash_opensplat.sh` script is configured for rapid iteration on the M4 MacBook Air with 2000 training steps. For production use, adjust the training parameters directly in the script (line 23):
+The `launch_opensplat.sh` script uses the `NUM_ITERS` value from `.env`. For production use, adjust the training parameters in `.env` or directly in the script:
 
 ```bash
 $OPENSPLAT_BIN "$DATA_DIR" \
