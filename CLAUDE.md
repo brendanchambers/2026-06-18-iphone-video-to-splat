@@ -18,21 +18,7 @@ Use tee to pipe console output to the `logs` directory.
 ## Debugging Notes
 
 ### OpenSplat Binary Issue (2026-06-18)
-**Status**: Blocker - Segmentation fault
-
-When testing `try_bash_opensplat.sh`:
-- Binary successfully loads COLMAP sparse data (99,506 points)
-- MPS (Metal Performance Shaders) initializes correctly
-- Crashes with segmentation fault during model initialization/training
-- Root cause: OpenMP library duplication in the binary
-  - Error: "OMP: Error #15: Initializing libomp.dylib, but found libomp.dylib already initialized"
-  - Multiple copies of OpenMP runtime linked into opensplat binary
-  - Workaround (KMP_DUPLICATE_LIB_OK=TRUE) allows startup but leads to segfault
-
-**Next Steps**:
-- Rebuild OpenSplat binary without OpenMP duplication (check CMake config)
-- Consider using system OpenMP instead of bundled version
-- Verify Metal GPU support is properly configured
+Issues: Warning about duplicated runtimes and segmentation fault. Cause: Pytorch was installed as a download and using brew, causing two runtimes linked in different places. Solution: removed installed pytorch and used brew as the sole runtime. Rebuilt OpenSplat with corrected path.
 
 ## Implementation Overview
 
