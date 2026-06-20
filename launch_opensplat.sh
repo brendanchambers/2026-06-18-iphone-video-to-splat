@@ -19,12 +19,16 @@ OUTPUT_DIR="${PROJECT_DIR}/data/intermediates/${FULL_EXPERIMENT_NAME}/splats"
 OUTPUT_SUBDIR="${OUTPUT_DIR}/${NUM_ITERS}steps_${TIMESTAMP}"
 LOG_FILE="${PROJECT_DIR}/logs/opensplat_pipeline.log"
 
+# Validation paths
+VAL_RENDER_FULL="${PROJECT_DIR}/${VAL_RENDER_DIR}"
+
 echo "Starting OpenSplat training on M4 Metal GPU..."
 
 # Create output and logs directories if they don't exist
 mkdir -p "$OUTPUT_DIR"
 mkdir -p "$OUTPUT_SUBDIR"
 mkdir -p "$(dirname "$LOG_FILE")"
+mkdir -p "$VAL_RENDER_FULL"
 
 # Generate semantic filename with iteration count, date, and time
 # Format: opensplat_output_numiters{NUM_ITERS}_{YYYYMMDD}_{HHMM}.ply
@@ -32,10 +36,17 @@ mkdir -p "$(dirname "$LOG_FILE")"
 OUTPUT_FILENAME="${EXPERIMENT_NAME}.ply"
 OUTPUT_PATH="${OUTPUT_SUBDIR}/${OUTPUT_FILENAME}"
 
+# Build validation parameters
+VALIDATION_ARGS=""
+if [ "$VAL_ENABLED" = "true" ]; then
+    VALIDATION_ARGS="--val --val-image $VAL_IMAGE --val-render $VAL_RENDER_FULL --ssim-weight $SSIM_WEIGHT"
+fi
+
 # Execute OpenSplat and log output (Adjust flags based on OpenSplat's CLI arguments)
 echo "Logging to: $LOG_FILE"
 echo "Output will be saved to: $OUTPUT_PATH"
-$OPENSPLAT_BIN "$DATA_DIR" --colmap-image-path "$IMAGES_DIR" --output "$OUTPUT_PATH" --num-iters "$NUM_ITERS" | tee "$LOG_FILE"
+echo "Validation enabled: $VAL_ENABLED (image: $VAL_IMAGE)"
+$OPENSPLAT_BIN "$DATA_DIR" --colmap-image-path "$IMAGES_DIR" --output "$OUTPUT_PATH" --num-iters "$NUM_ITERS" $VALIDATION_ARGS | tee "$LOG_FILE"
 
 echo "Training complete! Output saved to $OUTPUT_PATH"
 echo "Training log saved to $LOG_FILE"

@@ -202,3 +202,145 @@ opensplat_output_numiters{NUM_ITERS}_{YYYYMMDD}_{HHMM}.ply
 - **Unique files**: No risk of overwriting previous results
 - **Self-documenting**: Filename contains experiment parameters and when it was run
 - **Sortable**: Results are naturally sorted chronologically and by iteration count
+
+---
+
+## Validation Setup for Gaussian Splat Models (2026-06-19)
+
+### Overview
+Implemented validation monitoring using OpenSplat's built-in validation parameters to track held-out performance and detect overfitting during training.
+
+### OpenSplat Validation Capabilities (Investigated)
+
+**Supported Parameters:**
+- `--val`: Boolean flag to enable validation (withholds single image from training)
+- `--val-image`: Select validation image: `"random"` (default) or specific filename
+- `--val-render`: Directory path to save rendered validation images during training
+- `--ssim-weight`: Loss weighting between SSIM (perceptual) and L1 (reconstruction) loss
+
+**Fixed Behaviors (Not Configurable):**
+- **Validation frequency**: Renders every 10 training steps
+- **Number of validation images**: Exactly 1 image (not multiple)
+- **Validation metrics output**: Final validation loss printed to stdout at end of training
+- **Random seed**: Uses fixed seed (42) for reproducible "random" validation image selection
+
+**Validation Rendering:**
+- Saves rendered validation images as PNGs (e.g., `10.png`, `20.png`, `30.png`, ...)
+- Shows how well the model reconstructs the held-out view over training iterations
+- Useful for visual inspection of training progress and convergence quality
+
+### Configuration (.env)
+
+Added to `.env`:
+```bash
+# OpenSplat Validation
+VAL_ENABLED=true                          # Enable validation mode
+VAL_IMAGE="random"                        # "random" or specific filename
+VAL_RENDER_DIR="./data/intermediates/validation_renders"
+SSIM_WEIGHT=0.2                          # Perceptual quality weighting
+```
+
+### Integration into Training Scripts (Completed 2026-06-19)
+
+**Updated `launch_opensplat.sh`:**
+1. Loads validation configuration from `.env`:
+   - `VAL_ENABLED=true` - Enables validation mode
+   - `VAL_IMAGE="frame_0032.jpg"` - Always use 32nd frame for validation
+   - `VAL_RENDER_DIR="./data/intermediates/validation_renders"` - Output directory for rendered validation images
+   - `SSIM_WEIGHT=0.2` - Loss weighting (perceptual vs reconstruction)
+
+2. Constructs validation arguments conditionally:
+   ```bash
+   if [ "$VAL_ENABLED" = "true" ]; then
+       VALIDATION_ARGS="--val --val-image $VAL_IMAGE --val-render $VAL_RENDER_FULL --ssim-weight $SSIM_WEIGHT"
+   fi
+   ```
+
+3. Passes validation args to OpenSplat binary:
+   ```bash
+   $OPENSPLAT_BIN "$DATA_DIR" --colmap-image-path "$IMAGES_DIR" --output "$OUTPUT_PATH" --num-iters "$NUM_ITERS" $VALIDATION_ARGS
+   ```
+
+4. Creates validation render directory automatically before training
+
+**What This Enables:**
+- OpenSplat withholds `frame_0032.jpg` from training (same image every run)
+- Renders validation image every 10 training steps to `VAL_RENDER_DIR`
+- Outputs final validation loss to stdout (captured in log file)
+- Allows tracking held-out view quality over time via rendered images
+
+**Example Output During Training:**
+```
+Starting OpenSplat training on M4 Metal GPU...
+Validation enabled: true (image: frame_0032.jpg)
+[Training outputs...]
+{image_path} validation loss: 0.0445
+
+Training complete! Output saved to ...
+```
+
+### Loss Parsing and Visualization (Completed 2026-06-19)
+
+**Created `scripts/parse_opensplat_logs.py`:**
+- Parses training loss per-step from log file (format: `Step N: loss`)
+- Parses final validation loss from log file (format: `path validation loss: value`)
+- Saves results to JSON file: `logs/opensplat_loss_summary.json`
+- Calculates and reports statistics:
+  - Training: min, max, average, final loss
+  - Validation: final loss and validation/training ratio
+  - Overfitting detection: Reports if val loss > 1.1x train loss
+
+**Usage:**
+```bash
+uv run python scripts/parse_opensplat_logs.py
+```
+
+**Output Example:**
+```
+TRAINING LOSS
+Found 1000 training steps
+  Min loss:     0.032156
+  Max loss:     0.156234
+  Average loss: 0.087456
+  Final loss:   0.041234
+
+VALIDATION LOSS
+Final validation loss: 0.042156
+Validation/Training ratio: 1.0223
+✓ Validation and training loss are balanced
+```
+
+**Updated `scripts/plot_training_metrics.py`:**
+- Now plots both training and validation loss on same graph
+- Training loss shown as:
+  - Light blue curve (raw per-step loss with markers)
+  - Dark blue curve (10-step moving average)
+- Validation loss shown as:
+  - Red dashed horizontal line (final validation loss)
+  - Labeled with numerical value
+- Enhanced statistics output:
+  - Displays training loss statistics
+  - Displays validation loss with overfitting indicator
+  - Suggests model quality based on validation/training ratio
+
+**Usage:**
+```bash
+uv run python scripts/plot_training_metrics.py
+```
+
+**Output Graph:**
+- X-axis: Training step number
+- Y-axis: Loss value
+- Legend shows all three metrics with color coding
+- Saved to: `logs/training_loss.png` (150 DPI)
+
+**Interpretation:**
+- **Healthy training**: Both curves decrease over time, validation loss stays close to (or below) training loss
+- **Overfitting**: Validation loss increases while training loss decreases (or validation >> training)
+- **Balanced**: Validation/Training ratio between 0.9-1.1x indicates good generalization
+
+### Future Enhancements (Not Implemented Yet)
+- [ ] Store validation loss values per training iteration (requires OpenSplat modification)
+- [ ] Create side-by-side comparison of validation rendered images
+- [ ] Track validation metrics across multiple runs for statistical analysis
+- [ ] Auto-detect optimal stopping point based on validation loss plateau
