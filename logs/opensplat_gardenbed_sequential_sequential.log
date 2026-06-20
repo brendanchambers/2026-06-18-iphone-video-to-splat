@@ -1,0 +1,8 @@
+Starting OpenSplat training on M4 Metal GPU...
+Logging to: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/logs/opensplat_pipeline.log
+Output will be saved to: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/splats/2500steps_20260620_1919/gardenbed_sequential.ply
+Validation enabled: true (image: frame_0032.jpg)
+Using MPS
+Invalid project folder (must be either a colmap or nerfstudio or openmvg project folder)
+Training complete! Output saved to /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/splats/2500steps_20260620_1919/gardenbed_sequential.ply
+Training log saved to /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/logs/opensplat_pipeline.log
