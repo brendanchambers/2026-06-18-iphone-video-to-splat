@@ -8,6 +8,10 @@ We will be attempting to create a 3D gaussian splat from extracted frames and st
 Please keep your plan, next steps, debugging notes, and other documentation for yourself in this file, CLAUDE.md.
 For other materials, e.g. run instructions, and other project info, maintain documentation in README.md
 
+## Important Rules
+
+**VALIDATION CONFIGURATION**: Do NOT change validation settings (VAL_ENABLED, VAL_IMAGE, SSIM_WEIGHT) without explicit discussion with the user. These are intentional experimental choices. If there are conflicts between validation configuration and data (e.g., validation image doesn't exist), discuss options with the user before making changes.
+
 ## Inner and outer repo organization for rapid prototyping
 Notice there is an inner project repo named opensplat pasted into the project. Avoid modifying this repository unless absolutely necessary. We will do our work in the outer repository. The inner project, opensplat, is expected to be a key dependency and it's simpler to have its code available here in the repo where we can use it heavily with ease.
 
@@ -17,7 +21,7 @@ Use tee to pipe console output to the `logs` directory.
 ## Debugging Notes
 
 ### Debugging movie
-We made a 4s .mov `gardenbed_test_4s_middle.mov` for rapid iteration during testing.
+We made a 4s .mov `data/incoming/movies/gardenbed_test_4s_middle.mov` for rapid iteration during testing.
 
 ### OpenSplat Binary Issue (2026-06-18)
 Issues: Warning about duplicated runtimes and segmentation fault. Cause: Pytorch was installed as a download and using brew, causing two runtimes linked in different places. Solution: removed installed pytorch and used brew as the sole runtime. Rebuilt OpenSplat with corrected path.
@@ -75,8 +79,8 @@ Issues: Warning about duplicated runtimes and segmentation fault. Cause: Pytorch
 ### TODOs - Fix path bugs and test with 8-frame example
 
 - [ ] **Create 8-frame test dataset**
-  - Extract minimal 8-frame subset from `data/incoming/gardenbed_2026-06-17.MOV`
-  - Use: `ffmpeg -i data/incoming/gardenbed_2026-06-17.MOV -vf "fps=0.2" -q:v 2 data/intermediates/test_8frames/images/frame_%04d.jpg`
+  - Extract minimal 8-frame subset from `data/incoming/movies/gardenbed_2026-06-17.mov`
+  - Use: `ffmpeg -i data/incoming/movies/gardenbed_2026-06-17.mov -vf "fps=0.2" -q:v 2 data/intermediates/test_8frames/images/frame_%04d.jpg`
   - This allows quick iteration through full pipeline without long COLMAP/training times
 
 - [ ] **Test and fix Stage 1 paths: COLMAP SfM + Distortion Correction**
@@ -114,8 +118,8 @@ Issues: Warning about duplicated runtimes and segmentation fault. Cause: Pytorch
 ## Path Fixes Applied (2026-06-19)
 
 ### Test Results
-Successfully tested COLMAP pipeline with 4-second test video extracted from middle of `gardenbed_2026-06-17.mov`:
-- Created: `data/incoming/gardenbed_test_4s_middle.mov` (4-second snippet)
+Successfully tested COLMAP pipeline with 4-second test video extracted from middle of `data/incoming/movies/gardenbed_2026-06-17.mov`:
+- Created: `data/incoming/movies/gardenbed_test_4s_middle.mov` (4-second snippet)
 - Output: `data/intermediates/test_4s_distortion_corrected/`
 - Results: 8 frames extracted, 3,980 sparse points reconstructed, distortion correction completed
 
@@ -354,6 +358,26 @@ Tested SIFT_BRUTEFORCE vs SIFT_LIGHTGLUE on the 4-second test video (`test_4s_fe
 - Both methods successfully reconstructed the scene with 8 frames and ~4K sparse points
 - SIFT_BRUTEFORCE selected as the default for production use
 - Removed all feature type parameterization from COLMAP pipeline
+
+### COLMAP Configuration (.env)
+
+Added `MAX_NUM_FEATURES` parameter to `.env` for easy configuration:
+```bash
+# COLMAP Structure-from-Motion
+# Max number of SIFT features per image (default: 8192, faster: 2048, quality: 16384)
+MAX_NUM_FEATURES=8192
+```
+
+**Configuration Options:**
+- Set value in `.env` to control default behavior
+- Command-line override still available: `./launch_colmap.sh --max-num-features 4096`
+- Command-line arguments take precedence over `.env` value
+- If neither is set, defaults to 8192 features
+
+**Recommended Values:**
+- `2048`: Fast iteration for testing (30s-90s COLMAP time)
+- `8192`: Balanced quality/speed for production (13-15 min total)
+- `16384`: Maximum quality (may exceed MacBook Air memory)
 
 ### COLMAP Script Cleanup (Completed 2026-06-20)
 

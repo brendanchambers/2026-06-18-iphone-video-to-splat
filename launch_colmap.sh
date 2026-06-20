@@ -22,7 +22,7 @@ source "$(dirname "$0")/.env"
 #   ./launch_colmap.sh [options]
 #
 # OPTIONS:
-#   --max-num-features <N>  Max SIFT features per image (default: 8192)
+#   --max-num-features <N>  Max SIFT features per image (overrides .env MAX_NUM_FEATURES)
 #   --help                  Show this help message
 #
 # EXAMPLES:
@@ -31,8 +31,8 @@ source "$(dirname "$0")/.env"
 #
 #====================================================================
 
-# Default parameters (can be overridden via CLI arguments)
-MAX_NUM_FEATURES=8192
+# Use MAX_NUM_FEATURES from .env, or default to 8192 if not set
+MAX_NUM_FEATURES=${MAX_NUM_FEATURES:-8192}
 
 # Parse command-line arguments
 while [[ $# -gt 0 ]]; do

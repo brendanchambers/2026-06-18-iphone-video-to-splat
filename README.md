@@ -40,7 +40,8 @@ The pipeline is optimized to run on Apple Silicon (M-series) Macs.
 │   └── ...
 ├── data/
 │   ├── incoming/
-│   │   └── *.MOV                      # Input iPhone video files
+│   │   └── movies/
+│   │       └── *.MOV                  # Input iPhone video files
 │   └── intermediates/
 │       ├── current_scene/             # [COLMAP Stage 1] Raw SfM reconstruction
 │       │   ├── images/                # Extracted video frames
@@ -82,13 +83,22 @@ Before running the pipeline, configure the project by editing `.env`:
 ```bash
 # .env
 PROJECT_DIR="/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat"
-VIDEO_PATH="./data/incoming/gardenbed_2026-06-17.MOV"
+VIDEO_PATH="./data/incoming/movies/gardenbed_2026-06-17.mov"
 EXPERIMENT_NAME="current_scene"
+
+# COLMAP Structure-from-Motion
+MAX_NUM_FEATURES=8192
+
+# OpenSplat Training
+NUM_ITERS=1500
 ```
 
+**Configuration Parameters:**
 - `PROJECT_DIR`: Absolute path to the project directory
 - `VIDEO_PATH`: Relative path to input video from `PROJECT_DIR`
 - `EXPERIMENT_NAME`: Name for this experiment (used for output directory naming)
+- `MAX_NUM_FEATURES`: Max SIFT features per image (default: 8192, faster: 2048, quality: 16384)
+- `NUM_ITERS`: Number of OpenSplat training iterations (default: 1500)
 
 ## Usage
 
@@ -313,14 +323,24 @@ A comprehensive parameter sweep was conducted on a full 62-second iPhone video (
 
 ### Parameter Sweep Implementation
 
-The pipeline supports parameterized testing via command-line overrides to `launch_colmap.sh`:
+The pipeline supports parameterized testing via:
 
+**Method 1: Configuration File (.env)**
 ```bash
-# Run COLMAP with custom max_num_features
-bash launch_colmap.sh --max-num-features 2048 --feature-type SIFT_BRUTEFORCE
+# Edit .env to set default
+MAX_NUM_FEATURES=2048
+
+# Run pipeline
+bash launch_colmap.sh
+```
+
+**Method 2: Command-Line Override**
+```bash
+# Override .env setting via command-line
+bash launch_colmap.sh --max-num-features 4096
 
 # Semantic output naming
-# Creates: data/intermediates/EXPERIMENT_NAME_max-num-features-2048_type-sift_bruteforce/
+# Creates: data/intermediates/EXPERIMENT_NAME_max-num-features-4096/
 ```
 
 Timing results are automatically logged to `logs/colmap_timings.jsonl` and `logs/opensplat_timings.jsonl` in JSON Lines format for analysis.
@@ -332,13 +352,16 @@ Large images and high Gaussian counts can cause memory errors. Use the `downscal
 
 ## Future Work Suggestions
 
+- [ ] Save validation images to the appropriate experiment directory during training
+- [ ] Render validaiton images less frequently if needed
+- [ ] Check validation loss throughout training, not just at the end
 - [ ] Add real-time viewer for trained models
 - [ ] Support for batch video processing
-- [ ] Optimize memory usage for longer videos
+- [ ] Tune memory usage and running time
 - [ ] Add camera trajectory visualization
 - [ ] Performance benchmarking on different M-series chips
 - [ ] Integration with alternative 3DGS implementations
-- [ ] Substitute neural models for classical models
+- [ ] Compare neural models to classical models (which is the research motivation for the existence of this repo, intended as an approachable baseline representing typical local macbook use)
 
 ## Dependencies
 

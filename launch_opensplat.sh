@@ -5,8 +5,12 @@ set -e
 source "$(dirname "$0")/.env"
 
 # Experiment configuration
+# Match COLMAP's semantic naming with max-num-features parameter
+MAX_NUM_FEATURES=${MAX_NUM_FEATURES:-8192}
+PARAM_SUFFIX="max-num-features-${MAX_NUM_FEATURES}"
+SEMANTIC_EXPERIMENT_NAME="${EXPERIMENT_NAME}_${PARAM_SUFFIX}"
 EXPERIMENT_POSTFIX="_distortion_corrected"
-FULL_EXPERIMENT_NAME="${EXPERIMENT_NAME}${EXPERIMENT_POSTFIX}"
+FULL_EXPERIMENT_NAME="${SEMANTIC_EXPERIMENT_NAME}${EXPERIMENT_POSTFIX}"
 TIMESTAMP=$(date +"%Y%m%d_%H%M")
 
 # Path to compiled OpenSplat binary
