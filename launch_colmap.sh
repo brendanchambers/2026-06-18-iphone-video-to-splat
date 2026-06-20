@@ -26,11 +26,14 @@ source "$(dirname "$0")/.env"
 #   --max-num-features <N>  Max SIFT features per image (overrides .env MAX_NUM_FEATURES)
 #   --experiment <name>     Experiment name (overrides .env EXPERIMENT_NAME)
 #   --video <path>          Video path (overrides .env VIDEO_PATH)
+#   --loop-detection        Enable vocabulary tree loop detection (sequential only)
+#   --vocab-tree <path>     Path to vocabulary tree file (default: data/incoming/vocabulary_trees/vocab_tree_flickr100K_words32K.bin)
 #   --help                  Show this help message
 #
 # EXAMPLES:
 #   ./launch_colmap.sh --matcher exhaustive --max-num-features 8192
 #   ./launch_colmap.sh --matcher sequential --max-num-features 4096
+#   ./launch_colmap.sh --matcher sequential --loop-detection --max-num-features 4096
 #
 #====================================================================
 
@@ -39,6 +42,8 @@ MATCHER=${MATCHER:-exhaustive}
 MAX_NUM_FEATURES=${MAX_NUM_FEATURES:-8192}
 EXPERIMENT_NAME=${EXPERIMENT_NAME:-gardenbed}
 VIDEO_PATH=${VIDEO_PATH:-./data/incoming/movies/gardenbed_2026-06-17.mov}
+LOOP_DETECTION=0
+VOCAB_TREE_PATH="${PROJECT_DIR}/data/incoming/vocabulary_trees/vocab_tree_flickr100K_words32K.bin"
 
 # Parse command-line arguments
 while [[ $# -gt 0 ]]; do
@@ -59,6 +64,14 @@ while [[ $# -gt 0 ]]; do
             VIDEO_PATH="$2"
             shift 2
             ;;
+        --loop-detection)
+            LOOP_DETECTION=1
+            shift 1
+            ;;
+        --vocab-tree)
+            VOCAB_TREE_PATH="$2"
+            shift 2
+            ;;
         --help)
             echo "COLMAP Photogrammetry Pipeline (Unified)"
             echo ""
@@ -69,11 +82,14 @@ while [[ $# -gt 0 ]]; do
             echo "  --max-num-features <N>  Max SIFT features per image (default: 8192)"
             echo "  --experiment <name>     Experiment name (default: gardenbed)"
             echo "  --video <path>          Video path (default: from .env)"
+            echo "  --loop-detection        Enable vocabulary tree loop detection (sequential only)"
+            echo "  --vocab-tree <path>     Path to vocabulary tree file"
             echo "  --help                  Show this help message"
             echo ""
             echo "Examples:"
             echo "  $0 --matcher exhaustive --max-num-features 8192"
             echo "  $0 --matcher sequential --max-num-features 4096"
+            echo "  $0 --matcher sequential --loop-detection --max-num-features 4096"
             exit 0
             ;;
         *)
@@ -89,6 +105,18 @@ if [ "$MATCHER" != "exhaustive" ] && [ "$MATCHER" != "sequential" ]; then
     exit 1
 fi
 
+# Warn if loop detection is requested with exhaustive matching
+if [ "$LOOP_DETECTION" = "1" ] && [ "$MATCHER" != "sequential" ]; then
+    echo "Warning: Loop detection only works with sequential matching. Ignoring --loop-detection flag."
+    LOOP_DETECTION=0
+fi
+
+# Validate vocabulary tree exists if loop detection enabled
+if [ "$LOOP_DETECTION" = "1" ] && [ ! -f "$VOCAB_TREE_PATH" ]; then
+    echo "Error: Vocabulary tree not found at $VOCAB_TREE_PATH"
+    exit 1
+fi
+
 if [ -z "$VIDEO_PATH" ] || [ -z "$PROJECT_DIR" ]; then
     echo "Error: VIDEO_PATH and PROJECT_DIR must be set in .env"
     exit 1
@@ -99,8 +127,11 @@ FEATURE_BASE="SIFT"
 FEATURE_MATCHING="SIFT_BRUTEFORCE"
 
 # Generate semantic output directory name
-# Format: experiment_name_matcher_max-num-features-8192
+# Format: experiment_name_matcher_max-num-features-8192[_loop]
 PARAM_SUFFIX="${MATCHER}_max-num-features-${MAX_NUM_FEATURES}"
+if [ "$LOOP_DETECTION" = "1" ]; then
+    PARAM_SUFFIX="${PARAM_SUFFIX}_loop"
+fi
 SEMANTIC_EXPERIMENT_NAME="${EXPERIMENT_NAME}_${PARAM_SUFFIX}"
 
 # Create directory structure expected by OpenSplat
@@ -121,6 +152,11 @@ START_TIMESTAMP=$(date "+%Y-%m-%d %H:%M:%S")
 
 echo "========================================================="
 echo "Starting COLMAP Pipeline (Matcher: $MATCHER)"
+if [ "$LOOP_DETECTION" = "1" ]; then
+    echo "Loop Detection: ENABLED (vocabulary tree: $(basename "$VOCAB_TREE_PATH"))"
+else
+    echo "Loop Detection: DISABLED"
+fi
 echo "Input video: $VIDEO_PATH"
 echo "Experiment: $SEMANTIC_EXPERIMENT_NAME"
 echo "Max SIFT features: $MAX_NUM_FEATURES"
@@ -181,6 +217,19 @@ if [ "$MATCHER" = "exhaustive" ]; then
         --ExhaustiveMatching.block_size 50 2>&1 | tee -a "$LOG_FILE"
 else
     echo "Using sequential matching..." | tee -a "$LOG_FILE"
+
+    # Build loop detection parameters if enabled
+    LOOP_DETECTION_ARGS=""
+    if [ "$LOOP_DETECTION" = "1" ]; then
+        echo "Enabling vocabulary tree loop detection..." | tee -a "$LOG_FILE"
+        LOOP_DETECTION_ARGS="--SequentialMatching.loop_detection 1 \
+        --SequentialMatching.loop_detection_period 10 \
+        --SequentialMatching.loop_detection_num_images 50 \
+        --SequentialMatching.loop_detection_num_nearest_neighbors 1 \
+        --SequentialMatching.loop_detection_num_checks 64 \
+        --SequentialMatching.vocab_tree_path $VOCAB_TREE_PATH"
+    fi
+
     colmap sequential_matcher \
         --database_path "$DATABASE_PATH" \
         --FeatureMatching.type "$FEATURE_MATCHING" \
@@ -199,7 +248,8 @@ else
         --TwoViewGeometry.max_num_trials 10000 \
         --TwoViewGeometry.min_inlier_ratio 0.25 \
         --SequentialMatching.overlap 5 \
-        --SequentialMatching.quadratic_overlap 1 2>&1 | tee -a "$LOG_FILE"
+        --SequentialMatching.quadratic_overlap 1 \
+        $LOOP_DETECTION_ARGS 2>&1 | tee -a "$LOG_FILE"
 fi
 
 # --- Step 4: Sparse Reconstruction ---
@@ -264,7 +314,7 @@ echo "=========================================================" | tee -a "$LOG_
 
 # Write timing results to JSONL file
 {
-    echo "{\"experiment\": \"$SEMANTIC_EXPERIMENT_NAME\", \"start_timestamp\": \"$START_TIMESTAMP\", \"end_timestamp\": \"$END_TIMESTAMP\", \"elapsed_seconds\": $ELAPSED_SECONDS, \"max_num_features\": $MAX_NUM_FEATURES, \"matcher\": \"$MATCHER\", \"video_input\": \"$VIDEO_PATH\", \"log_file\": \"$LOG_FILE\"}"
+    echo "{\"experiment\": \"$SEMANTIC_EXPERIMENT_NAME\", \"start_timestamp\": \"$START_TIMESTAMP\", \"end_timestamp\": \"$END_TIMESTAMP\", \"elapsed_seconds\": $ELAPSED_SECONDS, \"max_num_features\": $MAX_NUM_FEATURES, \"matcher\": \"$MATCHER\", \"loop_detection\": $LOOP_DETECTION, \"video_input\": \"$VIDEO_PATH\", \"log_file\": \"$LOG_FILE\"}"
 } >> "$TIMING_FILE"
 
 echo "Timing results saved to: $TIMING_FILE"

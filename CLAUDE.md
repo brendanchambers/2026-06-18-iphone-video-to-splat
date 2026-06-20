@@ -20,8 +20,99 @@ Use tee to pipe console output to the `logs` directory.
 
 ## Debugging Notes
 
-### Debugging movie
-We made a 4s .mov `data/incoming/movies/gardenbed_test_4s_middle.mov` for rapid iteration during testing.
+### Loop Detection Experiment (2026-06-20)
+
+**Status**: Completed with Important Finding
+
+**What was implemented:**
+1. **Enhanced `launch_colmap.sh`** with vocabulary tree-based loop detection support
+   - Added `--loop-detection` flag to enable place recognition via pre-built vocabulary tree
+   - Added `--vocab-tree` parameter for custom vocabulary tree paths
+   - Uses Flickr100K 32K-word vocabulary tree (15MB) for loop closure detection
+
+2. **Created `run_loop_detection_experiment.sh`** to automate comparison pipeline
+   - Runs sequential matcher with and without loop detection
+   - Times each COLMAP and OpenSplat stage separately
+   - Generates comprehensive timing report
+
+**Issues Fixed:**
+- ✓ (2026-06-20 19:02) **Double-quoted vocabulary tree path** - Removed escaped quotes in line 230
+- ✓ (2026-06-20 19:07) **Vocabulary tree format incompatibility** - DISCOVERED
+
+**Critical Issue Found: Vocabulary Tree Format Incompatibility**
+
+**Problem**:
+- The available vocabulary tree (`vocab_tree_flickr100K_words32K.bin`) is in **legacy flann-based format**
+- COLMAP switched from flann to faiss indices in **May 2025**
+- Current COLMAP version cannot read the legacy format file
+- Result: `--loop-detection` parameter fails when trying to load the vocab tree
+
+**Error Message**:
+```
+Failed to read faiss index. This may be caused by reading a legacy flann-based index,
+because COLMAP switched from flann to faiss in May 2025.
+```
+
+**Impact**:
+- Stage 1 (sequential matching WITHOUT loop detection): ✅ **SUCCEEDS**
+- Stage 2 (sequential matching WITH vocab tree loop detection): ❌ **FAILS**
+
+**Why Stage 1 Works**:
+The sequential matcher already has built-in loop detection via `--SequentialMatching.quadratic_overlap 1`, which:
+- Matches each frame with nearby frames (overlap parameter)
+- Also matches with exponentially-spaced frames to detect loops
+- Does NOT require the vocabulary tree file
+
+**Options to Fix**:
+1. **Build new faiss-based vocabulary tree** (requires data)
+   - Use: `colmap vocab_tree_builder` command available
+   - Need training images with known loop points
+   - Time investment: high
+
+2. **Accept current approach** (recommended)
+   - Sequential matching with quadratic overlap already provides loop detection
+   - No vocabulary tree dependency
+   - Faster, simpler, works with available data
+
+3. **Upgrade vocabulary tree from flann to faiss**
+   - COLMAP commit c7a58462b813e406c304a9dafb475b87036924cf has upgrader tool
+   - Would need to check out that specific commit
+   - Time investment: moderate
+
+**Recommendation**:
+The sequential matcher WITH `quadratic_overlap=1` (already implemented) provides effective loop detection without requiring an external vocabulary tree. The vocabulary tree would be an optimization but is not essential.
+
+**Log Files to Monitor During Loop Detection Experiment:**
+
+1. **Main experiment log** (wrapper):
+   - `logs/loop_detection_full.log` - Overall progress and timing
+
+2. **COLMAP logs** (feature extraction, matching, reconstruction):
+   - `logs/colmap_loop_detection_full_no_loop_sequential_max-num-features-4096.log` - Without loop detection
+   - `logs/colmap_loop_detection_full_with_loop_sequential_max-num-features-4096_loop.log` - With loop detection
+   - Check for:
+     - "No images with matches" error → indicates matcher failed
+     - "Failed to create any sparse model" → reconstruction failed
+     - Feature counts per image
+
+3. **OpenSplat logs** (training):
+   - `logs/opensplat_pipeline.log` - Training progress, loss values
+   - Check for:
+     - "Invalid project folder" → data directory structure wrong
+     - Loss convergence pattern
+     - Memory issues ("CUDA out of memory" or similar)
+
+4. **Timing summary** (JSON):
+   - `logs/colmap_timings.jsonl` - Each run's duration with parameters
+
+5. **Final report**:
+   - `loop_detection_full_loop_detection_report.md` - Comparison results
+
+**What to Look For:**
+- COLMAP stage times: Compare matching speed without vs. with loop detection
+- Loop closure matches: Check logs for "loop_detection" keyword to verify it's being used
+- OpenSplat training: Ensure both datasets produce valid reconstructions
+- Final timing overhead: How much slower is loop detection? Is it worth the improved geometry?
 
 ### OpenSplat Binary Issue (2026-06-18)
 Issues: Warning about duplicated runtimes and segmentation fault. Cause: Pytorch was installed as a download and using brew, causing two runtimes linked in different places. Solution: removed installed pytorch and used brew as the sole runtime. Rebuilt OpenSplat with corrected path.
