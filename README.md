@@ -150,9 +150,60 @@ All training output is logged to `logs/opensplat_pipeline.log`.
 - `data/intermediates/{EXPERIMENT_NAME}_distortion_corrected/opensplat_output/scene.ply` - Trained Gaussian Splat model
 - `logs/opensplat_pipeline.log` - Training log with loss values at each step (used for visualization)
 
-### Running the Full Pipeline
+### Running Full Comparison Experiments
 
-To run both stages sequentially, use the unified pipeline script:
+To run an automated feature matching comparison experiment (COLMAP + OpenSplat):
+
+```bash
+./run_experiment.sh --name my_experiment --video ./data/incoming/movies/video.mov --iters 500
+```
+
+This will:
+1. Run COLMAP with both exhaustive and sequential matching strategies
+2. Train OpenSplat on both outputs
+3. Generate a comparison report: `my_experiment_comparison_report.md`
+
+**Parameters:**
+- `--name <name>` - Experiment name (required)
+- `--video <path>` - Video path (required)
+- `--max-features <N>` - Max SIFT features (default: 4096)
+- `--iters <N>` - Training iterations (default: 500)
+- `--matchers <list>` - Matchers to test (default: exhaustive,sequential)
+
+**Examples:**
+```bash
+# Quick test with 4-second video
+./run_experiment.sh --name quicktest --video ./data/incoming/movies/gardenbed_test_4s_middle.mov
+
+# Full production run
+./run_experiment.sh --name production --video ./data/incoming/movies/gardenbed_2026-06-17.mov \
+    --max-features 8192 --iters 1500
+
+# Only exhaustive matching
+./run_experiment.sh --name exhaustive_only --video video.mov --matchers exhaustive
+```
+
+### Direct COLMAP Execution
+
+For more control, run COLMAP directly with matcher selection:
+
+```bash
+# Exhaustive matching (all image pairs)
+./launch_colmap.sh --matcher exhaustive --max-num-features 4096 --experiment my_scene --video video.mov
+
+# Sequential matching (video frame order)
+./launch_colmap.sh --matcher sequential --max-num-features 4096 --experiment my_scene --video video.mov
+```
+
+**COLMAP Parameters:**
+- `--matcher exhaustive|sequential` - Feature matching strategy
+- `--max-num-features <N>` - Max SIFT features per image
+- `--experiment <name>` - Experiment name
+- `--video <path>` - Video path
+
+### Running the Legacy Full Pipeline
+
+To run both stages sequentially with defaults from `.env`:
 
 ```bash
 bash pipeline.sh

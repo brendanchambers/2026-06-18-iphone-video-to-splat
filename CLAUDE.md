@@ -421,3 +421,141 @@ MAX_NUM_FEATURES=8192
 - Reduced argument parsing complexity
 - Clear that we're using a proven, validated approach
 - Experiment naming is simpler and cleaner
+
+---
+
+## Unified Experiment Workflow (2026-06-20)
+
+### Overview
+Refactored the experiment system to simplify running feature matching comparisons. Created a unified COLMAP launcher with matcher parameterization and an experiment orchestrator that automates full COLMAP + OpenSplat comparison runs.
+
+### Files Created
+
+#### 1. **launch_colmap.sh** (Unified COLMAP launcher)
+Merged exhaustive and sequential matchers into a single script with `--matcher` parameter.
+
+**Features:**
+- Single unified entry point for all COLMAP runs
+- Takes `--matcher exhaustive|sequential` to switch strategies
+- All parameters overridable via command-line (no .env editing needed)
+- Parameters: `--matcher`, `--max-num-features`, `--experiment`, `--video`
+- Output directory naming includes matcher type: `{experiment}_{matcher}_max-num-features-{N}`
+
+**Example:**
+```bash
+./launch_colmap.sh --matcher sequential --max-num-features 4096 --experiment scene --video video.mov
+```
+
+#### 2. **run_experiment.sh** (Experiment orchestrator)
+Automates full comparison experiments with both COLMAP and OpenSplat.
+
+**Features:**
+- Runs COLMAP and OpenSplat for multiple matchers in sequence
+- Auto-generates comparison reports
+- Temporary .env management to override settings per run
+- Parameters: `--name`, `--video`, `--max-features`, `--iters`, `--matchers`
+
+**Example:**
+```bash
+./run_experiment.sh --name test --video video.mov --iters 500 --matchers exhaustive,sequential
+```
+
+### Files Removed/Consolidated
+
+- ✓ `launch_colmap_exhaustive.sh` - Merged into unified `launch_colmap.sh`
+- ✓ `launch_colmap_sequential.sh` - Merged into unified `launch_colmap.sh`
+- ✓ `launch_opensplat_semantic.sh` - Removed (legacy, replaced by .env-based `launch_opensplat.sh`)
+- ✓ `EXPERIMENT_WORKFLOW.md` - Consolidated into README.md
+- ✓ `SETUP_COMPLETE.md` - Consolidated into CLAUDE.md (this file)
+
+### Configuration
+
+The `.env` file provides defaults that can be overridden:
+```bash
+PROJECT_DIR="/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat"
+VIDEO_PATH="./data/incoming/movies/gardenbed_2026-06-17.mov"
+EXPERIMENT_NAME="test"                    # Default experiment name
+MAX_NUM_FEATURES=4096                     # Default features
+NUM_ITERS=500                             # Default training iterations
+VAL_ENABLED=true                          # Validation enabled
+VAL_IMAGE="frame_0032.jpg"                # Validation image
+VAL_RENDER_DIR="./data/intermediates/validation_renders"
+SSIM_WEIGHT=0.5                           # Perceptual loss weight
+```
+
+**Important**: Command-line parameters override `.env` values.
+
+### Design Improvements Over Previous Approach
+
+| Aspect | Before | After |
+|--------|--------|-------|
+| COLMAP Scripts | 2 separate files (exhaustive, sequential) | 1 unified file with `--matcher` param |
+| Experiment Orchestration | Manual (run COLMAP, then OpenSplat) | Automated via `run_experiment.sh` |
+| Parameter Overrides | Edit `.env` file | All command-line arguments |
+| Reports | Manual comparison | Auto-generated markdown |
+| Naming | Inconsistent | Semantic (includes matcher type) |
+| Repeatability | Moderate | High (clear parameter structure) |
+
+### Typical Workflow
+
+1. **Quick test** (5 min, 4-second video):
+   ```bash
+   ./run_experiment.sh --name quicktest --video gardenbed_test_4s_middle.mov
+   ```
+
+2. **Production run** (15-20 min, full video):
+   ```bash
+   ./run_experiment.sh --name production --video gardenbed_2026-06-17.mov \
+       --max-features 8192 --iters 1500
+   ```
+
+3. **COLMAP-only timing test**:
+   ```bash
+   ./launch_colmap.sh --matcher exhaustive --video video.mov --experiment timing_test
+   ./launch_colmap.sh --matcher sequential --video video.mov --experiment timing_test
+   ```
+
+### Output Structure
+
+After running `run_experiment.sh --name my_experiment`:
+```
+data/intermediates/
+├── my_experiment_exhaustive_max-num-features-4096/
+│   ├── images/
+│   ├── sparse/
+│   └── database.db
+├── my_experiment_exhaustive_max-num-features-4096_distortion_corrected/
+│   ├── images/
+│   ├── sparse/
+│   └── splats/
+│       └── 500steps_YYYYMMDD_HHMM/
+│           └── my_experiment_exhaustive.ply
+├── my_experiment_sequential_max-num-features-4096/
+└── my_experiment_sequential_max-num-features-4096_distortion_corrected/
+    └── splats/
+        └── 500steps_YYYYMMDD_HHMM/
+            └── my_experiment_sequential.ply
+
+logs/
+├── colmap_timings.jsonl
+├── colmap_my_experiment_exhaustive_*.log
+└── opensplat_my_experiment_exhaustive_*.log
+
+my_experiment_comparison_report.md     ← Auto-generated
+```
+
+### Testing Status
+
+The unified workflow was tested with 4-second test video on both matchers:
+- **Exhaustive matcher**: Works correctly with `--matcher exhaustive`
+- **Sequential matcher**: Works correctly with `--matcher sequential`
+- Both generate proper log files and directory structures
+- Ready for production use
+
+### Key Behaviors
+
+1. **Parameter Precedence**: Command-line args > `.env` values > hardcoded defaults
+2. **Naming Convention**: `{experiment}_{matcher}_max-num-features-{N}` for output dirs
+3. **Report Generation**: Auto-generated `{experiment}_comparison_report.md` with timing & loss data
+4. **Validation**: Both COLMAP and OpenSplat use frame_0032.jpg for held-out validation
+5. **Logging**: All output tee'd to `logs/` directory with semantic names

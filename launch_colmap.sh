@@ -7,14 +7,14 @@ set -e
 source "$(dirname "$0")/.env"
 
 #====================================================================
-# COLMAP Photogrammetry Pipeline
+# COLMAP Photogrammetry Pipeline (Unified)
 #====================================================================
 #
-# Runs the full COLMAP SfM pipeline with SIFT_BRUTEFORCE features:
+# Runs the full COLMAP SfM pipeline with configurable feature matching:
 #
 # 1. Frame Extraction - Extracts frames from video at 2 fps
 # 2. Feature Extraction - Detects SIFT features in each image
-# 3. Feature Matching - Matches features using brute force exhaustive matching
+# 3. Feature Matching - Matches features (exhaustive or sequential)
 # 4. Sparse Reconstruction - Computes camera poses & 3D point cloud
 # 5. Distortion Correction - Undistorts images for use with OpenSplat
 #
@@ -22,37 +22,58 @@ source "$(dirname "$0")/.env"
 #   ./launch_colmap.sh [options]
 #
 # OPTIONS:
+#   --matcher <type>        Feature matching type: exhaustive or sequential (default: exhaustive)
 #   --max-num-features <N>  Max SIFT features per image (overrides .env MAX_NUM_FEATURES)
+#   --experiment <name>     Experiment name (overrides .env EXPERIMENT_NAME)
+#   --video <path>          Video path (overrides .env VIDEO_PATH)
 #   --help                  Show this help message
 #
 # EXAMPLES:
-#   ./launch_colmap.sh --max-num-features 8192
-#   ./launch_colmap.sh --max-num-features 4096
+#   ./launch_colmap.sh --matcher exhaustive --max-num-features 8192
+#   ./launch_colmap.sh --matcher sequential --max-num-features 4096
 #
 #====================================================================
 
-# Use MAX_NUM_FEATURES from .env, or default to 8192 if not set
+# Default values from .env
+MATCHER=${MATCHER:-exhaustive}
 MAX_NUM_FEATURES=${MAX_NUM_FEATURES:-8192}
+EXPERIMENT_NAME=${EXPERIMENT_NAME:-gardenbed}
+VIDEO_PATH=${VIDEO_PATH:-./data/incoming/movies/gardenbed_2026-06-17.mov}
 
 # Parse command-line arguments
 while [[ $# -gt 0 ]]; do
     case $1 in
+        --matcher)
+            MATCHER="$2"
+            shift 2
+            ;;
         --max-num-features)
             MAX_NUM_FEATURES="$2"
             shift 2
             ;;
+        --experiment)
+            EXPERIMENT_NAME="$2"
+            shift 2
+            ;;
+        --video)
+            VIDEO_PATH="$2"
+            shift 2
+            ;;
         --help)
-            echo "COLMAP Photogrammetry Pipeline"
+            echo "COLMAP Photogrammetry Pipeline (Unified)"
             echo ""
             echo "Usage: $0 [options]"
             echo ""
             echo "Options:"
-            echo "  --max-num-features <N>   Max SIFT features per image (default: 8192)"
-            echo "  --help                   Show this help message"
+            echo "  --matcher <type>        Feature matching: exhaustive or sequential (default: exhaustive)"
+            echo "  --max-num-features <N>  Max SIFT features per image (default: 8192)"
+            echo "  --experiment <name>     Experiment name (default: gardenbed)"
+            echo "  --video <path>          Video path (default: from .env)"
+            echo "  --help                  Show this help message"
             echo ""
             echo "Examples:"
-            echo "  $0 --max-num-features 8192"
-            echo "  $0 --max-num-features 4096"
+            echo "  $0 --matcher exhaustive --max-num-features 8192"
+            echo "  $0 --matcher sequential --max-num-features 4096"
             exit 0
             ;;
         *)
@@ -62,18 +83,24 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
+# Validate matcher type
+if [ "$MATCHER" != "exhaustive" ] && [ "$MATCHER" != "sequential" ]; then
+    echo "Error: --matcher must be 'exhaustive' or 'sequential', got '$MATCHER'"
+    exit 1
+fi
+
 if [ -z "$VIDEO_PATH" ] || [ -z "$PROJECT_DIR" ]; then
     echo "Error: VIDEO_PATH and PROJECT_DIR must be set in .env"
     exit 1
 fi
 
-# Feature extraction configuration (hardcoded to SIFT_BRUTEFORCE)
+# Feature extraction configuration (hardcoded to SIFT)
 FEATURE_BASE="SIFT"
 FEATURE_MATCHING="SIFT_BRUTEFORCE"
 
-# Generate semantic output directory name based on max features
-# Format: experiment_name_max-num-features-8192
-PARAM_SUFFIX="max-num-features-${MAX_NUM_FEATURES}"
+# Generate semantic output directory name
+# Format: experiment_name_matcher_max-num-features-8192
+PARAM_SUFFIX="${MATCHER}_max-num-features-${MAX_NUM_FEATURES}"
 SEMANTIC_EXPERIMENT_NAME="${EXPERIMENT_NAME}_${PARAM_SUFFIX}"
 
 # Create directory structure expected by OpenSplat
@@ -93,7 +120,7 @@ START_TIME=$(date +%s%N)
 START_TIMESTAMP=$(date "+%Y-%m-%d %H:%M:%S")
 
 echo "========================================================="
-echo "Starting COLMAP Pipeline (SIFT_BRUTEFORCE)"
+echo "Starting COLMAP Pipeline (Matcher: $MATCHER)"
 echo "Input video: $VIDEO_PATH"
 echo "Experiment: $SEMANTIC_EXPERIMENT_NAME"
 echo "Max SIFT features: $MAX_NUM_FEATURES"
@@ -129,26 +156,51 @@ colmap feature_extractor \
     --SiftExtraction.upright 0 2>&1 | tee -a "$LOG_FILE"
 
 # --- Step 3: Feature Matching ---
-# Links corresponding SIFT features across image pairs using brute force exhaustive matching
-echo "--> Step 3: Matching SIFT features (exhaustive, brute force)..." | tee -a "$LOG_FILE"
-colmap exhaustive_matcher \
-    --database_path "$DATABASE_PATH" \
-    --FeatureMatching.type "$FEATURE_MATCHING" \
-    --FeatureMatching.use_gpu 1 \
-    --FeatureMatching.gpu_index -1 \
-    --FeatureMatching.guided_matching 0 \
-    --FeatureMatching.skip_geometric_verification 0 \
-    --FeatureMatching.max_num_matches 32768 \
-    --SiftMatching.max_ratio 0.8 \
-    --SiftMatching.max_distance 0.7 \
-    --SiftMatching.cross_check 1 \
-    --SiftMatching.cpu_brute_force_matcher 0 \
-    --TwoViewGeometry.min_num_inliers 15 \
-    --TwoViewGeometry.max_error 4 \
-    --TwoViewGeometry.confidence 0.999 \
-    --TwoViewGeometry.max_num_trials 10000 \
-    --TwoViewGeometry.min_inlier_ratio 0.25 \
-    --ExhaustiveMatching.block_size 50 2>&1 | tee -a "$LOG_FILE"
+# Links corresponding SIFT features across image pairs
+echo "--> Step 3: Matching SIFT features ($MATCHER)..." | tee -a "$LOG_FILE"
+
+if [ "$MATCHER" = "exhaustive" ]; then
+    echo "Using exhaustive brute force matching..." | tee -a "$LOG_FILE"
+    colmap exhaustive_matcher \
+        --database_path "$DATABASE_PATH" \
+        --FeatureMatching.type "$FEATURE_MATCHING" \
+        --FeatureMatching.use_gpu 1 \
+        --FeatureMatching.gpu_index -1 \
+        --FeatureMatching.guided_matching 0 \
+        --FeatureMatching.skip_geometric_verification 0 \
+        --FeatureMatching.max_num_matches 32768 \
+        --SiftMatching.max_ratio 0.8 \
+        --SiftMatching.max_distance 0.7 \
+        --SiftMatching.cross_check 1 \
+        --SiftMatching.cpu_brute_force_matcher 0 \
+        --TwoViewGeometry.min_num_inliers 15 \
+        --TwoViewGeometry.max_error 4 \
+        --TwoViewGeometry.confidence 0.999 \
+        --TwoViewGeometry.max_num_trials 10000 \
+        --TwoViewGeometry.min_inlier_ratio 0.25 \
+        --ExhaustiveMatching.block_size 50 2>&1 | tee -a "$LOG_FILE"
+else
+    echo "Using sequential matching..." | tee -a "$LOG_FILE"
+    colmap sequential_matcher \
+        --database_path "$DATABASE_PATH" \
+        --FeatureMatching.type "$FEATURE_MATCHING" \
+        --FeatureMatching.use_gpu 1 \
+        --FeatureMatching.gpu_index -1 \
+        --FeatureMatching.guided_matching 0 \
+        --FeatureMatching.skip_geometric_verification 0 \
+        --FeatureMatching.max_num_matches 32768 \
+        --SiftMatching.max_ratio 0.8 \
+        --SiftMatching.max_distance 0.7 \
+        --SiftMatching.cross_check 1 \
+        --SiftMatching.cpu_brute_force_matcher 0 \
+        --TwoViewGeometry.min_num_inliers 15 \
+        --TwoViewGeometry.max_error 4 \
+        --TwoViewGeometry.confidence 0.999 \
+        --TwoViewGeometry.max_num_trials 10000 \
+        --TwoViewGeometry.min_inlier_ratio 0.25 \
+        --SequentialMatching.overlap 5 \
+        --SequentialMatching.quadratic_overlap 1 2>&1 | tee -a "$LOG_FILE"
+fi
 
 # --- Step 4: Sparse Reconstruction ---
 # Calculates camera locations and the 3D sparse point cloud
@@ -212,7 +264,7 @@ echo "=========================================================" | tee -a "$LOG_
 
 # Write timing results to JSONL file
 {
-    echo "{\"experiment\": \"$SEMANTIC_EXPERIMENT_NAME\", \"start_timestamp\": \"$START_TIMESTAMP\", \"end_timestamp\": \"$END_TIMESTAMP\", \"elapsed_seconds\": $ELAPSED_SECONDS, \"max_num_features\": $MAX_NUM_FEATURES, \"feature_matcher\": \"SIFT_BRUTEFORCE\", \"video_input\": \"$VIDEO_PATH\", \"log_file\": \"$LOG_FILE\"}"
+    echo "{\"experiment\": \"$SEMANTIC_EXPERIMENT_NAME\", \"start_timestamp\": \"$START_TIMESTAMP\", \"end_timestamp\": \"$END_TIMESTAMP\", \"elapsed_seconds\": $ELAPSED_SECONDS, \"max_num_features\": $MAX_NUM_FEATURES, \"matcher\": \"$MATCHER\", \"video_input\": \"$VIDEO_PATH\", \"log_file\": \"$LOG_FILE\"}"
 } >> "$TIMING_FILE"
 
 echo "Timing results saved to: $TIMING_FILE"

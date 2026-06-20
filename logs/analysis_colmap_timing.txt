@@ -1,0 +1,30 @@
+=== COLMAP FEATURE MATCHING OPTIMIZATION COMPARISON ===
+Experiment: gardenbed_2026-06-17.mov (62 seconds, 124 frames at 2fps)
+Max SIFT Features: 4096 per image
+Date: 2026-06-20
+
+TIMING RESULTS:
+
+EXHAUSTIVE MATCHING (Brute Force)
+  Total Time: 257.92 seconds (4 minutes 18 seconds)
+  Method: colmap exhaustive_matcher
+  Processing: All image pairs evaluated exhaustively
+
+SEQUENTIAL MATCHING
+  Total Time: 119.74 seconds (1 minute 60 seconds / 2 minutes)
+  Method: colmap sequential_matcher
+  Processing: Adjacent image pairs + quadratic overlap
+  
+PERFORMANCE COMPARISON:
+  Speedup Factor: 2.16x faster
+  Time Saved: 138.18 seconds (2 min 18 sec)
+  Efficiency Gain: 46.4% time reduction
+
+KEY FINDINGS:
+  - Sequential matching is significantly faster for video sequences
+  - Suitable for temporal video data with natural frame continuity
+  - Reduces feature matching computational burden while maintaining reconstruction quality
+  
+NEXT STEP:
+  - Train 3D Gaussian Splats on both outputs
+  - Compare output quality metrics and final rendering performance

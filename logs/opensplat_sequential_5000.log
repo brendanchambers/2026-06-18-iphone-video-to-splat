@@ -1,0 +1,385 @@
+Starting OpenSplat training on M4 Metal GPU...
+Logging to: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/logs/opensplat_pipeline.log
+Output will be saved to: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/splats/5000steps_20260620_1748/gardenbed_sequential.ply
+Validation enabled: true (image: frame_0032.jpg)
+Using MPS
+Reading 52190 points
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0001.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0014.jpg
+Loading Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0066.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0079.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0105.jpg
+/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0040.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0118.jpgLoading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0092.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0053.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0027.jpg
+
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0080.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0041.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0028.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0067.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0106.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0119.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0054.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0093.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0015.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0002.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0055.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0042.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0068.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0081.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0120.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0016.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0029.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0003.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0107.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0094.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0043.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0069.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0056.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0082.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0108.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0004.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0121.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0017.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0030.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0109.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0070.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0044.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0057.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0083.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0005.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0122.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0095.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0071.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0018.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0084.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0045.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0123.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0031.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0006.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0058.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0072.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0019.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0032.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0073.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0085.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0046.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0124.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0096.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0110.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0020.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0059.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0074.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0033.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0007.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0111.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0097.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0086.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0021.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0060.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0047.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0008.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0098.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0034.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0112.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0048.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0087.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0075.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0099.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0035.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0061.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0113.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0009.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0049.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0076.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0022.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0088.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0114.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0100.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0036.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0050.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0062.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0010.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0077.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0023.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0089.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0101.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0115.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0037.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0063.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0078.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0011.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0116.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0102.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0024.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0090.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0064.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0038.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0051.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0012.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0117.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0103.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0025.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0065.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0013.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0039.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0104.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0052.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0091.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/gardenbed_sequential_max-num-features-4096_distortion_corrected/images/frame_0026.jpg
+init_gsplat_metal_context: loading '/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/opensplat/build/default.metallib'
+init_gsplat_metal_context: loaded '/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/opensplat/build/default.metallib', functions: compute_cov2d_bounds_kernel, project_gaussians_backward_kernel, get_tile_bin_edges_kernel, rasterize_backward_kernel, map_gaussian_to_intersects_kernel, nd_rasterize_backward_kernel, project_gaussians_forward_kernel, compute_sh_backward_kernel, compute_sh_forward_kernel, nd_rasterize_forward_kernel
+init_gsplat_metal_context: load function nd_rasterize_backward_kernel with label: (null)
+init_gsplat_metal_context: load function nd_rasterize_forward_kernel with label: (null)
+init_gsplat_metal_context: load function rasterize_backward_kernel with label: (null)
+init_gsplat_metal_context: load function project_gaussians_forward_kernel with label: (null)
+init_gsplat_metal_context: load function project_gaussians_backward_kernel with label: (null)
+init_gsplat_metal_context: load function compute_sh_forward_kernel with label: (null)
+init_gsplat_metal_context: load function compute_sh_backward_kernel with label: (null)
+init_gsplat_metal_context: load function compute_cov2d_bounds_kernel with label: (null)
+init_gsplat_metal_context: load function map_gaussian_to_intersects_kernel with label: (null)
+init_gsplat_metal_context: load function get_tile_bin_edges_kernel with label: (null)
+Step 10: 0.51113 (0%)
+Step 20: 0.538923 (0%)
+Step 30: 0.48582 (0%)
+Step 40: 0.470396 (0%)
+Step 50: 0.485354 (1%)
+Step 60: 0.469878 (1%)
+Step 70: 0.444672 (1%)
+Step 80: 0.473017 (1%)
+Step 90: 0.458903 (1%)
+Step 100: 0.464947 (2%)
+Step 110: 0.462922 (2%)
+Step 120: 0.444963 (2%)
+Step 130: 0.413711 (2%)
+Step 140: 0.366844 (2%)
+Step 150: 0.429741 (3%)
+Step 160: 0.423993 (3%)
+Step 170: 0.408202 (3%)
+Step 180: 0.394357 (3%)
+Step 190: 0.477151 (3%)
+Step 200: 0.407079 (4%)
+Step 210: 0.374611 (4%)
+Step 220: 0.422481 (4%)
+Step 230: 0.365885 (4%)
+Step 240: 0.430532 (4%)
+Step 250: 0.401161 (5%)
+Step 260: 0.360754 (5%)
+Step 270: 0.389885 (5%)
+Step 280: 0.392736 (5%)
+Step 290: 0.391726 (5%)
+Step 300: 0.34903 (6%)
+Step 310: 0.336413 (6%)
+Step 320: 0.467638 (6%)
+Step 330: 0.306578 (6%)
+Step 340: 0.341952 (6%)
+Step 350: 0.325095 (7%)
+Step 360: 0.328744 (7%)
+Step 370: 0.33217 (7%)
+Step 380: 0.320007 (7%)
+Step 390: 0.305234 (7%)
+Step 400: 0.373883 (8%)
+Step 410: 0.333307 (8%)
+Step 420: 0.330979 (8%)
+Step 430: 0.375827 (8%)
+Step 440: 0.316242 (8%)
+Step 450: 0.476824 (9%)
+Step 460: 0.394125 (9%)
+Step 470: 0.363624 (9%)
+Step 480: 0.43585 (9%)
+Step 490: 0.33784 (9%)
+Step 500: 0.315213 (10%)
+Step 510: 0.300721 (10%)
+Step 520: 0.418496 (10%)
+Step 530: 0.347586 (10%)
+Step 540: 0.357571 (10%)
+Step 550: 0.405894 (11%)
+Step 560: 0.351352 (11%)
+Step 570: 0.235919 (11%)
+Step 580: 0.334508 (11%)
+Step 590: 0.278795 (11%)
+Step 600: 0.312254 (12%)
+Added 40481 gaussians, new count 92671
+Culled 28121 gaussians, remaining 64550
+Step 610: 0.36361 (12%)
+Step 620: 0.330303 (12%)
+Step 630: 0.306086 (12%)
+Step 640: 0.348046 (12%)
+Step 650: 0.34157 (13%)
+Step 660: 0.342349 (13%)
+Step 670: 0.284354 (13%)
+Step 680: 0.345823 (13%)
+Step 690: 0.331416 (13%)
+Step 700: 0.373653 (14%)
+Added 64726 gaussians, new count 129276
+Culled 17356 gaussians, remaining 111920
+Step 710: 0.326868 (14%)
+Step 720: 0.334675 (14%)
+Step 730: 0.330698 (14%)
+Step 740: 0.411079 (14%)
+Step 750: 0.326889 (15%)
+Step 760: 0.247172 (15%)
+Step 770: 0.35325 (15%)
+Step 780: 0.262508 (15%)
+Step 790: 0.187384 (15%)
+Step 800: 0.312742 (16%)
+Added 94576 gaussians, new count 206496
+Culled 27491 gaussians, remaining 179005
+Step 810: 0.31268 (16%)
+Step 820: 0.343003 (16%)
+Step 830: 0.358906 (16%)
+Step 840: 0.350454 (16%)
+Step 850: 0.301 (17%)
+Step 860: 0.316758 (17%)
+Step 870: 0.298852 (17%)
+Step 880: 0.291866 (17%)
+Step 890: 0.266343 (17%)
+Step 900: 0.249326 (18%)
+Added 124550 gaussians, new count 303555
+Culled 41491 gaussians, remaining 262064
+Step 910: 0.330162 (18%)
+Step 920: 0.269313 (18%)
+Step 930: 0.416274 (18%)
+Step 940: 0.303813 (18%)
+Step 950: 0.282974 (19%)
+Step 960: 0.264437 (19%)
+Step 970: 0.264308 (19%)
+Step 980: 0.23853 (19%)
+Step 990: 0.22828 (19%)
+Step 1000: 0.235776 (20%)
+Added 152478 gaussians, new count 414542
+Culled 55900 gaussians, remaining 358642
+Step 1010: 0.268621 (20%)
+Step 1020: 0.247067 (20%)
+Step 1030: 0.348807 (20%)
+Step 1040: 0.244559 (20%)
+Step 1050: 0.314036 (21%)
+Step 1060: 0.331754 (21%)
+Step 1070: 0.228962 (21%)
+Step 1080: 0.30806 (21%)
+Step 1090: 0.275431 (21%)
+Step 1100: 0.351829 (22%)
+Added 180229 gaussians, new count 538871
+Culled 69279 gaussians, remaining 469592
+Step 1110: 0.286183 (22%)
+Step 1120: 0.310768 (22%)
+Step 1130: 0.364965 (22%)
+Step 1140: 0.237428 (22%)
+Step 1150: 0.203752 (23%)
+Step 1160: 0.213844 (23%)
+Step 1170: 0.181064 (23%)
+Step 1180: 0.256431 (23%)
+Step 1190: 0.291618 (23%)
+Step 1200: 0.216259 (24%)
+Added 199665 gaussians, new count 669257
+Culled 79298 gaussians, remaining 589959
+Step 1210: 0.232298 (24%)
+Step 1220: 0.2353 (24%)
+Step 1230: 0.30549 (24%)
+Step 1240: 0.272293 (24%)
+Step 1250: 0.207078 (25%)
+Step 1260: 0.268261 (25%)
+Step 1270: 0.214755 (25%)
+Step 1280: 0.190785 (25%)
+Step 1290: 0.321318 (25%)
+Step 1300: 0.249113 (26%)
+Added 212531 gaussians, new count 802490
+Culled 87033 gaussians, remaining 715457
+Step 1310: 0.359092 (26%)
+Step 1320: 0.238531 (26%)
+Step 1330: 0.277275 (26%)
+Step 1340: 0.227382 (26%)
+Step 1350: 0.230506 (27%)
+Step 1360: 0.167879 (27%)
+Step 1370: 0.345954 (27%)
+Step 1380: 0.252497 (27%)
+Step 1390: 0.197205 (27%)
+Step 1400: 0.283781 (28%)
+Added 229005 gaussians, new count 944462
+Culled 105542 gaussians, remaining 838920
+Step 1410: 0.226393 (28%)
+Step 1420: 0.229384 (28%)
+Step 1430: 0.243967 (28%)
+Step 1440: 0.209363 (28%)
+Step 1450: 0.232565 (29%)
+Step 1460: 0.17555 (29%)
+Step 1470: 0.161718 (29%)
+Step 1480: 0.185956 (29%)
+Step 1490: 0.233407 (29%)
+Step 1500: 0.215886 (30%)
+Added 234262 gaussians, new count 1073182
+Culled 109585 gaussians, remaining 963597
+Step 1510: 0.332476 (30%)
+Step 1520: 0.173843 (30%)
+Step 1530: 0.229729 (30%)
+Step 1540: 0.269242 (30%)
+Step 1550: 0.211207 (31%)
+Step 1560: 0.247236 (31%)
+Step 1570: 0.293254 (31%)
+Step 1580: 0.225555 (31%)
+Step 1590: 0.18917 (31%)
+Step 1600: 0.173634 (32%)
+Added 252016 gaussians, new count 1215613
+Culled 120819 gaussians, remaining 1094794
+Step 1610: 0.192354 (32%)
+Step 1620: 0.275237 (32%)
+Step 1630: 0.16441 (32%)
+Step 1640: 0.191455 (32%)
+Step 1650: 0.184154 (33%)
+Step 1660: 0.251414 (33%)
+Step 1670: 0.1763 (33%)
+Step 1680: 0.287041 (33%)
+Step 1690: 0.285311 (33%)
+Step 1700: 0.257989 (34%)
+Added 251452 gaussians, new count 1346246
+Culled 133465 gaussians, remaining 1212781
+Step 1710: 0.224359 (34%)
+Step 1720: 0.212871 (34%)
+Step 1730: 0.270202 (34%)
+Step 1740: 0.160635 (34%)
+Step 1750: 0.345367 (35%)
+Step 1760: 0.235576 (35%)
+Step 1770: 0.210595 (35%)
+Step 1780: 0.166473 (35%)
+Step 1790: 0.263973 (35%)
+Step 1800: 0.15209 (36%)
+Added 247748 gaussians, new count 1460529
+Culled 129335 gaussians, remaining 1331194
+Step 1810: 0.212282 (36%)
+Step 1820: 0.252672 (36%)
+Step 1830: 0.188557 (36%)
+Step 1840: 0.251094 (36%)
+Step 1850: 0.221251 (37%)
+Step 1860: 0.164445 (37%)
+Step 1870: 0.204905 (37%)
+Step 1880: 0.176051 (37%)
+Step 1890: 0.251567 (37%)
+Step 1900: 0.235359 (38%)
+Added 254336 gaussians, new count 1585530
+Culled 141962 gaussians, remaining 1443568
+Step 1910: 0.230879 (38%)
+Step 1920: 0.251822 (38%)
+Step 1930: 0.182464 (38%)
+Step 1940: 0.203092 (38%)
+Step 1950: 0.183203 (39%)
+Step 1960: 0.164736 (39%)
+Step 1970: 0.248596 (39%)
+Step 1980: 0.273476 (39%)
+Step 1990: 0.22403 (39%)
+Step 2000: 0.189527 (40%)
+Added 258700 gaussians, new count 1702268
+Culled 141979 gaussians, remaining 1560289
+Step 2010: 0.269524 (40%)
+Step 2020: 0.176644 (40%)
+Step 2030: 0.277804 (40%)
+Step 2040: 0.24046 (40%)
+Step 2050: 0.186713 (41%)
+Step 2060: 0.196778 (41%)
+Step 2070: 0.146411 (41%)
+Step 2080: 0.224898 (41%)
+Step 2090: 0.17736 (41%)
+Step 2100: 0.160513 (42%)
+Added 254793 gaussians, new count 1815082
+Culled 148283 gaussians, remaining 1666799
+Step 2110: 0.174435 (42%)
