@@ -344,3 +344,56 @@ uv run python scripts/plot_training_metrics.py
 - [ ] Create side-by-side comparison of validation rendered images
 - [ ] Track validation metrics across multiple runs for statistical analysis
 - [ ] Auto-detect optimal stopping point based on validation loss plateau
+
+---
+
+## Feature Extraction Comparison & Simplification (2026-06-20)
+
+### Feature Comparison Results
+Tested SIFT_BRUTEFORCE vs SIFT_LIGHTGLUE on the 4-second test video (`test_4s_feature_comparison`):
+- Both methods successfully reconstructed the scene with 8 frames and ~4K sparse points
+- SIFT_BRUTEFORCE selected as the default for production use
+- Removed all feature type parameterization from COLMAP pipeline
+
+### COLMAP Script Cleanup (Completed 2026-06-20)
+
+**Simplified `launch_colmap.sh`:**
+- Removed `--feature-type` command-line argument entirely
+- Removed feature type case statement and validation
+- Hardcoded SIFT_BRUTEFORCE feature extraction and matching
+- Updated output directory naming: now only includes `max-num-features` parameter
+- Simplified help text and usage examples
+- Cleaner, more focused script for production use
+
+**Before:**
+```bash
+./launch_colmap.sh --max-num-features 8192 --feature-type SIFT_BRUTEFORCE
+./launch_colmap.sh --feature-type SIFT_LIGHTGLUE
+./launch_colmap.sh --max-num-features 4096 --feature-type ALIKED_LIGHTGLUE
+```
+
+**After:**
+```bash
+./launch_colmap.sh --max-num-features 8192
+./launch_colmap.sh --max-num-features 4096
+```
+
+**Configuration:**
+- Default max features: 8192 (configurable via `--max-num-features`)
+- Feature extraction: SIFT (10 octaves, peak threshold 0.00667)
+- Feature matching: SIFT_BRUTEFORCE (exhaustive matcher)
+- Output path format: `{experiment_name}_max-num-features-{N}`
+
+**Changes Made:**
+1. Removed feature type option parsing (lines 46-83 simplified)
+2. Hardcoded `FEATURE_BASE="SIFT"` and `FEATURE_MATCHING="SIFT_BRUTEFORCE"`
+3. Updated output dir naming to exclude feature type
+4. Simplified help text to 1 option instead of 4
+5. Updated status messages throughout pipeline
+6. Changed timing JSON field: `"feature_type"` → `"feature_matcher": "SIFT_BRUTEFORCE"`
+
+**Benefits:**
+- Easier to understand and maintain
+- Reduced argument parsing complexity
+- Clear that we're using a proven, validated approach
+- Experiment naming is simpler and cleaner

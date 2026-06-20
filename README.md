@@ -243,12 +243,94 @@ Step 1000: 0.143528 (100%)
 
 This visualization helps identify training convergence and detect potential overfitting or instability in the Gaussian Splat optimization.
 
+## Experimental Results: COLMAP Feature Parameter Sweep
+
+A comprehensive parameter sweep was conducted on a full 62-second iPhone video (gardenbed scene, 124 frames at 2 fps) to evaluate the impact of COLMAP's `max_num_features` parameter on reconstruction quality and training time.
+
+### Methodology
+
+- **Dataset**: Full `gardenbed_2026-06-17.mov` (62 seconds, 1920×1080 iPhone video)
+- **COLMAP Parameters Tested**: 256, 2048, and 8192 features
+- **Training Steps**: 1500 and 5000 iterations for each parameter
+- **Hardware**: M4 MacBook Air 24GB RAM
+- **Validation**: Held-out test image (frame_0032.jpg) validation loss
+
+### Results Summary
+
+#### COLMAP Stage (SfM Reconstruction)
+
+| max_num_features | COLMAP Time | Images Registered | Sparse Points |
+|------------------|-------------|-------------------|---------------|
+| 256 | 29.99s | 75/124 (60%) | ~29k |
+| 2048 | 93.59s | 124/124 (100%) | ~115k |
+| 8192 | 807.71s | 124/124 (100%) | ~200k |
+
+**Key Finding**: max_num_features=256 fails to register all frames (~60% coverage), while both 2048 and 8192 achieve complete scene reconstruction.
+
+#### OpenSplat Training (1500 iterations)
+
+| Parameter | Time | Val Loss | Gaussians | Quality Score |
+|-----------|------|----------|-----------|---------------|
+| 256 | 80.81s | 0.244 | 3,908 | 1.0x |
+| 2048 | 107.36s | 0.170 | 52,921 | 1.43x |
+| 8192 | 166.84s | 0.125 | 163,764 | 1.95x |
+
+#### OpenSplat Training (5000 iterations)
+
+| Parameter | Time | Val Loss | Improvement | Quality Score |
+|-----------|------|----------|-------------|---------------|
+| 256 | 698.37s | 0.171 | ↓30% | 1.42x |
+| 2048 | 963.15s | 0.134 | ↓21% | 1.82x |
+| 8192 | 990.08s | 0.118 | ↓5.6% | 2.07x |
+
+### Interpretation
+
+**Validation Loss Convergence:**
+- **256 features**: Significant improvements from 1500→5000 iters (0.244 → 0.171, -30%)
+- **2048 features**: Strong improvements from 1500→5000 iters (0.170 → 0.134, -21%)
+- **8192 features**: Diminishing returns from 1500→5000 iters (0.125 → 0.118, -5.6%)
+
+**Practical Implications:**
+- **256 features** is unsuitable for complex scenes (60% frame registration) but trains quickly
+- **2048 features** provides excellent balance: 100% registration + 21% quality improvement with 5000 iters
+- **8192 features** offers best reconstruction quality but shows near-saturation at 1500 iters
+
+### Recommendations by Use Case
+
+**Quick Prototyping** (< 2 minutes total):
+- Use: max_num_features=256 + 1500 OpenSplat iters
+- Note: Only works for simple scenes with continuous camera motion
+
+**Development / Production Balanced** (< 20 minutes total):
+- Use: max_num_features=2048 + 5000 OpenSplat iters
+- Achieves 2x COLMAP time vs 256, but quality improves 1.82x
+- **Recommended for most use cases**
+
+**Maximum Quality**:
+- Use: max_num_features=8192 + 5000 OpenSplat iters
+- Best reconstruction fidelity for complex dynamic scenes
+- ~16.5 minutes total pipeline time on M4 MacBook Air
+
+### Parameter Sweep Implementation
+
+The pipeline supports parameterized testing via command-line overrides to `launch_colmap.sh`:
+
+```bash
+# Run COLMAP with custom max_num_features
+bash launch_colmap.sh --max-num-features 2048 --feature-type SIFT_BRUTEFORCE
+
+# Semantic output naming
+# Creates: data/intermediates/EXPERIMENT_NAME_max-num-features-2048_type-sift_bruteforce/
+```
+
+Timing results are automatically logged to `logs/colmap_timings.jsonl` and `logs/opensplat_timings.jsonl` in JSON Lines format for analysis.
+
 ## Known Issues
 
 ### Memory Constraints
 Large images and high Gaussian counts can cause memory errors. Use the `downscale` parameter to reduce image resolution before training.
 
-## Future Work
+## Future Work Suggestions
 
 - [ ] Add real-time viewer for trained models
 - [ ] Support for batch video processing
@@ -256,6 +338,7 @@ Large images and high Gaussian counts can cause memory errors. Use the `downscal
 - [ ] Add camera trajectory visualization
 - [ ] Performance benchmarking on different M-series chips
 - [ ] Integration with alternative 3DGS implementations
+- [ ] Substitute neural models for classical models
 
 ## Dependencies
 
@@ -272,4 +355,5 @@ For development notes and workflow information, see `CLAUDE.md`.
 
 - [OpenSplat](https://github.com/antimatter15/splat)
 - [COLMAP](https://colmap.github.io/)
+- [COLMAP direct to docs](https://colmap.github.io/faq.html)
 - [3D Gaussian Splatting Paper](https://repo.cvpr.org/)

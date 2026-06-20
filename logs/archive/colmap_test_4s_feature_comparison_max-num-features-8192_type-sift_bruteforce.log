@@ -1,0 +1,210 @@
+=========================================================
+--> Step 1: Extracting frames using ffmpeg...
+ffmpeg version 8.1.2 Copyright (c) 2000-2026 the FFmpeg developers
+  built with Apple clang version 17.0.0 (clang-1700.6.4.2)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/8.1.2 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      60. 26.102 / 60. 26.102
+  libavcodec     62. 28.102 / 62. 28.102
+  libavformat    62. 12.102 / 62. 12.102
+  libavdevice    62.  3.102 / 62.  3.102
+  libavfilter    11. 14.102 / 11. 14.102
+  libswscale      9.  5.102 /  9.  5.102
+  libswresample   6.  3.102 /  6.  3.102
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from './data/incoming/gardenbed_test_4s_middle.mov':
+  Metadata:
+    major_brand     : qt  
+    minor_version   : 512
+    compatible_brands: qt  
+    encoder         : Lavf62.12.102
+  Duration: 00:00:04.01, start: 0.000000, bitrate: 19786 kb/s
+  Stream #0:0[0x1]: Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1920, 19646 kb/s, 29.67 fps, 29.67 tbr, 11392 tbn (default)
+    Metadata:
+      handler_name    : Core Media Video
+      vendor_id       : FFMP
+      encoder         : Lavc62.28.102 libx264
+  Stream #0:1[0x2]: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 128 kb/s (default)
+    Metadata:
+      handler_name    : Core Media Audio
+      vendor_id       : [0][0][0][0]
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> mjpeg (native))
+Press [q] to stop, [?] for help
+Output #0, image2, to '/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/test_4s_feature_comparison_max-num-features-8192_type-sift_bruteforce/images/frame_%04d.jpg':
+  Metadata:
+    major_brand     : qt  
+    minor_version   : 512
+    compatible_brands: qt  
+    encoder         : Lavf62.12.102
+  Stream #0:0: Video: mjpeg, yuv420p(pc, bt709, progressive), 1080x1920, q=2-31, 200 kb/s, 2 fps, 2 tbn (default)
+    Metadata:
+      encoder         : Lavc62.28.102 mjpeg
+      handler_name    : Core Media Video
+      vendor_id       : FFMP
+    Side data:
+      CPB properties: bitrate max/min/avg: 0/0/200000 buffer size: 0 vbv_delay: N/A
+[out#0/image2 @ 0x1356046e0] video:5173KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame=    8 fps=0.0 q=2.0 Lsize=N/A time=00:00:04.00 bitrate=N/A speed=20.2x elapsed=0:00:00.19    
+--> Step 2: Extracting image features (base=SIFT, max_num_features=8192)...
+I20260619 22:38:04.767432 0x16b8eb000 feature_extraction.cc:504] === Feature extraction ===
+I20260619 22:38:04.870796 0x16beef000 sift.cc:757] Creating SIFT GPU feature extractor
+I20260619 22:38:05.056890 0x16bf7b000 feature_extraction.cc:282] Processed file [1/8]
+I20260619 22:38:05.056910 0x16bf7b000 feature_extraction.cc:285]   Name:            frame_0001.jpg
+I20260619 22:38:05.056913 0x16bf7b000 feature_extraction.cc:294]   Dimensions:      1080 x 1920
+I20260619 22:38:05.056914 0x16bf7b000 feature_extraction.cc:297]   Camera:          #1 - RADIAL
+I20260619 22:38:05.056916 0x16bf7b000 feature_extraction.cc:300]   Focal Length:    2304.00px
+I20260619 22:38:05.056920 0x16bf7b000 feature_extraction.cc:304]   Features:        13398 (SIFT)
+I20260619 22:38:05.136351 0x16bf7b000 feature_extraction.cc:282] Processed file [2/8]
+I20260619 22:38:05.136370 0x16bf7b000 feature_extraction.cc:285]   Name:            frame_0002.jpg
+I20260619 22:38:05.136373 0x16bf7b000 feature_extraction.cc:294]   Dimensions:      1080 x 1920
+I20260619 22:38:05.136375 0x16bf7b000 feature_extraction.cc:297]   Camera:          #1 - RADIAL
+I20260619 22:38:05.136377 0x16bf7b000 feature_extraction.cc:300]   Focal Length:    2304.00px
+I20260619 22:38:05.136380 0x16bf7b000 feature_extraction.cc:304]   Features:        8323 (SIFT)
+I20260619 22:38:05.196843 0x16bf7b000 feature_extraction.cc:282] Processed file [3/8]
+I20260619 22:38:05.196864 0x16bf7b000 feature_extraction.cc:285]   Name:            frame_0003.jpg
+I20260619 22:38:05.196866 0x16bf7b000 feature_extraction.cc:294]   Dimensions:      1080 x 1920
+I20260619 22:38:05.196868 0x16bf7b000 feature_extraction.cc:297]   Camera:          #1 - RADIAL
+I20260619 22:38:05.196870 0x16bf7b000 feature_extraction.cc:300]   Focal Length:    2304.00px
+I20260619 22:38:05.196873 0x16bf7b000 feature_extraction.cc:304]   Features:        9326 (SIFT)
+I20260619 22:38:05.256967 0x16bf7b000 feature_extraction.cc:282] Processed file [4/8]
+I20260619 22:38:05.256985 0x16bf7b000 feature_extraction.cc:285]   Name:            frame_0004.jpg
+I20260619 22:38:05.256988 0x16bf7b000 feature_extraction.cc:294]   Dimensions:      1080 x 1920
+I20260619 22:38:05.256990 0x16bf7b000 feature_extraction.cc:297]   Camera:          #1 - RADIAL
+I20260619 22:38:05.257000 0x16bf7b000 feature_extraction.cc:300]   Focal Length:    2304.00px
+I20260619 22:38:05.257007 0x16bf7b000 feature_extraction.cc:304]   Features:        10579 (SIFT)
+I20260619 22:38:05.320040 0x16bf7b000 feature_extraction.cc:282] Processed file [5/8]
+I20260619 22:38:05.320062 0x16bf7b000 feature_extraction.cc:285]   Name:            frame_0005.jpg
+I20260619 22:38:05.320065 0x16bf7b000 feature_extraction.cc:294]   Dimensions:      1080 x 1920
+I20260619 22:38:05.320067 0x16bf7b000 feature_extraction.cc:297]   Camera:          #1 - RADIAL
+I20260619 22:38:05.320069 0x16bf7b000 feature_extraction.cc:300]   Focal Length:    2304.00px
+I20260619 22:38:05.320072 0x16bf7b000 feature_extraction.cc:304]   Features:        13661 (SIFT)
+I20260619 22:38:05.380453 0x16bf7b000 feature_extraction.cc:282] Processed file [6/8]
+I20260619 22:38:05.380475 0x16bf7b000 feature_extraction.cc:285]   Name:            frame_0006.jpg
+I20260619 22:38:05.380478 0x16bf7b000 feature_extraction.cc:294]   Dimensions:      1080 x 1920
+I20260619 22:38:05.380480 0x16bf7b000 feature_extraction.cc:297]   Camera:          #1 - RADIAL
+I20260619 22:38:05.380482 0x16bf7b000 feature_extraction.cc:300]   Focal Length:    2304.00px
+I20260619 22:38:05.380485 0x16bf7b000 feature_extraction.cc:304]   Features:        8487 (SIFT)
+I20260619 22:38:05.442208 0x16bf7b000 feature_extraction.cc:282] Processed file [7/8]
+I20260619 22:38:05.442226 0x16bf7b000 feature_extraction.cc:285]   Name:            frame_0007.jpg
+I20260619 22:38:05.442228 0x16bf7b000 feature_extraction.cc:294]   Dimensions:      1080 x 1920
+I20260619 22:38:05.442230 0x16bf7b000 feature_extraction.cc:297]   Camera:          #1 - RADIAL
+I20260619 22:38:05.442232 0x16bf7b000 feature_extraction.cc:300]   Focal Length:    2304.00px
+I20260619 22:38:05.442235 0x16bf7b000 feature_extraction.cc:304]   Features:        13508 (SIFT)
+I20260619 22:38:05.505183 0x16bf7b000 feature_extraction.cc:282] Processed file [8/8]
+I20260619 22:38:05.505242 0x16bf7b000 feature_extraction.cc:285]   Name:            frame_0008.jpg
+I20260619 22:38:05.505246 0x16bf7b000 feature_extraction.cc:294]   Dimensions:      1080 x 1920
+I20260619 22:38:05.505248 0x16bf7b000 feature_extraction.cc:297]   Camera:          #1 - RADIAL
+I20260619 22:38:05.505250 0x16bf7b000 feature_extraction.cc:300]   Focal Length:    2304.00px
+I20260619 22:38:05.505254 0x16bf7b000 feature_extraction.cc:304]   Features:        12197 (SIFT)
+I20260619 22:38:05.508587 0x16b8eb000 timer.cc:90] Elapsed time: 0.012 [minutes]
+--> Step 3: Matching features (Exhaustive, matching_type=SIFT_BRUTEFORCE)...
+I20260619 22:38:05.711087 0x16b74f000 feature_matching.cc:195] === Feature matching & geometric verification ===
+I20260619 22:38:05.726206 0x16b7db000 sift.cc:1559] Creating SIFT GPU feature matcher
+I20260619 22:38:05.749134 0x16b74f000 pairing.cc:180] Generating exhaustive image pairs...
+I20260619 22:38:05.749145 0x16b74f000 pairing.cc:213] Processing block [1/1, 1/1]
+I20260619 22:38:08.087999 0x16b74f000 feature_matching.cc:217] in 2.339s
+I20260619 22:38:08.088039 0x16b74f000 timer.cc:90] Elapsed time: 0.040 [minutes]
+--> Step 4: Generating 3D sparse reconstruction...
+I20260619 22:38:08.162244 0x1fde420c0 incremental_pipeline.cc:278] Loading database
+I20260619 22:38:08.162558 0x1fde420c0 database_cache.cc:72] Loading rigs...
+I20260619 22:38:08.162581 0x1fde420c0 database_cache.cc:82]  1 in 0.000s
+I20260619 22:38:08.162585 0x1fde420c0 database_cache.cc:90] Loading cameras...
+I20260619 22:38:08.162595 0x1fde420c0 database_cache.cc:108]  1 in 0.000s
+I20260619 22:38:08.162598 0x1fde420c0 database_cache.cc:116] Loading frames...
+I20260619 22:38:08.162617 0x1fde420c0 database_cache.cc:126]  8 in 0.000s
+I20260619 22:38:08.162620 0x1fde420c0 database_cache.cc:134] Loading matches...
+I20260619 22:38:08.162725 0x1fde420c0 database_cache.cc:139]  28 in 0.000s
+I20260619 22:38:08.162728 0x1fde420c0 database_cache.cc:147] Loading images...
+I20260619 22:38:08.163702 0x1fde420c0 database_cache.cc:241]  8 in 0.001s (connected 8, loaded 8)
+I20260619 22:38:08.163706 0x1fde420c0 database_cache.cc:255] Loading pose priors...
+I20260619 22:38:08.163712 0x1fde420c0 database_cache.cc:263]  0 in 0.000s
+I20260619 22:38:08.163714 0x1fde420c0 database_cache.cc:271] Building correspondence graph...
+I20260619 22:38:08.166301 0x1fde420c0 database_cache.cc:300]  in 0.003s (ignored 0)
+I20260619 22:38:08.166306 0x1fde420c0 timer.cc:90] Elapsed time: 0.000 [minutes]
+I20260619 22:38:08.166940 0x1fde420c0 incremental_pipeline.cc:390] Finding good initial image pair
+I20260619 22:38:08.185382 0x1fde420c0 incremental_pipeline.cc:414] Registering initial image pair #1 and #4
+I20260619 22:38:08.186731 0x1fde420c0 incremental_pipeline.cc:432] Global bundle adjustment
+I20260619 22:38:08.219541 0x1fde420c0 incremental_pipeline.cc:537] Registering image #3 (num_reg_frames=2)
+I20260619 22:38:08.219554 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 144 / 3407 points
+I20260619 22:38:08.219654 0x1fde420c0 incremental_pipeline.cc:563] => Could not register, trying another image.
+I20260619 22:38:08.219656 0x1fde420c0 incremental_pipeline.cc:537] Registering image #2 (num_reg_frames=2)
+I20260619 22:38:08.219658 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 135 / 4192 points
+I20260619 22:38:08.219737 0x1fde420c0 incremental_pipeline.cc:563] => Could not register, trying another image.
+I20260619 22:38:08.219738 0x1fde420c0 incremental_pipeline.cc:537] Registering image #5 (num_reg_frames=2)
+I20260619 22:38:08.219740 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 117 / 4757 points
+I20260619 22:38:08.219846 0x1fde420c0 incremental_pipeline.cc:563] => Could not register, trying another image.
+I20260619 22:38:08.219849 0x1fde420c0 incremental_pipeline.cc:537] Registering image #6 (num_reg_frames=2)
+I20260619 22:38:08.219850 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 86 / 3706 points
+I20260619 22:38:08.219944 0x1fde420c0 incremental_pipeline.cc:563] => Could not register, trying another image.
+I20260619 22:38:08.219946 0x1fde420c0 incremental_pipeline.cc:537] Registering image #7 (num_reg_frames=2)
+I20260619 22:38:08.219948 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 39 / 4597 points
+I20260619 22:38:08.220045 0x1fde420c0 incremental_pipeline.cc:563] => Could not register, trying another image.
+I20260619 22:38:08.220048 0x1fde420c0 incremental_pipeline.cc:537] Registering image #2 (num_reg_frames=2)
+I20260619 22:38:08.220050 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 135 / 4192 points
+I20260619 22:38:08.220051 0x1fde420c0 incremental_pipeline.cc:546] Registering image with structure-less fallback
+I20260619 22:38:08.220052 0x1fde420c0 incremental_pipeline.cc:548] => Image sees 3687 / 5674 correspondences
+I20260619 22:38:08.220126 0x1fde420c0 incremental_pipeline.cc:563] => Could not register, trying another image.
+I20260619 22:38:08.220128 0x1fde420c0 incremental_pipeline.cc:537] Registering image #5 (num_reg_frames=2)
+I20260619 22:38:08.220129 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 117 / 4757 points
+I20260619 22:38:08.220131 0x1fde420c0 incremental_pipeline.cc:546] Registering image with structure-less fallback
+I20260619 22:38:08.220133 0x1fde420c0 incremental_pipeline.cc:548] => Image sees 3608 / 7656 correspondences
+I20260619 22:38:08.220241 0x1fde420c0 incremental_pipeline.cc:563] => Could not register, trying another image.
+I20260619 22:38:08.220256 0x1fde420c0 incremental_pipeline.cc:537] Registering image #3 (num_reg_frames=2)
+I20260619 22:38:08.220259 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 144 / 3407 points
+I20260619 22:38:08.220261 0x1fde420c0 incremental_pipeline.cc:546] Registering image with structure-less fallback
+I20260619 22:38:08.220262 0x1fde420c0 incremental_pipeline.cc:548] => Image sees 2649 / 6440 correspondences
+I20260619 22:38:08.220352 0x1fde420c0 incremental_pipeline.cc:563] => Could not register, trying another image.
+I20260619 22:38:08.220354 0x1fde420c0 incremental_pipeline.cc:537] Registering image #6 (num_reg_frames=2)
+I20260619 22:38:08.220355 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 86 / 3706 points
+I20260619 22:38:08.220357 0x1fde420c0 incremental_pipeline.cc:546] Registering image with structure-less fallback
+I20260619 22:38:08.220358 0x1fde420c0 incremental_pipeline.cc:548] => Image sees 2175 / 6897 correspondences
+I20260619 22:38:08.220444 0x1fde420c0 incremental_pipeline.cc:563] => Could not register, trying another image.
+I20260619 22:38:08.220446 0x1fde420c0 incremental_pipeline.cc:537] Registering image #7 (num_reg_frames=2)
+I20260619 22:38:08.220447 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 39 / 4597 points
+I20260619 22:38:08.220449 0x1fde420c0 incremental_pipeline.cc:546] Registering image with structure-less fallback
+I20260619 22:38:08.220450 0x1fde420c0 incremental_pipeline.cc:548] => Image sees 428 / 6388 correspondences
+I20260619 22:38:08.220529 0x1fde420c0 incremental_pipeline.cc:563] => Could not register, trying another image.
+I20260619 22:38:08.220530 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+I20260619 22:38:08.227807 0x1fde420c0 incremental_pipeline.cc:537] Registering image #3 (num_reg_frames=2)
+I20260619 22:38:08.227815 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 144 / 3407 points
+I20260619 22:38:08.297773 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+I20260619 22:38:08.324054 0x1fde420c0 incremental_pipeline.cc:537] Registering image #8 (num_reg_frames=3)
+I20260619 22:38:08.324065 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 85 / 4036 points
+I20260619 22:38:08.361629 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+I20260619 22:38:08.379001 0x1fde420c0 incremental_pipeline.cc:537] Registering image #2 (num_reg_frames=4)
+I20260619 22:38:08.379012 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 993 / 4192 points
+I20260619 22:38:08.434443 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+I20260619 22:38:08.462557 0x1fde420c0 incremental_pipeline.cc:537] Registering image #6 (num_reg_frames=5)
+I20260619 22:38:08.462572 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 963 / 3706 points
+I20260619 22:38:08.588211 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+I20260619 22:38:08.631168 0x1fde420c0 incremental_pipeline.cc:537] Registering image #5 (num_reg_frames=6)
+I20260619 22:38:08.631183 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 2015 / 4757 points
+I20260619 22:38:08.711016 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+I20260619 22:38:08.781573 0x1fde420c0 incremental_pipeline.cc:537] Registering image #7 (num_reg_frames=7)
+I20260619 22:38:08.781585 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 1168 / 4597 points
+I20260619 22:38:08.860834 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+I20260619 22:38:08.941854 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+I20260619 22:38:08.998401 0x1fde420c0 incremental_pipeline.cc:723] Keeping successful reconstruction
+I20260619 22:38:09.002899 0x1fde420c0 timer.cc:90] Elapsed time: 0.014 [minutes]
+--> Step 5: Correcting camera distortion...
+I20260619 22:38:09.054130 0x1fde420c0 image.cc:368] === Reading reconstruction ===
+I20260619 22:38:09.058040 0x1fde420c0 image.cc:371] => Reconstruction with 8 images and 3980 points
+I20260619 22:38:09.058066 0x1fde420c0 undistorters.cc:166] === Image undistortion ===
+I20260619 22:38:09.058415 0x1fde420c0 undistorters.cc:205] Undistorting image [1/8]
+I20260619 22:38:09.655682 0x1fde420c0 undistorters.cc:205] Undistorting image [2/8]
+I20260619 22:38:09.655711 0x1fde420c0 undistorters.cc:205] Undistorting image [3/8]
+I20260619 22:38:09.689250 0x1fde420c0 undistorters.cc:205] Undistorting image [4/8]
+I20260619 22:38:09.689270 0x1fde420c0 undistorters.cc:205] Undistorting image [5/8]
+I20260619 22:38:09.689272 0x1fde420c0 undistorters.cc:205] Undistorting image [6/8]
+I20260619 22:38:09.689277 0x1fde420c0 undistorters.cc:205] Undistorting image [7/8]
+I20260619 22:38:09.690934 0x1fde420c0 undistorters.cc:205] Undistorting image [8/8]
+I20260619 22:38:09.690939 0x1fde420c0 undistorters.cc:213] Writing reconstruction...
+I20260619 22:38:09.699661 0x1fde420c0 undistorters.cc:218] Writing configuration...
+I20260619 22:38:09.699778 0x1fde420c0 undistorters.cc:222] Writing scripts...
+I20260619 22:38:09.699877 0x1fde420c0 timer.cc:90] Elapsed time: 0.011 [minutes]
+=========================================================
+COLMAP Pipeline complete!
+Your OpenSplat-ready dataset is located at:
+  /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/test_4s_feature_comparison_max-num-features-8192_type-sift_bruteforce_distortion_corrected
+Elapsed time: 5.66s
+Log file: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/logs/colmap_test_4s_feature_comparison_max-num-features-8192_type-sift_bruteforce.log
+=========================================================
