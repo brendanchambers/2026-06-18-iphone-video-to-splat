@@ -57,11 +57,11 @@ echo "Output logged to: $LOG_FILE"
 echo "=========================================================" | tee "$LOG_FILE"
 
 # --- Step 1: Extract Frames from Video ---
-# Extracting 2 to 3 frames per second is usually ideal for tracking.
-# Adjust 'fps=2' higher if your video camera moves very fast.
+# Extracting frames at constant framerate.
+# Adjust the fps parameter based on video speed and desired frame density.
+# Typical values: 2 fps for slower pans, 3-4 fps for faster motion.
 echo "--> Step 1: Extracting frames using ffmpeg..." | tee -a "$LOG_FILE"
-# ffmpeg -i "$VIDEO_PATH" -vf "fps=2" -q:v 2 "$IMAGES_DIR/frame_%04d.jpg" 2>&1 | tee -a "$LOG_FILE"
-ffmpeg -i "$VIDEO_PATH" -vf "mpdecimate=hi=64*12*1000:lo=64*5*0:frac=0.999" -vsync vfr -q:v 2 "$IMAGES_DIR/frame_%04d.jpg" 2>&1 | tee -a "$LOG_FILE"
+ffmpeg -i "$VIDEO_PATH" -vf "fps=2" -q:v 2 "$IMAGES_DIR/frame_%04d.jpg" 2>&1 | tee -a "$LOG_FILE"
 
 # --- Step 2: Feature Extraction ---
 # This locates unique points across your extracted frames
