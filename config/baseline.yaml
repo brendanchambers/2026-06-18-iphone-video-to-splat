@@ -20,7 +20,7 @@ paths:
 # Frame extraction parameters
 frame_extraction:
   fps: 2                              # Constant framerate in frames per second
-  quality: 2                          # JPEG quality (1-5, 2 is high quality)
+  quality: 5                          # JPEG quality (1-5)
 
 # COLMAP Feature Extraction parameters
 colmap:
@@ -36,7 +36,7 @@ colmap:
     sift_num_octaves: 4
     sift_octave_resolution: 3
     sift_peak_threshold: 0.00667
-    sift_edge_threshold: 20
+    sift_edge_threshold: 15
     sift_estimate_affine_shape: 0
     sift_max_num_orientations: 2
     sift_upright: 0
@@ -75,7 +75,7 @@ colmap:
     ba_global_max_num_iterations: 50
     ba_global_frames_freq: 500
     ba_global_points_freq: 250000
-    filter_max_reproj_error: 8
+    filter_max_reproj_error: 6
     filter_min_tri_angle: 1.5
     init_max_error: 4
     init_min_tri_angle: 16

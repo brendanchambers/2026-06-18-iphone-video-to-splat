@@ -2,21 +2,21 @@ Using MPS
 
 Reading 2328 points
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy_distortion_corrected/images/frame_0002.jpg
-
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy_distortion_corrected/images/frame_0004.jpg
-
 Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy_distortion_corrected/images/frame_0001.jpg
-
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy_distortion_corrected/images/frame_0005.jpg
 
 Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy_distortion_corrected/images/frame_0003.jpg
 
-Loading Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy_distortion_corrected/images/frame_0007.jpg
+Loading Loading Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy_distortion_corrected/images/frame_0004.jpgLoading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy_distortion_corrected/images/frame_0002.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy_distortion_corrected/images/frame_0006.jpg
+/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy_distortion_corrected/images/frame_0006.jpgLoading Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy_distortion_corrected/images/frame_0008.jpg
 
-/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy_distortion_corrected/images/frame_0008.jpg
+/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy_distortion_corrected/images/frame_0005.jpg
+
+/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy_distortion_corrected/images/frame_0007.jpg
+
+
+
+
 
 init_gsplat_metal_context: loading '/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/opensplat/build/default.metallib'
 
@@ -42,19 +42,19 @@ init_gsplat_metal_context: load function map_gaussian_to_intersects_kernel with 
 
 init_gsplat_metal_context: load function get_tile_bin_edges_kernel with label: (null)
 
-Step 10: 0.331474 (20%)
+Step 10: 0.331464 (20%)
 
-Step 20: 0.314323 (40%)
+Step 20: 0.314311 (40%)
 
-Step 30: 0.280196 (60%)
+Step 30: 0.280185 (60%)
 
-Step 40: 0.296923 (80%)
+Step 40: 0.296903 (80%)
 
-Step 50: 0.301814 (100%)
+Step 50: 0.301925 (100%)
 
 Wrote /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy_distortion_corrected/splats/cameras.json
 
-Wrote /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy_distortion_corrected/splats/teensy_20260621_1219.ply
+Wrote /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy_distortion_corrected/splats/teensy_20260621_1227.ply
 
-/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy_distortion_corrected/images/frame_0001.jpg validation loss: 0.345241
+/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy_distortion_corrected/images/frame_0001.jpg validation loss: 0.345224
 

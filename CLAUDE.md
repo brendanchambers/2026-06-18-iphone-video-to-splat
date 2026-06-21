@@ -208,7 +208,7 @@ pipeline.py (main entry point)
   - colmap (56 params: feature_extraction, matching, mapper, undistorter)
   - opensplat (13 params)
   - validation (2 params)
-- `config/teensy.yaml` - Minimal dev config: 50 iterations, frame_0000.jpg validation
+- `config/teensy.yaml` - Uses Hydra defaults inheritance (16 lines) - inherits baseline.yaml and overrides only: experiment_name, video_path, opensplat.num_iters, validation.image
 
 **Testing & Documentation** (4 files, 44K)
 - `test_pipeline.py` - 6 test suites (all passing)
@@ -276,11 +276,50 @@ success = pipeline.run_full_pipeline()
 ✅ IDE friendly - full Python IDE support
 ✅ Extensible - easy to add new steps
 
+### Config Inheritance Pattern (2026-06-21)
+
+**Approach:** Hydra defaults list composition - teensy.yaml inherits from baseline.yaml
+
+**How it works:**
+- `baseline.yaml` contains all 87 core parameters
+- `teensy.yaml` starts with `defaults: [baseline, _self_]`, inheriting everything
+- Then teensy overrides only the 4 parameters that differ:
+  - `project.experiment_name: "teensy"`
+  - `project.video_path: "./data/incoming/movies/teensy.mov"`
+  - `opensplat.num_iters: 50`
+  - `validation.image: "frame_0001.jpg"`
+- Deep merge combines baseline + teensy overrides
+
+**Benefits:**
+- ✅ Zero duplication (teensy was 124 lines, now 16 lines)
+- ✅ Change propagation (update baseline.yaml, all inheriting configs auto-update)
+- ✅ Clear intent (teensy.yaml shows exactly what's different)
+- ✅ Scales well (new experiments are just a few lines of overrides)
+- ✅ No code changes needed (pipeline.py works unchanged)
+
+**Adding new experiment configs:**
+1. Create `config/experiment_name.yaml`
+2. Start with: `defaults: [baseline, _self_]`
+3. Add only the parameters you're testing
+4. Run: `uv run python pipeline.py --config-name experiment_name`
+
+**Usage:**
+```bash
+# Teensy (inherits baseline)
+uv run python pipeline.py --config-name teensy
+
+# Baseline
+uv run python pipeline.py --config-name baseline
+
+# New experiment (inherits baseline)
+uv run python pipeline.py --config-name high_quality
+```
+
 ### Next Steps
 
 - See `PIPELINE.md` for usage and API reference
 - See `reports/IMPLEMENTATION_SUMMARY.md` for architecture details
 - See `config/baseline.yaml` for all 87 available parameters
-- See `config/teensy.yaml` for quick dev iteration (50 iters, minimal setup)
+- See `config/teensy.yaml` for config inheritance pattern (16 line example)
 - Run `uv run python test_pipeline.py` to verify setup
 - Run `uv run python pipeline.py` to execute the pipeline
