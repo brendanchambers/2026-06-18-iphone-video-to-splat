@@ -55,5 +55,7 @@ echo "  - COLMAP: logs/colmap_pipeline.log"
 echo "  - OpenSplat: logs/opensplat_pipeline.log"
 echo ""
 echo "To visualize training loss:"
-echo "  uv run python scripts/plot_training_loss.py"
+echo "  uv run python scripts/plot_training_metrics.py"
 echo "========================================================="
+
+uv run python scripts/plot_training_metrics.py

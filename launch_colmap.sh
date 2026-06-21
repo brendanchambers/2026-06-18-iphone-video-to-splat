@@ -60,7 +60,8 @@ echo "=========================================================" | tee "$LOG_FIL
 # Extracting 2 to 3 frames per second is usually ideal for tracking.
 # Adjust 'fps=2' higher if your video camera moves very fast.
 echo "--> Step 1: Extracting frames using ffmpeg..." | tee -a "$LOG_FILE"
-ffmpeg -i "$VIDEO_PATH" -vf "fps=2" -q:v 2 "$IMAGES_DIR/frame_%04d.jpg" 2>&1 | tee -a "$LOG_FILE"
+# ffmpeg -i "$VIDEO_PATH" -vf "fps=2" -q:v 2 "$IMAGES_DIR/frame_%04d.jpg" 2>&1 | tee -a "$LOG_FILE"
+ffmpeg -i "$VIDEO_PATH" -vf "mpdecimate=hi=64*12*1000:lo=64*5*0:frac=0.999" -vsync vfr -q:v 2 "$IMAGES_DIR/frame_%04d.jpg" 2>&1 | tee -a "$LOG_FILE"
 
 # --- Step 2: Feature Extraction ---
 # This locates unique points across your extracted frames
@@ -79,7 +80,7 @@ colmap feature_extractor \
     --SiftExtraction.num_octaves 4 \
     --SiftExtraction.octave_resolution 3 \
     --SiftExtraction.peak_threshold 0.00667 \
-    --SiftExtraction.edge_threshold 10 \
+    --SiftExtraction.edge_threshold 20 \
     --SiftExtraction.estimate_affine_shape 0 \
     --SiftExtraction.max_num_orientations 2 \
     --SiftExtraction.upright 0 2>&1 | tee -a "$LOG_FILE"
@@ -129,7 +130,7 @@ colmap mapper \
     --Mapper.ba_global_max_num_iterations 50 \
     --Mapper.ba_global_frames_freq 500 \
     --Mapper.ba_global_points_freq 250000 \
-    --Mapper.filter_max_reproj_error 4 \
+    --Mapper.filter_max_reproj_error 8 \
     --Mapper.filter_min_tri_angle 1.5 \
     --Mapper.init_max_error 4 \
     --Mapper.init_min_tri_angle 16 \
