@@ -113,7 +113,7 @@ opensplat:
 # Validation parameters
 validation:
   enabled: true
-  image: "frame_0000.jpg"
+  image: "frame_0001.jpg"
 
 # Hydra configuration
 hydra:

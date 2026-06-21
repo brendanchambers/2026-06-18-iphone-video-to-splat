@@ -1,0 +1,13 @@
+[2026-06-21 12:18:14,284][__main__][INFO] - 
+[2026-06-21 12:18:14,284][__main__][INFO] - ╔==========================================================╗
+[2026-06-21 12:18:14,284][__main__][INFO] - ║          3D Gaussian Splat Training Pipeline              ║
+[2026-06-21 12:18:14,284][__main__][INFO] - ╚==========================================================╝
+[2026-06-21 12:18:14,284][__main__][INFO] - Experiment: teensy
+[2026-06-21 12:18:14,284][__main__][INFO] - Project dir: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat
+[2026-06-21 12:18:14,285][__main__][INFO] - 
+[2026-06-21 12:18:14,285][__main__][INFO] - ============================================================
+[2026-06-21 12:18:14,285][__main__][INFO] - STEP 1: Frame Extraction
+[2026-06-21 12:18:14,285][__main__][INFO] - ============================================================
+[2026-06-21 12:18:14,285][src.frame_extractor][ERROR] - Video file not found: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/incoming/movies/teensy.mov
+[2026-06-21 12:18:14,285][__main__][ERROR] - ✗ Frame extraction failed
+[2026-06-21 12:18:14,285][__main__][ERROR] - Pipeline failed at step: frame_extraction
