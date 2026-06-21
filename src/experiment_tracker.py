@@ -92,11 +92,11 @@ def extract_validation_loss(jsonl_path: Path) -> Optional[float]:
                 return None
 
             record = json.loads(last_line)
-            # Validation loss records have format: {"step": N, "loss": X, "timestamp": "..."}
-            if "loss" in record:
-                return float(record["loss"])
+            # Validation loss records have format: {"validation_loss": X, "timestamp": "..."}
+            if "validation_loss" in record:
+                return float(record["validation_loss"])
             else:
-                logger.debug(f"No 'loss' field in last record: {jsonl_path}")
+                logger.debug(f"No 'validation_loss' field in last record: {jsonl_path}")
                 return None
 
     except (json.JSONDecodeError, ValueError) as e:
