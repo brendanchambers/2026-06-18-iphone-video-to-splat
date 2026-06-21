@@ -1,0 +1,4 @@
+{"experiment_name": "densify_sz0.00025_gr1e-05", "experiment_group": "sweep_densify_size_and_gradient_threshold", "timestamp": "2026-06-21T17:33:57.724578", "total_running_time": 226.61485266685486, "train_loss": 0.145808, "val_loss": 0.183041}
+{"experiment_name": "densify_sz0.00025_gr0.0001", "experiment_group": "sweep_densify_size_and_gradient_threshold", "timestamp": "2026-06-21T17:37:08.846549", "total_running_time": 191.07846355438232, "train_loss": 0.153266, "val_loss": 0.187219}
+{"experiment_name": "densify_sz0.0025_gr1e-05", "experiment_group": "sweep_densify_size_and_gradient_threshold", "timestamp": "2026-06-21T17:41:02.203880", "total_running_time": 233.321359872818, "train_loss": 0.150241, "val_loss": 0.185793}
+{"experiment_name": "densify_sz0.0025_gr0.0001", "experiment_group": "sweep_densify_size_and_gradient_threshold", "timestamp": "2026-06-21T17:44:04.045155", "total_running_time": 181.80957508087158, "train_loss": 0.158765, "val_loss": 0.188164}

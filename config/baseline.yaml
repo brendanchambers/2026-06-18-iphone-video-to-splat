@@ -105,8 +105,8 @@ opensplat:
   refine_every: 100
   warmup_length: 250
   reset_alpha_every: 30
-  densify_grad_thresh: 0.0002
-  densify_size_thresh: 0.005
+  densify_grad_thresh: 0.00001
+  densify_size_thresh: 0.00025
   stop_screen_size_at: 1000
   split_screen_size: 0.05
 

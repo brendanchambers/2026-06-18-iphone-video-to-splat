@@ -1804,3 +1804,121 @@
 [2026-06-21 17:31:52,262][src.opensplat_trainer][INFO] - Step 750: 0.135409 (50%)
 [2026-06-21 17:31:53,764][src.opensplat_trainer][INFO] - Step 760: 0.0985229 (50%)
 [2026-06-21 17:31:54,867][src.opensplat_trainer][INFO] - Step 770: 0.172307 (51%)
+[2026-06-21 17:31:55,947][src.opensplat_trainer][INFO] - Step 780: 0.122126 (52%)
+[2026-06-21 17:31:57,073][src.opensplat_trainer][INFO] - Step 790: 0.0947178 (52%)
+[2026-06-21 17:31:58,165][src.opensplat_trainer][INFO] - Step 800: 0.138467 (53%)
+[2026-06-21 17:31:59,263][src.opensplat_trainer][INFO] - Step 810: 0.120992 (54%)
+[2026-06-21 17:32:00,372][src.opensplat_trainer][INFO] - Step 820: 0.162674 (54%)
+[2026-06-21 17:32:01,508][src.opensplat_trainer][INFO] - Step 830: 0.144093 (55%)
+[2026-06-21 17:32:02,639][src.opensplat_trainer][INFO] - Step 840: 0.184046 (56%)
+[2026-06-21 17:32:03,758][src.opensplat_trainer][INFO] - Step 850: 0.167745 (56%)
+[2026-06-21 17:32:04,872][src.opensplat_trainer][INFO] - Step 860: 0.145357 (57%)
+[2026-06-21 17:32:05,989][src.opensplat_trainer][INFO] - Step 870: 0.136314 (58%)
+[2026-06-21 17:32:07,114][src.opensplat_trainer][INFO] - Step 880: 0.144255 (58%)
+[2026-06-21 17:32:08,235][src.opensplat_trainer][INFO] - Step 890: 0.103029 (59%)
+[2026-06-21 17:32:09,334][src.opensplat_trainer][INFO] - Step 900: 0.103871 (60%)
+[2026-06-21 17:32:10,443][src.opensplat_trainer][INFO] - Step 910: 0.134502 (60%)
+[2026-06-21 17:32:11,546][src.opensplat_trainer][INFO] - Step 920: 0.107558 (61%)
+[2026-06-21 17:32:12,786][src.opensplat_trainer][INFO] - Step 930: 0.18185 (62%)
+[2026-06-21 17:32:14,009][src.opensplat_trainer][INFO] - Step 940: 0.114913 (62%)
+[2026-06-21 17:32:15,295][src.opensplat_trainer][INFO] - Step 950: 0.127032 (63%)
+[2026-06-21 17:32:16,738][src.opensplat_trainer][INFO] - Step 960: 0.113968 (64%)
+[2026-06-21 17:32:18,233][src.opensplat_trainer][INFO] - Step 970: 0.12224 (64%)
+[2026-06-21 17:32:19,719][src.opensplat_trainer][INFO] - Step 980: 0.0938816 (65%)
+[2026-06-21 17:32:21,119][src.opensplat_trainer][INFO] - Step 990: 0.130649 (66%)
+[2026-06-21 17:32:22,568][src.opensplat_trainer][INFO] - Step 1000: 0.191519 (66%)
+[2026-06-21 17:32:24,448][src.opensplat_trainer][INFO] - Step 1010: 0.160076 (67%)
+[2026-06-21 17:32:26,348][src.opensplat_trainer][INFO] - Step 1020: 0.174373 (68%)
+[2026-06-21 17:32:28,152][src.opensplat_trainer][INFO] - Step 1030: 0.204019 (68%)
+[2026-06-21 17:32:30,025][src.opensplat_trainer][INFO] - Step 1040: 0.143984 (69%)
+[2026-06-21 17:32:31,925][src.opensplat_trainer][INFO] - Step 1050: 0.210159 (70%)
+[2026-06-21 17:32:33,844][src.opensplat_trainer][INFO] - Step 1060: 0.204661 (70%)
+[2026-06-21 17:32:35,740][src.opensplat_trainer][INFO] - Step 1070: 0.155881 (71%)
+[2026-06-21 17:32:37,602][src.opensplat_trainer][INFO] - Step 1080: 0.20263 (72%)
+[2026-06-21 17:32:39,525][src.opensplat_trainer][INFO] - Step 1090: 0.175141 (72%)
+[2026-06-21 17:32:41,351][src.opensplat_trainer][INFO] - Step 1100: 0.205433 (73%)
+[2026-06-21 17:32:43,188][src.opensplat_trainer][INFO] - Step 1110: 0.181162 (74%)
+[2026-06-21 17:32:44,988][src.opensplat_trainer][INFO] - Step 1120: 0.213579 (74%)
+[2026-06-21 17:32:46,800][src.opensplat_trainer][INFO] - Step 1130: 0.202904 (75%)
+[2026-06-21 17:32:48,630][src.opensplat_trainer][INFO] - Step 1140: 0.14431 (76%)
+[2026-06-21 17:32:50,467][src.opensplat_trainer][INFO] - Step 1150: 0.129382 (76%)
+[2026-06-21 17:32:52,236][src.opensplat_trainer][INFO] - Step 1160: 0.143271 (77%)
+[2026-06-21 17:32:53,989][src.opensplat_trainer][INFO] - Step 1170: 0.101624 (78%)
+[2026-06-21 17:32:55,789][src.opensplat_trainer][INFO] - Step 1180: 0.162987 (78%)
+[2026-06-21 17:32:57,613][src.opensplat_trainer][INFO] - Step 1190: 0.194345 (79%)
+[2026-06-21 17:32:59,399][src.opensplat_trainer][INFO] - Step 1200: 0.154229 (80%)
+[2026-06-21 17:33:01,209][src.opensplat_trainer][INFO] - Step 1210: 0.118845 (80%)
+[2026-06-21 17:33:03,109][src.opensplat_trainer][INFO] - Step 1220: 0.141336 (81%)
+[2026-06-21 17:33:05,217][src.opensplat_trainer][INFO] - Step 1230: 0.180003 (82%)
+[2026-06-21 17:33:06,943][src.opensplat_trainer][INFO] - Step 1240: 0.144665 (82%)
+[2026-06-21 17:33:08,403][src.opensplat_trainer][INFO] - Step 1250: 0.123652 (83%)
+[2026-06-21 17:33:09,992][src.opensplat_trainer][INFO] - Step 1260: 0.142888 (84%)
+[2026-06-21 17:33:11,809][src.opensplat_trainer][INFO] - Step 1270: 0.14563 (84%)
+[2026-06-21 17:33:13,586][src.opensplat_trainer][INFO] - Step 1280: 0.121525 (85%)
+[2026-06-21 17:33:15,348][src.opensplat_trainer][INFO] - Step 1290: 0.186044 (86%)
+[2026-06-21 17:33:17,171][src.opensplat_trainer][INFO] - Step 1300: 0.164468 (86%)
+[2026-06-21 17:33:19,078][src.opensplat_trainer][INFO] - Step 1310: 0.19567 (87%)
+[2026-06-21 17:33:20,897][src.opensplat_trainer][INFO] - Step 1320: 0.139239 (88%)
+[2026-06-21 17:33:22,749][src.opensplat_trainer][INFO] - Step 1330: 0.152322 (88%)
+[2026-06-21 17:33:24,541][src.opensplat_trainer][INFO] - Step 1340: 0.142906 (89%)
+[2026-06-21 17:33:26,342][src.opensplat_trainer][INFO] - Step 1350: 0.134638 (90%)
+[2026-06-21 17:33:28,141][src.opensplat_trainer][INFO] - Step 1360: 0.128328 (90%)
+[2026-06-21 17:33:29,938][src.opensplat_trainer][INFO] - Step 1370: 0.208515 (91%)
+[2026-06-21 17:33:31,731][src.opensplat_trainer][INFO] - Step 1380: 0.150297 (92%)
+[2026-06-21 17:33:33,656][src.opensplat_trainer][INFO] - Step 1390: 0.120506 (92%)
+[2026-06-21 17:33:35,485][src.opensplat_trainer][INFO] - Step 1400: 0.178107 (93%)
+[2026-06-21 17:33:37,295][src.opensplat_trainer][INFO] - Step 1410: 0.130907 (94%)
+[2026-06-21 17:33:39,116][src.opensplat_trainer][INFO] - Step 1420: 0.131253 (94%)
+[2026-06-21 17:33:40,928][src.opensplat_trainer][INFO] - Step 1430: 0.139376 (95%)
+[2026-06-21 17:33:42,732][src.opensplat_trainer][INFO] - Step 1440: 0.165654 (96%)
+[2026-06-21 17:33:44,606][src.opensplat_trainer][INFO] - Step 1450: 0.168948 (96%)
+[2026-06-21 17:33:46,499][src.opensplat_trainer][INFO] - Step 1460: 0.132399 (97%)
+[2026-06-21 17:33:48,437][src.opensplat_trainer][INFO] - Step 1470: 0.118956 (98%)
+[2026-06-21 17:33:50,402][src.opensplat_trainer][INFO] - Step 1480: 0.139907 (98%)
+[2026-06-21 17:33:52,252][src.opensplat_trainer][INFO] - Step 1490: 0.155047 (99%)
+[2026-06-21 17:33:54,116][src.opensplat_trainer][INFO] - Step 1500: 0.145808 (100%)
+[2026-06-21 17:33:54,243][src.opensplat_trainer][INFO] - Wrote /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.00025_gr1e-05/colmap_sfm_linearized/splats/cameras.json
+[2026-06-21 17:33:56,689][src.opensplat_trainer][INFO] - Wrote /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.00025_gr1e-05/colmap_sfm_linearized/splats/densify_sz0.00025_gr1e-05_20260621_1731.ply
+[2026-06-21 17:33:56,811][src.opensplat_trainer][INFO] - /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.00025_gr1e-05/colmap_sfm_linearized/images/frame_0045.jpg validation loss: 0.183041
+[2026-06-21 17:33:57,355][src.opensplat_trainer][INFO] - Parsed 150 training loss values to /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.00025_gr1e-05/colmap_sfm_linearized/splats/train_20260621_1731.jsonl
+[2026-06-21 17:33:57,355][src.opensplat_trainer][INFO] - Captured validation loss: 0.183041 to /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.00025_gr1e-05/colmap_sfm_linearized/splats/val_20260621_1731.jsonl
+[2026-06-21 17:33:57,355][src.opensplat_trainer][INFO] - Training completed successfully
+[2026-06-21 17:33:57,355][src.opensplat_trainer][INFO] - Output saved to: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.00025_gr1e-05/colmap_sfm_linearized/splats/densify_sz0.00025_gr1e-05_20260621_1731.ply
+[2026-06-21 17:33:57,355][__main__][INFO] - ✓ Splat training completed
+[2026-06-21 17:33:57,356][__main__][INFO] - ============================================================
+[2026-06-21 17:33:57,356][__main__][INFO] - Analyzing Training Loss
+[2026-06-21 17:33:57,356][__main__][INFO] - ============================================================
+[2026-06-21 17:33:57,721][src.timing_recorder][INFO] - [TIMING] ✓ Completed: splat_training (161.74s)
+[2026-06-21 17:33:57,721][__main__][INFO] - 
+[2026-06-21 17:33:57,721][__main__][INFO] - ╔==========================================================╗
+[2026-06-21 17:33:57,721][__main__][INFO] - ║                    Pipeline Complete!                    ║
+[2026-06-21 17:33:57,722][__main__][INFO] - ╚==========================================================╝
+[2026-06-21 17:33:57,722][__main__][INFO] - Output directory: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.00025_gr1e-05/colmap_sfm_linearized/splats
+[2026-06-21 17:33:57,722][__main__][INFO] -   - PLY file: *.ply (3D Gaussian Splat)
+[2026-06-21 17:33:57,722][__main__][INFO] -   - Loss log: *.jsonl (Training loss per step)
+[2026-06-21 17:33:57,722][__main__][INFO] -   - Timing log: running-time_*.jsonl (Step execution times)
+[2026-06-21 17:33:57,722][src.timing_recorder][INFO] - 
+[2026-06-21 17:33:57,722][src.timing_recorder][INFO] - ======================================================================
+[2026-06-21 17:33:57,722][src.timing_recorder][INFO] - PIPELINE EXECUTION TIMING SUMMARY
+[2026-06-21 17:33:57,722][src.timing_recorder][INFO] - ======================================================================
+[2026-06-21 17:33:57,722][src.timing_recorder][INFO] - ✓ frame_extraction              3.01s  (  1.3%)
+[2026-06-21 17:33:57,722][src.timing_recorder][INFO] - ✓ feature_extraction            7.15s  (  3.2%)
+[2026-06-21 17:33:57,722][src.timing_recorder][INFO] - ✓ feature_matching             16.50s  (  7.3%)
+[2026-06-21 17:33:57,722][src.timing_recorder][INFO] - ✓ sparse_reconstruction        29.28s  ( 12.9%)
+[2026-06-21 17:33:57,722][src.timing_recorder][INFO] - ✓ undistortion                  8.94s  (  3.9%)
+[2026-06-21 17:33:57,722][src.timing_recorder][INFO] - ✓ splat_training              161.74s  ( 71.4%)
+[2026-06-21 17:33:57,722][src.timing_recorder][INFO] - ----------------------------------------------------------------------
+[2026-06-21 17:33:57,722][src.timing_recorder][INFO] - TOTAL                         226.61s  (100.0%)
+[2026-06-21 17:33:57,722][src.timing_recorder][INFO] - ======================================================================
+[2026-06-21 17:33:57,722][src.timing_recorder][INFO] - 
+[2026-06-21 17:33:57,723][src.timing_recorder][INFO] - [TIMING] Saved timing report to: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.00025_gr1e-05/colmap_sfm_linearized/splats/running-time_20260621_1733.jsonl
+[2026-06-21 17:33:57,723][__main__][INFO] - ============================================================
+[2026-06-21 17:33:57,723][__main__][INFO] - Logging Experiment Results
+[2026-06-21 17:33:57,724][__main__][INFO] - ============================================================
+[2026-06-21 17:33:57,725][src.experiment_tracker][INFO] - Logged experiment to: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/reports/experiments/sweep_densify_size_and_gradient_threshold.jsonl
+[2026-06-21 17:33:57,725][__main__][INFO] - Experiment results logged to: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/reports/experiments/sweep_densify_size_and_gradient_threshold.jsonl
+[2026-06-21 17:33:57,725][__main__][INFO] -   Experiment: densify_sz0.00025_gr1e-05
+[2026-06-21 17:33:57,725][__main__][INFO] -   Group: sweep_densify_size_and_gradient_threshold
+[2026-06-21 17:33:57,725][__main__][INFO] -   Train loss: 0.145808
+[2026-06-21 17:33:57,725][__main__][INFO] -   Validation loss: 0.183041
+[2026-06-21 17:33:57,725][__main__][INFO] -   Total time: 226.61s (3.78m)
