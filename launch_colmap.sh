@@ -28,8 +28,8 @@ source "$(dirname "$0")/.env"
 #   Lower = stricter matching, fewer false matches.
 # - Reconstruction quality: Adjust Mapper.filter_max_reproj_error (default: 4)
 #   Lower = stricter filtering, potentially fewer 3D points.
-# - Memory usage: Adjust ExhaustiveMatching.block_size (default: 50)
-#   Lower = less memory, slower. Useful on memory-constrained systems.
+# - Memory usage: Adjust SequentialMatching.overlap (default: 20)
+#   Lower = fewer comparisons, faster. Higher = more thorough but slower.
 #
 #====================================================================
 
@@ -74,7 +74,7 @@ colmap feature_extractor \
     --FeatureExtraction.type "SIFT" \
     --FeatureExtraction.use_gpu 1 \
     --FeatureExtraction.gpu_index -1 \
-    --SiftExtraction.max_num_features 8192 \
+    --SiftExtraction.max_num_features 4096 \
     --SiftExtraction.first_octave -1 \
     --SiftExtraction.num_octaves 4 \
     --SiftExtraction.octave_resolution 3 \
@@ -85,9 +85,10 @@ colmap feature_extractor \
     --SiftExtraction.upright 0 2>&1 | tee -a "$LOG_FILE"
 
 # --- Step 3: Feature Matching ---
-# Links corresponding features together. 'exhaustive' works best for video sequences
-echo "--> Step 3: Matching features (Exhaustive)..." | tee -a "$LOG_FILE"
-colmap exhaustive_matcher \
+# Links corresponding features together. 'sequential' is ideal for video sequences
+# where frames are ordered chronologically and adjacent frames are most relevant.
+echo "--> Step 3: Matching features (Sequential)..." | tee -a "$LOG_FILE"
+colmap sequential_matcher \
     --database_path "$DATABASE_PATH" \
     --FeatureMatching.type "SIFT_BRUTEFORCE" \
     --FeatureMatching.use_gpu 1 \
@@ -104,7 +105,7 @@ colmap exhaustive_matcher \
     --TwoViewGeometry.confidence 0.999 \
     --TwoViewGeometry.max_num_trials 10000 \
     --TwoViewGeometry.min_inlier_ratio 0.25 \
-    --ExhaustiveMatching.block_size 50 2>&1 | tee -a "$LOG_FILE"
+    --SequentialMatching.overlap 20 2>&1 | tee -a "$LOG_FILE"
 
 # --- Step 4: Sparse Reconstruction ---
 # Calculates camera locations and the 3D sparse point cloud
