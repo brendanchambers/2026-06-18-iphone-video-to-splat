@@ -1,6 +1,7 @@
 # iPhone Video to 3D Gaussian Splat
 
-Convert iPhone video recordings into 3D Gaussian Splat models on macOS using OpenSplat.
+- Convert iPhone video recordings into 3D Gaussian Splat models on macOS using local compute.
+- baseline recipe: COLMAP + OpenSplat
 
 ## Overview
 
