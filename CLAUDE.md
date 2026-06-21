@@ -6,10 +6,11 @@ We will be training and rendering a 3D Gaussian splat. The language will be pyth
 We will be attempting to create a 3D gaussian splat from extracted frames and structure from motion (`data/intermediate/frames` and `data/intermediate/sfm`). The computation will be happening on a macbook air M4 24gb. We will use opensplat to initialize and train the 3D gaussian splat (`https://github.com/pierotofy/opensplat`).
 
 ## Workflow info
-Please keep your plan, next steps, debugging notes, and other documentation for yourself in this file, CLAUDE.md.
-For other materials, e.g. run instructions, and other project info, maintain documentation in README.md.
-Do not create new markdown files in the top level project directory. If needed, you may organize them under `reference` or `work_history`.
-Regularly clean up old work details from CLAUDE.md to maintain a concise markdown file.
+- Please keep your plan, next steps, debugging notes, and other documentation for yourself in this file, CLAUDE.md.  
+- For other materials, e.g. run instructions, and other project info, maintain documentation in README.md.  
+- Do not create new markdown files in the top level project directory.  
+- I appreciate how you summarize your work, often using bash echo or expanding CLAUDE.md. Instead, pleaes write your summaries of work to `reports/work_history`. This approach will avoid bloating CLAUDE.md while still persisting in the repo.  
+- Check for out-of-date info in CLAUDE.md and README.md and maintain very concise documentation.  
 
 ## Inner and outer repo organization for rapid prototyping
 Notice there is an inner project repo named opensplat pasted into the project. Avoid modifying this repository unless absolutely necessary. We will do our work in the outer repository. The inner project, opensplat, is expected to be a key dependency and it's simpler to have its code available here in the repo where we can use it heavily with ease.
@@ -17,8 +18,206 @@ Notice there is an inner project repo named opensplat pasted into the project. A
 ## Experiments
 Write console output and errors to a `logs` directory. Use a single logfile per unique run (when we are runnign comparisons, 1 logfile per experiment variant).
 
+Experiment results are automatically logged to `reports/experiments/<experiment_group>.jsonl` at the end of each pipeline run. This makes it easy to compare groups of related experiments.
 
 # Below: compressed log of past work
+
+## Experiment Group Tracking (2026-06-21)
+
+### Overview
+Added automatic experiment result logging system that collects final metrics (train loss, validation loss, total runtime) and writes them to group-based JSONL files. This enables easy comparison of experiments organized by group.
+
+### Files Created
+- `src/experiment_tracker.py` - Experiment tracking utilities:
+  - `extract_final_loss_value(jsonl_path)` - Extracts final training loss
+  - `extract_validation_loss(jsonl_path)` - Extracts final validation loss
+  - `extract_total_running_time(timing_jsonl_path)` - Extracts total pipeline time
+  - `log_experiment_result(...)` - Logs results to group JSONL file
+  - `ExperimentResult` dataclass - Record structure
+
+### Files Modified
+- `config/baseline.yaml` - Added `experiment_group: "baseline"` parameter
+- `pipeline.py` - Integrated experiment logging:
+  - Added `log_experiment_results()` method to Pipeline class
+  - Auto-logs results at end of successful pipeline run
+
+### Configuration
+
+**Add experiment_group to config:**
+```yaml
+project:
+  experiment_name: "my_exp"
+  experiment_group: "hyperparameter_sweep"  # New parameter
+```
+
+**Override from CLI:**
+```bash
+uv run python pipeline.py project.experiment_group=my_sweep_group
+```
+
+### Output Format
+
+**File location:** `reports/experiments/<experiment_group>.jsonl`
+
+**File format:** JSONL (one JSON object per line)
+```json
+{"experiment_name": "test_exp_1", "experiment_group": "baseline", "timestamp": "2026-06-21T16:12:41", "total_running_time": 500.0, "train_loss": 0.45, "val_loss": 0.5}
+{"experiment_name": "test_exp_2", "experiment_group": "baseline", "timestamp": "2026-06-21T16:15:20", "total_running_time": 510.0, "train_loss": 0.42, "val_loss": 0.48}
+```
+
+**Fields:**
+- `experiment_name`: Name from config (e.g., "current_scene")
+- `experiment_group`: Group name for organizing related experiments
+- `timestamp`: ISO format timestamp when logged
+- `total_running_time`: Total pipeline execution time in seconds
+- `train_loss`: Final training loss value
+- `val_loss`: Final validation loss value (null if validation disabled)
+
+### Usage
+
+**Automatic logging during pipeline:**
+```bash
+uv run python pipeline.py
+```
+
+Pipeline automatically:
+1. Extracts final training loss from `train_*.jsonl`
+2. Extracts final validation loss from `val_*.jsonl` (if it exists)
+3. Extracts total running time from `running-time_*.jsonl`
+4. Appends record to `reports/experiments/<experiment_group>.jsonl`
+
+**Run multiple experiments in same group:**
+```bash
+# All results go to reports/experiments/hyperparameter_sweep.jsonl
+uv run python pipeline.py project.experiment_group=hyperparameter_sweep project.experiment_name=exp_1 opensplat.num_iters=1500
+uv run python pipeline.py project.experiment_group=hyperparameter_sweep project.experiment_name=exp_2 opensplat.num_iters=2000
+uv run python pipeline.py project.experiment_group=hyperparameter_sweep project.experiment_name=exp_3 opensplat.num_iters=2500
+```
+
+Result: All 3 experiments logged to same file, easy to compare.
+
+**Analyze results with Python:**
+```python
+import json
+from pathlib import Path
+
+group_file = Path("reports/experiments/hyperparameter_sweep.jsonl")
+results = []
+with open(group_file) as f:
+    for line in f:
+        results.append(json.loads(line))
+
+# Find best by validation loss
+best = min(results, key=lambda r: r.get("val_loss", float("inf")))
+print(f"Best config: {best['experiment_name']} (val_loss={best['val_loss']:.4f})")
+```
+
+### Key Features
+
+✅ Automatic extraction of all metrics from existing log files
+✅ Append-only JSONL format for easy concatenation
+✅ Group-based organization (one file per experiment group)
+✅ ISO timestamps for traceability
+✅ Handles missing validation loss gracefully (null if not available)
+✅ Zero configuration needed (inherits from baseline.yaml)
+✅ Works with config inheritance (teensy.yaml uses baseline's group)
+
+
+
+## Pipeline Execution Timing Instrumentation (2026-06-21)
+
+### Overview
+Added automatic timing instrumentation to measure and log the execution time of each pipeline step. Timing records are automatically written to a JSONL file in the splats output directory with format `running-time_<YYYYMMDD_HHMM>.jsonl`.
+
+### Implementation Details
+
+**Files Created:**
+- `src/timing_recorder.py` - Standalone timing recorder with TimingRecorder class
+
+**Files Modified:**
+- `pipeline.py` - Integrated TimingRecorder into Pipeline class
+
+**Key Features:**
+- **Per-step timing**: Records start time, end time, elapsed duration, and success status for each pipeline step
+- **JSONL output**: One timing record per line with full ISO timestamp metadata
+- **Console summary**: Prints human-readable timing summary with percentages when pipeline completes
+- **Automatic co-location**: Timing file saved alongside PLY and loss files in splats directory
+- **Zero overhead**: Uses Python's built-in `time.time()` for minimal performance impact
+
+### Usage
+
+**Automatic recording during pipeline execution:**
+```bash
+uv run python pipeline.py
+```
+
+Pipeline now produces:
+- `data/intermediates/current_scene/splats/current_scene_YYYYMMDD_HHMM.ply` (3D model)
+- `data/intermediates/current_scene/splats/train_YYYYMMDD_HHMM.jsonl` (training loss per step)
+- `data/intermediates/current_scene/splats/running-time_YYYYMMDD_HHMM.jsonl` (step execution times)
+
+### JSONL Format
+
+Each line contains a timing record, with a final summary line containing the total time:
+```json
+{"step": "frame_extraction", "start_time": "2026-06-21T14:30:00.123456", "end_time": "2026-06-21T14:35:45.654321", "elapsed_seconds": 345.53, "success": true}
+{"step": "feature_extraction", "start_time": "2026-06-21T14:35:45.654322", "end_time": "2026-06-21T14:40:12.123456", "elapsed_seconds": 266.47, "success": true}
+{"step": "feature_matching", "start_time": "2026-06-21T14:40:12.123457", "end_time": "2026-06-21T14:42:19.987654", "elapsed_seconds": 127.86, "success": true}
+{"total_time": 739.86, "timestamp": "2026-06-21T14:42:20.000000"}
+```
+
+**Per-step record fields:**
+- `step`: Step name (e.g., "frame_extraction", "feature_extraction", etc.)
+- `start_time`: ISO format timestamp when step started
+- `end_time`: ISO format timestamp when step completed
+- `elapsed_seconds`: Total execution time in seconds (float)
+- `success`: Boolean indicating whether step completed successfully
+
+**Summary record (final line):**
+- `total_time`: Sum of all step execution times in seconds (float)
+- `timestamp`: ISO format timestamp when timing report was generated
+
+### Console Output Example
+
+When the pipeline completes successfully, it prints:
+```
+======================================================================
+PIPELINE EXECUTION TIMING SUMMARY
+======================================================================
+✓ frame_extraction            345.53s  ( 28.3%)
+✓ feature_extraction          266.47s  ( 21.8%)
+✓ feature_matching            187.23s  ( 15.3%)
+✓ sparse_reconstruction       234.56s  ( 19.2%)
+✓ undistortion                78.91s   (  6.5%)
+✓ splat_training              320.45s  (  8.9%)
+----------------------------------------------------------------------
+TOTAL                        1433.15s  (100.0%)
+======================================================================
+```
+
+### Architecture
+
+**TimingRecorder class** (`src/timing_recorder.py`):
+- `start_step(step_name)` - Mark step start time
+- `end_step(step_name, success)` - Mark step end and record timing
+- `save_to_jsonl(output_dir)` - Write all timing records to JSONL file
+- `print_summary()` - Print human-readable timing summary
+
+**Integration in Pipeline**:
+- TimingRecorder instantiated in `Pipeline.__init__()`
+- `start_step()` called before each step in `run_full_pipeline()`
+- `end_step()` called after each step (even on failure)
+- `save_to_jsonl()` and `print_summary()` called when pipeline completes
+
+### Future Enhancements
+
+Potential future improvements:
+- [ ] Parse timing JSONL files and create visualization (timing chart)
+- [ ] Compare timing across multiple runs
+- [ ] Identify performance bottlenecks
+- [ ] Track timing trends over experiment iterations
+
+---
 
 ## JSONL Training Loss Logging (2026-06-21)
 
@@ -399,3 +598,166 @@ uv run python pipeline.py --config-name high_quality
 - See `config/teensy.yaml` for config inheritance pattern (16 line example)
 - Run `uv run python test_pipeline.py` to verify setup
 - Run `uv run python pipeline.py` to execute the pipeline
+
+---
+
+## Hyperparameter Sweep Analysis Procedure (2026-06-21)
+
+### Overview
+Automated procedure to extract and analyze results from Hydra multirun hyperparameter sweeps. Used after each sweep completes to generate comprehensive results table with validation loss and execution timing.
+
+### Quick Reference
+
+**When sweep finishes:**
+1. Identify all run directories: `data/intermediates/densify_sz*_gr*/` (or similar pattern)
+2. For each run, extract:
+   - **Validation loss**: From `data/intermediates/[run_dir]/colmap_sfm_linearized/splats/val_*.jsonl` (final line or last `loss` value)
+   - **Total runtime**: From `data/intermediates/[run_dir]/colmap_sfm_linearized/splats/running-time_*.jsonl` (final line `total_time` field)
+3. Create results table in `reports/HPARAM_SWEEP_RESULTS.md`
+
+### Detailed Procedure
+
+#### Step 1: Identify Sweep Configuration
+Read `recipes/hparam/launch_hparam_sweep.sh` to determine:
+- Which parameters were varied
+- What values were tested
+- Total number of configurations
+
+Example from 2026-06-21 sweep:
+```bash
+opensplat.densify_size_thresh=0.0025,0.005,0.01        # 3 values
+opensplat.densify_grad_thresh=0.0001,0.0002,0.0004     # 3 values
+# Total: 3 × 3 = 9 runs
+```
+
+#### Step 2: Locate Run Directories
+Each Hydra multirun creates a directory for each configuration:
+```
+data/intermediates/densify_sz0.0025_gr0.0001/
+data/intermediates/densify_sz0.0025_gr0.0002/
+data/intermediates/densify_sz0.0025_gr0.0004/
+...
+```
+
+Pattern: `data/intermediates/[param_descriptors]/`
+
+Command to find all runs:
+```bash
+find data/intermediates -type d -name "*densify*" | sort
+```
+
+#### Step 3: Extract Validation Loss from Each Run
+**File location:** `data/intermediates/[run_dir]/colmap_sfm_linearized/splats/val_*.jsonl`
+
+**File format:** JSONL with JSON objects, one per line
+```json
+{"step": 0, "loss": 0.5, "timestamp": "2026-06-21T14:30:00.123456"}
+{"step": 100, "loss": 0.4, "timestamp": "2026-06-21T14:30:10.456789"}
+{"step": 200, "loss": 0.35, "timestamp": "2026-06-21T14:30:20.789012"}
+```
+
+**Extraction method:** Read the file, parse last line as JSON, extract `loss` field
+
+**Python snippet:**
+```python
+import json
+with open("val_*.jsonl") as f:
+    last_line = f.readlines()[-1]
+    final_loss = json.loads(last_line)["loss"]
+```
+
+#### Step 4: Extract Total Running Time from Each Run
+**File location:** `data/intermediates/[run_dir]/colmap_sfm_linearized/splats/running-time_*.jsonl`
+
+**File format:** JSONL with timing records, final line contains summary
+```json
+{"step": "frame_extraction", "start_time": "...", "end_time": "...", "elapsed_seconds": 345.53, "success": true}
+...
+{"total_time": 1433.15, "timestamp": "2026-06-21T14:42:20.000000"}
+```
+
+**Extraction method:** Read the file, parse last line as JSON, extract `total_time` field
+
+**Python snippet:**
+```python
+import json
+with open("running-time_*.jsonl") as f:
+    last_line = f.readlines()[-1]
+    total_time = json.loads(last_line)["total_time"]
+```
+
+#### Step 5: Compile Results Table
+Create markdown table with columns:
+- Parameter 1 value
+- Parameter 2 value (if 2D sweep) or all parameters in separate columns
+- Validation Loss
+- Total Time (seconds)
+- Total Time (minutes) [optional: seconds / 60]
+
+#### Step 6: Generate Analysis Markdown
+Write to `reports/HPARAM_SWEEP_RESULTS.md` including:
+1. Results table (markdown format)
+2. Statistics:
+   - Min/max/mean validation loss
+   - Loss range and percentage variation
+   - Fastest/slowest run times
+   - Runtime variation percentage
+3. Key findings
+4. Recommendation for best configuration
+5. Data source references
+
+### Template Report Structure
+
+```markdown
+# Hyperparameter Sweep Results
+
+## Overview
+[Description of parameters tested and number of runs]
+
+## Results Table
+[Markdown table with all results]
+
+## Analysis
+
+### Validation Loss
+[Statistics and best/worst configurations]
+
+### Runtime Analysis
+[Timing statistics]
+
+### Key Findings
+[Observations about parameter sensitivity, convergence quality, speed]
+
+## Recommendation
+[Optimal configuration based on quality and/or speed]
+
+## Data Sources
+[File paths for validation loss and timing files]
+
+## Sweep Command
+[The command from launch_hparam_sweep.sh]
+
+## Date
+[When the analysis was performed]
+```
+
+### Common File Patterns
+
+- **Validation loss files:** `*/colmap_sfm_linearized/splats/val_YYYYMMDD_HHMM.jsonl`
+- **Timing files:** `*/colmap_sfm_linearized/splats/running-time_YYYYMMDD_HHMM.jsonl`
+- **Run directories:** `data/intermediates/[param1_name]_[param1_val]_[param2_name]_[param2_val]_...`
+
+### Notes
+
+- Each run produces TWO files: validation loss (val_*.jsonl) and timing (running-time_*.jsonl)
+- Both files use glob patterns with timestamps, use glob to find them
+- Final JSON line in each file contains the summary data (loss or total_time)
+- All timing is in seconds (convert to minutes with / 60 if needed)
+- Loss values are stored as floats with full precision
+- ISO timestamps are included for reference but not typically used in analysis
+
+### Future Enhancements
+- [ ] Script to automate data extraction (generate CSV from sweep results)
+- [ ] Visualization of loss vs parameter values (heatmap)
+- [ ] Interactive comparison tool for multiple sweeps
+- [ ] Automatic statistical significance testing

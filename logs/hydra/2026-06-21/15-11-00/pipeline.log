@@ -1166,3 +1166,721 @@
 [2026-06-21 15:11:30,175][src.colmap_mapper][INFO] - I20260621 15:11:30.174967 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 1762 / 2951 points
 [2026-06-21 15:11:30,266][src.colmap_mapper][INFO] - I20260621 15:11:30.266128 0x1fde420c0 incremental_pipeline.cc:537] Registering image #26 (num_reg_frames=12)
 [2026-06-21 15:11:30,266][src.colmap_mapper][INFO] - I20260621 15:11:30.266142 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 1280 / 2912 points
+[2026-06-21 15:11:30,372][src.colmap_mapper][INFO] - I20260621 15:11:30.372791 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+[2026-06-21 15:11:30,503][src.colmap_mapper][INFO] - I20260621 15:11:30.503265 0x1fde420c0 incremental_pipeline.cc:537] Registering image #13 (num_reg_frames=13)
+[2026-06-21 15:11:30,503][src.colmap_mapper][INFO] - I20260621 15:11:30.503280 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 1161 / 2697 points
+[2026-06-21 15:11:30,586][src.colmap_mapper][INFO] - I20260621 15:11:30.586070 0x1fde420c0 incremental_pipeline.cc:537] Registering image #12 (num_reg_frames=14)
+[2026-06-21 15:11:30,586][src.colmap_mapper][INFO] - I20260621 15:11:30.586081 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 1336 / 2781 points
+[2026-06-21 15:11:30,667][src.colmap_mapper][INFO] - I20260621 15:11:30.667745 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+[2026-06-21 15:11:30,852][src.colmap_mapper][INFO] - I20260621 15:11:30.852777 0x1fde420c0 incremental_pipeline.cc:537] Registering image #27 (num_reg_frames=15)
+[2026-06-21 15:11:30,852][src.colmap_mapper][INFO] - I20260621 15:11:30.852791 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 912 / 2415 points
+[2026-06-21 15:11:30,950][src.colmap_mapper][INFO] - I20260621 15:11:30.950695 0x1fde420c0 incremental_pipeline.cc:537] Registering image #28 (num_reg_frames=16)
+[2026-06-21 15:11:30,950][src.colmap_mapper][INFO] - I20260621 15:11:30.950707 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 985 / 3883 points
+[2026-06-21 15:11:31,049][src.colmap_mapper][INFO] - I20260621 15:11:31.049323 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+[2026-06-21 15:11:31,237][src.colmap_mapper][INFO] - I20260621 15:11:31.237215 0x1fde420c0 incremental_pipeline.cc:537] Registering image #29 (num_reg_frames=17)
+[2026-06-21 15:11:31,237][src.colmap_mapper][INFO] - I20260621 15:11:31.237225 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 1221 / 4880 points
+[2026-06-21 15:11:31,342][src.colmap_mapper][INFO] - I20260621 15:11:31.342694 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+[2026-06-21 15:11:31,541][src.colmap_mapper][INFO] - I20260621 15:11:31.541634 0x1fde420c0 incremental_pipeline.cc:537] Registering image #30 (num_reg_frames=18)
+[2026-06-21 15:11:31,541][src.colmap_mapper][INFO] - I20260621 15:11:31.541648 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 2022 / 4550 points
+[2026-06-21 15:11:31,645][src.colmap_mapper][INFO] - I20260621 15:11:31.645842 0x1fde420c0 incremental_pipeline.cc:537] Registering image #31 (num_reg_frames=19)
+[2026-06-21 15:11:31,645][src.colmap_mapper][INFO] - I20260621 15:11:31.645856 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 1148 / 2313 points
+[2026-06-21 15:11:31,744][src.colmap_mapper][INFO] - I20260621 15:11:31.744215 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+[2026-06-21 15:11:31,965][src.colmap_mapper][INFO] - I20260621 15:11:31.965130 0x1fde420c0 incremental_pipeline.cc:537] Registering image #11 (num_reg_frames=20)
+[2026-06-21 15:11:31,965][src.colmap_mapper][INFO] - I20260621 15:11:31.965144 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 758 / 2255 points
+[2026-06-21 15:11:32,018][src.colmap_mapper][INFO] - I20260621 15:11:32.018251 0x1fde420c0 incremental_pipeline.cc:537] Registering image #10 (num_reg_frames=21)
+[2026-06-21 15:11:32,018][src.colmap_mapper][INFO] - I20260621 15:11:32.018262 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 805 / 4271 points
+[2026-06-21 15:11:32,089][src.colmap_mapper][INFO] - I20260621 15:11:32.088962 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+[2026-06-21 15:11:32,327][src.colmap_mapper][INFO] - I20260621 15:11:32.327398 0x1fde420c0 incremental_pipeline.cc:537] Registering image #9 (num_reg_frames=22)
+[2026-06-21 15:11:32,327][src.colmap_mapper][INFO] - I20260621 15:11:32.327411 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 1422 / 5032 points
+[2026-06-21 15:11:32,416][src.colmap_mapper][INFO] - I20260621 15:11:32.416449 0x1fde420c0 incremental_pipeline.cc:537] Registering image #8 (num_reg_frames=23)
+[2026-06-21 15:11:32,416][src.colmap_mapper][INFO] - I20260621 15:11:32.416460 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 2094 / 4862 points
+[2026-06-21 15:11:32,519][src.colmap_mapper][INFO] - I20260621 15:11:32.519183 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+[2026-06-21 15:11:32,759][src.colmap_mapper][INFO] - I20260621 15:11:32.759753 0x1fde420c0 incremental_pipeline.cc:537] Registering image #7 (num_reg_frames=24)
+[2026-06-21 15:11:32,759][src.colmap_mapper][INFO] - I20260621 15:11:32.759766 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 2088 / 5068 points
+[2026-06-21 15:11:32,871][src.colmap_mapper][INFO] - I20260621 15:11:32.870989 0x1fde420c0 incremental_pipeline.cc:537] Registering image #6 (num_reg_frames=25)
+[2026-06-21 15:11:32,871][src.colmap_mapper][INFO] - I20260621 15:11:32.871000 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 2603 / 5222 points
+[2026-06-21 15:11:32,996][src.colmap_mapper][INFO] - I20260621 15:11:32.996806 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+[2026-06-21 15:11:33,298][src.colmap_mapper][INFO] - I20260621 15:11:33.298366 0x1fde420c0 incremental_pipeline.cc:537] Registering image #5 (num_reg_frames=26)
+[2026-06-21 15:11:33,298][src.colmap_mapper][INFO] - I20260621 15:11:33.298381 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 2469 / 4656 points
+[2026-06-21 15:11:33,440][src.colmap_mapper][INFO] - I20260621 15:11:33.440446 0x1fde420c0 incremental_pipeline.cc:537] Registering image #3 (num_reg_frames=27)
+[2026-06-21 15:11:33,440][src.colmap_mapper][INFO] - I20260621 15:11:33.440458 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 1734 / 5423 points
+[2026-06-21 15:11:33,597][src.colmap_mapper][INFO] - I20260621 15:11:33.597518 0x1fde420c0 incremental_pipeline.cc:537] Registering image #2 (num_reg_frames=28)
+[2026-06-21 15:11:33,597][src.colmap_mapper][INFO] - I20260621 15:11:33.597529 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 2271 / 5591 points
+[2026-06-21 15:11:33,810][src.colmap_mapper][INFO] - I20260621 15:11:33.810043 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+[2026-06-21 15:11:34,145][src.colmap_mapper][INFO] - I20260621 15:11:34.145506 0x1fde420c0 incremental_pipeline.cc:537] Registering image #1 (num_reg_frames=29)
+[2026-06-21 15:11:34,145][src.colmap_mapper][INFO] - I20260621 15:11:34.145521 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 2352 / 5343 points
+[2026-06-21 15:11:34,286][src.colmap_mapper][INFO] - I20260621 15:11:34.286402 0x1fde420c0 incremental_pipeline.cc:537] Registering image #4 (num_reg_frames=30)
+[2026-06-21 15:11:34,286][src.colmap_mapper][INFO] - I20260621 15:11:34.286414 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 1870 / 2965 points
+[2026-06-21 15:11:34,444][src.colmap_mapper][INFO] - I20260621 15:11:34.444129 0x1fde420c0 incremental_pipeline.cc:537] Registering image #32 (num_reg_frames=31)
+[2026-06-21 15:11:34,444][src.colmap_mapper][INFO] - I20260621 15:11:34.444141 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 641 / 1821 points
+[2026-06-21 15:11:34,532][src.colmap_mapper][INFO] - I20260621 15:11:34.532064 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+[2026-06-21 15:11:35,122][src.colmap_mapper][INFO] - I20260621 15:11:35.122385 0x1fde420c0 incremental_pipeline.cc:537] Registering image #33 (num_reg_frames=32)
+[2026-06-21 15:11:35,122][src.colmap_mapper][INFO] - I20260621 15:11:35.122399 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 506 / 1864 points
+[2026-06-21 15:11:35,198][src.colmap_mapper][INFO] - I20260621 15:11:35.198815 0x1fde420c0 incremental_pipeline.cc:537] Registering image #34 (num_reg_frames=33)
+[2026-06-21 15:11:35,198][src.colmap_mapper][INFO] - I20260621 15:11:35.198828 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 534 / 3042 points
+[2026-06-21 15:11:35,272][src.colmap_mapper][INFO] - I20260621 15:11:35.272168 0x1fde420c0 incremental_pipeline.cc:537] Registering image #35 (num_reg_frames=34)
+[2026-06-21 15:11:35,272][src.colmap_mapper][INFO] - I20260621 15:11:35.272179 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 820 / 3291 points
+[2026-06-21 15:11:35,349][src.colmap_mapper][INFO] - I20260621 15:11:35.349762 0x1fde420c0 incremental_pipeline.cc:537] Registering image #36 (num_reg_frames=35)
+[2026-06-21 15:11:35,349][src.colmap_mapper][INFO] - I20260621 15:11:35.349774 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 1107 / 2844 points
+[2026-06-21 15:11:35,427][src.colmap_mapper][INFO] - I20260621 15:11:35.427473 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+[2026-06-21 15:11:36,048][src.colmap_mapper][INFO] - I20260621 15:11:36.048730 0x1fde420c0 incremental_pipeline.cc:537] Registering image #37 (num_reg_frames=36)
+[2026-06-21 15:11:36,048][src.colmap_mapper][INFO] - I20260621 15:11:36.048745 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 1028 / 3640 points
+[2026-06-21 15:11:36,128][src.colmap_mapper][INFO] - I20260621 15:11:36.127980 0x1fde420c0 incremental_pipeline.cc:537] Registering image #38 (num_reg_frames=37)
+[2026-06-21 15:11:36,128][src.colmap_mapper][INFO] - I20260621 15:11:36.127992 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 902 / 3940 points
+[2026-06-21 15:11:36,220][src.colmap_mapper][INFO] - I20260621 15:11:36.220576 0x1fde420c0 incremental_pipeline.cc:537] Registering image #39 (num_reg_frames=38)
+[2026-06-21 15:11:36,220][src.colmap_mapper][INFO] - I20260621 15:11:36.220588 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 1297 / 3966 points
+[2026-06-21 15:11:36,320][src.colmap_mapper][INFO] - I20260621 15:11:36.320885 0x1fde420c0 incremental_pipeline.cc:537] Registering image #40 (num_reg_frames=39)
+[2026-06-21 15:11:36,321][src.colmap_mapper][INFO] - I20260621 15:11:36.320895 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 1420 / 3075 points
+[2026-06-21 15:11:36,436][src.colmap_mapper][INFO] - I20260621 15:11:36.436927 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+[2026-06-21 15:11:36,858][src.colmap_mapper][INFO] - I20260621 15:11:36.858531 0x1fde420c0 incremental_pipeline.cc:537] Registering image #41 (num_reg_frames=40)
+[2026-06-21 15:11:36,858][src.colmap_mapper][INFO] - I20260621 15:11:36.858547 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 644 / 1742 points
+[2026-06-21 15:11:36,939][src.colmap_mapper][INFO] - I20260621 15:11:36.939598 0x1fde420c0 incremental_pipeline.cc:537] Registering image #42 (num_reg_frames=41)
+[2026-06-21 15:11:36,939][src.colmap_mapper][INFO] - I20260621 15:11:36.939610 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 503 / 2342 points
+[2026-06-21 15:11:37,039][src.colmap_mapper][INFO] - I20260621 15:11:37.039614 0x1fde420c0 incremental_pipeline.cc:537] Registering image #43 (num_reg_frames=42)
+[2026-06-21 15:11:37,039][src.colmap_mapper][INFO] - I20260621 15:11:37.039624 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 745 / 2495 points
+[2026-06-21 15:11:37,119][src.colmap_mapper][INFO] - I20260621 15:11:37.119877 0x1fde420c0 incremental_pipeline.cc:537] Registering image #44 (num_reg_frames=43)
+[2026-06-21 15:11:37,119][src.colmap_mapper][INFO] - I20260621 15:11:37.119888 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 806 / 2475 points
+[2026-06-21 15:11:37,192][src.colmap_mapper][INFO] - I20260621 15:11:37.192268 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+[2026-06-21 15:11:37,650][src.colmap_mapper][INFO] - I20260621 15:11:37.650304 0x1fde420c0 incremental_pipeline.cc:537] Registering image #45 (num_reg_frames=44)
+[2026-06-21 15:11:37,650][src.colmap_mapper][INFO] - I20260621 15:11:37.650315 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 563 / 2347 points
+[2026-06-21 15:11:37,715][src.colmap_mapper][INFO] - I20260621 15:11:37.715158 0x1fde420c0 incremental_pipeline.cc:537] Registering image #46 (num_reg_frames=45)
+[2026-06-21 15:11:37,715][src.colmap_mapper][INFO] - I20260621 15:11:37.715169 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 592 / 2009 points
+[2026-06-21 15:11:37,794][src.colmap_mapper][INFO] - I20260621 15:11:37.794650 0x1fde420c0 incremental_pipeline.cc:537] Registering image #47 (num_reg_frames=46)
+[2026-06-21 15:11:37,794][src.colmap_mapper][INFO] - I20260621 15:11:37.794661 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 667 / 1878 points
+[2026-06-21 15:11:37,872][src.colmap_mapper][INFO] - I20260621 15:11:37.872292 0x1fde420c0 incremental_pipeline.cc:537] Registering image #48 (num_reg_frames=47)
+[2026-06-21 15:11:37,872][src.colmap_mapper][INFO] - I20260621 15:11:37.872301 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 584 / 2105 points
+[2026-06-21 15:11:37,951][src.colmap_mapper][INFO] - I20260621 15:11:37.951550 0x1fde420c0 incremental_pipeline.cc:537] Registering image #49 (num_reg_frames=48)
+[2026-06-21 15:11:37,951][src.colmap_mapper][INFO] - I20260621 15:11:37.951560 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 572 / 1844 points
+[2026-06-21 15:11:38,001][src.colmap_mapper][INFO] - I20260621 15:11:38.001364 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+[2026-06-21 15:11:38,531][src.colmap_mapper][INFO] - I20260621 15:11:38.531757 0x1fde420c0 incremental_pipeline.cc:537] Registering image #50 (num_reg_frames=49)
+[2026-06-21 15:11:38,531][src.colmap_mapper][INFO] - I20260621 15:11:38.531774 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 574 / 1962 points
+[2026-06-21 15:11:38,586][src.colmap_mapper][INFO] - I20260621 15:11:38.586648 0x1fde420c0 incremental_pipeline.cc:537] Registering image #51 (num_reg_frames=50)
+[2026-06-21 15:11:38,586][src.colmap_mapper][INFO] - I20260621 15:11:38.586659 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 596 / 3229 points
+[2026-06-21 15:11:38,657][src.colmap_mapper][INFO] - I20260621 15:11:38.657570 0x1fde420c0 incremental_pipeline.cc:537] Registering image #52 (num_reg_frames=51)
+[2026-06-21 15:11:38,657][src.colmap_mapper][INFO] - I20260621 15:11:38.657580 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 849 / 3418 points
+[2026-06-21 15:11:38,727][src.colmap_mapper][INFO] - I20260621 15:11:38.727210 0x1fde420c0 incremental_pipeline.cc:537] Registering image #53 (num_reg_frames=52)
+[2026-06-21 15:11:38,727][src.colmap_mapper][INFO] - I20260621 15:11:38.727220 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 1010 / 3288 points
+[2026-06-21 15:11:38,807][src.colmap_mapper][INFO] - I20260621 15:11:38.807268 0x1fde420c0 incremental_pipeline.cc:537] Registering image #54 (num_reg_frames=53)
+[2026-06-21 15:11:38,807][src.colmap_mapper][INFO] - I20260621 15:11:38.807278 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 1176 / 3737 points
+[2026-06-21 15:11:38,891][src.colmap_mapper][INFO] - I20260621 15:11:38.891497 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+[2026-06-21 15:11:39,762][src.colmap_mapper][INFO] - I20260621 15:11:39.762054 0x1fde420c0 incremental_pipeline.cc:537] Registering image #55 (num_reg_frames=54)
+[2026-06-21 15:11:39,762][src.colmap_mapper][INFO] - I20260621 15:11:39.762067 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 1407 / 4103 points
+[2026-06-21 15:11:39,876][src.colmap_mapper][INFO] - I20260621 15:11:39.876529 0x1fde420c0 incremental_pipeline.cc:537] Registering image #56 (num_reg_frames=55)
+[2026-06-21 15:11:39,876][src.colmap_mapper][INFO] - I20260621 15:11:39.876540 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 1915 / 3799 points
+[2026-06-21 15:11:40,002][src.colmap_mapper][INFO] - I20260621 15:11:40.002496 0x1fde420c0 incremental_pipeline.cc:537] Registering image #57 (num_reg_frames=56)
+[2026-06-21 15:11:40,002][src.colmap_mapper][INFO] - I20260621 15:11:40.002506 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 1550 / 2768 points
+[2026-06-21 15:11:40,186][src.colmap_mapper][INFO] - I20260621 15:11:40.186342 0x1fde420c0 incremental_pipeline.cc:537] Registering image #58 (num_reg_frames=57)
+[2026-06-21 15:11:40,186][src.colmap_mapper][INFO] - I20260621 15:11:40.186352 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 816 / 2297 points
+[2026-06-21 15:11:40,286][src.colmap_mapper][INFO] - I20260621 15:11:40.286319 0x1fde420c0 incremental_pipeline.cc:537] Registering image #59 (num_reg_frames=58)
+[2026-06-21 15:11:40,286][src.colmap_mapper][INFO] - I20260621 15:11:40.286327 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 663 / 2715 points
+[2026-06-21 15:11:40,394][src.colmap_mapper][INFO] - I20260621 15:11:40.394109 0x1fde420c0 incremental_pipeline.cc:537] Registering image #60 (num_reg_frames=59)
+[2026-06-21 15:11:40,394][src.colmap_mapper][INFO] - I20260621 15:11:40.394123 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 726 / 2380 points
+[2026-06-21 15:11:40,475][src.colmap_mapper][INFO] - I20260621 15:11:40.475432 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+[2026-06-21 15:11:41,207][src.colmap_mapper][INFO] - I20260621 15:11:41.207259 0x1fde420c0 incremental_pipeline.cc:537] Registering image #61 (num_reg_frames=60)
+[2026-06-21 15:11:41,207][src.colmap_mapper][INFO] - I20260621 15:11:41.207302 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 474 / 1867 points
+[2026-06-21 15:11:41,291][src.colmap_mapper][INFO] - I20260621 15:11:41.291390 0x1fde420c0 incremental_pipeline.cc:537] Registering image #62 (num_reg_frames=61)
+[2026-06-21 15:11:41,291][src.colmap_mapper][INFO] - I20260621 15:11:41.291400 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 344 / 2971 points
+[2026-06-21 15:11:41,356][src.colmap_mapper][INFO] - I20260621 15:11:41.356279 0x1fde420c0 incremental_pipeline.cc:537] Registering image #64 (num_reg_frames=62)
+[2026-06-21 15:11:41,356][src.colmap_mapper][INFO] - I20260621 15:11:41.356293 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 467 / 2137 points
+[2026-06-21 15:11:41,431][src.colmap_mapper][INFO] - I20260621 15:11:41.431628 0x1fde420c0 incremental_pipeline.cc:537] Registering image #63 (num_reg_frames=63)
+[2026-06-21 15:11:41,431][src.colmap_mapper][INFO] - I20260621 15:11:41.431638 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 1041 / 2453 points
+[2026-06-21 15:11:41,511][src.colmap_mapper][INFO] - I20260621 15:11:41.511847 0x1fde420c0 incremental_pipeline.cc:537] Registering image #65 (num_reg_frames=64)
+[2026-06-21 15:11:41,511][src.colmap_mapper][INFO] - I20260621 15:11:41.511862 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 447 / 1838 points
+[2026-06-21 15:11:41,588][src.colmap_mapper][INFO] - I20260621 15:11:41.588535 0x1fde420c0 incremental_pipeline.cc:537] Registering image #66 (num_reg_frames=65)
+[2026-06-21 15:11:41,588][src.colmap_mapper][INFO] - I20260621 15:11:41.588547 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 515 / 2031 points
+[2026-06-21 15:11:41,682][src.colmap_mapper][INFO] - I20260621 15:11:41.682702 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+[2026-06-21 15:11:42,355][src.colmap_mapper][INFO] - I20260621 15:11:42.355291 0x1fde420c0 incremental_pipeline.cc:537] Registering image #67 (num_reg_frames=66)
+[2026-06-21 15:11:42,355][src.colmap_mapper][INFO] - I20260621 15:11:42.355307 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 479 / 1603 points
+[2026-06-21 15:11:42,424][src.colmap_mapper][INFO] - I20260621 15:11:42.424917 0x1fde420c0 incremental_pipeline.cc:537] Registering image #68 (num_reg_frames=67)
+[2026-06-21 15:11:42,425][src.colmap_mapper][INFO] - I20260621 15:11:42.424930 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 400 / 1837 points
+[2026-06-21 15:11:42,479][src.colmap_mapper][INFO] - I20260621 15:11:42.479170 0x1fde420c0 incremental_pipeline.cc:537] Registering image #69 (num_reg_frames=68)
+[2026-06-21 15:11:42,479][src.colmap_mapper][INFO] - I20260621 15:11:42.479182 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 495 / 1859 points
+[2026-06-21 15:11:42,542][src.colmap_mapper][INFO] - I20260621 15:11:42.542457 0x1fde420c0 incremental_pipeline.cc:537] Registering image #70 (num_reg_frames=69)
+[2026-06-21 15:11:42,542][src.colmap_mapper][INFO] - I20260621 15:11:42.542467 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 406 / 1900 points
+[2026-06-21 15:11:42,594][src.colmap_mapper][INFO] - I20260621 15:11:42.594142 0x1fde420c0 incremental_pipeline.cc:537] Registering image #71 (num_reg_frames=70)
+[2026-06-21 15:11:42,594][src.colmap_mapper][INFO] - I20260621 15:11:42.594152 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 399 / 2118 points
+[2026-06-21 15:11:42,635][src.colmap_mapper][INFO] - I20260621 15:11:42.634999 0x1fde420c0 incremental_pipeline.cc:537] Registering image #72 (num_reg_frames=71)
+[2026-06-21 15:11:42,635][src.colmap_mapper][INFO] - I20260621 15:11:42.635010 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 521 / 1902 points
+[2026-06-21 15:11:42,670][src.colmap_mapper][INFO] - I20260621 15:11:42.670727 0x1fde420c0 incremental_pipeline.cc:537] Registering image #73 (num_reg_frames=72)
+[2026-06-21 15:11:42,670][src.colmap_mapper][INFO] - I20260621 15:11:42.670736 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 324 / 2751 points
+[2026-06-21 15:11:42,719][src.colmap_mapper][INFO] - I20260621 15:11:42.719872 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+[2026-06-21 15:11:43,484][src.colmap_mapper][INFO] - I20260621 15:11:43.484557 0x1fde420c0 incremental_pipeline.cc:537] Registering image #74 (num_reg_frames=73)
+[2026-06-21 15:11:43,484][src.colmap_mapper][INFO] - I20260621 15:11:43.484573 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 454 / 2941 points
+[2026-06-21 15:11:43,567][src.colmap_mapper][INFO] - I20260621 15:11:43.567793 0x1fde420c0 incremental_pipeline.cc:537] Registering image #75 (num_reg_frames=74)
+[2026-06-21 15:11:43,567][src.colmap_mapper][INFO] - I20260621 15:11:43.567804 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 973 / 3115 points
+[2026-06-21 15:11:43,665][src.colmap_mapper][INFO] - I20260621 15:11:43.665589 0x1fde420c0 incremental_pipeline.cc:537] Registering image #76 (num_reg_frames=75)
+[2026-06-21 15:11:43,665][src.colmap_mapper][INFO] - I20260621 15:11:43.665599 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 1181 / 2797 points
+[2026-06-21 15:11:43,761][src.colmap_mapper][INFO] - I20260621 15:11:43.761927 0x1fde420c0 incremental_pipeline.cc:537] Registering image #77 (num_reg_frames=76)
+[2026-06-21 15:11:43,762][src.colmap_mapper][INFO] - I20260621 15:11:43.761941 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 1205 / 3116 points
+[2026-06-21 15:11:43,875][src.colmap_mapper][INFO] - I20260621 15:11:43.875433 0x1fde420c0 incremental_pipeline.cc:537] Registering image #82 (num_reg_frames=77)
+[2026-06-21 15:11:43,875][src.colmap_mapper][INFO] - I20260621 15:11:43.875443 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 896 / 3632 points
+[2026-06-21 15:11:44,001][src.colmap_mapper][INFO] - I20260621 15:11:44.001304 0x1fde420c0 incremental_pipeline.cc:537] Registering image #83 (num_reg_frames=78)
+[2026-06-21 15:11:44,001][src.colmap_mapper][INFO] - I20260621 15:11:44.001315 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 1234 / 3653 points
+[2026-06-21 15:11:44,118][src.colmap_mapper][INFO] - I20260621 15:11:44.118482 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+[2026-06-21 15:11:45,097][src.colmap_mapper][INFO] - I20260621 15:11:45.097945 0x1fde420c0 incremental_pipeline.cc:537] Registering image #81 (num_reg_frames=79)
+[2026-06-21 15:11:45,098][src.colmap_mapper][INFO] - I20260621 15:11:45.097961 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 1461 / 3536 points
+[2026-06-21 15:11:45,226][src.colmap_mapper][INFO] - I20260621 15:11:45.226486 0x1fde420c0 incremental_pipeline.cc:537] Registering image #84 (num_reg_frames=80)
+[2026-06-21 15:11:45,226][src.colmap_mapper][INFO] - I20260621 15:11:45.226497 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 1533 / 3164 points
+[2026-06-21 15:11:45,372][src.colmap_mapper][INFO] - I20260621 15:11:45.372072 0x1fde420c0 incremental_pipeline.cc:537] Registering image #78 (num_reg_frames=81)
+[2026-06-21 15:11:45,372][src.colmap_mapper][INFO] - I20260621 15:11:45.372088 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 1172 / 3537 points
+[2026-06-21 15:11:45,498][src.colmap_mapper][INFO] - I20260621 15:11:45.498298 0x1fde420c0 incremental_pipeline.cc:537] Registering image #80 (num_reg_frames=82)
+[2026-06-21 15:11:45,498][src.colmap_mapper][INFO] - I20260621 15:11:45.498310 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 1165 / 3019 points
+[2026-06-21 15:11:45,625][src.colmap_mapper][INFO] - I20260621 15:11:45.625471 0x1fde420c0 incremental_pipeline.cc:537] Registering image #79 (num_reg_frames=83)
+[2026-06-21 15:11:45,625][src.colmap_mapper][INFO] - I20260621 15:11:45.625482 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 1830 / 3162 points
+[2026-06-21 15:11:45,781][src.colmap_mapper][INFO] - I20260621 15:11:45.781740 0x1fde420c0 incremental_pipeline.cc:537] Registering image #85 (num_reg_frames=84)
+[2026-06-21 15:11:45,781][src.colmap_mapper][INFO] - I20260621 15:11:45.781751 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 1112 / 2672 points
+[2026-06-21 15:11:45,913][src.colmap_mapper][INFO] - I20260621 15:11:45.913718 0x1fde420c0 incremental_pipeline.cc:537] Registering image #86 (num_reg_frames=85)
+[2026-06-21 15:11:45,913][src.colmap_mapper][INFO] - I20260621 15:11:45.913729 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 712 / 2280 points
+[2026-06-21 15:11:46,029][src.colmap_mapper][INFO] - I20260621 15:11:46.029433 0x1fde420c0 incremental_pipeline.cc:537] Registering image #87 (num_reg_frames=86)
+[2026-06-21 15:11:46,029][src.colmap_mapper][INFO] - I20260621 15:11:46.029443 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 717 / 3056 points
+[2026-06-21 15:11:46,163][src.colmap_mapper][INFO] - I20260621 15:11:46.163143 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+[2026-06-21 15:11:47,544][src.colmap_mapper][INFO] - I20260621 15:11:47.544884 0x1fde420c0 incremental_pipeline.cc:537] Registering image #88 (num_reg_frames=87)
+[2026-06-21 15:11:47,545][src.colmap_mapper][INFO] - I20260621 15:11:47.544897 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 1152 / 2844 points
+[2026-06-21 15:11:47,648][src.colmap_mapper][INFO] - I20260621 15:11:47.648067 0x1fde420c0 incremental_pipeline.cc:537] Registering image #89 (num_reg_frames=88)
+[2026-06-21 15:11:47,648][src.colmap_mapper][INFO] - I20260621 15:11:47.648077 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 882 / 1652 points
+[2026-06-21 15:11:47,745][src.colmap_mapper][INFO] - I20260621 15:11:47.745741 0x1fde420c0 incremental_pipeline.cc:537] Registering image #90 (num_reg_frames=89)
+[2026-06-21 15:11:47,745][src.colmap_mapper][INFO] - I20260621 15:11:47.745750 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 412 / 1734 points
+[2026-06-21 15:11:47,822][src.colmap_mapper][INFO] - I20260621 15:11:47.822924 0x1fde420c0 incremental_pipeline.cc:537] Registering image #91 (num_reg_frames=90)
+[2026-06-21 15:11:47,823][src.colmap_mapper][INFO] - I20260621 15:11:47.822934 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 422 / 2250 points
+[2026-06-21 15:11:47,897][src.colmap_mapper][INFO] - I20260621 15:11:47.897892 0x1fde420c0 incremental_pipeline.cc:537] Registering image #92 (num_reg_frames=91)
+[2026-06-21 15:11:47,897][src.colmap_mapper][INFO] - I20260621 15:11:47.897901 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 827 / 2105 points
+[2026-06-21 15:11:47,977][src.colmap_mapper][INFO] - I20260621 15:11:47.977519 0x1fde420c0 incremental_pipeline.cc:537] Registering image #93 (num_reg_frames=92)
+[2026-06-21 15:11:47,977][src.colmap_mapper][INFO] - I20260621 15:11:47.977528 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 561 / 1804 points
+[2026-06-21 15:11:48,043][src.colmap_mapper][INFO] - I20260621 15:11:48.043354 0x1fde420c0 incremental_pipeline.cc:537] Registering image #94 (num_reg_frames=93)
+[2026-06-21 15:11:48,043][src.colmap_mapper][INFO] - I20260621 15:11:48.043367 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 517 / 2056 points
+[2026-06-21 15:11:48,134][src.colmap_mapper][INFO] - I20260621 15:11:48.133962 0x1fde420c0 incremental_pipeline.cc:537] Registering image #95 (num_reg_frames=94)
+[2026-06-21 15:11:48,134][src.colmap_mapper][INFO] - I20260621 15:11:48.133973 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 564 / 1780 points
+[2026-06-21 15:11:48,193][src.colmap_mapper][INFO] - I20260621 15:11:48.193323 0x1fde420c0 incremental_pipeline.cc:537] Registering image #96 (num_reg_frames=95)
+[2026-06-21 15:11:48,193][src.colmap_mapper][INFO] - I20260621 15:11:48.193334 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 377 / 2058 points
+[2026-06-21 15:11:48,259][src.colmap_mapper][INFO] - I20260621 15:11:48.259231 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+[2026-06-21 15:11:49,151][src.colmap_mapper][INFO] - I20260621 15:11:49.151845 0x1fde420c0 incremental_pipeline.cc:537] Registering image #97 (num_reg_frames=96)
+[2026-06-21 15:11:49,151][src.colmap_mapper][INFO] - I20260621 15:11:49.151858 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 431 / 1975 points
+[2026-06-21 15:11:49,195][src.colmap_mapper][INFO] - I20260621 15:11:49.195532 0x1fde420c0 incremental_pipeline.cc:537] Registering image #98 (num_reg_frames=97)
+[2026-06-21 15:11:49,195][src.colmap_mapper][INFO] - I20260621 15:11:49.195542 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 510 / 1585 points
+[2026-06-21 15:11:49,230][src.colmap_mapper][INFO] - I20260621 15:11:49.230803 0x1fde420c0 incremental_pipeline.cc:537] Registering image #99 (num_reg_frames=98)
+[2026-06-21 15:11:49,230][src.colmap_mapper][INFO] - I20260621 15:11:49.230812 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 375 / 1944 points
+[2026-06-21 15:11:49,272][src.colmap_mapper][INFO] - I20260621 15:11:49.272094 0x1fde420c0 incremental_pipeline.cc:537] Registering image #100 (num_reg_frames=99)
+[2026-06-21 15:11:49,272][src.colmap_mapper][INFO] - I20260621 15:11:49.272103 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 385 / 2004 points
+[2026-06-21 15:11:49,324][src.colmap_mapper][INFO] - I20260621 15:11:49.324675 0x1fde420c0 incremental_pipeline.cc:537] Registering image #101 (num_reg_frames=100)
+[2026-06-21 15:11:49,324][src.colmap_mapper][INFO] - I20260621 15:11:49.324684 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 403 / 1905 points
+[2026-06-21 15:11:49,395][src.colmap_mapper][INFO] - I20260621 15:11:49.395673 0x1fde420c0 incremental_pipeline.cc:537] Registering image #102 (num_reg_frames=101)
+[2026-06-21 15:11:49,395][src.colmap_mapper][INFO] - I20260621 15:11:49.395681 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 388 / 2092 points
+[2026-06-21 15:11:49,432][src.colmap_mapper][INFO] - I20260621 15:11:49.432669 0x1fde420c0 incremental_pipeline.cc:537] Registering image #103 (num_reg_frames=102)
+[2026-06-21 15:11:49,432][src.colmap_mapper][INFO] - I20260621 15:11:49.432682 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 432 / 2490 points
+[2026-06-21 15:11:49,473][src.colmap_mapper][INFO] - I20260621 15:11:49.473556 0x1fde420c0 incremental_pipeline.cc:537] Registering image #104 (num_reg_frames=103)
+[2026-06-21 15:11:49,473][src.colmap_mapper][INFO] - I20260621 15:11:49.473566 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 595 / 2743 points
+[2026-06-21 15:11:49,539][src.colmap_mapper][INFO] - I20260621 15:11:49.539649 0x1fde420c0 incremental_pipeline.cc:537] Registering image #105 (num_reg_frames=104)
+[2026-06-21 15:11:49,539][src.colmap_mapper][INFO] - I20260621 15:11:49.539660 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 698 / 1948 points
+[2026-06-21 15:11:49,617][src.colmap_mapper][INFO] - I20260621 15:11:49.617531 0x1fde420c0 incremental_pipeline.cc:537] Registering image #106 (num_reg_frames=105)
+[2026-06-21 15:11:49,617][src.colmap_mapper][INFO] - I20260621 15:11:49.617544 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 737 / 2400 points
+[2026-06-21 15:11:49,702][src.colmap_mapper][INFO] - I20260621 15:11:49.702123 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+[2026-06-21 15:11:50,769][src.colmap_mapper][INFO] - I20260621 15:11:50.769573 0x1fde420c0 incremental_pipeline.cc:537] Registering image #107 (num_reg_frames=106)
+[2026-06-21 15:11:50,769][src.colmap_mapper][INFO] - I20260621 15:11:50.769588 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 560 / 1703 points
+[2026-06-21 15:11:50,847][src.colmap_mapper][INFO] - I20260621 15:11:50.847849 0x1fde420c0 incremental_pipeline.cc:537] Registering image #108 (num_reg_frames=107)
+[2026-06-21 15:11:50,847][src.colmap_mapper][INFO] - I20260621 15:11:50.847865 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 851 / 1992 points
+[2026-06-21 15:11:50,927][src.colmap_mapper][INFO] - I20260621 15:11:50.927951 0x1fde420c0 incremental_pipeline.cc:537] Registering image #109 (num_reg_frames=108)
+[2026-06-21 15:11:50,928][src.colmap_mapper][INFO] - I20260621 15:11:50.927964 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 338 / 1730 points
+[2026-06-21 15:11:50,968][src.colmap_mapper][INFO] - I20260621 15:11:50.968682 0x1fde420c0 incremental_pipeline.cc:537] Registering image #110 (num_reg_frames=109)
+[2026-06-21 15:11:50,968][src.colmap_mapper][INFO] - I20260621 15:11:50.968693 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 278 / 2722 points
+[2026-06-21 15:11:51,030][src.colmap_mapper][INFO] - I20260621 15:11:51.030434 0x1fde420c0 incremental_pipeline.cc:537] Registering image #111 (num_reg_frames=110)
+[2026-06-21 15:11:51,030][src.colmap_mapper][INFO] - I20260621 15:11:51.030445 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 425 / 3234 points
+[2026-06-21 15:11:51,114][src.colmap_mapper][INFO] - I20260621 15:11:51.114723 0x1fde420c0 incremental_pipeline.cc:537] Registering image #112 (num_reg_frames=111)
+[2026-06-21 15:11:51,114][src.colmap_mapper][INFO] - I20260621 15:11:51.114733 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 954 / 3453 points
+[2026-06-21 15:11:51,181][src.colmap_mapper][INFO] - I20260621 15:11:51.181273 0x1fde420c0 incremental_pipeline.cc:537] Registering image #113 (num_reg_frames=112)
+[2026-06-21 15:11:51,181][src.colmap_mapper][INFO] - I20260621 15:11:51.181283 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 695 / 4089 points
+[2026-06-21 15:11:51,261][src.colmap_mapper][INFO] - I20260621 15:11:51.261103 0x1fde420c0 incremental_pipeline.cc:537] Registering image #114 (num_reg_frames=113)
+[2026-06-21 15:11:51,261][src.colmap_mapper][INFO] - I20260621 15:11:51.261112 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 528 / 3388 points
+[2026-06-21 15:11:51,398][src.colmap_mapper][INFO] - I20260621 15:11:51.398191 0x1fde420c0 incremental_pipeline.cc:537] Registering image #118 (num_reg_frames=114)
+[2026-06-21 15:11:51,398][src.colmap_mapper][INFO] - I20260621 15:11:51.398200 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 880 / 3407 points
+[2026-06-21 15:11:51,498][src.colmap_mapper][INFO] - I20260621 15:11:51.498105 0x1fde420c0 incremental_pipeline.cc:537] Registering image #119 (num_reg_frames=115)
+[2026-06-21 15:11:51,498][src.colmap_mapper][INFO] - I20260621 15:11:51.498115 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 1052 / 4475 points
+[2026-06-21 15:11:51,600][src.colmap_mapper][INFO] - I20260621 15:11:51.600012 0x1fde420c0 incremental_pipeline.cc:537] Registering image #117 (num_reg_frames=116)
+[2026-06-21 15:11:51,600][src.colmap_mapper][INFO] - I20260621 15:11:51.600022 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 1127 / 3249 points
+[2026-06-21 15:11:51,713][src.colmap_mapper][INFO] - I20260621 15:11:51.713584 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+[2026-06-21 15:11:53,506][src.colmap_mapper][INFO] - I20260621 15:11:53.506679 0x1fde420c0 incremental_pipeline.cc:537] Registering image #121 (num_reg_frames=117)
+[2026-06-21 15:11:53,506][src.colmap_mapper][INFO] - I20260621 15:11:53.506692 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 1361 / 4855 points
+[2026-06-21 15:11:53,654][src.colmap_mapper][INFO] - I20260621 15:11:53.654607 0x1fde420c0 incremental_pipeline.cc:537] Registering image #115 (num_reg_frames=118)
+[2026-06-21 15:11:53,654][src.colmap_mapper][INFO] - I20260621 15:11:53.654618 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 1571 / 3667 points
+[2026-06-21 15:11:53,805][src.colmap_mapper][INFO] - I20260621 15:11:53.805558 0x1fde420c0 incremental_pipeline.cc:537] Registering image #116 (num_reg_frames=119)
+[2026-06-21 15:11:53,805][src.colmap_mapper][INFO] - I20260621 15:11:53.805568 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 1433 / 2739 points
+[2026-06-21 15:11:53,934][src.colmap_mapper][INFO] - I20260621 15:11:53.934543 0x1fde420c0 incremental_pipeline.cc:537] Registering image #120 (num_reg_frames=120)
+[2026-06-21 15:11:53,934][src.colmap_mapper][INFO] - I20260621 15:11:53.934553 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 1593 / 3408 points
+[2026-06-21 15:11:54,073][src.colmap_mapper][INFO] - I20260621 15:11:54.072996 0x1fde420c0 incremental_pipeline.cc:537] Registering image #122 (num_reg_frames=121)
+[2026-06-21 15:11:54,073][src.colmap_mapper][INFO] - I20260621 15:11:54.073011 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 1451 / 3019 points
+[2026-06-21 15:11:54,217][src.colmap_mapper][INFO] - I20260621 15:11:54.217183 0x1fde420c0 incremental_pipeline.cc:537] Registering image #123 (num_reg_frames=122)
+[2026-06-21 15:11:54,217][src.colmap_mapper][INFO] - I20260621 15:11:54.217196 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 1697 / 5043 points
+[2026-06-21 15:11:54,430][src.colmap_mapper][INFO] - I20260621 15:11:54.430493 0x1fde420c0 incremental_pipeline.cc:537] Registering image #124 (num_reg_frames=123)
+[2026-06-21 15:11:54,430][src.colmap_mapper][INFO] - I20260621 15:11:54.430504 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 2623 / 4548 points
+[2026-06-21 15:11:54,580][src.colmap_mapper][INFO] - I20260621 15:11:54.580093 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+[2026-06-21 15:11:56,561][src.colmap_mapper][INFO] - I20260621 15:11:56.561390 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+[2026-06-21 15:11:57,495][src.colmap_mapper][INFO] - I20260621 15:11:57.495092 0x1fde420c0 incremental_pipeline.cc:723] Keeping successful reconstruction
+[2026-06-21 15:11:57,532][src.colmap_mapper][INFO] - I20260621 15:11:57.532801 0x1fde420c0 timer.cc:90] Elapsed time: 0.488 [minutes]
+[2026-06-21 15:11:57,548][src.colmap_mapper][INFO] - Sparse reconstruction completed successfully
+[2026-06-21 15:11:57,548][__main__][INFO] - ✓ Sparse reconstruction completed
+[2026-06-21 15:11:57,548][__main__][INFO] - ============================================================
+[2026-06-21 15:11:57,548][__main__][INFO] - STEP 5: Image Undistortion
+[2026-06-21 15:11:57,548][__main__][INFO] - ============================================================
+[2026-06-21 15:11:57,549][src.colmap_undistorter][INFO] - Undistorting images
+[2026-06-21 15:11:57,549][src.colmap_undistorter][INFO] - Input model: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_camera_model/sparse/0
+[2026-06-21 15:11:57,549][src.colmap_undistorter][INFO] - Images: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_camera_model/images
+[2026-06-21 15:11:57,549][src.colmap_undistorter][INFO] - Output: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized
+[2026-06-21 15:11:57,549][src.colmap_undistorter][INFO] - Running: colmap image_undistorter
+[2026-06-21 15:11:57,598][src.colmap_undistorter][INFO] - I20260621 15:11:57.597781 0x1fde420c0 image.cc:368] === Reading reconstruction ===
+[2026-06-21 15:11:57,632][src.colmap_undistorter][INFO] - I20260621 15:11:57.632100 0x1fde420c0 image.cc:371] => Reconstruction with 124 images and 51778 points
+[2026-06-21 15:11:57,632][src.colmap_undistorter][INFO] - I20260621 15:11:57.632135 0x1fde420c0 undistorters.cc:166] === Image undistortion ===
+[2026-06-21 15:11:57,632][src.colmap_undistorter][INFO] - I20260621 15:11:57.632598 0x1fde420c0 undistorters.cc:205] Undistorting image [1/124]
+[2026-06-21 15:11:58,377][src.colmap_undistorter][INFO] - I20260621 15:11:58.376993 0x1fde420c0 undistorters.cc:205] Undistorting image [2/124]
+[2026-06-21 15:11:58,378][src.colmap_undistorter][INFO] - I20260621 15:11:58.377018 0x1fde420c0 undistorters.cc:205] Undistorting image [3/124]
+[2026-06-21 15:11:58,378][src.colmap_undistorter][INFO] - I20260621 15:11:58.377022 0x1fde420c0 undistorters.cc:205] Undistorting image [4/124]
+[2026-06-21 15:11:58,378][src.colmap_undistorter][INFO] - I20260621 15:11:58.377025 0x1fde420c0 undistorters.cc:205] Undistorting image [5/124]
+[2026-06-21 15:11:58,378][src.colmap_undistorter][INFO] - I20260621 15:11:58.377028 0x1fde420c0 undistorters.cc:205] Undistorting image [6/124]
+[2026-06-21 15:11:58,378][src.colmap_undistorter][INFO] - I20260621 15:11:58.377030 0x1fde420c0 undistorters.cc:205] Undistorting image [7/124]
+[2026-06-21 15:11:58,380][src.colmap_undistorter][INFO] - I20260621 15:11:58.377035 0x1fde420c0 undistorters.cc:205] Undistorting image [8/124]
+[2026-06-21 15:11:58,388][src.colmap_undistorter][INFO] - I20260621 15:11:58.387356 0x1fde420c0 undistorters.cc:205] Undistorting image [9/124]
+[2026-06-21 15:11:58,388][src.colmap_undistorter][INFO] - I20260621 15:11:58.387380 0x1fde420c0 undistorters.cc:205] Undistorting image [10/124]
+[2026-06-21 15:11:58,388][src.colmap_undistorter][INFO] - I20260621 15:11:58.387384 0x1fde420c0 undistorters.cc:205] Undistorting image [11/124]
+[2026-06-21 15:11:59,004][src.colmap_undistorter][INFO] - I20260621 15:11:59.000984 0x1fde420c0 undistorters.cc:205] Undistorting image [12/124]
+[2026-06-21 15:11:59,005][src.colmap_undistorter][INFO] - I20260621 15:11:59.005775 0x1fde420c0 undistorters.cc:205] Undistorting image [13/124]
+[2026-06-21 15:11:59,124][src.colmap_undistorter][INFO] - I20260621 15:11:59.118563 0x1fde420c0 undistorters.cc:205] Undistorting image [14/124]
+[2026-06-21 15:11:59,128][src.colmap_undistorter][INFO] - I20260621 15:11:59.118579 0x1fde420c0 undistorters.cc:205] Undistorting image [15/124]
+[2026-06-21 15:11:59,128][src.colmap_undistorter][INFO] - I20260621 15:11:59.118582 0x1fde420c0 undistorters.cc:205] Undistorting image [16/124]
+[2026-06-21 15:11:59,129][src.colmap_undistorter][INFO] - I20260621 15:11:59.118584 0x1fde420c0 undistorters.cc:205] Undistorting image [17/124]
+[2026-06-21 15:11:59,132][src.colmap_undistorter][INFO] - I20260621 15:11:59.118585 0x1fde420c0 undistorters.cc:205] Undistorting image [18/124]
+[2026-06-21 15:11:59,132][src.colmap_undistorter][INFO] - I20260621 15:11:59.118587 0x1fde420c0 undistorters.cc:205] Undistorting image [19/124]
+[2026-06-21 15:11:59,132][src.colmap_undistorter][INFO] - I20260621 15:11:59.118588 0x1fde420c0 undistorters.cc:205] Undistorting image [20/124]
+[2026-06-21 15:11:59,133][src.colmap_undistorter][INFO] - I20260621 15:11:59.118589 0x1fde420c0 undistorters.cc:205] Undistorting image [21/124]
+[2026-06-21 15:11:59,731][src.colmap_undistorter][INFO] - I20260621 15:11:59.731357 0x1fde420c0 undistorters.cc:205] Undistorting image [22/124]
+[2026-06-21 15:11:59,768][src.colmap_undistorter][INFO] - I20260621 15:11:59.766545 0x1fde420c0 undistorters.cc:205] Undistorting image [23/124]
+[2026-06-21 15:11:59,768][src.colmap_undistorter][INFO] - I20260621 15:11:59.766568 0x1fde420c0 undistorters.cc:205] Undistorting image [24/124]
+[2026-06-21 15:11:59,768][src.colmap_undistorter][INFO] - I20260621 15:11:59.766572 0x1fde420c0 undistorters.cc:205] Undistorting image [25/124]
+[2026-06-21 15:11:59,790][src.colmap_undistorter][INFO] - I20260621 15:11:59.790095 0x1fde420c0 undistorters.cc:205] Undistorting image [26/124]
+[2026-06-21 15:11:59,790][src.colmap_undistorter][INFO] - I20260621 15:11:59.790119 0x1fde420c0 undistorters.cc:205] Undistorting image [27/124]
+[2026-06-21 15:11:59,790][src.colmap_undistorter][INFO] - I20260621 15:11:59.790127 0x1fde420c0 undistorters.cc:205] Undistorting image [28/124]
+[2026-06-21 15:11:59,809][src.colmap_undistorter][INFO] - I20260621 15:11:59.809218 0x1fde420c0 undistorters.cc:205] Undistorting image [29/124]
+[2026-06-21 15:11:59,872][src.colmap_undistorter][INFO] - I20260621 15:11:59.872534 0x1fde420c0 undistorters.cc:205] Undistorting image [30/124]
+[2026-06-21 15:11:59,872][src.colmap_undistorter][INFO] - I20260621 15:11:59.872559 0x1fde420c0 undistorters.cc:205] Undistorting image [31/124]
+[2026-06-21 15:12:00,406][src.colmap_undistorter][INFO] - I20260621 15:12:00.406145 0x1fde420c0 undistorters.cc:205] Undistorting image [32/124]
+[2026-06-21 15:12:00,430][src.colmap_undistorter][INFO] - I20260621 15:12:00.429171 0x1fde420c0 undistorters.cc:205] Undistorting image [33/124]
+[2026-06-21 15:12:00,440][src.colmap_undistorter][INFO] - I20260621 15:12:00.439933 0x1fde420c0 undistorters.cc:205] Undistorting image [34/124]
+[2026-06-21 15:12:00,448][src.colmap_undistorter][INFO] - I20260621 15:12:00.448034 0x1fde420c0 undistorters.cc:205] Undistorting image [35/124]
+[2026-06-21 15:12:00,494][src.colmap_undistorter][INFO] - I20260621 15:12:00.492390 0x1fde420c0 undistorters.cc:205] Undistorting image [36/124]
+[2026-06-21 15:12:00,501][src.colmap_undistorter][INFO] - I20260621 15:12:00.500582 0x1fde420c0 undistorters.cc:205] Undistorting image [37/124]
+[2026-06-21 15:12:00,512][src.colmap_undistorter][INFO] - I20260621 15:12:00.511673 0x1fde420c0 undistorters.cc:205] Undistorting image [38/124]
+[2026-06-21 15:12:00,513][src.colmap_undistorter][INFO] - I20260621 15:12:00.511692 0x1fde420c0 undistorters.cc:205] Undistorting image [39/124]
+[2026-06-21 15:12:00,526][src.colmap_undistorter][INFO] - I20260621 15:12:00.526198 0x1fde420c0 undistorters.cc:205] Undistorting image [40/124]
+[2026-06-21 15:12:00,574][src.colmap_undistorter][INFO] - I20260621 15:12:00.574421 0x1fde420c0 undistorters.cc:205] Undistorting image [41/124]
+[2026-06-21 15:12:01,063][src.colmap_undistorter][INFO] - I20260621 15:12:01.062948 0x1fde420c0 undistorters.cc:205] Undistorting image [42/124]
+[2026-06-21 15:12:01,100][src.colmap_undistorter][INFO] - I20260621 15:12:01.098989 0x1fde420c0 undistorters.cc:205] Undistorting image [43/124]
+[2026-06-21 15:12:01,182][src.colmap_undistorter][INFO] - I20260621 15:12:01.182268 0x1fde420c0 undistorters.cc:205] Undistorting image [44/124]
+[2026-06-21 15:12:01,182][src.colmap_undistorter][INFO] - I20260621 15:12:01.182297 0x1fde420c0 undistorters.cc:205] Undistorting image [45/124]
+[2026-06-21 15:12:01,182][src.colmap_undistorter][INFO] - I20260621 15:12:01.182301 0x1fde420c0 undistorters.cc:205] Undistorting image [46/124]
+[2026-06-21 15:12:01,198][src.colmap_undistorter][INFO] - I20260621 15:12:01.196516 0x1fde420c0 undistorters.cc:205] Undistorting image [47/124]
+[2026-06-21 15:12:01,198][src.colmap_undistorter][INFO] - I20260621 15:12:01.196538 0x1fde420c0 undistorters.cc:205] Undistorting image [48/124]
+[2026-06-21 15:12:01,198][src.colmap_undistorter][INFO] - I20260621 15:12:01.196542 0x1fde420c0 undistorters.cc:205] Undistorting image [49/124]
+[2026-06-21 15:12:01,198][src.colmap_undistorter][INFO] - I20260621 15:12:01.196545 0x1fde420c0 undistorters.cc:205] Undistorting image [50/124]
+[2026-06-21 15:12:01,306][src.colmap_undistorter][INFO] - I20260621 15:12:01.303184 0x1fde420c0 undistorters.cc:205] Undistorting image [51/124]
+[2026-06-21 15:12:01,690][src.colmap_undistorter][INFO] - I20260621 15:12:01.690026 0x1fde420c0 undistorters.cc:205] Undistorting image [52/124]
+[2026-06-21 15:12:01,749][src.colmap_undistorter][INFO] - I20260621 15:12:01.749040 0x1fde420c0 undistorters.cc:205] Undistorting image [53/124]
+[2026-06-21 15:12:01,781][src.colmap_undistorter][INFO] - I20260621 15:12:01.781512 0x1fde420c0 undistorters.cc:205] Undistorting image [54/124]
+[2026-06-21 15:12:01,781][src.colmap_undistorter][INFO] - I20260621 15:12:01.781535 0x1fde420c0 undistorters.cc:205] Undistorting image [55/124]
+[2026-06-21 15:12:01,838][src.colmap_undistorter][INFO] - I20260621 15:12:01.831973 0x1fde420c0 undistorters.cc:205] Undistorting image [56/124]
+[2026-06-21 15:12:01,838][src.colmap_undistorter][INFO] - I20260621 15:12:01.831994 0x1fde420c0 undistorters.cc:205] Undistorting image [57/124]
+[2026-06-21 15:12:01,848][src.colmap_undistorter][INFO] - I20260621 15:12:01.844051 0x1fde420c0 undistorters.cc:205] Undistorting image [58/124]
+[2026-06-21 15:12:01,848][src.colmap_undistorter][INFO] - I20260621 15:12:01.844484 0x1fde420c0 undistorters.cc:205] Undistorting image [59/124]
+[2026-06-21 15:12:01,906][src.colmap_undistorter][INFO] - I20260621 15:12:01.905540 0x1fde420c0 undistorters.cc:205] Undistorting image [60/124]
+[2026-06-21 15:12:02,004][src.colmap_undistorter][INFO] - I20260621 15:12:02.004642 0x1fde420c0 undistorters.cc:205] Undistorting image [61/124]
+[2026-06-21 15:12:02,358][src.colmap_undistorter][INFO] - I20260621 15:12:02.358170 0x1fde420c0 undistorters.cc:205] Undistorting image [62/124]
+[2026-06-21 15:12:02,403][src.colmap_undistorter][INFO] - I20260621 15:12:02.402019 0x1fde420c0 undistorters.cc:205] Undistorting image [63/124]
+[2026-06-21 15:12:02,404][src.colmap_undistorter][INFO] - I20260621 15:12:02.402040 0x1fde420c0 undistorters.cc:205] Undistorting image [64/124]
+[2026-06-21 15:12:02,418][src.colmap_undistorter][INFO] - I20260621 15:12:02.417427 0x1fde420c0 undistorters.cc:205] Undistorting image [65/124]
+[2026-06-21 15:12:02,522][src.colmap_undistorter][INFO] - I20260621 15:12:02.521852 0x1fde420c0 undistorters.cc:205] Undistorting image [66/124]
+[2026-06-21 15:12:02,522][src.colmap_undistorter][INFO] - I20260621 15:12:02.521878 0x1fde420c0 undistorters.cc:205] Undistorting image [67/124]
+[2026-06-21 15:12:02,570][src.colmap_undistorter][INFO] - I20260621 15:12:02.570157 0x1fde420c0 undistorters.cc:205] Undistorting image [68/124]
+[2026-06-21 15:12:02,570][src.colmap_undistorter][INFO] - I20260621 15:12:02.570182 0x1fde420c0 undistorters.cc:205] Undistorting image [69/124]
+[2026-06-21 15:12:02,570][src.colmap_undistorter][INFO] - I20260621 15:12:02.570186 0x1fde420c0 undistorters.cc:205] Undistorting image [70/124]
+[2026-06-21 15:12:02,689][src.colmap_undistorter][INFO] - I20260621 15:12:02.689610 0x1fde420c0 undistorters.cc:205] Undistorting image [71/124]
+[2026-06-21 15:12:03,040][src.colmap_undistorter][INFO] - I20260621 15:12:03.038288 0x1fde420c0 undistorters.cc:205] Undistorting image [72/124]
+[2026-06-21 15:12:03,040][src.colmap_undistorter][INFO] - I20260621 15:12:03.038315 0x1fde420c0 undistorters.cc:205] Undistorting image [73/124]
+[2026-06-21 15:12:03,045][src.colmap_undistorter][INFO] - I20260621 15:12:03.044973 0x1fde420c0 undistorters.cc:205] Undistorting image [74/124]
+[2026-06-21 15:12:03,085][src.colmap_undistorter][INFO] - I20260621 15:12:03.085290 0x1fde420c0 undistorters.cc:205] Undistorting image [75/124]
+[2026-06-21 15:12:03,157][src.colmap_undistorter][INFO] - I20260621 15:12:03.157061 0x1fde420c0 undistorters.cc:205] Undistorting image [76/124]
+[2026-06-21 15:12:03,157][src.colmap_undistorter][INFO] - I20260621 15:12:03.157083 0x1fde420c0 undistorters.cc:205] Undistorting image [77/124]
+[2026-06-21 15:12:03,215][src.colmap_undistorter][INFO] - I20260621 15:12:03.214641 0x1fde420c0 undistorters.cc:205] Undistorting image [78/124]
+[2026-06-21 15:12:03,221][src.colmap_undistorter][INFO] - I20260621 15:12:03.221243 0x1fde420c0 undistorters.cc:205] Undistorting image [79/124]
+[2026-06-21 15:12:03,237][src.colmap_undistorter][INFO] - I20260621 15:12:03.237318 0x1fde420c0 undistorters.cc:205] Undistorting image [80/124]
+[2026-06-21 15:12:03,367][src.colmap_undistorter][INFO] - I20260621 15:12:03.366973 0x1fde420c0 undistorters.cc:205] Undistorting image [81/124]
+[2026-06-21 15:12:03,719][src.colmap_undistorter][INFO] - I20260621 15:12:03.719636 0x1fde420c0 undistorters.cc:205] Undistorting image [82/124]
+[2026-06-21 15:12:03,719][src.colmap_undistorter][INFO] - I20260621 15:12:03.719665 0x1fde420c0 undistorters.cc:205] Undistorting image [83/124]
+[2026-06-21 15:12:03,719][src.colmap_undistorter][INFO] - I20260621 15:12:03.719669 0x1fde420c0 undistorters.cc:205] Undistorting image [84/124]
+[2026-06-21 15:12:03,789][src.colmap_undistorter][INFO] - I20260621 15:12:03.789351 0x1fde420c0 undistorters.cc:205] Undistorting image [85/124]
+[2026-06-21 15:12:03,843][src.colmap_undistorter][INFO] - I20260621 15:12:03.842845 0x1fde420c0 undistorters.cc:205] Undistorting image [86/124]
+[2026-06-21 15:12:03,844][src.colmap_undistorter][INFO] - I20260621 15:12:03.842875 0x1fde420c0 undistorters.cc:205] Undistorting image [87/124]
+[2026-06-21 15:12:03,992][src.colmap_undistorter][INFO] - I20260621 15:12:03.992238 0x1fde420c0 undistorters.cc:205] Undistorting image [88/124]
+[2026-06-21 15:12:04,029][src.colmap_undistorter][INFO] - I20260621 15:12:04.029786 0x1fde420c0 undistorters.cc:205] Undistorting image [89/124]
+[2026-06-21 15:12:04,044][src.colmap_undistorter][INFO] - I20260621 15:12:04.044245 0x1fde420c0 undistorters.cc:205] Undistorting image [90/124]
+[2026-06-21 15:12:04,168][src.colmap_undistorter][INFO] - I20260621 15:12:04.167932 0x1fde420c0 undistorters.cc:205] Undistorting image [91/124]
+[2026-06-21 15:12:04,616][src.colmap_undistorter][INFO] - I20260621 15:12:04.615482 0x1fde420c0 undistorters.cc:205] Undistorting image [92/124]
+[2026-06-21 15:12:04,748][src.colmap_undistorter][INFO] - I20260621 15:12:04.746537 0x1fde420c0 undistorters.cc:205] Undistorting image [93/124]
+[2026-06-21 15:12:04,748][src.colmap_undistorter][INFO] - I20260621 15:12:04.746574 0x1fde420c0 undistorters.cc:205] Undistorting image [94/124]
+[2026-06-21 15:12:04,771][src.colmap_undistorter][INFO] - I20260621 15:12:04.771709 0x1fde420c0 undistorters.cc:205] Undistorting image [95/124]
+[2026-06-21 15:12:04,851][src.colmap_undistorter][INFO] - I20260621 15:12:04.848028 0x1fde420c0 undistorters.cc:205] Undistorting image [96/124]
+[2026-06-21 15:12:04,851][src.colmap_undistorter][INFO] - I20260621 15:12:04.848040 0x1fde420c0 undistorters.cc:205] Undistorting image [97/124]
+[2026-06-21 15:12:04,917][src.colmap_undistorter][INFO] - I20260621 15:12:04.914819 0x1fde420c0 undistorters.cc:205] Undistorting image [98/124]
+[2026-06-21 15:12:04,995][src.colmap_undistorter][INFO] - I20260621 15:12:04.995729 0x1fde420c0 undistorters.cc:205] Undistorting image [99/124]
+[2026-06-21 15:12:04,995][src.colmap_undistorter][INFO] - I20260621 15:12:04.995745 0x1fde420c0 undistorters.cc:205] Undistorting image [100/124]
+[2026-06-21 15:12:05,026][src.colmap_undistorter][INFO] - I20260621 15:12:05.026074 0x1fde420c0 undistorters.cc:205] Undistorting image [101/124]
+[2026-06-21 15:12:05,368][src.colmap_undistorter][INFO] - I20260621 15:12:05.367905 0x1fde420c0 undistorters.cc:205] Undistorting image [102/124]
+[2026-06-21 15:12:05,408][src.colmap_undistorter][INFO] - I20260621 15:12:05.407247 0x1fde420c0 undistorters.cc:205] Undistorting image [103/124]
+[2026-06-21 15:12:05,461][src.colmap_undistorter][INFO] - I20260621 15:12:05.460994 0x1fde420c0 undistorters.cc:205] Undistorting image [104/124]
+[2026-06-21 15:12:05,461][src.colmap_undistorter][INFO] - I20260621 15:12:05.461015 0x1fde420c0 undistorters.cc:205] Undistorting image [105/124]
+[2026-06-21 15:12:05,500][src.colmap_undistorter][INFO] - I20260621 15:12:05.499663 0x1fde420c0 undistorters.cc:205] Undistorting image [106/124]
+[2026-06-21 15:12:05,554][src.colmap_undistorter][INFO] - I20260621 15:12:05.549570 0x1fde420c0 undistorters.cc:205] Undistorting image [107/124]
+[2026-06-21 15:12:05,622][src.colmap_undistorter][INFO] - I20260621 15:12:05.622054 0x1fde420c0 undistorters.cc:205] Undistorting image [108/124]
+[2026-06-21 15:12:05,660][src.colmap_undistorter][INFO] - I20260621 15:12:05.659165 0x1fde420c0 undistorters.cc:205] Undistorting image [109/124]
+[2026-06-21 15:12:05,707][src.colmap_undistorter][INFO] - I20260621 15:12:05.705221 0x1fde420c0 undistorters.cc:205] Undistorting image [110/124]
+[2026-06-21 15:12:05,727][src.colmap_undistorter][INFO] - I20260621 15:12:05.725519 0x1fde420c0 undistorters.cc:205] Undistorting image [111/124]
+[2026-06-21 15:12:06,057][src.colmap_undistorter][INFO] - I20260621 15:12:06.057462 0x1fde420c0 undistorters.cc:205] Undistorting image [112/124]
+[2026-06-21 15:12:06,122][src.colmap_undistorter][INFO] - I20260621 15:12:06.121439 0x1fde420c0 undistorters.cc:205] Undistorting image [113/124]
+[2026-06-21 15:12:06,123][src.colmap_undistorter][INFO] - I20260621 15:12:06.121466 0x1fde420c0 undistorters.cc:205] Undistorting image [114/124]
+[2026-06-21 15:12:06,151][src.colmap_undistorter][INFO] - I20260621 15:12:06.147822 0x1fde420c0 undistorters.cc:205] Undistorting image [115/124]
+[2026-06-21 15:12:06,178][src.colmap_undistorter][INFO] - I20260621 15:12:06.178623 0x1fde420c0 undistorters.cc:205] Undistorting image [116/124]
+[2026-06-21 15:12:06,195][src.colmap_undistorter][INFO] - I20260621 15:12:06.195142 0x1fde420c0 undistorters.cc:205] Undistorting image [117/124]
+[2026-06-21 15:12:06,301][src.colmap_undistorter][INFO] - I20260621 15:12:06.301480 0x1fde420c0 undistorters.cc:205] Undistorting image [118/124]
+[2026-06-21 15:12:06,355][src.colmap_undistorter][INFO] - I20260621 15:12:06.355357 0x1fde420c0 undistorters.cc:205] Undistorting image [119/124]
+[2026-06-21 15:12:06,402][src.colmap_undistorter][INFO] - I20260621 15:12:06.402686 0x1fde420c0 undistorters.cc:205] Undistorting image [120/124]
+[2026-06-21 15:12:06,402][src.colmap_undistorter][INFO] - I20260621 15:12:06.402729 0x1fde420c0 undistorters.cc:205] Undistorting image [121/124]
+[2026-06-21 15:12:06,611][src.colmap_undistorter][INFO] - I20260621 15:12:06.611348 0x1fde420c0 undistorters.cc:205] Undistorting image [122/124]
+[2026-06-21 15:12:06,615][src.colmap_undistorter][INFO] - I20260621 15:12:06.615113 0x1fde420c0 undistorters.cc:205] Undistorting image [123/124]
+[2026-06-21 15:12:06,636][src.colmap_undistorter][INFO] - I20260621 15:12:06.636056 0x1fde420c0 undistorters.cc:205] Undistorting image [124/124]
+[2026-06-21 15:12:06,657][src.colmap_undistorter][INFO] - I20260621 15:12:06.657943 0x1fde420c0 undistorters.cc:213] Writing reconstruction...
+[2026-06-21 15:12:06,724][src.colmap_undistorter][INFO] - I20260621 15:12:06.724799 0x1fde420c0 undistorters.cc:218] Writing configuration...
+[2026-06-21 15:12:06,724][src.colmap_undistorter][INFO] - I20260621 15:12:06.724924 0x1fde420c0 undistorters.cc:222] Writing scripts...
+[2026-06-21 15:12:06,725][src.colmap_undistorter][INFO] - I20260621 15:12:06.725027 0x1fde420c0 timer.cc:90] Elapsed time: 0.152 [minutes]
+[2026-06-21 15:12:06,737][src.colmap_undistorter][INFO] - Image undistortion completed successfully
+[2026-06-21 15:12:06,737][__main__][INFO] - ✓ Image undistortion completed
+[2026-06-21 15:12:06,737][__main__][INFO] - ============================================================
+[2026-06-21 15:12:06,737][__main__][INFO] - STEP 6: OpenSplat Training
+[2026-06-21 15:12:06,737][__main__][INFO] - ============================================================
+[2026-06-21 15:12:06,738][src.opensplat_trainer][INFO] - Training 3D Gaussian Splat
+[2026-06-21 15:12:06,738][src.opensplat_trainer][INFO] - Sparse model: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/sparse
+[2026-06-21 15:12:06,738][src.opensplat_trainer][INFO] - Images: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images
+[2026-06-21 15:12:06,738][src.opensplat_trainer][INFO] - Output PLY: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/splats/more_gaussians_20260621_1512.ply
+[2026-06-21 15:12:06,738][src.opensplat_trainer][INFO] - Training loss log: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/splats/train_20260621_1512.jsonl
+[2026-06-21 15:12:06,738][src.opensplat_trainer][INFO] - Validation loss log: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/splats/val_20260621_1512.jsonl
+[2026-06-21 15:12:06,738][src.opensplat_trainer][INFO] - Running: opensplat
+[2026-06-21 15:12:06,887][src.opensplat_trainer][INFO] - Using MPS
+[2026-06-21 15:12:06,906][src.opensplat_trainer][INFO] - Reading 51778 points
+[2026-06-21 15:12:06,913][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0001.jpg
+[2026-06-21 15:12:06,913][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0014.jpgLoading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0027.jpg
+[2026-06-21 15:12:06,913][src.opensplat_trainer][INFO] - 
+[2026-06-21 15:12:06,913][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0066.jpg
+[2026-06-21 15:12:06,913][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0079.jpg
+[2026-06-21 15:12:06,913][src.opensplat_trainer][INFO] - Loading Loading Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0105.jpg
+[2026-06-21 15:12:06,913][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0118.jpg
+[2026-06-21 15:12:06,913][src.opensplat_trainer][INFO] - /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0053.jpg
+[2026-06-21 15:12:06,913][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0092.jpg
+[2026-06-21 15:12:06,913][src.opensplat_trainer][INFO] - /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0040.jpg
+[2026-06-21 15:12:06,934][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0080.jpg
+[2026-06-21 15:12:06,935][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0028.jpg
+[2026-06-21 15:12:06,938][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0093.jpg
+[2026-06-21 15:12:06,947][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0119.jpg
+[2026-06-21 15:12:06,947][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0002.jpg
+[2026-06-21 15:12:06,947][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0054.jpg
+[2026-06-21 15:12:06,947][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0041.jpg
+[2026-06-21 15:12:06,948][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0015.jpg
+[2026-06-21 15:12:06,950][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0106.jpg
+[2026-06-21 15:12:06,951][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0067.jpg
+[2026-06-21 15:12:06,962][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0094.jpg
+[2026-06-21 15:12:06,964][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0081.jpg
+[2026-06-21 15:12:06,965][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0029.jpg
+[2026-06-21 15:12:06,976][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0120.jpg
+[2026-06-21 15:12:06,976][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0107.jpg
+[2026-06-21 15:12:06,976][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0003.jpg
+[2026-06-21 15:12:06,978][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0068.jpg
+[2026-06-21 15:12:06,978][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0042.jpg
+[2026-06-21 15:12:06,979][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0016.jpg
+[2026-06-21 15:12:06,986][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0055.jpg
+[2026-06-21 15:12:06,997][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0095.jpg
+[2026-06-21 15:12:06,997][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0121.jpg
+[2026-06-21 15:12:06,998][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0082.jpg
+[2026-06-21 15:12:07,000][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0069.jpg
+[2026-06-21 15:12:07,000][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0030.jpg
+[2026-06-21 15:12:07,008][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0004.jpg
+[2026-06-21 15:12:07,011][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0043.jpg
+[2026-06-21 15:12:07,011][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0017.jpg
+[2026-06-21 15:12:07,011][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0108.jpg
+[2026-06-21 15:12:07,014][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0056.jpg
+[2026-06-21 15:12:07,020][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0070.jpg
+[2026-06-21 15:12:07,021][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0096.jpg
+[2026-06-21 15:12:07,021][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0083.jpg
+[2026-06-21 15:12:07,026][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0122.jpg
+[2026-06-21 15:12:07,029][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0031.jpg
+[2026-06-21 15:12:07,031][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0044.jpg
+[2026-06-21 15:12:07,036][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0109.jpg
+[2026-06-21 15:12:07,038][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0005.jpg
+[2026-06-21 15:12:07,038][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0057.jpg
+[2026-06-21 15:12:07,042][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0018.jpg
+[2026-06-21 15:12:07,046][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0097.jpg
+[2026-06-21 15:12:07,050][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0071.jpg
+[2026-06-21 15:12:07,050][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0084.jpg
+[2026-06-21 15:12:07,058][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0032.jpg
+[2026-06-21 15:12:07,058][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0110.jpg
+[2026-06-21 15:12:07,060][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0123.jpg
+[2026-06-21 15:12:07,062][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0045.jpg
+[2026-06-21 15:12:07,062][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0006.jpg
+[2026-06-21 15:12:07,064][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0019.jpg
+[2026-06-21 15:12:07,065][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0058.jpg
+[2026-06-21 15:12:07,069][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0072.jpg
+[2026-06-21 15:12:07,071][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0098.jpg
+[2026-06-21 15:12:07,079][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0111.jpg
+[2026-06-21 15:12:07,081][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0124.jpg
+[2026-06-21 15:12:07,083][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0020.jpg
+[2026-06-21 15:12:07,084][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0033.jpg
+[2026-06-21 15:12:07,088][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0085.jpg
+[2026-06-21 15:12:07,088][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0046.jpg
+[2026-06-21 15:12:07,093][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0007.jpg
+[2026-06-21 15:12:07,096][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0099.jpg
+[2026-06-21 15:12:07,099][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0059.jpg
+[2026-06-21 15:12:07,100][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0073.jpg
+[2026-06-21 15:12:07,101][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0112.jpg
+[2026-06-21 15:12:07,106][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0034.jpg
+[2026-06-21 15:12:07,109][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0047.jpg
+[2026-06-21 15:12:07,115][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0008.jpg
+[2026-06-21 15:12:07,118][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0100.jpg
+[2026-06-21 15:12:07,119][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0086.jpg
+[2026-06-21 15:12:07,122][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0060.jpg
+[2026-06-21 15:12:07,128][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0113.jpg
+[2026-06-21 15:12:07,128][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0074.jpg
+[2026-06-21 15:12:07,130][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0035.jpg
+[2026-06-21 15:12:07,131][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0021.jpg
+[2026-06-21 15:12:07,145][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0048.jpg
+[2026-06-21 15:12:07,146][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0009.jpg
+[2026-06-21 15:12:07,148][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0036.jpg
+[2026-06-21 15:12:07,150][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0087.jpg
+[2026-06-21 15:12:07,150][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0114.jpg
+[2026-06-21 15:12:07,151][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0022.jpg
+[2026-06-21 15:12:07,153][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0061.jpg
+[2026-06-21 15:12:07,156][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0075.jpg
+[2026-06-21 15:12:07,159][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0101.jpg
+[2026-06-21 15:12:07,170][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0115.jpg
+[2026-06-21 15:12:07,173][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0023.jpg
+[2026-06-21 15:12:07,174][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0010.jpg
+[2026-06-21 15:12:07,174][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0088.jpg
+[2026-06-21 15:12:07,177][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0049.jpg
+[2026-06-21 15:12:07,177][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0062.jpg
+[2026-06-21 15:12:07,179][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0076.jpg
+[2026-06-21 15:12:07,184][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0102.jpg
+[2026-06-21 15:12:07,185][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0037.jpg
+[2026-06-21 15:12:07,195][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0116.jpg
+[2026-06-21 15:12:07,195][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0024.jpg
+[2026-06-21 15:12:07,196][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0063.jpg
+[2026-06-21 15:12:07,200][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0050.jpg
+[2026-06-21 15:12:07,207][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0089.jpg
+[2026-06-21 15:12:07,207][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0038.jpg
+[2026-06-21 15:12:07,209][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0077.jpg
+[2026-06-21 15:12:07,210][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0011.jpg
+[2026-06-21 15:12:07,211][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0103.jpg
+[2026-06-21 15:12:07,211][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0117.jpg
+[2026-06-21 15:12:07,219][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0064.jpg
+[2026-06-21 15:12:07,222][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0051.jpg
+[2026-06-21 15:12:07,222][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0025.jpg
+[2026-06-21 15:12:07,234][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0039.jpg
+[2026-06-21 15:12:07,234][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0078.jpg
+[2026-06-21 15:12:07,235][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0104.jpg
+[2026-06-21 15:12:07,237][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0012.jpg
+[2026-06-21 15:12:07,238][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0090.jpg
+[2026-06-21 15:12:07,246][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0065.jpg
+[2026-06-21 15:12:07,247][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0026.jpg
+[2026-06-21 15:12:07,249][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0052.jpg
+[2026-06-21 15:12:07,256][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0013.jpg
+[2026-06-21 15:12:07,259][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0091.jpg
+[2026-06-21 15:12:07,818][src.opensplat_trainer][INFO] - init_gsplat_metal_context: loading '/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/opensplat/build/default.metallib'
+[2026-06-21 15:12:07,818][src.opensplat_trainer][INFO] - init_gsplat_metal_context: loaded '/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/opensplat/build/default.metallib', functions: compute_cov2d_bounds_kernel, project_gaussians_backward_kernel, get_tile_bin_edges_kernel, rasterize_backward_kernel, map_gaussian_to_intersects_kernel, nd_rasterize_backward_kernel, project_gaussians_forward_kernel, compute_sh_backward_kernel, compute_sh_forward_kernel, nd_rasterize_forward_kernel
+[2026-06-21 15:12:07,818][src.opensplat_trainer][INFO] - init_gsplat_metal_context: load function nd_rasterize_backward_kernel with label: (null)
+[2026-06-21 15:12:07,818][src.opensplat_trainer][INFO] - init_gsplat_metal_context: load function nd_rasterize_forward_kernel with label: (null)
+[2026-06-21 15:12:07,818][src.opensplat_trainer][INFO] - init_gsplat_metal_context: load function rasterize_backward_kernel with label: (null)
+[2026-06-21 15:12:07,818][src.opensplat_trainer][INFO] - init_gsplat_metal_context: load function project_gaussians_forward_kernel with label: (null)
+[2026-06-21 15:12:07,818][src.opensplat_trainer][INFO] - init_gsplat_metal_context: load function project_gaussians_backward_kernel with label: (null)
+[2026-06-21 15:12:07,818][src.opensplat_trainer][INFO] - init_gsplat_metal_context: load function compute_sh_forward_kernel with label: (null)
+[2026-06-21 15:12:07,818][src.opensplat_trainer][INFO] - init_gsplat_metal_context: load function compute_sh_backward_kernel with label: (null)
+[2026-06-21 15:12:07,818][src.opensplat_trainer][INFO] - init_gsplat_metal_context: load function compute_cov2d_bounds_kernel with label: (null)
+[2026-06-21 15:12:07,818][src.opensplat_trainer][INFO] - init_gsplat_metal_context: load function map_gaussian_to_intersects_kernel with label: (null)
+[2026-06-21 15:12:07,818][src.opensplat_trainer][INFO] - init_gsplat_metal_context: load function get_tile_bin_edges_kernel with label: (null)
+[2026-06-21 15:12:07,818][src.opensplat_trainer][INFO] - Step 10: 0.288029 (0%)
+[2026-06-21 15:12:08,184][src.opensplat_trainer][INFO] - Step 20: 0.310421 (1%)
+[2026-06-21 15:12:08,550][src.opensplat_trainer][INFO] - Step 30: 0.273946 (2%)
+[2026-06-21 15:12:08,918][src.opensplat_trainer][INFO] - Step 40: 0.26362 (2%)
+[2026-06-21 15:12:09,283][src.opensplat_trainer][INFO] - Step 50: 0.272936 (3%)
+[2026-06-21 15:12:09,644][src.opensplat_trainer][INFO] - Step 60: 0.266568 (4%)
+[2026-06-21 15:12:10,005][src.opensplat_trainer][INFO] - Step 70: 0.252895 (4%)
+[2026-06-21 15:12:10,380][src.opensplat_trainer][INFO] - Step 80: 0.27284 (5%)
+[2026-06-21 15:12:10,750][src.opensplat_trainer][INFO] - Step 90: 0.266367 (6%)
+[2026-06-21 15:12:11,114][src.opensplat_trainer][INFO] - Step 100: 0.270304 (6%)
+[2026-06-21 15:12:11,476][src.opensplat_trainer][INFO] - Step 110: 0.269636 (7%)
+[2026-06-21 15:12:11,843][src.opensplat_trainer][INFO] - Step 120: 0.254094 (8%)
+[2026-06-21 15:12:12,152][src.opensplat_trainer][INFO] - Step 130: 0.239194 (8%)
+[2026-06-21 15:12:12,434][src.opensplat_trainer][INFO] - Step 140: 0.209849 (9%)
+[2026-06-21 15:12:12,710][src.opensplat_trainer][INFO] - Step 150: 0.244587 (10%)
+[2026-06-21 15:12:12,989][src.opensplat_trainer][INFO] - Step 160: 0.242296 (10%)
+[2026-06-21 15:12:13,368][src.opensplat_trainer][INFO] - Step 170: 0.242017 (11%)
+[2026-06-21 15:12:13,641][src.opensplat_trainer][INFO] - Step 180: 0.232898 (12%)
+[2026-06-21 15:12:13,920][src.opensplat_trainer][INFO] - Step 190: 0.270857 (12%)
+[2026-06-21 15:12:14,200][src.opensplat_trainer][INFO] - Step 200: 0.233216 (13%)
+[2026-06-21 15:12:14,490][src.opensplat_trainer][INFO] - Step 210: 0.216968 (14%)
+[2026-06-21 15:12:14,765][src.opensplat_trainer][INFO] - Step 220: 0.237053 (14%)
+[2026-06-21 15:12:15,055][src.opensplat_trainer][INFO] - Step 230: 0.219136 (15%)
+[2026-06-21 15:12:15,336][src.opensplat_trainer][INFO] - Step 240: 0.247698 (16%)
+[2026-06-21 15:12:15,613][src.opensplat_trainer][INFO] - Step 250: 0.239734 (16%)
+[2026-06-21 15:12:15,886][src.opensplat_trainer][INFO] - Step 260: 0.212749 (17%)
+[2026-06-21 15:12:16,164][src.opensplat_trainer][INFO] - Step 270: 0.228982 (18%)
+[2026-06-21 15:12:16,439][src.opensplat_trainer][INFO] - Step 280: 0.23164 (18%)
+[2026-06-21 15:12:16,722][src.opensplat_trainer][INFO] - Step 290: 0.22807 (19%)
+[2026-06-21 15:12:17,006][src.opensplat_trainer][INFO] - Step 300: 0.211491 (20%)
+[2026-06-21 15:12:17,100][src.opensplat_trainer][INFO] - Added 77860 gaussians, new count 129638
+[2026-06-21 15:12:17,118][src.opensplat_trainer][INFO] - Culled 58795 gaussians, remaining 70843
+[2026-06-21 15:12:17,502][src.opensplat_trainer][INFO] - Step 310: 0.239422 (20%)
+[2026-06-21 15:12:17,824][src.opensplat_trainer][INFO] - Step 320: 0.285681 (21%)
+[2026-06-21 15:12:18,118][src.opensplat_trainer][INFO] - Step 330: 0.187442 (22%)
+[2026-06-21 15:12:18,411][src.opensplat_trainer][INFO] - Step 340: 0.215051 (22%)
+[2026-06-21 15:12:18,708][src.opensplat_trainer][INFO] - Step 350: 0.188242 (23%)
+[2026-06-21 15:12:19,006][src.opensplat_trainer][INFO] - Step 360: 0.188339 (24%)
+[2026-06-21 15:12:19,367][src.opensplat_trainer][INFO] - Step 370: 0.196143 (24%)
+[2026-06-21 15:12:19,653][src.opensplat_trainer][INFO] - Step 380: 0.181103 (25%)
+[2026-06-21 15:12:19,942][src.opensplat_trainer][INFO] - Step 390: 0.171767 (26%)
+[2026-06-21 15:12:20,239][src.opensplat_trainer][INFO] - Step 400: 0.220411 (26%)
+[2026-06-21 15:12:20,285][src.opensplat_trainer][INFO] - Added 101057 gaussians, new count 171900
+[2026-06-21 15:12:20,298][src.opensplat_trainer][INFO] - Culled 51621 gaussians, remaining 120279
+[2026-06-21 15:12:20,674][src.opensplat_trainer][INFO] - Step 410: 0.22269 (27%)
+[2026-06-21 15:12:21,046][src.opensplat_trainer][INFO] - Step 420: 0.205733 (28%)
+[2026-06-21 15:12:21,410][src.opensplat_trainer][INFO] - Step 430: 0.219362 (28%)
+[2026-06-21 15:12:21,765][src.opensplat_trainer][INFO] - Step 440: 0.176864 (29%)
+[2026-06-21 15:12:22,127][src.opensplat_trainer][INFO] - Step 450: 0.293251 (30%)
+[2026-06-21 15:12:22,477][src.opensplat_trainer][INFO] - Step 460: 0.220407 (30%)
+[2026-06-21 15:12:22,838][src.opensplat_trainer][INFO] - Step 470: 0.206784 (31%)
+[2026-06-21 15:12:23,217][src.opensplat_trainer][INFO] - Step 480: 0.244949 (32%)
+[2026-06-21 15:12:23,579][src.opensplat_trainer][INFO] - Step 490: 0.185109 (32%)
+[2026-06-21 15:12:23,945][src.opensplat_trainer][INFO] - Step 500: 0.168384 (33%)
+[2026-06-21 15:12:24,001][src.opensplat_trainer][INFO] - Added 147344 gaussians, new count 267623
+[2026-06-21 15:12:24,018][src.opensplat_trainer][INFO] - Culled 61742 gaussians, remaining 205881
+[2026-06-21 15:12:24,558][src.opensplat_trainer][INFO] - Step 510: 0.203224 (34%)
+[2026-06-21 15:12:25,032][src.opensplat_trainer][INFO] - Step 520: 0.235417 (34%)
+[2026-06-21 15:12:25,500][src.opensplat_trainer][INFO] - Step 530: 0.196709 (35%)
+[2026-06-21 15:12:25,966][src.opensplat_trainer][INFO] - Step 540: 0.207867 (36%)
+[2026-06-21 15:12:26,433][src.opensplat_trainer][INFO] - Step 550: 0.230483 (36%)
+[2026-06-21 15:12:26,903][src.opensplat_trainer][INFO] - Step 560: 0.190095 (37%)
+[2026-06-21 15:12:27,372][src.opensplat_trainer][INFO] - Step 570: 0.136263 (38%)
+[2026-06-21 15:12:27,875][src.opensplat_trainer][INFO] - Step 580: 0.177555 (38%)
+[2026-06-21 15:12:28,395][src.opensplat_trainer][INFO] - Step 590: 0.143663 (39%)
+[2026-06-21 15:12:28,887][src.opensplat_trainer][INFO] - Step 600: 0.171703 (40%)
+[2026-06-21 15:12:28,956][src.opensplat_trainer][INFO] - Added 217125 gaussians, new count 423006
+[2026-06-21 15:12:29,149][src.opensplat_trainer][INFO] - Culled 82044 gaussians, remaining 340962
+[2026-06-21 15:12:29,846][src.opensplat_trainer][INFO] - Step 610: 0.19193 (40%)
+[2026-06-21 15:12:30,512][src.opensplat_trainer][INFO] - Step 620: 0.171064 (41%)
+[2026-06-21 15:12:31,155][src.opensplat_trainer][INFO] - Step 630: 0.166276 (42%)
+[2026-06-21 15:12:31,817][src.opensplat_trainer][INFO] - Step 640: 0.185227 (42%)
+[2026-06-21 15:12:32,475][src.opensplat_trainer][INFO] - Step 650: 0.175255 (43%)
+[2026-06-21 15:12:33,135][src.opensplat_trainer][INFO] - Step 660: 0.172599 (44%)
+[2026-06-21 15:12:33,801][src.opensplat_trainer][INFO] - Step 670: 0.142115 (44%)
+[2026-06-21 15:12:34,461][src.opensplat_trainer][INFO] - Step 680: 0.187154 (45%)
+[2026-06-21 15:12:35,107][src.opensplat_trainer][INFO] - Step 690: 0.164405 (46%)
+[2026-06-21 15:12:35,751][src.opensplat_trainer][INFO] - Step 700: 0.202919 (46%)
+[2026-06-21 15:12:35,839][src.opensplat_trainer][INFO] - Added 304059 gaussians, new count 645021
+[2026-06-21 15:12:35,870][src.opensplat_trainer][INFO] - Culled 111509 gaussians, remaining 533512
+[2026-06-21 15:12:36,781][src.opensplat_trainer][INFO] - Step 710: 0.15793 (47%)
+[2026-06-21 15:12:37,714][src.opensplat_trainer][INFO] - Step 720: 0.16229 (48%)
+[2026-06-21 15:12:38,629][src.opensplat_trainer][INFO] - Step 730: 0.17054 (48%)
+[2026-06-21 15:12:39,531][src.opensplat_trainer][INFO] - Step 740: 0.211724 (49%)
+[2026-06-21 15:12:40,460][src.opensplat_trainer][INFO] - Step 750: 0.170468 (50%)
+[2026-06-21 15:12:41,297][src.opensplat_trainer][INFO] - Step 760: 0.124858 (50%)
+[2026-06-21 15:12:42,157][src.opensplat_trainer][INFO] - Step 770: 0.173227 (51%)
+[2026-06-21 15:12:42,990][src.opensplat_trainer][INFO] - Step 780: 0.132591 (52%)
+[2026-06-21 15:12:43,841][src.opensplat_trainer][INFO] - Step 790: 0.0955358 (52%)
+[2026-06-21 15:12:44,669][src.opensplat_trainer][INFO] - Step 800: 0.154857 (53%)
+[2026-06-21 15:12:45,499][src.opensplat_trainer][INFO] - Step 810: 0.135096 (54%)
+[2026-06-21 15:12:46,363][src.opensplat_trainer][INFO] - Step 820: 0.177233 (54%)
+[2026-06-21 15:12:47,205][src.opensplat_trainer][INFO] - Step 830: 0.15593 (55%)
+[2026-06-21 15:12:48,061][src.opensplat_trainer][INFO] - Step 840: 0.17982 (56%)
+[2026-06-21 15:12:48,890][src.opensplat_trainer][INFO] - Step 850: 0.158356 (56%)
+[2026-06-21 15:12:49,738][src.opensplat_trainer][INFO] - Step 860: 0.157476 (57%)
+[2026-06-21 15:12:50,583][src.opensplat_trainer][INFO] - Step 870: 0.150992 (58%)
+[2026-06-21 15:12:51,435][src.opensplat_trainer][INFO] - Step 880: 0.151946 (58%)
+[2026-06-21 15:12:52,274][src.opensplat_trainer][INFO] - Step 890: 0.12792 (59%)
+[2026-06-21 15:12:53,113][src.opensplat_trainer][INFO] - Step 900: 0.128682 (60%)
+[2026-06-21 15:12:53,964][src.opensplat_trainer][INFO] - Step 910: 0.145892 (60%)
+[2026-06-21 15:12:54,801][src.opensplat_trainer][INFO] - Step 920: 0.12518 (61%)
+[2026-06-21 15:12:55,673][src.opensplat_trainer][INFO] - Step 930: 0.193317 (62%)
+[2026-06-21 15:12:56,518][src.opensplat_trainer][INFO] - Step 940: 0.136605 (62%)
+[2026-06-21 15:12:57,370][src.opensplat_trainer][INFO] - Step 950: 0.14389 (63%)
+[2026-06-21 15:12:58,238][src.opensplat_trainer][INFO] - Step 960: 0.131273 (64%)
+[2026-06-21 15:12:59,107][src.opensplat_trainer][INFO] - Step 970: 0.143717 (64%)
+[2026-06-21 15:12:59,965][src.opensplat_trainer][INFO] - Step 980: 0.104424 (65%)
+[2026-06-21 15:13:00,800][src.opensplat_trainer][INFO] - Step 990: 0.113038 (66%)
+[2026-06-21 15:13:01,734][src.opensplat_trainer][INFO] - Step 1000: 0.17596 (66%)
+[2026-06-21 15:13:03,014][src.opensplat_trainer][INFO] - Step 1010: 0.16209 (67%)
+[2026-06-21 15:13:04,294][src.opensplat_trainer][INFO] - Step 1020: 0.175226 (68%)
+[2026-06-21 15:13:05,517][src.opensplat_trainer][INFO] - Step 1030: 0.22019 (68%)
+[2026-06-21 15:13:06,815][src.opensplat_trainer][INFO] - Step 1040: 0.167055 (69%)
+[2026-06-21 15:13:08,120][src.opensplat_trainer][INFO] - Step 1050: 0.223871 (70%)
+[2026-06-21 15:13:09,485][src.opensplat_trainer][INFO] - Step 1060: 0.221621 (70%)
+[2026-06-21 15:13:10,878][src.opensplat_trainer][INFO] - Step 1070: 0.171617 (71%)
+[2026-06-21 15:13:12,284][src.opensplat_trainer][INFO] - Step 1080: 0.219983 (72%)
+[2026-06-21 15:13:13,607][src.opensplat_trainer][INFO] - Step 1090: 0.192378 (72%)
+[2026-06-21 15:13:14,902][src.opensplat_trainer][INFO] - Step 1100: 0.224423 (73%)
+[2026-06-21 15:13:16,194][src.opensplat_trainer][INFO] - Step 1110: 0.207886 (74%)
+[2026-06-21 15:13:17,483][src.opensplat_trainer][INFO] - Step 1120: 0.236761 (74%)
+[2026-06-21 15:13:18,684][src.opensplat_trainer][INFO] - Step 1130: 0.227919 (75%)
+[2026-06-21 15:13:19,903][src.opensplat_trainer][INFO] - Step 1140: 0.163659 (76%)
+[2026-06-21 15:13:21,069][src.opensplat_trainer][INFO] - Step 1150: 0.156853 (76%)
+[2026-06-21 15:13:22,268][src.opensplat_trainer][INFO] - Step 1160: 0.141564 (77%)
+[2026-06-21 15:13:23,448][src.opensplat_trainer][INFO] - Step 1170: 0.117402 (78%)
+[2026-06-21 15:13:24,680][src.opensplat_trainer][INFO] - Step 1180: 0.166755 (78%)
+[2026-06-21 15:13:25,915][src.opensplat_trainer][INFO] - Step 1190: 0.212231 (79%)
+[2026-06-21 15:13:27,131][src.opensplat_trainer][INFO] - Step 1200: 0.147503 (80%)
+[2026-06-21 15:13:28,366][src.opensplat_trainer][INFO] - Step 1210: 0.146823 (80%)
+[2026-06-21 15:13:29,569][src.opensplat_trainer][INFO] - Step 1220: 0.162621 (81%)
+[2026-06-21 15:13:30,825][src.opensplat_trainer][INFO] - Step 1230: 0.199211 (82%)
+[2026-06-21 15:13:32,000][src.opensplat_trainer][INFO] - Step 1240: 0.142405 (82%)
+[2026-06-21 15:13:33,213][src.opensplat_trainer][INFO] - Step 1250: 0.150657 (83%)
+[2026-06-21 15:13:34,372][src.opensplat_trainer][INFO] - Step 1260: 0.169466 (84%)
+[2026-06-21 15:13:35,665][src.opensplat_trainer][INFO] - Step 1270: 0.173146 (84%)
+[2026-06-21 15:13:36,977][src.opensplat_trainer][INFO] - Step 1280: 0.131576 (85%)
+[2026-06-21 15:13:38,214][src.opensplat_trainer][INFO] - Step 1290: 0.209229 (86%)
+[2026-06-21 15:13:39,495][src.opensplat_trainer][INFO] - Step 1300: 0.187985 (86%)
+[2026-06-21 15:13:40,711][src.opensplat_trainer][INFO] - Step 1310: 0.222173 (87%)
+[2026-06-21 15:13:41,937][src.opensplat_trainer][INFO] - Step 1320: 0.151136 (88%)
+[2026-06-21 15:13:43,188][src.opensplat_trainer][INFO] - Step 1330: 0.166466 (88%)
+[2026-06-21 15:13:44,432][src.opensplat_trainer][INFO] - Step 1340: 0.166489 (89%)
+[2026-06-21 15:13:45,690][src.opensplat_trainer][INFO] - Step 1350: 0.160296 (90%)
+[2026-06-21 15:13:46,950][src.opensplat_trainer][INFO] - Step 1360: 0.140702 (90%)
+[2026-06-21 15:13:48,157][src.opensplat_trainer][INFO] - Step 1370: 0.236449 (91%)
+[2026-06-21 15:13:49,394][src.opensplat_trainer][INFO] - Step 1380: 0.168125 (92%)
+[2026-06-21 15:13:50,644][src.opensplat_trainer][INFO] - Step 1390: 0.148176 (92%)
+[2026-06-21 15:13:51,871][src.opensplat_trainer][INFO] - Step 1400: 0.204505 (93%)
+[2026-06-21 15:13:53,095][src.opensplat_trainer][INFO] - Step 1410: 0.157252 (94%)
+[2026-06-21 15:13:54,305][src.opensplat_trainer][INFO] - Step 1420: 0.157645 (94%)
+[2026-06-21 15:13:55,516][src.opensplat_trainer][INFO] - Step 1430: 0.162168 (95%)
+[2026-06-21 15:13:56,747][src.opensplat_trainer][INFO] - Step 1440: 0.136298 (96%)
+[2026-06-21 15:13:57,967][src.opensplat_trainer][INFO] - Step 1450: 0.20125 (96%)
+[2026-06-21 15:13:59,252][src.opensplat_trainer][INFO] - Step 1460: 0.131711 (97%)
+[2026-06-21 15:14:00,487][src.opensplat_trainer][INFO] - Step 1470: 0.11922 (98%)
+[2026-06-21 15:14:01,750][src.opensplat_trainer][INFO] - Step 1480: 0.143406 (98%)
+[2026-06-21 15:14:02,953][src.opensplat_trainer][INFO] - Step 1490: 0.175344 (99%)
+[2026-06-21 15:14:04,186][src.opensplat_trainer][INFO] - Step 1500: 0.167357 (100%)
+[2026-06-21 15:14:04,267][src.opensplat_trainer][INFO] - Wrote /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/splats/cameras.json
+[2026-06-21 15:14:05,941][src.opensplat_trainer][INFO] - Wrote /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/splats/more_gaussians_20260621_1512.ply
+[2026-06-21 15:14:06,044][src.opensplat_trainer][INFO] - /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/images/frame_0032.jpg validation loss: 0.170165
+[2026-06-21 15:14:06,506][src.opensplat_trainer][INFO] - Parsed 150 training loss values to /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/splats/train_20260621_1512.jsonl
+[2026-06-21 15:14:06,506][src.opensplat_trainer][INFO] - Captured validation loss: 0.170165 to /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/splats/val_20260621_1512.jsonl
+[2026-06-21 15:14:06,507][src.opensplat_trainer][INFO] - Training completed successfully
+[2026-06-21 15:14:06,507][src.opensplat_trainer][INFO] - Output saved to: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/splats/more_gaussians_20260621_1512.ply
+[2026-06-21 15:14:06,507][__main__][INFO] - ✓ Splat training completed
+[2026-06-21 15:14:06,507][__main__][INFO] - ============================================================
+[2026-06-21 15:14:06,507][__main__][INFO] - Analyzing Training Loss
+[2026-06-21 15:14:06,507][__main__][INFO] - ============================================================
+[2026-06-21 15:14:06,861][__main__][INFO] - 
+[2026-06-21 15:14:06,861][__main__][INFO] - ╔==========================================================╗
+[2026-06-21 15:14:06,861][__main__][INFO] - ║                    Pipeline Complete!                    ║
+[2026-06-21 15:14:06,861][__main__][INFO] - ╚==========================================================╝
+[2026-06-21 15:14:06,861][__main__][INFO] - Output directory: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/more_gaussians/colmap_sfm_linearized/splats
+[2026-06-21 15:14:06,861][__main__][INFO] -   - PLY file: *.ply (3D Gaussian Splat)
+[2026-06-21 15:14:06,861][__main__][INFO] -   - Loss log: *.jsonl (Training loss per step)

@@ -1,2 +1,0 @@
-{"step": "COLMAP Pipeline", "stages": [{"name": "feature_extraction", "elapsed_minutes": 0.133}, {"name": "feature_matching", "elapsed_minutes": 11.327}, {"name": "mapper", "elapsed_minutes": 1.284}, {"name": "image_undistorter", "elapsed_minutes": 0.176}], "total_minutes": 12.92, "total_seconds": 775.2, "status": "completed"}
-{"step": "OpenSplat Training", "total_minutes": 1.264, "total_seconds": 75.84, "iterations": 1000, "status": "completed"}

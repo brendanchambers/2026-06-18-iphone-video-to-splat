@@ -14,6 +14,13 @@ from src.colmap_feature_matcher import match_features
 from src.colmap_mapper import sparse_reconstruction
 from src.colmap_undistorter import undistort_images
 from src.opensplat_trainer import train_splat
+from src.timing_recorder import TimingRecorder
+from src.experiment_tracker import (
+    extract_final_loss_value,
+    extract_validation_loss,
+    extract_total_running_time,
+    log_experiment_result,
+)
 from scripts.analyze_training_loss import load_loss_records, analyze_loss, print_analysis, plot_loss
 
 
@@ -62,6 +69,7 @@ class Pipeline:
         self.log_dir = Path(config.paths.log_dir)
         self.colmap_log_file = self.log_dir / "colmap_pipeline.log"
         self.opensplat_log_file = self.log_dir / "opensplat_pipeline.log"
+        self.timing_recorder = TimingRecorder()
 
         # Create output directories
         Path(config.paths.colmap_sfm_camera_model).mkdir(parents=True, exist_ok=True)
@@ -254,6 +262,86 @@ class Pipeline:
         except Exception as e:
             logger.warning(f"Could not generate plot: {e}")
 
+    def log_experiment_results(self, output_dir: Path) -> bool:
+        """
+        Log experiment results to the experiment group JSONL file.
+
+        Extracts final training loss, validation loss, and total running time,
+        then appends a record to reports/experiments/<experiment_group>.jsonl
+
+        Args:
+            output_dir: Directory containing timing and loss JSONL files
+
+        Returns:
+            True if successful, False otherwise
+        """
+        logger.info("=" * 60)
+        logger.info("Logging Experiment Results")
+        logger.info("=" * 60)
+
+        output_dir = Path(output_dir)
+        experiment_name = self.config.project.experiment_name
+        experiment_group = self.config.project.experiment_group
+
+        # Find the most recent timing file
+        timing_files = sorted(output_dir.glob("running-time_*.jsonl"))
+        if not timing_files:
+            logger.warning("No timing log file found")
+            return False
+
+        timing_file = timing_files[-1]
+
+        # Find the most recent training loss file
+        train_loss_files = sorted(output_dir.glob("train_*.jsonl"))
+        if not train_loss_files:
+            logger.warning("No training loss log file found")
+            return False
+
+        train_loss_file = train_loss_files[-1]
+
+        # Try to find validation loss file (optional)
+        val_loss_files = sorted(output_dir.glob("val_*.jsonl"))
+        val_loss_file = val_loss_files[-1] if val_loss_files else None
+
+        # Extract values
+        total_running_time = extract_total_running_time(timing_file)
+        train_loss = extract_final_loss_value(train_loss_file)
+        val_loss = extract_validation_loss(val_loss_file) if val_loss_file else None
+
+        if total_running_time is None or train_loss is None:
+            logger.error("Failed to extract required metrics from log files")
+            return False
+
+        # Log to experiment group file
+        experiment_output = (
+            Path(self.config.paths.log_dir).parent
+            / "reports"
+            / "experiments"
+            / f"{experiment_group}.jsonl"
+        )
+
+        success = log_experiment_result(
+            experiment_name=experiment_name,
+            experiment_group=experiment_group,
+            total_running_time=total_running_time,
+            train_loss=train_loss,
+            val_loss=val_loss,
+            output_jsonl_path=experiment_output,
+        )
+
+        if success:
+            logger.info(f"Experiment results logged to: {experiment_output}")
+            logger.info(f"  Experiment: {experiment_name}")
+            logger.info(f"  Group: {experiment_group}")
+            logger.info(f"  Train loss: {train_loss:.6f}")
+            if val_loss is not None:
+                logger.info(f"  Validation loss: {val_loss:.6f}")
+            logger.info(f"  Total time: {total_running_time:.2f}s ({total_running_time/60:.2f}m)")
+        else:
+            logger.error("Failed to log experiment results")
+
+        return success
+
     def run_full_pipeline(self, skip_steps: Optional[list] = None) -> bool:
         """
         Run the complete pipeline.
@@ -290,12 +378,16 @@ class Pipeline:
                 continue
 
             try:
+                self.timing_recorder.start_step(step_name)
                 success = step_func()
+                self.timing_recorder.end_step(step_name, success=success)
+
                 if not success:
                     all_success = False
                     logger.error(f"Pipeline failed at step: {step_name}")
                     return False
             except Exception as e:
+                self.timing_recorder.end_step(step_name, success=False)
                 logger.error(f"Exception in {step_name}: {e}", exc_info=True)
                 all_success = False
                 return False
@@ -308,6 +400,14 @@ class Pipeline:
             logger.info(f"Output directory: {self.config.paths.opensplat_output_dir}")
             logger.info(f"  - PLY file: *.ply (3D Gaussian Splat)")
             logger.info(f"  - Loss log: *.jsonl (Training loss per step)")
+            logger.info(f"  - Timing log: running-time_*.jsonl (Step execution times)")
+
+            # Print timing summary and save to file
+            self.timing_recorder.print_summary()
+            self.timing_recorder.save_to_jsonl(Path(self.config.paths.opensplat_output_dir))
+
+            # Log experiment results to group file
+            self.log_experiment_results(Path(self.config.paths.opensplat_output_dir))
 
         return all_success
 
@@ -316,8 +416,7 @@ class Pipeline:
 def main(config: DictConfig) -> None:
     """Main entry point with Hydra configuration."""
     pipeline = Pipeline(config)
-    success = pipeline.run_full_pipeline()
-    exit(0 if success else 1)
+    pipeline.run_full_pipeline()
 
 
 if __name__ == "__main__":

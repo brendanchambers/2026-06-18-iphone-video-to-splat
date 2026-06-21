@@ -7,12 +7,12 @@
 
 This project implements a two-stage pipeline to convert iPhone video into 3D Gaussian Splat models:
 
-1. **COLMAP SfM Processing** (`current_scene/` → `current_scene_distortion_corrected/`)
-   - Extract frames from video
+1. **COLMAP SfM Processing** 
+   - Extract frames at a fixed framerate from video using ffmpeg 
    - Compute camera poses and 3D points using SfM
    - Linearize camera distortion models via `colmap image_undistorter`
 
-2. **Gaussian Splat Training** (`current_scene_distortion_corrected/opensplat_output/`)
+2. **Gaussian Splat Training**
    - Train a 3D Gaussian Splat model using OpenSplat with distortion-corrected data
 
 The pipeline is optimized to run on Apple Silicon (M-series) Macs.
@@ -23,45 +23,6 @@ The pipeline is optimized to run on Apple Silicon (M-series) Macs.
 - **3D Gaussian Splat training** with differentiable rendering
 - **Apple Silicon support** for M-series Macs
 - **Memory-efficient** downscaling for MacBook Air compatibility
-
-## Project Structure
-
-```
-.
-├── README.md                          # This file
-├── CLAUDE.md                          # Development notes & workflow
-├── config.toml                        # Training configuration
-├── main.py                            # Main entry point
-├── pyproject.toml                     # Python project configuration
-├── scripts/
-│   └── train_gaussian_splat.py        # Main training script
-├── opensplat/                         # OpenSplat dependency (embedded)
-│   └── ...
-├── colmap/                            # COLMAP dependency (embedded)
-│   └── ...
-├── data/
-│   ├── incoming/
-│   │   └── *.MOV                      # Input iPhone video files
-│   └── intermediates/
-│       ├── current_scene/             # [COLMAP Stage 1] Raw SfM reconstruction
-│       │   ├── images/                # Extracted video frames
-│       │   ├── database.db            # COLMAP feature database
-│       │   └── sparse/                # COLMAP SfM output
-│       │       └── 0/
-│       │           ├── cameras.bin
-│       │           ├── images.bin
-│       │           └── points3D.bin
-│       └── current_scene_distortion_corrected/  # [COLMAP Stage 2 & OpenSplat] Distortion-corrected data
-│           ├── images/                # Undistorted frames
-│           ├── sparse/                # Undistorted camera poses
-│           │   └── 0/
-│           │       ├── cameras.bin
-│           │       ├── images.bin
-│           │       └── points3D.bin
-│           └── opensplat_output/      # [OpenSplat] Trained models
-│               └── *.ply              # Gaussian Splat models
-└── src/                               # Source code utilities
-```
 
 ## Prerequisites
 
@@ -76,173 +37,290 @@ The pipeline is optimized to run on Apple Silicon (M-series) Macs.
 
 Build COLMAP and OpenSplat. Update .env to configure your run.
 
-## Configuration
+# Python Pipeline for 3D Gaussian Splat Training
 
-Before running the pipeline, configure the project by editing `.env`:
+This document describes the new Python-based pipeline that replaces the bash scripts for training 3D Gaussian splats from video.
 
-```bash
-# .env
-PROJECT_DIR="/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat"
-VIDEO_PATH="./data/incoming/gardenbed_2026-06-17.MOV"
-EXPERIMENT_NAME="current_scene"
+## Overview
+
+The pipeline consists of:
+- **Configuration Management**: Hydra + OmegaConf for centralized, composable configuration
+- **Modular Utilities**: Separate Python modules for each pipeline step
+- **Main Orchestrator**: `pipeline.py` that coordinates the entire workflow
+
+## Architecture
+
+```
+pipeline.py                    # Main orchestrator
+├── src/
+│   ├── frame_extractor.py           # Video → frames (ffmpeg)
+│   ├── colmap_feature_extractor.py  # Images → SIFT features
+│   ├── colmap_feature_matcher.py    # Match features between frames
+│   ├── colmap_mapper.py             # Sparse reconstruction
+│   ├── colmap_undistorter.py        # Undistort images & correct cameras
+│   └── opensplat_trainer.py         # Train 3D Gaussian splat
+└── config/
+    ├── baseline.yaml                 # Baseline Hydra configuration
+    └── teensy.yaml                   # Minimal dev/test configuration
 ```
 
-- `PROJECT_DIR`: Absolute path to the project directory
-- `VIDEO_PATH`: Relative path to input video from `PROJECT_DIR`
-- `EXPERIMENT_NAME`: Name for this experiment (used for output directory naming)
+## Configuration
+
+All configuration is managed through YAML files in the `config/` directory using Hydra + OmegaConf. The default config is `config/baseline.yaml`.
+
+### Key Configuration Sections
+
+**Project paths:**
+```yaml
+project:
+  dir: "/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat"
+  video_path: "./data/incoming/movies/gardenbed_2026-06-17.mov"
+  experiment_name: "current_scene"
+  experiment_group: "ungrouped'
+```
+
+**Frame extraction:**
+```yaml
+frame_extraction:
+  fps: 2
+  use_mpdecimate: true
+  mpdecimate_hi: 64
+  mpdecimate_lo: 5
+  quality: 2
+```
+
+**COLMAP parameters:** (feature_extraction, feature_matching, mapper, undistorter)
+```yaml
+colmap:
+  feature_extraction:
+    sift_max_num_features: 4096
+    # ... more parameters
+  feature_matching:
+    sequential_overlap: 20
+    # ... more parameters
+  # etc.
+```
+
+**OpenSplat parameters:**
+```yaml
+opensplat:
+  num_iters: 1500
+  downscale_factor: 1
+  sh_degree: 3
+  ssim_weight: 0.2
+  # ... more parameters
+```
+
+**Validation:**
+```yaml
+validation:
+  enabled: true
+  image: "frame_0032.jpg"
+```
 
 ## Usage
 
-The pipeline consists of two main stages. All intermediate data is stored in `data/intermediates/`. Both stages use `.env` for configuration.
-
-### Stage 1: COLMAP SfM Processing
-
-Extract frames from the iPhone video, compute camera poses using SfM, and linearize distortion models.
-
-Run the automated script:
-
-```bash
-bash launch_colmap.sh
-```
-
-This script will:
-1. Extract frames at 2 fps from the video specified in `.env`
-2. Run COLMAP feature extraction with RADIAL distortion model
-3. Perform exhaustive feature matching
-4. Compute Structure-from-Motion reconstruction
-5. Linearize camera distortion and undistort frames for OpenSplat
-
-All output is logged to `logs/colmap_pipeline.log`.
-
-**Output**:
-- `data/intermediates/current_scene/sparse/0/` - Raw SfM reconstruction
-- `data/intermediates/current_scene_distortion_corrected/images/` - Undistorted frames
-- `data/intermediates/current_scene_distortion_corrected/sparse/0/` - Distortion-corrected camera poses
-- `logs/colmap_pipeline.log` - Detailed pipeline execution log
-
-### Stage 2: OpenSplat Training
-
-Train a 3D Gaussian Splat model using the distortion-corrected data from Stage 1:
-
-```bash
-bash launch_opensplat.sh
-```
-
-This script will:
-1. Load camera poses and 3D points from COLMAP output
-2. Load distortion-corrected frames
-3. Initialize 3D Gaussians from the sparse point cloud
-4. Run training on Apple Metal GPU for configured iterations
-5. Save the trained model as PLY format
-
-All training output is logged to `logs/opensplat_pipeline.log`.
-
-**Outputs**:
-- `data/intermediates/{EXPERIMENT_NAME}_distortion_corrected/opensplat_output/scene.ply` - Trained Gaussian Splat model
-- `logs/opensplat_pipeline.log` - Training log with loss values at each step (used for visualization)
-
 ### Running the Full Pipeline
 
-To run both stages sequentially, use the unified pipeline script:
+```bash
+uv run python pipeline.py
+```
+
+This runs all 6 steps:
+1. Frame extraction
+2. Feature extraction
+3. Feature matching
+4. Sparse reconstruction
+5. Image undistortion
+6. Splat training
+
+### Testing the Pipeline
 
 ```bash
-bash pipeline.sh
+uv run python test_pipeline.py
 ```
 
-This will:
-1. Execute the COLMAP SfM stage (Stage 1)
-2. Upon successful completion, execute the OpenSplat training stage (Stage 2)
+This validates:
+- Configuration loading
+- Pipeline instantiation
+- Module imports
+- Parameter coverage
+- Pipeline methods
+- Directory structure
 
-Pipeline logs:
-- `logs/colmap_pipeline.log` - COLMAP stage output
-- `logs/opensplat_pipeline.log` - OpenSplat training output
+### Overriding Configuration
 
-If either stage fails, the pipeline stops and reports the error to help with debugging.
-
-### Training Configuration
-
-The `launch_opensplat.sh` script uses the `NUM_ITERS` value from `.env`. For production use, adjust the training parameters in `.env` or directly in the script:
+Use Hydra's command-line overrides:
 
 ```bash
-$OPENSPLAT_BIN "$DATA_DIR" \
-  --colmap-image-path "$IMAGES_DIR" \
-  --output "$OUTPUT_DIR/scene.ply" \
-  --num-iters 2000          # Increase for better quality
+# Change number of iterations
+uv run python pipeline.py opensplat.num_iters=3000
+
+# Use different experiment name
+uv run python pipeline.py project.experiment_name=new_experiment
+
+# Change video input
+uv run python pipeline.py project.video_path="./path/to/video.mov"
+
+# Disable validation
+uv run python pipeline.py validation.enabled=false
+
+# Change frame extraction FPS
+uv run python pipeline.py frame_extraction.fps=3
 ```
 
-Additional flags for optimization:
-- `--downscale-factor 2`: Scale images down by 2x for memory efficiency
-- `--num-downscales 3`: Progressive resolution schedule
-- `--ssim-weight 0.2`: Balance between SSIM and L1 loss
-- `--densify-grad-thresh 0.0002`: Gaussian splitting sensitivity
-- `--sh-degree 3`: Spherical harmonics degree (higher = more detail)
+## Module Reference
 
-## Visualization
+### frame_extractor.py
 
-### Feature Extraction Visualization
+Extracts frames from video using ffmpeg.
 
-Visualize SIFT features extracted by COLMAP on each frame. Shows the 500 strongest features with optional orientation indicators:
+```python
+from src.frame_extractor import extract_frames
 
-```bash
-uv run python scripts/visualize_colmap_features.py \
-  --colmap-dir data/intermediates/test_4s \
-  --output-dir data/intermediates/test_4s/annotated_images \
-  --max-features 2000 \
-  --show-orientation
+success = extract_frames(
+    video_path=Path("video.mov"),
+    output_dir=Path("frames/"),
+    use_mpdecimate=True,
+    config=config,
+    log_file=Path("logs/extraction.log")
+)
 ```
 
-**Options:**
-- `--max-features N`: Show only the N strongest features (default: all)
-- `--show-orientation`: Draw orientation lines for each feature
-- `--circle-radius R`: Radius of feature circles in pixels (default: 5)
-- `--line-length L`: Length of orientation lines in pixels (default: 8)
+**Parameters:**
+- `video_path`: Path to input video
+- `output_dir`: Directory for extracted frames
+- `use_mpdecimate`: Use intelligent frame selection (default: True)
+- `fps`: Fixed FPS if not using mpdecimate
+- `config`: OmegaConf config object
 
-**Output**: Annotated images with green circles marking feature locations, blue lines showing orientation angles.
+### colmap_feature_extractor.py
 
-### Feature Matching Visualization
+Extracts SIFT features from images using COLMAP.
 
-Visualize feature correspondences between image pairs from COLMAP exhaustive matching. Shows the 5 strongest matches with random colors:
+```python
+from src.colmap_feature_extractor import extract_features
 
-```bash
-uv run python scripts/visualize_colmap_feature_matches.py \
-  --colmap-dir data/intermediates/test_4s \
-  --output-dir data/intermediates/test_4s/match_visualizations \
-  --max-pairs 10 \
-  --max-matches 25
+success = extract_features(
+    database_path=Path("database.db"),
+    image_path=Path("frames/"),
+    config=config,
+    log_file=Path("logs/colmap.log")
+)
 ```
 
-**Options:**
-- `--max-pairs N`: Visualize first N image pairs (default: all)
-- `--max-matches M`: Show only the M strongest feature matches per pair (default: 5)
+### colmap_feature_matcher.py
 
-**Output**: Side-by-side image pairs with:
-- **Blue bounding box** around first image
-- **Orange bounding box** around second image
-- **Colored match lines** connecting corresponding features
-- **Semi-transparent images** (50% opacity) to highlight match lines
+Matches features between frames using sequential matching.
 
-### Training Loss Visualization
+```python
+from src.colmap_feature_matcher import match_features
 
-Analyze the training loss curve from OpenSplat training. The script parses `logs/opensplat_pipeline.log` and generates a plot with both raw and smoothed loss values:
-
-```bash
-uv run python scripts/plot_training_loss.py
+success = match_features(
+    database_path=Path("database.db"),
+    config=config,
+    log_file=Path("logs/colmap.log")
+)
 ```
 
-**Output**: `logs/training_loss.png` showing:
-- **Light blue line** with markers: Raw training loss at each step (80% opacity)
-- **Dark blue line**: Moving average (window size: 10 steps) for trend visualization (80% opacity)
-- **Statistics printed**: Min, max, and average loss values
+### colmap_mapper.py
 
-The log file is automatically created by `launch_opensplat.sh` during training with the format:
-```
-Step 10: 0.263509 (1%)
-Step 20: 0.29705 (2%)
-...
-Step 1000: 0.143528 (100%)
+Performs sparse 3D reconstruction.
+
+```python
+from src.colmap_mapper import sparse_reconstruction
+
+success = sparse_reconstruction(
+    database_path=Path("database.db"),
+    image_path=Path("frames/"),
+    output_path=Path("sparse/"),
+    config=config,
+    log_file=Path("logs/colmap.log")
+)
 ```
 
-This visualization helps identify training convergence and detect potential overfitting or instability in the Gaussian Splat optimization.
+### colmap_undistorter.py
+
+Undistorts images and corrects camera distortion.
+
+```python
+from src.colmap_undistorter import undistort_images
+
+success = undistort_images(
+    image_path=Path("frames/"),
+    input_model_path=Path("sparse/0"),
+    output_path=Path("distortion_corrected/"),
+    config=config,
+    log_file=Path("logs/colmap.log")
+)
+```
+
+### opensplat_trainer.py
+
+Trains 3D Gaussian splat using OpenSplat.
+
+```python
+from src.opensplat_trainer import train_splat
+
+success = train_splat(
+    sparse_model_path=Path("sparse/"),
+    images_path=Path("distortion_corrected/images"),
+    output_dir=Path("splats/"),
+    opensplat_bin=Path("opensplat/build/opensplat"),
+    experiment_name="my_experiment",
+    config=config,
+    log_file=Path("logs/opensplat.log")
+)
+```
+
+## Logging
+
+All pipeline steps log to:
+- **Console**: Real-time output with INFO level
+- **File**: Detailed logs in `logs/` directory
+  - `logs/pipeline.log`: Main pipeline log
+  - `logs/colmap_pipeline.log`: COLMAP steps (extraction, matching, mapping, undistortion)
+  - `logs/opensplat_pipeline.log`: OpenSplat training
+
+## Error Handling
+
+Each module function returns a boolean:
+- `True`: Step completed successfully
+- `False`: Step failed
+
+The pipeline stops on first failure and logs the error. Exception tracebacks are included in logs.
+
+## Comparison with Bash Scripts
+
+| Aspect | Bash Scripts | Python Pipeline |
+|--------|-------------|-----------------|
+| Configuration | `.env` file + hardcoded paths | Hydra YAML config |
+| Parameter overrides | .env editing + bash rerun | Hydra CLI overrides |
+| Code organization | Single large scripts | Modular utilities |
+| Testing | Manual | Automated test suite |
+| Composability | Limited | Full OmegaConf composition |
+| Extensibility | Script editing | Module extension |
+| IDE support | Limited | Full Python IDE integration |
+
+## Future Enhancements
+
+- [ ] Add validation metrics tracking across runs
+- [ ] Implement checkpoint/resume functionality
+- [ ] Add multi-experiment comparison utilities
+- [ ] Create visualization tools for training progress
+- [ ] Add support for custom COLMAP parameter profiles
+- [ ] Implement distributed training support
+
+## Integration with Existing Tools
+
+The Python pipeline maintains full compatibility with:
+- COLMAP command-line tools (via subprocess)
+- OpenSplat binary (via subprocess)
+- FFmpeg (via subprocess)
+- Existing validation visualization scripts
+
+No modifications to bash scripts are required; they remain available for manual use.
+
 
 ## Known Issues
 

@@ -1,0 +1,88 @@
+[2026-06-21 16:00:21,740][__main__][INFO] - 
+[2026-06-21 16:00:21,740][__main__][INFO] - ╔==========================================================╗
+[2026-06-21 16:00:21,740][__main__][INFO] - ║          3D Gaussian Splat Training Pipeline              ║
+[2026-06-21 16:00:21,740][__main__][INFO] - ╚==========================================================╝
+[2026-06-21 16:00:21,740][__main__][INFO] - Experiment: densify_sz0.0025_gr0.0001
+[2026-06-21 16:00:21,740][__main__][INFO] - Project dir: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat
+[2026-06-21 16:00:21,740][__main__][INFO] - 
+[2026-06-21 16:00:21,740][src.timing_recorder][INFO] - [TIMING] Starting: frame_extraction
+[2026-06-21 16:00:21,740][__main__][INFO] - ============================================================
+[2026-06-21 16:00:21,741][__main__][INFO] - STEP 1: Frame Extraction
+[2026-06-21 16:00:21,741][__main__][INFO] - ============================================================
+[2026-06-21 16:00:21,741][src.frame_extractor][INFO] - Extracting frames from: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/incoming/movies/gardenbed_2026-06-17.mov
+[2026-06-21 16:00:21,741][src.frame_extractor][INFO] - Output directory: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.0025_gr0.0001/colmap_sfm_camera_model/images
+[2026-06-21 16:00:21,741][src.frame_extractor][INFO] - Extracting frames at 2 fps
+[2026-06-21 16:00:21,741][src.frame_extractor][INFO] - Running command: ffmpeg -i /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/incoming/movies/gardenbed_2026-06-17.mov -vf fps=2 -q:v 5 /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.0025_gr0.0001/colmap_sfm_camera_model/images/frame_%04d.jpg
+[2026-06-21 16:00:25,143][src.frame_extractor][INFO] - ffmpeg version 8.1.2 Copyright (c) 2000-2026 the FFmpeg developers
+[2026-06-21 16:00:25,144][src.frame_extractor][INFO] -   built with Apple clang version 17.0.0 (clang-1700.6.4.2)
+[2026-06-21 16:00:25,144][src.frame_extractor][INFO] -   configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/8.1.2 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon
+[2026-06-21 16:00:25,144][src.frame_extractor][INFO] -   libavutil      60. 26.102 / 60. 26.102
+[2026-06-21 16:00:25,145][src.frame_extractor][INFO] -   libavcodec     62. 28.102 / 62. 28.102
+[2026-06-21 16:00:25,145][src.frame_extractor][INFO] -   libavformat    62. 12.102 / 62. 12.102
+[2026-06-21 16:00:25,145][src.frame_extractor][INFO] -   libavdevice    62.  3.102 / 62.  3.102
+[2026-06-21 16:00:25,145][src.frame_extractor][INFO] -   libavfilter    11. 14.102 / 11. 14.102
+[2026-06-21 16:00:25,145][src.frame_extractor][INFO] -   libswscale      9.  5.102 /  9.  5.102
+[2026-06-21 16:00:25,145][src.frame_extractor][INFO] -   libswresample   6.  3.102 /  6.  3.102
+[2026-06-21 16:00:25,150][src.frame_extractor][INFO] - Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/incoming/movies/gardenbed_2026-06-17.mov':
+[2026-06-21 16:00:25,150][src.frame_extractor][INFO] -   Metadata:
+[2026-06-21 16:00:25,150][src.frame_extractor][INFO] -     major_brand     : qt
+[2026-06-21 16:00:25,150][src.frame_extractor][INFO] -     minor_version   : 0
+[2026-06-21 16:00:25,150][src.frame_extractor][INFO] -     compatible_brands: qt
+[2026-06-21 16:00:25,150][src.frame_extractor][INFO] -     creation_time   : 2026-06-17T23:07:41.000000Z
+[2026-06-21 16:00:25,150][src.frame_extractor][INFO] -     com.apple.quicktime.full-frame-rate-playback-intent: 0
+[2026-06-21 16:00:25,150][src.frame_extractor][INFO] -     com.apple.quicktime.make: Apple
+[2026-06-21 16:00:25,150][src.frame_extractor][INFO] -     com.apple.quicktime.model: iPhone SE (3rd generation)
+[2026-06-21 16:00:25,150][src.frame_extractor][INFO] -     com.apple.quicktime.software: 26.3.1
+[2026-06-21 16:00:25,151][src.frame_extractor][INFO] -     com.apple.quicktime.creationdate: 2026-06-17T19:07:41-0400
+[2026-06-21 16:00:25,151][src.frame_extractor][INFO] -   Duration: 00:01:01.87, start: 0.000000, bitrate: 10219 kb/s
+[2026-06-21 16:00:25,151][src.frame_extractor][INFO] -   Stream #0:0[0x1](und): Video: hevc (Main) (hvc1 / 0x31637668), yuv420p(tv, bt709), 1920x1080, 9983 kb/s, 29.64 fps, 29.67 tbr, 600 tbn (default)
+[2026-06-21 16:00:25,151][src.frame_extractor][INFO] -     Metadata:
+[2026-06-21 16:00:25,151][src.frame_extractor][INFO] -       creation_time   : 2026-06-17T23:07:41.000000Z
+[2026-06-21 16:00:25,151][src.frame_extractor][INFO] -       handler_name    : Core Media Video
+[2026-06-21 16:00:25,151][src.frame_extractor][INFO] -       vendor_id       : [0][0][0][0]
+[2026-06-21 16:00:25,151][src.frame_extractor][INFO] -       encoder         : HEVC
+[2026-06-21 16:00:25,151][src.frame_extractor][INFO] -     Side data:
+[2026-06-21 16:00:25,151][src.frame_extractor][INFO] -       Display Matrix: rotation of -90.00 degrees
+[2026-06-21 16:00:25,151][src.frame_extractor][INFO] -   Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 185 kb/s (default)
+[2026-06-21 16:00:25,151][src.frame_extractor][INFO] -     Metadata:
+[2026-06-21 16:00:25,151][src.frame_extractor][INFO] -       creation_time   : 2026-06-17T23:07:41.000000Z
+[2026-06-21 16:00:25,151][src.frame_extractor][INFO] -       handler_name    : Core Media Audio
+[2026-06-21 16:00:25,151][src.frame_extractor][INFO] -       vendor_id       : [0][0][0][0]
+[2026-06-21 16:00:25,151][src.frame_extractor][INFO] -   Stream #0:2[0x3](und): Data: none (mebx / 0x7862656D), 0 kb/s (default)
+[2026-06-21 16:00:25,152][src.frame_extractor][INFO] -     Metadata:
+[2026-06-21 16:00:25,152][src.frame_extractor][INFO] -       creation_time   : 2026-06-17T23:07:41.000000Z
+[2026-06-21 16:00:25,152][src.frame_extractor][INFO] -       handler_name    : Core Media Metadata
+[2026-06-21 16:00:25,152][src.frame_extractor][INFO] -   Stream #0:3[0x4](und): Data: none (mebx / 0x7862656D), 0 kb/s (default)
+[2026-06-21 16:00:25,152][src.frame_extractor][INFO] -     Metadata:
+[2026-06-21 16:00:25,152][src.frame_extractor][INFO] -       creation_time   : 2026-06-17T23:07:41.000000Z
+[2026-06-21 16:00:25,152][src.frame_extractor][INFO] -       handler_name    : Core Media Metadata
+[2026-06-21 16:00:25,152][src.frame_extractor][INFO] -   Stream #0:4[0x5](und): Data: none (mebx / 0x7862656D), 34 kb/s (default)
+[2026-06-21 16:00:25,152][src.frame_extractor][INFO] -     Metadata:
+[2026-06-21 16:00:25,152][src.frame_extractor][INFO] -       creation_time   : 2026-06-17T23:07:41.000000Z
+[2026-06-21 16:00:25,152][src.frame_extractor][INFO] -       handler_name    : Core Media Metadata
+[2026-06-21 16:00:25,152][src.frame_extractor][INFO] -   Stream #0:5[0x6](und): Data: none (mebx / 0x7862656D), 0 kb/s (default)
+[2026-06-21 16:00:25,152][src.frame_extractor][INFO] -     Metadata:
+[2026-06-21 16:00:25,152][src.frame_extractor][INFO] -       creation_time   : 2026-06-17T23:07:41.000000Z
+[2026-06-21 16:00:25,152][src.frame_extractor][INFO] -       handler_name    : Core Media Metadata
+[2026-06-21 16:00:25,152][src.frame_extractor][INFO] - Stream mapping:
+[2026-06-21 16:00:25,153][src.frame_extractor][INFO] -   Stream #0:0 -> #0:0 (hevc (native) -> mjpeg (native))
+[2026-06-21 16:00:25,153][src.frame_extractor][INFO] - Press [q] to stop, [?] for help
+[2026-06-21 16:00:25,243][src.frame_extractor][INFO] - Output #0, image2, to '/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.0025_gr0.0001/colmap_sfm_camera_model/images/frame_%04d.jpg':
+[2026-06-21 16:00:25,243][src.frame_extractor][INFO] -   Metadata:
+[2026-06-21 16:00:25,243][src.frame_extractor][INFO] -     major_brand     : qt
+[2026-06-21 16:00:25,243][src.frame_extractor][INFO] -     minor_version   : 0
+[2026-06-21 16:00:25,243][src.frame_extractor][INFO] -     compatible_brands: qt
+[2026-06-21 16:00:25,243][src.frame_extractor][INFO] -     com.apple.quicktime.creationdate: 2026-06-17T19:07:41-0400
+[2026-06-21 16:00:25,243][src.frame_extractor][INFO] -     com.apple.quicktime.full-frame-rate-playback-intent: 0
+[2026-06-21 16:00:25,243][src.frame_extractor][INFO] -     com.apple.quicktime.make: Apple
+[2026-06-21 16:00:25,243][src.frame_extractor][INFO] -     com.apple.quicktime.model: iPhone SE (3rd generation)
+[2026-06-21 16:00:25,244][src.frame_extractor][INFO] -     com.apple.quicktime.software: 26.3.1
+[2026-06-21 16:00:25,244][src.frame_extractor][INFO] -     encoder         : Lavf62.12.102
+[2026-06-21 16:00:25,244][src.frame_extractor][INFO] -   Stream #0:0(und): Video: mjpeg, yuv420p(pc, bt709, progressive), 1080x1920, q=2-31, 200 kb/s, 2 fps, 2 tbn (default)
+[2026-06-21 16:00:25,244][src.frame_extractor][INFO] -     Metadata:
+[2026-06-21 16:00:25,244][src.frame_extractor][INFO] -       encoder         : Lavc62.28.102 mjpeg
+[2026-06-21 16:00:25,244][src.frame_extractor][INFO] -       creation_time   : 2026-06-17T23:07:41.000000Z
+[2026-06-21 16:00:25,244][src.frame_extractor][INFO] -       handler_name    : Core Media Video
+[2026-06-21 16:00:25,245][src.frame_extractor][INFO] -       vendor_id       : [0][0][0][0]
+[2026-06-21 16:00:25,245][src.frame_extractor][INFO] -     Side data:
+[2026-06-21 16:00:25,245][src.frame_extractor][INFO] -       CPB properties: bitrate max/min/avg: 0/0/200000 buffer size: 0 vbv_delay: N/A

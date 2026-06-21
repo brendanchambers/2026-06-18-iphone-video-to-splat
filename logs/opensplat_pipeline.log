@@ -2,253 +2,253 @@ Using MPS
 
 Reading 51778 points
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0001.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0001.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0014.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0027.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0040.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0014.jpgLoading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0053.jpg
 
-Loading Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0053.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0066.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0066.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0040.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0079.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0092.jpg
 
-/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0027.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0092.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0105.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0118.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0118.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0079.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0028.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0105.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0106.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0054.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0067.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0002.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0054.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0106.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0093.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0080.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0015.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0119.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0002.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0041.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0119.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0093.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0080.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0067.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0041.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0028.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0029.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0015.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0068.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0055.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0094.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0120.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0003.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0107.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0016.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0081.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0107.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0029.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0081.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0003.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0042.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0094.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0055.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0016.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0120.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0042.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0030.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0068.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0017.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0082.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0056.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0108.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0069.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0030.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0108.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0017.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0004.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0056.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0043.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0004.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0095.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0121.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0082.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0069.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0121.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0095.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0031.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0083.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0070.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0043.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0057.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0018.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0018.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0109.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0044.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0122.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0109.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0057.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0122.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0096.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0005.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0031.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0096.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0070.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0083.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0005.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0032.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0110.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0110.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0044.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0071.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0019.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0058.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0123.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0019.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0084.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0097.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0097.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0006.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0032.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0123.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0058.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0045.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0111.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0072.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0071.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0033.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0006.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0059.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0045.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0020.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0020.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0111.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0124.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0073.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0085.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0084.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0072.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0124.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0059.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0007.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0033.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0098.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0098.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0060.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0046.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0112.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0007.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0034.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0112.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0021.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0021.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0046.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0086.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0074.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0060.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0085.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0073.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0061.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0034.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0099.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0047.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0008.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0099.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0113.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0113.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0035.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0008.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0022.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0022.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0047.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0061.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0075.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0074.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0100.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0087.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0114.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0035.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0062.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0114.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0009.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0100.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0036.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0048.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0076.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0009.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0048.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0062.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0115.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0075.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0063.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0023.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0023.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0036.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0101.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0101.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0086.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0088.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0010.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0076.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0077.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0049.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0116.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0063.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0037.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0115.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0064.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0010.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0049.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0102.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0102.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0089.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0078.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0024.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0065.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0037.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0038.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0077.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0117.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0116.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0087.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0064.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0011.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0050.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0024.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0011.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0050.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0103.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0103.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0078.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0039.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0090.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0012.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0038.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0088.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0117.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0051.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0025.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0104.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0051.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0025.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0065.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0089.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0012.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0013.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0104.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0052.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0039.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0026.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0091.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0090.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0026.jpg
 
-Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0091.jpg
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0052.jpg
+
+Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0013.jpg
 
 init_gsplat_metal_context: loading '/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/opensplat/build/default.metallib'
 
@@ -274,329 +274,329 @@ init_gsplat_metal_context: load function map_gaussian_to_intersects_kernel with 
 
 init_gsplat_metal_context: load function get_tile_bin_edges_kernel with label: (null)
 
-Step 10: 0.288029 (0%)
+Step 10: 0.288045 (0%)
 
-Step 20: 0.310421 (1%)
+Step 20: 0.310313 (1%)
 
-Step 30: 0.273946 (2%)
+Step 30: 0.273959 (2%)
 
-Step 40: 0.26362 (2%)
+Step 40: 0.2636 (2%)
 
-Step 50: 0.272936 (3%)
+Step 50: 0.265 (3%)
 
-Step 60: 0.266568 (4%)
+Step 60: 0.266213 (4%)
 
-Step 70: 0.252895 (4%)
+Step 70: 0.252924 (4%)
 
-Step 80: 0.27284 (5%)
+Step 80: 0.272798 (5%)
 
-Step 90: 0.266368 (6%)
+Step 90: 0.266419 (6%)
 
-Step 100: 0.270303 (6%)
+Step 100: 0.270183 (6%)
 
-Step 110: 0.269637 (7%)
+Step 110: 0.269645 (7%)
 
-Step 120: 0.254093 (8%)
+Step 120: 0.255464 (8%)
 
-Step 130: 0.239192 (8%)
+Step 130: 0.238776 (8%)
 
-Step 140: 0.209849 (9%)
+Step 140: 0.209829 (9%)
 
-Step 150: 0.244587 (10%)
+Step 150: 0.245014 (10%)
 
-Step 160: 0.242296 (10%)
+Step 160: 0.242728 (10%)
 
-Step 170: 0.242039 (11%)
+Step 170: 0.241931 (11%)
 
-Step 180: 0.232901 (12%)
+Step 180: 0.232771 (12%)
 
-Step 190: 0.270856 (12%)
+Step 190: 0.270735 (12%)
 
-Step 200: 0.233215 (13%)
+Step 200: 0.240062 (13%)
 
-Step 210: 0.216963 (14%)
+Step 210: 0.217012 (14%)
 
-Step 220: 0.237053 (14%)
+Step 220: 0.236927 (14%)
 
-Step 230: 0.219133 (15%)
+Step 230: 0.219018 (15%)
 
-Step 240: 0.247709 (16%)
+Step 240: 0.247701 (16%)
 
-Step 250: 0.23973 (16%)
+Step 250: 0.239678 (16%)
 
-Step 260: 0.212754 (17%)
+Step 260: 0.212743 (17%)
 
-Step 270: 0.228977 (18%)
+Step 270: 0.227587 (18%)
 
-Step 280: 0.231646 (18%)
+Step 280: 0.211031 (18%)
 
-Step 290: 0.228068 (19%)
+Step 290: 0.228087 (19%)
 
-Step 300: 0.211491 (20%)
+Step 300: 0.211394 (20%)
 
-Added 29957 gaussians, new count 81735
+Added 8357 gaussians, new count 60135
 
-Culled 27959 gaussians, remaining 53776
+Culled 15961 gaussians, remaining 44174
 
-Step 310: 0.234156 (20%)
+Step 310: 0.211762 (20%)
 
-Step 320: 0.279846 (21%)
+Step 320: 0.270228 (21%)
 
-Step 330: 0.186491 (22%)
+Step 330: 0.183448 (22%)
 
-Step 340: 0.209612 (22%)
+Step 340: 0.203331 (22%)
 
-Step 350: 0.190589 (23%)
+Step 350: 0.192677 (23%)
 
-Step 360: 0.192934 (24%)
+Step 360: 0.199272 (24%)
 
-Step 370: 0.19844 (24%)
+Step 370: 0.198052 (24%)
 
-Step 380: 0.185189 (25%)
+Step 380: 0.188805 (25%)
 
-Step 390: 0.176742 (26%)
+Step 390: 0.183882 (26%)
 
-Step 400: 0.222401 (26%)
+Step 400: 0.223562 (26%)
 
-Added 56356 gaussians, new count 110132
+Added 20983 gaussians, new count 65157
 
-Culled 25798 gaussians, remaining 84334
+Culled 6156 gaussians, remaining 59001
 
-Step 410: 0.225735 (27%)
+Step 410: 0.216934 (27%)
 
-Step 420: 0.208541 (28%)
+Step 420: 0.209012 (28%)
 
-Step 430: 0.222824 (28%)
+Step 430: 0.21126 (28%)
 
-Step 440: 0.183286 (29%)
+Step 440: 0.193646 (29%)
 
-Step 450: 0.290018 (30%)
+Step 450: 0.283744 (30%)
 
-Step 460: 0.230681 (30%)
+Step 460: 0.241409 (30%)
 
-Step 470: 0.211037 (31%)
+Step 470: 0.221458 (31%)
 
-Step 480: 0.250539 (32%)
+Step 480: 0.253772 (32%)
 
-Step 490: 0.189064 (32%)
+Step 490: 0.196856 (32%)
 
-Step 500: 0.175312 (33%)
+Step 500: 0.189982 (33%)
 
-Added 77716 gaussians, new count 162050
+Added 25158 gaussians, new count 84159
 
-Culled 32308 gaussians, remaining 129742
+Culled 8100 gaussians, remaining 76059
 
-Step 510: 0.200999 (34%)
+Step 510: 0.199304 (34%)
 
-Step 520: 0.241721 (34%)
+Step 520: 0.24438 (34%)
 
-Step 530: 0.202038 (35%)
+Step 530: 0.206763 (35%)
 
-Step 540: 0.212854 (36%)
+Step 540: 0.221241 (36%)
 
-Step 550: 0.234868 (36%)
+Step 550: 0.236059 (36%)
 
-Step 560: 0.200414 (37%)
+Step 560: 0.216046 (37%)
 
-Step 570: 0.141722 (38%)
+Step 570: 0.145597 (38%)
 
-Step 580: 0.184879 (38%)
+Step 580: 0.197763 (38%)
 
-Step 590: 0.151535 (39%)
+Step 590: 0.167874 (39%)
 
-Step 600: 0.176665 (40%)
+Step 600: 0.186804 (40%)
 
-Added 102085 gaussians, new count 231827
+Added 28117 gaussians, new count 104176
 
-Culled 40861 gaussians, remaining 190966
+Culled 10453 gaussians, remaining 93723
 
-Step 610: 0.193321 (40%)
+Step 610: 0.190915 (40%)
 
-Step 620: 0.17743 (41%)
+Step 620: 0.187734 (41%)
 
-Step 630: 0.172336 (42%)
+Step 630: 0.180417 (42%)
 
-Step 640: 0.194746 (42%)
+Step 640: 0.211512 (42%)
 
-Step 650: 0.181699 (43%)
+Step 650: 0.195126 (43%)
 
-Step 660: 0.179623 (44%)
+Step 660: 0.195876 (44%)
 
-Step 670: 0.149891 (44%)
+Step 670: 0.173609 (44%)
 
-Step 680: 0.195969 (45%)
+Step 680: 0.210705 (45%)
 
-Step 690: 0.175115 (46%)
+Step 690: 0.192452 (46%)
 
-Step 700: 0.20765 (46%)
+Step 700: 0.220214 (46%)
 
-Added 123431 gaussians, new count 314397
+Added 30601 gaussians, new count 124324
 
-Culled 48565 gaussians, remaining 265832
+Culled 12228 gaussians, remaining 112096
 
-Step 710: 0.16844 (47%)
+Step 710: 0.172257 (47%)
 
-Step 720: 0.173742 (48%)
+Step 720: 0.186567 (48%)
 
-Step 730: 0.178826 (48%)
+Step 730: 0.1898 (48%)
 
-Step 740: 0.221018 (49%)
+Step 740: 0.235517 (49%)
 
-Step 750: 0.176926 (50%)
+Step 750: 0.17343 (50%)
 
-Step 760: 0.131033 (50%)
+Step 760: 0.158695 (50%)
 
-Step 770: 0.181914 (51%)
+Step 770: 0.196528 (51%)
 
-Step 780: 0.144366 (52%)
+Step 780: 0.161396 (52%)
 
-Step 790: 0.105724 (52%)
+Step 790: 0.120311 (52%)
 
-Step 800: 0.161309 (53%)
+Step 800: 0.181496 (53%)
 
-Step 810: 0.142187 (54%)
+Step 810: 0.166193 (54%)
 
-Step 820: 0.186944 (54%)
+Step 820: 0.206559 (54%)
 
-Step 830: 0.169394 (55%)
+Step 830: 0.194195 (55%)
 
-Step 840: 0.18795 (56%)
+Step 840: 0.196132 (56%)
 
-Step 850: 0.166265 (56%)
+Step 850: 0.174522 (56%)
 
-Step 860: 0.166336 (57%)
+Step 860: 0.186121 (57%)
 
-Step 870: 0.161662 (58%)
+Step 870: 0.183655 (58%)
 
-Step 880: 0.163095 (58%)
+Step 880: 0.182582 (58%)
 
-Step 890: 0.137327 (59%)
+Step 890: 0.1621 (59%)
 
-Step 900: 0.134874 (60%)
+Step 900: 0.162952 (60%)
 
-Step 910: 0.154413 (60%)
+Step 910: 0.181151 (60%)
 
-Step 920: 0.132336 (61%)
+Step 920: 0.159216 (61%)
 
-Step 930: 0.204584 (62%)
+Step 930: 0.228651 (62%)
 
-Step 940: 0.143841 (62%)
+Step 940: 0.168797 (62%)
 
-Step 950: 0.154251 (63%)
+Step 950: 0.17675 (63%)
 
-Step 960: 0.14324 (64%)
+Step 960: 0.165736 (64%)
 
-Step 970: 0.15075 (64%)
+Step 970: 0.174983 (64%)
 
-Step 980: 0.119322 (65%)
+Step 980: 0.146376 (65%)
 
-Step 990: 0.12283 (66%)
+Step 990: 0.179823 (66%)
 
-Step 1000: 0.180621 (66%)
+Step 1000: 0.192889 (66%)
 
-Step 1010: 0.169281 (67%)
+Step 1010: 0.196117 (67%)
 
-Step 1020: 0.184113 (68%)
+Step 1020: 0.20398 (68%)
 
-Step 1030: 0.231966 (68%)
+Step 1030: 0.255316 (68%)
 
-Step 1040: 0.17536 (69%)
+Step 1040: 0.202269 (69%)
 
-Step 1050: 0.230018 (70%)
+Step 1050: 0.252516 (70%)
 
-Step 1060: 0.231635 (70%)
+Step 1060: 0.252525 (70%)
 
-Step 1070: 0.17945 (71%)
+Step 1070: 0.209401 (71%)
 
-Step 1080: 0.229852 (72%)
+Step 1080: 0.252627 (72%)
 
-Step 1090: 0.202769 (72%)
+Step 1090: 0.227884 (72%)
 
-Step 1100: 0.235727 (73%)
+Step 1100: 0.259836 (73%)
 
-Step 1110: 0.21574 (74%)
+Step 1110: 0.243575 (74%)
 
-Step 1120: 0.246423 (74%)
+Step 1120: 0.26633 (74%)
 
-Step 1130: 0.240529 (75%)
+Step 1130: 0.268948 (75%)
 
-Step 1140: 0.175661 (76%)
+Step 1140: 0.20285 (76%)
 
-Step 1150: 0.165635 (76%)
+Step 1150: 0.200467 (76%)
 
-Step 1160: 0.146959 (77%)
+Step 1160: 0.16288 (77%)
 
-Step 1170: 0.129661 (78%)
+Step 1170: 0.154099 (78%)
 
-Step 1180: 0.17323 (78%)
+Step 1180: 0.190626 (78%)
 
-Step 1190: 0.223216 (79%)
+Step 1190: 0.245637 (79%)
 
-Step 1200: 0.154063 (80%)
+Step 1200: 0.167026 (80%)
 
-Step 1210: 0.161829 (80%)
+Step 1210: 0.194251 (80%)
 
-Step 1220: 0.171016 (81%)
+Step 1220: 0.202651 (81%)
 
-Step 1230: 0.208619 (82%)
+Step 1230: 0.233736 (82%)
 
-Step 1240: 0.15316 (82%)
+Step 1240: 0.168908 (82%)
 
-Step 1250: 0.157799 (83%)
+Step 1250: 0.191436 (83%)
 
-Step 1260: 0.186503 (84%)
+Step 1260: 0.217076 (84%)
 
-Step 1270: 0.181188 (84%)
+Step 1270: 0.213121 (84%)
 
-Step 1280: 0.140469 (85%)
+Step 1280: 0.161358 (85%)
 
-Step 1290: 0.224115 (86%)
+Step 1290: 0.25205 (86%)
 
-Step 1300: 0.199509 (86%)
+Step 1300: 0.224528 (86%)
 
-Step 1310: 0.235144 (87%)
+Step 1310: 0.266156 (87%)
 
-Step 1320: 0.163082 (88%)
+Step 1320: 0.188832 (88%)
 
-Step 1330: 0.177209 (88%)
+Step 1330: 0.201683 (88%)
 
-Step 1340: 0.180434 (89%)
+Step 1340: 0.206838 (89%)
 
-Step 1350: 0.177012 (90%)
+Step 1350: 0.205455 (90%)
 
-Step 1360: 0.152221 (90%)
+Step 1360: 0.175049 (90%)
 
-Step 1370: 0.249423 (91%)
+Step 1370: 0.279518 (91%)
 
-Step 1380: 0.181982 (92%)
+Step 1380: 0.209351 (92%)
 
-Step 1390: 0.159479 (92%)
+Step 1390: 0.187449 (92%)
 
-Step 1400: 0.219453 (93%)
+Step 1400: 0.251665 (93%)
 
-Step 1410: 0.165678 (94%)
+Step 1410: 0.198942 (94%)
 
-Step 1420: 0.175557 (94%)
+Step 1420: 0.204747 (94%)
 
-Step 1430: 0.172141 (95%)
+Step 1430: 0.200145 (95%)
 
-Step 1440: 0.147189 (96%)
+Step 1440: 0.21936 (96%)
 
-Step 1450: 0.209645 (96%)
+Step 1450: 0.239697 (96%)
 
-Step 1460: 0.137478 (97%)
+Step 1460: 0.155129 (97%)
 
-Step 1470: 0.128647 (98%)
+Step 1470: 0.172505 (98%)
 
-Step 1480: 0.150872 (98%)
+Step 1480: 0.17094 (98%)
 
-Step 1490: 0.187982 (99%)
+Step 1490: 0.214685 (99%)
 
-Step 1500: 0.179407 (100%)
+Step 1500: 0.207302 (100%)
 
-Wrote /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/splats/cameras.json
+Wrote /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/splats/cameras.json
 
-Wrote /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/splats/current_scene_20260621_1459.ply
+Wrote /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/splats/densify_sz0.01_gr0.0004_20260621_1623.ply
 
-/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/current_scene/colmap_sfm_linearized/images/frame_0032.jpg validation loss: 0.175541
+/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/densify_sz0.01_gr0.0004/colmap_sfm_linearized/images/frame_0045.jpg validation loss: 0.225482
 

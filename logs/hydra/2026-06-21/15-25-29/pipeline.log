@@ -1,0 +1,280 @@
+[2026-06-21 15:25:29,479][__main__][INFO] - 
+[2026-06-21 15:25:29,479][__main__][INFO] - ╔==========================================================╗
+[2026-06-21 15:25:29,479][__main__][INFO] - ║          3D Gaussian Splat Training Pipeline              ║
+[2026-06-21 15:25:29,479][__main__][INFO] - ╚==========================================================╝
+[2026-06-21 15:25:29,479][__main__][INFO] - Experiment: teensy
+[2026-06-21 15:25:29,479][__main__][INFO] - Project dir: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat
+[2026-06-21 15:25:29,479][__main__][INFO] - 
+[2026-06-21 15:25:29,479][src.timing_recorder][INFO] - [TIMING] Starting: frame_extraction
+[2026-06-21 15:25:29,479][__main__][INFO] - ============================================================
+[2026-06-21 15:25:29,479][__main__][INFO] - STEP 1: Frame Extraction
+[2026-06-21 15:25:29,479][__main__][INFO] - ============================================================
+[2026-06-21 15:25:29,479][src.frame_extractor][INFO] - Extracting frames from: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/incoming/movies/teensy.mov
+[2026-06-21 15:25:29,479][src.frame_extractor][INFO] - Output directory: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy/colmap_sfm_camera_model/images
+[2026-06-21 15:25:29,479][src.frame_extractor][INFO] - Extracting frames at 2 fps
+[2026-06-21 15:25:29,479][src.frame_extractor][INFO] - Running command: ffmpeg -i /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/incoming/movies/teensy.mov -vf fps=2 -q:v 5 /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy/colmap_sfm_camera_model/images/frame_%04d.jpg
+[2026-06-21 15:25:29,494][src.frame_extractor][INFO] - ffmpeg version 8.1.2 Copyright (c) 2000-2026 the FFmpeg developers
+[2026-06-21 15:25:29,494][src.frame_extractor][INFO] -   built with Apple clang version 17.0.0 (clang-1700.6.4.2)
+[2026-06-21 15:25:29,494][src.frame_extractor][INFO] -   configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/8.1.2 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvmaf --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon
+[2026-06-21 15:25:29,494][src.frame_extractor][INFO] -   libavutil      60. 26.102 / 60. 26.102
+[2026-06-21 15:25:29,494][src.frame_extractor][INFO] -   libavcodec     62. 28.102 / 62. 28.102
+[2026-06-21 15:25:29,494][src.frame_extractor][INFO] -   libavformat    62. 12.102 / 62. 12.102
+[2026-06-21 15:25:29,494][src.frame_extractor][INFO] -   libavdevice    62.  3.102 / 62.  3.102
+[2026-06-21 15:25:29,494][src.frame_extractor][INFO] -   libavfilter    11. 14.102 / 11. 14.102
+[2026-06-21 15:25:29,494][src.frame_extractor][INFO] -   libswscale      9.  5.102 /  9.  5.102
+[2026-06-21 15:25:29,494][src.frame_extractor][INFO] -   libswresample   6.  3.102 /  6.  3.102
+[2026-06-21 15:25:29,510][src.frame_extractor][INFO] - Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/incoming/movies/teensy.mov':
+[2026-06-21 15:25:29,510][src.frame_extractor][INFO] -   Metadata:
+[2026-06-21 15:25:29,510][src.frame_extractor][INFO] -     major_brand     : qt
+[2026-06-21 15:25:29,510][src.frame_extractor][INFO] -     minor_version   : 512
+[2026-06-21 15:25:29,510][src.frame_extractor][INFO] -     compatible_brands: qt
+[2026-06-21 15:25:29,510][src.frame_extractor][INFO] -     encoder         : Lavf62.12.102
+[2026-06-21 15:25:29,510][src.frame_extractor][INFO] -   Duration: 00:00:04.01, start: 0.000000, bitrate: 19786 kb/s
+[2026-06-21 15:25:29,510][src.frame_extractor][INFO] -   Stream #0:0[0x1]: Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1080x1920, 19646 kb/s, 29.67 fps, 29.67 tbr, 11392 tbn (default)
+[2026-06-21 15:25:29,510][src.frame_extractor][INFO] -     Metadata:
+[2026-06-21 15:25:29,510][src.frame_extractor][INFO] -       handler_name    : Core Media Video
+[2026-06-21 15:25:29,510][src.frame_extractor][INFO] -       vendor_id       : FFMP
+[2026-06-21 15:25:29,510][src.frame_extractor][INFO] -       encoder         : Lavc62.28.102 libx264
+[2026-06-21 15:25:29,510][src.frame_extractor][INFO] -   Stream #0:1[0x2]: Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 128 kb/s (default)
+[2026-06-21 15:25:29,510][src.frame_extractor][INFO] -     Metadata:
+[2026-06-21 15:25:29,510][src.frame_extractor][INFO] -       handler_name    : Core Media Audio
+[2026-06-21 15:25:29,510][src.frame_extractor][INFO] -       vendor_id       : [0][0][0][0]
+[2026-06-21 15:25:29,510][src.frame_extractor][INFO] - Stream mapping:
+[2026-06-21 15:25:29,510][src.frame_extractor][INFO] -   Stream #0:0 -> #0:0 (h264 (native) -> mjpeg (native))
+[2026-06-21 15:25:29,510][src.frame_extractor][INFO] - Press [q] to stop, [?] for help
+[2026-06-21 15:25:29,563][src.frame_extractor][INFO] - Output #0, image2, to '/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy/colmap_sfm_camera_model/images/frame_%04d.jpg':
+[2026-06-21 15:25:29,563][src.frame_extractor][INFO] -   Metadata:
+[2026-06-21 15:25:29,563][src.frame_extractor][INFO] -     major_brand     : qt
+[2026-06-21 15:25:29,563][src.frame_extractor][INFO] -     minor_version   : 512
+[2026-06-21 15:25:29,563][src.frame_extractor][INFO] -     compatible_brands: qt
+[2026-06-21 15:25:29,563][src.frame_extractor][INFO] -     encoder         : Lavf62.12.102
+[2026-06-21 15:25:29,563][src.frame_extractor][INFO] -   Stream #0:0: Video: mjpeg, yuv420p(pc, bt709, progressive), 1080x1920, q=2-31, 200 kb/s, 2 fps, 2 tbn (default)
+[2026-06-21 15:25:29,564][src.frame_extractor][INFO] -     Metadata:
+[2026-06-21 15:25:29,564][src.frame_extractor][INFO] -       encoder         : Lavc62.28.102 mjpeg
+[2026-06-21 15:25:29,564][src.frame_extractor][INFO] -       handler_name    : Core Media Video
+[2026-06-21 15:25:29,564][src.frame_extractor][INFO] -       vendor_id       : FFMP
+[2026-06-21 15:25:29,564][src.frame_extractor][INFO] -     Side data:
+[2026-06-21 15:25:29,564][src.frame_extractor][INFO] -       CPB properties: bitrate max/min/avg: 0/0/200000 buffer size: 0 vbv_delay: N/A
+[2026-06-21 15:25:29,713][src.frame_extractor][INFO] - [out#0/image2 @ 0x600000050180] video:3120KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+[2026-06-21 15:25:29,713][src.frame_extractor][INFO] - frame=    8 fps=0.0 q=5.0 Lsize=N/A time=00:00:04.00 bitrate=N/A speed=19.7x elapsed=0:00:00.20
+[2026-06-21 15:25:29,716][src.frame_extractor][INFO] - Successfully extracted 8 frames
+[2026-06-21 15:25:29,716][__main__][INFO] - ✓ Frame extraction completed
+[2026-06-21 15:25:29,716][src.timing_recorder][INFO] - [TIMING] ✓ Completed: frame_extraction (0.24s)
+[2026-06-21 15:25:29,716][src.timing_recorder][INFO] - [TIMING] Starting: feature_extraction
+[2026-06-21 15:25:29,716][__main__][INFO] - ============================================================
+[2026-06-21 15:25:29,716][__main__][INFO] - STEP 2: Feature Extraction
+[2026-06-21 15:25:29,716][__main__][INFO] - ============================================================
+[2026-06-21 15:25:29,717][src.colmap_feature_extractor][INFO] - Extracting features from images: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy/colmap_sfm_camera_model/images
+[2026-06-21 15:25:29,717][src.colmap_feature_extractor][INFO] - Database: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy/colmap_sfm_camera_model/database.db
+[2026-06-21 15:25:29,717][src.colmap_feature_extractor][INFO] - Running: colmap feature_extractor
+[2026-06-21 15:25:29,886][src.colmap_feature_extractor][INFO] - I20260621 15:25:29.886330 0x16fa57000 feature_extraction.cc:504] === Feature extraction ===
+[2026-06-21 15:25:29,901][src.colmap_feature_extractor][INFO] - I20260621 15:25:29.901033 0x17005b000 sift.cc:757] Creating SIFT GPU feature extractor
+[2026-06-21 15:25:29,942][src.colmap_feature_extractor][INFO] - I20260621 15:25:29.942019 0x1700e7000 feature_extraction.cc:282] Processed file [1/8]
+[2026-06-21 15:25:29,942][src.colmap_feature_extractor][INFO] - I20260621 15:25:29.942031 0x1700e7000 feature_extraction.cc:285]   Name:            frame_0001.jpg
+[2026-06-21 15:25:29,942][src.colmap_feature_extractor][INFO] - W20260621 15:25:29.942033 0x1700e7000 feature_extraction.cc:289] frame_0001.jpg IMAGE_EXISTS: Features for image were already extracted.
+[2026-06-21 15:25:29,942][src.colmap_feature_extractor][INFO] - I20260621 15:25:29.942305 0x1700e7000 feature_extraction.cc:282] Processed file [2/8]
+[2026-06-21 15:25:29,942][src.colmap_feature_extractor][INFO] - I20260621 15:25:29.942318 0x1700e7000 feature_extraction.cc:285]   Name:            frame_0002.jpg
+[2026-06-21 15:25:29,942][src.colmap_feature_extractor][INFO] - W20260621 15:25:29.942338 0x1700e7000 feature_extraction.cc:289] frame_0002.jpg IMAGE_EXISTS: Features for image were already extracted.
+[2026-06-21 15:25:29,942][src.colmap_feature_extractor][INFO] - I20260621 15:25:29.942347 0x1700e7000 feature_extraction.cc:282] Processed file [3/8]
+[2026-06-21 15:25:29,942][src.colmap_feature_extractor][INFO] - I20260621 15:25:29.942349 0x1700e7000 feature_extraction.cc:285]   Name:            frame_0003.jpg
+[2026-06-21 15:25:29,942][src.colmap_feature_extractor][INFO] - W20260621 15:25:29.942350 0x1700e7000 feature_extraction.cc:289] frame_0003.jpg IMAGE_EXISTS: Features for image were already extracted.
+[2026-06-21 15:25:29,942][src.colmap_feature_extractor][INFO] - I20260621 15:25:29.942355 0x1700e7000 feature_extraction.cc:282] Processed file [4/8]
+[2026-06-21 15:25:29,942][src.colmap_feature_extractor][INFO] - I20260621 15:25:29.942357 0x1700e7000 feature_extraction.cc:285]   Name:            frame_0005.jpg
+[2026-06-21 15:25:29,942][src.colmap_feature_extractor][INFO] - W20260621 15:25:29.942358 0x1700e7000 feature_extraction.cc:289] frame_0005.jpg IMAGE_EXISTS: Features for image were already extracted.
+[2026-06-21 15:25:29,942][src.colmap_feature_extractor][INFO] - I20260621 15:25:29.942363 0x1700e7000 feature_extraction.cc:282] Processed file [5/8]
+[2026-06-21 15:25:29,942][src.colmap_feature_extractor][INFO] - I20260621 15:25:29.942364 0x1700e7000 feature_extraction.cc:285]   Name:            frame_0004.jpg
+[2026-06-21 15:25:29,942][src.colmap_feature_extractor][INFO] - W20260621 15:25:29.942366 0x1700e7000 feature_extraction.cc:289] frame_0004.jpg IMAGE_EXISTS: Features for image were already extracted.
+[2026-06-21 15:25:29,942][src.colmap_feature_extractor][INFO] - I20260621 15:25:29.942370 0x1700e7000 feature_extraction.cc:282] Processed file [6/8]
+[2026-06-21 15:25:29,942][src.colmap_feature_extractor][INFO] - I20260621 15:25:29.942372 0x1700e7000 feature_extraction.cc:285]   Name:            frame_0006.jpg
+[2026-06-21 15:25:29,942][src.colmap_feature_extractor][INFO] - W20260621 15:25:29.942373 0x1700e7000 feature_extraction.cc:289] frame_0006.jpg IMAGE_EXISTS: Features for image were already extracted.
+[2026-06-21 15:25:29,942][src.colmap_feature_extractor][INFO] - I20260621 15:25:29.942399 0x1700e7000 feature_extraction.cc:282] Processed file [7/8]
+[2026-06-21 15:25:29,942][src.colmap_feature_extractor][INFO] - I20260621 15:25:29.942418 0x1700e7000 feature_extraction.cc:285]   Name:            frame_0007.jpg
+[2026-06-21 15:25:29,942][src.colmap_feature_extractor][INFO] - W20260621 15:25:29.942426 0x1700e7000 feature_extraction.cc:289] frame_0007.jpg IMAGE_EXISTS: Features for image were already extracted.
+[2026-06-21 15:25:29,942][src.colmap_feature_extractor][INFO] - I20260621 15:25:29.942464 0x1700e7000 feature_extraction.cc:282] Processed file [8/8]
+[2026-06-21 15:25:29,942][src.colmap_feature_extractor][INFO] - I20260621 15:25:29.942468 0x1700e7000 feature_extraction.cc:285]   Name:            frame_0008.jpg
+[2026-06-21 15:25:29,942][src.colmap_feature_extractor][INFO] - W20260621 15:25:29.942471 0x1700e7000 feature_extraction.cc:289] frame_0008.jpg IMAGE_EXISTS: Features for image were already extracted.
+[2026-06-21 15:25:29,942][src.colmap_feature_extractor][INFO] - I20260621 15:25:29.942531 0x16fa57000 timer.cc:90] Elapsed time: 0.001 [minutes]
+[2026-06-21 15:25:29,947][src.colmap_feature_extractor][INFO] - Feature extraction completed successfully
+[2026-06-21 15:25:29,947][__main__][INFO] - ✓ Feature extraction completed
+[2026-06-21 15:25:29,947][src.timing_recorder][INFO] - [TIMING] ✓ Completed: feature_extraction (0.23s)
+[2026-06-21 15:25:29,947][src.timing_recorder][INFO] - [TIMING] Starting: feature_matching
+[2026-06-21 15:25:29,947][__main__][INFO] - ============================================================
+[2026-06-21 15:25:29,947][__main__][INFO] - STEP 3: Feature Matching
+[2026-06-21 15:25:29,947][__main__][INFO] - ============================================================
+[2026-06-21 15:25:29,948][src.colmap_feature_matcher][INFO] - Matching features in database: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy/colmap_sfm_camera_model/database.db
+[2026-06-21 15:25:29,948][src.colmap_feature_matcher][INFO] - Running: colmap sequential_matcher
+[2026-06-21 15:25:30,115][src.colmap_feature_matcher][INFO] - I20260621 15:25:30.114755 0x16fa63000 feature_matching.cc:195] === Feature matching & geometric verification ===
+[2026-06-21 15:25:30,131][src.colmap_feature_matcher][INFO] - I20260621 15:25:30.131050 0x16faef000 sift.cc:1559] Creating SIFT GPU feature matcher
+[2026-06-21 15:25:30,156][src.colmap_feature_matcher][INFO] - I20260621 15:25:30.156278 0x16fa63000 pairing.cc:415] Generating sequential image pairs...
+[2026-06-21 15:25:30,156][src.colmap_feature_matcher][INFO] - I20260621 15:25:30.156378 0x16fa63000 pairing.cc:473] Processing image [1/8]
+[2026-06-21 15:25:30,156][src.colmap_feature_matcher][INFO] - I20260621 15:25:30.156400 0x16fa63000 feature_matching.cc:217] in 0.000s
+[2026-06-21 15:25:30,156][src.colmap_feature_matcher][INFO] - I20260621 15:25:30.156403 0x16fa63000 pairing.cc:473] Processing image [2/8]
+[2026-06-21 15:25:30,156][src.colmap_feature_matcher][INFO] - I20260621 15:25:30.156418 0x16fa63000 feature_matching.cc:217] in 0.000s
+[2026-06-21 15:25:30,156][src.colmap_feature_matcher][INFO] - I20260621 15:25:30.156420 0x16fa63000 pairing.cc:473] Processing image [3/8]
+[2026-06-21 15:25:30,156][src.colmap_feature_matcher][INFO] - I20260621 15:25:30.156433 0x16fa63000 feature_matching.cc:217] in 0.000s
+[2026-06-21 15:25:30,156][src.colmap_feature_matcher][INFO] - I20260621 15:25:30.156435 0x16fa63000 pairing.cc:473] Processing image [4/8]
+[2026-06-21 15:25:30,156][src.colmap_feature_matcher][INFO] - I20260621 15:25:30.156449 0x16fa63000 feature_matching.cc:217] in 0.000s
+[2026-06-21 15:25:30,156][src.colmap_feature_matcher][INFO] - I20260621 15:25:30.156451 0x16fa63000 pairing.cc:473] Processing image [5/8]
+[2026-06-21 15:25:30,156][src.colmap_feature_matcher][INFO] - I20260621 15:25:30.156461 0x16fa63000 feature_matching.cc:217] in 0.000s
+[2026-06-21 15:25:30,156][src.colmap_feature_matcher][INFO] - I20260621 15:25:30.156463 0x16fa63000 pairing.cc:473] Processing image [6/8]
+[2026-06-21 15:25:30,156][src.colmap_feature_matcher][INFO] - I20260621 15:25:30.156475 0x16fa63000 feature_matching.cc:217] in 0.000s
+[2026-06-21 15:25:30,156][src.colmap_feature_matcher][INFO] - I20260621 15:25:30.156476 0x16fa63000 pairing.cc:473] Processing image [7/8]
+[2026-06-21 15:25:30,156][src.colmap_feature_matcher][INFO] - I20260621 15:25:30.156484 0x16fa63000 feature_matching.cc:217] in 0.000s
+[2026-06-21 15:25:30,156][src.colmap_feature_matcher][INFO] - I20260621 15:25:30.156486 0x16fa63000 pairing.cc:473] Processing image [8/8]
+[2026-06-21 15:25:30,156][src.colmap_feature_matcher][INFO] - I20260621 15:25:30.156487 0x16fa63000 feature_matching.cc:217] in 0.000s
+[2026-06-21 15:25:30,156][src.colmap_feature_matcher][INFO] - I20260621 15:25:30.156489 0x16fa63000 timer.cc:90] Elapsed time: 0.001 [minutes]
+[2026-06-21 15:25:30,161][src.colmap_feature_matcher][INFO] - Feature matching completed successfully
+[2026-06-21 15:25:30,161][__main__][INFO] - ✓ Feature matching completed
+[2026-06-21 15:25:30,161][src.timing_recorder][INFO] - [TIMING] ✓ Completed: feature_matching (0.21s)
+[2026-06-21 15:25:30,161][src.timing_recorder][INFO] - [TIMING] Starting: sparse_reconstruction
+[2026-06-21 15:25:30,161][__main__][INFO] - ============================================================
+[2026-06-21 15:25:30,161][__main__][INFO] - STEP 4: Sparse Reconstruction
+[2026-06-21 15:25:30,161][__main__][INFO] - ============================================================
+[2026-06-21 15:25:30,162][src.colmap_mapper][INFO] - Performing sparse reconstruction
+[2026-06-21 15:25:30,162][src.colmap_mapper][INFO] - Database: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy/colmap_sfm_camera_model/database.db
+[2026-06-21 15:25:30,162][src.colmap_mapper][INFO] - Images: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy/colmap_sfm_camera_model/images
+[2026-06-21 15:25:30,162][src.colmap_mapper][INFO] - Output: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy/colmap_sfm_camera_model/sparse
+[2026-06-21 15:25:30,162][src.colmap_mapper][INFO] - Running: colmap mapper
+[2026-06-21 15:25:30,212][src.colmap_mapper][INFO] - I20260621 15:25:30.212315 0x1fde420c0 incremental_pipeline.cc:278] Loading database
+[2026-06-21 15:25:30,212][src.colmap_mapper][INFO] - I20260621 15:25:30.212626 0x1fde420c0 database_cache.cc:72] Loading rigs...
+[2026-06-21 15:25:30,212][src.colmap_mapper][INFO] - I20260621 15:25:30.212648 0x1fde420c0 database_cache.cc:82]  1 in 0.000s
+[2026-06-21 15:25:30,212][src.colmap_mapper][INFO] - I20260621 15:25:30.212651 0x1fde420c0 database_cache.cc:90] Loading cameras...
+[2026-06-21 15:25:30,212][src.colmap_mapper][INFO] - I20260621 15:25:30.212661 0x1fde420c0 database_cache.cc:108]  1 in 0.000s
+[2026-06-21 15:25:30,212][src.colmap_mapper][INFO] - I20260621 15:25:30.212663 0x1fde420c0 database_cache.cc:116] Loading frames...
+[2026-06-21 15:25:30,212][src.colmap_mapper][INFO] - I20260621 15:25:30.212681 0x1fde420c0 database_cache.cc:126]  8 in 0.000s
+[2026-06-21 15:25:30,212][src.colmap_mapper][INFO] - I20260621 15:25:30.212683 0x1fde420c0 database_cache.cc:134] Loading matches...
+[2026-06-21 15:25:30,213][src.colmap_mapper][INFO] - I20260621 15:25:30.212744 0x1fde420c0 database_cache.cc:139]  17 in 0.000s
+[2026-06-21 15:25:30,213][src.colmap_mapper][INFO] - I20260621 15:25:30.212746 0x1fde420c0 database_cache.cc:147] Loading images...
+[2026-06-21 15:25:30,213][src.colmap_mapper][INFO] - I20260621 15:25:30.213296 0x1fde420c0 database_cache.cc:241]  8 in 0.001s (connected 8, loaded 8)
+[2026-06-21 15:25:30,213][src.colmap_mapper][INFO] - I20260621 15:25:30.213302 0x1fde420c0 database_cache.cc:255] Loading pose priors...
+[2026-06-21 15:25:30,213][src.colmap_mapper][INFO] - I20260621 15:25:30.213308 0x1fde420c0 database_cache.cc:263]  0 in 0.000s
+[2026-06-21 15:25:30,213][src.colmap_mapper][INFO] - I20260621 15:25:30.213310 0x1fde420c0 database_cache.cc:271] Building correspondence graph...
+[2026-06-21 15:25:30,214][src.colmap_mapper][INFO] - I20260621 15:25:30.214148 0x1fde420c0 database_cache.cc:300]  in 0.001s (ignored 0)
+[2026-06-21 15:25:30,214][src.colmap_mapper][INFO] - I20260621 15:25:30.214151 0x1fde420c0 timer.cc:90] Elapsed time: 0.000 [minutes]
+[2026-06-21 15:25:30,214][src.colmap_mapper][INFO] - I20260621 15:25:30.214245 0x1fde420c0 incremental_pipeline.cc:390] Finding good initial image pair
+[2026-06-21 15:25:30,224][src.colmap_mapper][INFO] - I20260621 15:25:30.224719 0x1fde420c0 incremental_pipeline.cc:414] Registering initial image pair #6 and #2
+[2026-06-21 15:25:30,225][src.colmap_mapper][INFO] - I20260621 15:25:30.225152 0x1fde420c0 incremental_pipeline.cc:432] Global bundle adjustment
+[2026-06-21 15:25:30,247][src.colmap_mapper][INFO] - I20260621 15:25:30.247374 0x1fde420c0 incremental_pipeline.cc:537] Registering image #3 (num_reg_frames=2)
+[2026-06-21 15:25:30,247][src.colmap_mapper][INFO] - I20260621 15:25:30.247383 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 85 / 1892 points
+[2026-06-21 15:25:30,260][src.colmap_mapper][INFO] - I20260621 15:25:30.260885 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+[2026-06-21 15:25:30,272][src.colmap_mapper][INFO] - I20260621 15:25:30.272290 0x1fde420c0 incremental_pipeline.cc:537] Registering image #1 (num_reg_frames=3)
+[2026-06-21 15:25:30,272][src.colmap_mapper][INFO] - I20260621 15:25:30.272296 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 465 / 1825 points
+[2026-06-21 15:25:30,291][src.colmap_mapper][INFO] - I20260621 15:25:30.291970 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+[2026-06-21 15:25:30,304][src.colmap_mapper][INFO] - I20260621 15:25:30.303970 0x1fde420c0 incremental_pipeline.cc:537] Registering image #4 (num_reg_frames=4)
+[2026-06-21 15:25:30,304][src.colmap_mapper][INFO] - I20260621 15:25:30.303977 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 362 / 3027 points
+[2026-06-21 15:25:30,368][src.colmap_mapper][INFO] - I20260621 15:25:30.368448 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+[2026-06-21 15:25:30,393][src.colmap_mapper][INFO] - I20260621 15:25:30.393129 0x1fde420c0 incremental_pipeline.cc:537] Registering image #5 (num_reg_frames=5)
+[2026-06-21 15:25:30,393][src.colmap_mapper][INFO] - I20260621 15:25:30.393137 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 1063 / 2461 points
+[2026-06-21 15:25:30,452][src.colmap_mapper][INFO] - I20260621 15:25:30.452745 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+[2026-06-21 15:25:30,471][src.colmap_mapper][INFO] - I20260621 15:25:30.471240 0x1fde420c0 incremental_pipeline.cc:537] Registering image #7 (num_reg_frames=6)
+[2026-06-21 15:25:30,471][src.colmap_mapper][INFO] - I20260621 15:25:30.471249 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 435 / 1676 points
+[2026-06-21 15:25:30,510][src.colmap_mapper][INFO] - I20260621 15:25:30.510110 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+[2026-06-21 15:25:30,548][src.colmap_mapper][INFO] - I20260621 15:25:30.548075 0x1fde420c0 incremental_pipeline.cc:537] Registering image #8 (num_reg_frames=7)
+[2026-06-21 15:25:30,548][src.colmap_mapper][INFO] - I20260621 15:25:30.548088 0x1fde420c0 incremental_pipeline.cc:540] => Image sees 482 / 1376 points
+[2026-06-21 15:25:30,582][src.colmap_mapper][INFO] - I20260621 15:25:30.582839 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+[2026-06-21 15:25:30,622][src.colmap_mapper][INFO] - I20260621 15:25:30.622927 0x1fde420c0 incremental_pipeline.cc:79] Retriangulation and Global bundle adjustment
+[2026-06-21 15:25:30,632][src.colmap_mapper][INFO] - I20260621 15:25:30.631992 0x1fde420c0 incremental_pipeline.cc:723] Keeping successful reconstruction
+[2026-06-21 15:25:30,633][src.colmap_mapper][INFO] - I20260621 15:25:30.633911 0x1fde420c0 timer.cc:90] Elapsed time: 0.007 [minutes]
+[2026-06-21 15:25:30,637][src.colmap_mapper][INFO] - Sparse reconstruction completed successfully
+[2026-06-21 15:25:30,637][__main__][INFO] - ✓ Sparse reconstruction completed
+[2026-06-21 15:25:30,637][src.timing_recorder][INFO] - [TIMING] ✓ Completed: sparse_reconstruction (0.48s)
+[2026-06-21 15:25:30,637][src.timing_recorder][INFO] - [TIMING] Starting: undistortion
+[2026-06-21 15:25:30,637][__main__][INFO] - ============================================================
+[2026-06-21 15:25:30,637][__main__][INFO] - STEP 5: Image Undistortion
+[2026-06-21 15:25:30,637][__main__][INFO] - ============================================================
+[2026-06-21 15:25:30,638][src.colmap_undistorter][INFO] - Undistorting images
+[2026-06-21 15:25:30,638][src.colmap_undistorter][INFO] - Input model: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy/colmap_sfm_camera_model/sparse/0
+[2026-06-21 15:25:30,638][src.colmap_undistorter][INFO] - Images: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy/colmap_sfm_camera_model/images
+[2026-06-21 15:25:30,638][src.colmap_undistorter][INFO] - Output: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy/colmap_sfm_linearized
+[2026-06-21 15:25:30,638][src.colmap_undistorter][INFO] - Running: colmap image_undistorter
+[2026-06-21 15:25:30,686][src.colmap_undistorter][INFO] - I20260621 15:25:30.686451 0x1fde420c0 image.cc:368] === Reading reconstruction ===
+[2026-06-21 15:25:30,688][src.colmap_undistorter][INFO] - I20260621 15:25:30.688468 0x1fde420c0 image.cc:371] => Reconstruction with 8 images and 2190 points
+[2026-06-21 15:25:30,688][src.colmap_undistorter][INFO] - I20260621 15:25:30.688479 0x1fde420c0 undistorters.cc:166] === Image undistortion ===
+[2026-06-21 15:25:30,688][src.colmap_undistorter][INFO] - I20260621 15:25:30.688649 0x1fde420c0 undistorters.cc:205] Undistorting image [1/8]
+[2026-06-21 15:25:31,310][src.colmap_undistorter][INFO] - I20260621 15:25:31.310242 0x1fde420c0 undistorters.cc:205] Undistorting image [2/8]
+[2026-06-21 15:25:31,310][src.colmap_undistorter][INFO] - I20260621 15:25:31.310261 0x1fde420c0 undistorters.cc:205] Undistorting image [3/8]
+[2026-06-21 15:25:31,337][src.colmap_undistorter][INFO] - I20260621 15:25:31.337786 0x1fde420c0 undistorters.cc:205] Undistorting image [4/8]
+[2026-06-21 15:25:31,337][src.colmap_undistorter][INFO] - I20260621 15:25:31.337800 0x1fde420c0 undistorters.cc:205] Undistorting image [5/8]
+[2026-06-21 15:25:31,346][src.colmap_undistorter][INFO] - I20260621 15:25:31.346600 0x1fde420c0 undistorters.cc:205] Undistorting image [6/8]
+[2026-06-21 15:25:31,346][src.colmap_undistorter][INFO] - I20260621 15:25:31.346608 0x1fde420c0 undistorters.cc:205] Undistorting image [7/8]
+[2026-06-21 15:25:31,346][src.colmap_undistorter][INFO] - I20260621 15:25:31.346610 0x1fde420c0 undistorters.cc:205] Undistorting image [8/8]
+[2026-06-21 15:25:31,356][src.colmap_undistorter][INFO] - I20260621 15:25:31.356662 0x1fde420c0 undistorters.cc:213] Writing reconstruction...
+[2026-06-21 15:25:31,360][src.colmap_undistorter][INFO] - I20260621 15:25:31.360892 0x1fde420c0 undistorters.cc:218] Writing configuration...
+[2026-06-21 15:25:31,361][src.colmap_undistorter][INFO] - I20260621 15:25:31.360981 0x1fde420c0 undistorters.cc:222] Writing scripts...
+[2026-06-21 15:25:31,361][src.colmap_undistorter][INFO] - I20260621 15:25:31.361070 0x1fde420c0 timer.cc:90] Elapsed time: 0.011 [minutes]
+[2026-06-21 15:25:31,365][src.colmap_undistorter][INFO] - Image undistortion completed successfully
+[2026-06-21 15:25:31,365][__main__][INFO] - ✓ Image undistortion completed
+[2026-06-21 15:25:31,365][src.timing_recorder][INFO] - [TIMING] ✓ Completed: undistortion (0.73s)
+[2026-06-21 15:25:31,365][src.timing_recorder][INFO] - [TIMING] Starting: splat_training
+[2026-06-21 15:25:31,365][__main__][INFO] - ============================================================
+[2026-06-21 15:25:31,365][__main__][INFO] - STEP 6: OpenSplat Training
+[2026-06-21 15:25:31,365][__main__][INFO] - ============================================================
+[2026-06-21 15:25:31,366][src.opensplat_trainer][INFO] - Training 3D Gaussian Splat
+[2026-06-21 15:25:31,366][src.opensplat_trainer][INFO] - Sparse model: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy/colmap_sfm_linearized/sparse
+[2026-06-21 15:25:31,366][src.opensplat_trainer][INFO] - Images: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy/colmap_sfm_linearized/images
+[2026-06-21 15:25:31,366][src.opensplat_trainer][INFO] - Output PLY: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy/colmap_sfm_linearized/splats/teensy_20260621_1525.ply
+[2026-06-21 15:25:31,366][src.opensplat_trainer][INFO] - Training loss log: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy/colmap_sfm_linearized/splats/train_20260621_1525.jsonl
+[2026-06-21 15:25:31,366][src.opensplat_trainer][INFO] - Validation loss log: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy/colmap_sfm_linearized/splats/val_20260621_1525.jsonl
+[2026-06-21 15:25:31,366][src.opensplat_trainer][INFO] - Running: opensplat
+[2026-06-21 15:25:31,513][src.opensplat_trainer][INFO] - Using MPS
+[2026-06-21 15:25:31,514][src.opensplat_trainer][INFO] - Reading 2190 points
+[2026-06-21 15:25:31,515][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy/colmap_sfm_linearized/images/frame_0001.jpgLoading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy/colmap_sfm_linearized/images/frame_0002.jpg
+[2026-06-21 15:25:31,515][src.opensplat_trainer][INFO] - 
+[2026-06-21 15:25:31,515][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy/colmap_sfm_linearized/images/frame_0005.jpg
+[2026-06-21 15:25:31,515][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy/colmap_sfm_linearized/images/frame_0006.jpg
+[2026-06-21 15:25:31,515][src.opensplat_trainer][INFO] - Loading Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy/colmap_sfm_linearized/images/frame_0008.jpg
+[2026-06-21 15:25:31,515][src.opensplat_trainer][INFO] - /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy/colmap_sfm_linearized/images/frame_0007.jpgLoading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy/colmap_sfm_linearized/images/frame_0003.jpg
+[2026-06-21 15:25:31,515][src.opensplat_trainer][INFO] - 
+[2026-06-21 15:25:31,515][src.opensplat_trainer][INFO] - Loading /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy/colmap_sfm_linearized/images/frame_0004.jpg
+[2026-06-21 15:25:31,892][src.opensplat_trainer][INFO] - init_gsplat_metal_context: loading '/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/opensplat/build/default.metallib'
+[2026-06-21 15:25:31,893][src.opensplat_trainer][INFO] - init_gsplat_metal_context: loaded '/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/opensplat/build/default.metallib', functions: compute_cov2d_bounds_kernel, project_gaussians_backward_kernel, get_tile_bin_edges_kernel, rasterize_backward_kernel, map_gaussian_to_intersects_kernel, nd_rasterize_backward_kernel, project_gaussians_forward_kernel, compute_sh_backward_kernel, compute_sh_forward_kernel, nd_rasterize_forward_kernel
+[2026-06-21 15:25:31,893][src.opensplat_trainer][INFO] - init_gsplat_metal_context: load function nd_rasterize_backward_kernel with label: (null)
+[2026-06-21 15:25:31,893][src.opensplat_trainer][INFO] - init_gsplat_metal_context: load function nd_rasterize_forward_kernel with label: (null)
+[2026-06-21 15:25:31,893][src.opensplat_trainer][INFO] - init_gsplat_metal_context: load function rasterize_backward_kernel with label: (null)
+[2026-06-21 15:25:31,893][src.opensplat_trainer][INFO] - init_gsplat_metal_context: load function project_gaussians_forward_kernel with label: (null)
+[2026-06-21 15:25:31,893][src.opensplat_trainer][INFO] - init_gsplat_metal_context: load function project_gaussians_backward_kernel with label: (null)
+[2026-06-21 15:25:31,893][src.opensplat_trainer][INFO] - init_gsplat_metal_context: load function compute_sh_forward_kernel with label: (null)
+[2026-06-21 15:25:31,893][src.opensplat_trainer][INFO] - init_gsplat_metal_context: load function compute_sh_backward_kernel with label: (null)
+[2026-06-21 15:25:31,893][src.opensplat_trainer][INFO] - init_gsplat_metal_context: load function compute_cov2d_bounds_kernel with label: (null)
+[2026-06-21 15:25:31,893][src.opensplat_trainer][INFO] - init_gsplat_metal_context: load function map_gaussian_to_intersects_kernel with label: (null)
+[2026-06-21 15:25:31,893][src.opensplat_trainer][INFO] - init_gsplat_metal_context: load function get_tile_bin_edges_kernel with label: (null)
+[2026-06-21 15:25:31,893][src.opensplat_trainer][INFO] - Step 10: 0.334294 (20%)
+[2026-06-21 15:25:32,121][src.opensplat_trainer][INFO] - Step 20: 0.315683 (40%)
+[2026-06-21 15:25:32,323][src.opensplat_trainer][INFO] - Step 30: 0.283404 (60%)
+[2026-06-21 15:25:32,533][src.opensplat_trainer][INFO] - Step 40: 0.300565 (80%)
+[2026-06-21 15:25:32,750][src.opensplat_trainer][INFO] - Step 50: 0.302381 (100%)
+[2026-06-21 15:25:32,765][src.opensplat_trainer][INFO] - Wrote /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy/colmap_sfm_linearized/splats/cameras.json
+[2026-06-21 15:25:32,773][src.opensplat_trainer][INFO] - Wrote /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy/colmap_sfm_linearized/splats/teensy_20260621_1525.ply
+[2026-06-21 15:25:32,787][src.opensplat_trainer][INFO] - /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy/colmap_sfm_linearized/images/frame_0001.jpg validation loss: 0.344967
+[2026-06-21 15:25:32,841][src.opensplat_trainer][INFO] - Parsed 5 training loss values to /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy/colmap_sfm_linearized/splats/train_20260621_1525.jsonl
+[2026-06-21 15:25:32,841][src.opensplat_trainer][INFO] - Captured validation loss: 0.344967 to /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy/colmap_sfm_linearized/splats/val_20260621_1525.jsonl
+[2026-06-21 15:25:32,841][src.opensplat_trainer][INFO] - Training completed successfully
+[2026-06-21 15:25:32,841][src.opensplat_trainer][INFO] - Output saved to: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy/colmap_sfm_linearized/splats/teensy_20260621_1525.ply
+[2026-06-21 15:25:32,841][__main__][INFO] - ✓ Splat training completed
+[2026-06-21 15:25:32,841][__main__][INFO] - ============================================================
+[2026-06-21 15:25:32,841][__main__][INFO] - Analyzing Training Loss
+[2026-06-21 15:25:32,841][__main__][INFO] - ============================================================
+[2026-06-21 15:25:33,110][src.timing_recorder][INFO] - [TIMING] ✓ Completed: splat_training (1.75s)
+[2026-06-21 15:25:33,110][__main__][INFO] - 
+[2026-06-21 15:25:33,110][__main__][INFO] - ╔==========================================================╗
+[2026-06-21 15:25:33,110][__main__][INFO] - ║                    Pipeline Complete!                    ║
+[2026-06-21 15:25:33,110][__main__][INFO] - ╚==========================================================╝
+[2026-06-21 15:25:33,111][__main__][INFO] - Output directory: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy/colmap_sfm_linearized/splats
+[2026-06-21 15:25:33,111][__main__][INFO] -   - PLY file: *.ply (3D Gaussian Splat)
+[2026-06-21 15:25:33,111][__main__][INFO] -   - Loss log: *.jsonl (Training loss per step)
+[2026-06-21 15:25:33,111][__main__][INFO] -   - Timing log: running-time_*.jsonl (Step execution times)
+[2026-06-21 15:25:33,111][src.timing_recorder][INFO] - 
+[2026-06-21 15:25:33,111][src.timing_recorder][INFO] - ======================================================================
+[2026-06-21 15:25:33,111][src.timing_recorder][INFO] - PIPELINE EXECUTION TIMING SUMMARY
+[2026-06-21 15:25:33,111][src.timing_recorder][INFO] - ======================================================================
+[2026-06-21 15:25:33,111][src.timing_recorder][INFO] - ✓ frame_extraction              0.24s  (  6.5%)
+[2026-06-21 15:25:33,111][src.timing_recorder][INFO] - ✓ feature_extraction            0.23s  (  6.3%)
+[2026-06-21 15:25:33,111][src.timing_recorder][INFO] - ✓ feature_matching              0.21s  (  5.9%)
+[2026-06-21 15:25:33,111][src.timing_recorder][INFO] - ✓ sparse_reconstruction         0.48s  ( 13.1%)
+[2026-06-21 15:25:33,111][src.timing_recorder][INFO] - ✓ undistortion                  0.73s  ( 20.0%)
+[2026-06-21 15:25:33,111][src.timing_recorder][INFO] - ✓ splat_training                1.75s  ( 48.1%)
+[2026-06-21 15:25:33,111][src.timing_recorder][INFO] - ----------------------------------------------------------------------
+[2026-06-21 15:25:33,111][src.timing_recorder][INFO] - TOTAL                           3.63s  (100.0%)
+[2026-06-21 15:25:33,111][src.timing_recorder][INFO] - ======================================================================
+[2026-06-21 15:25:33,111][src.timing_recorder][INFO] - 
+[2026-06-21 15:25:33,112][src.timing_recorder][INFO] - [TIMING] Saved timing report to: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/teensy/colmap_sfm_linearized/splats/running-time_20260621_1525.jsonl
