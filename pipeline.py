@@ -274,7 +274,7 @@ class Pipeline:
         return all_success
 
 
-@hydra.main(version_base=None, config_path="config", config_name="config")
+@hydra.main(version_base=None, config_path="config", config_name="baseline")
 def main(config: DictConfig) -> None:
     """Main entry point with Hydra configuration."""
     pipeline = Pipeline(config)

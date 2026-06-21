@@ -113,3 +113,11 @@ opensplat:
 validation:
   enabled: true
   image: "frame_0032.jpg"
+
+# Hydra configuration
+hydra:
+  output_subdir: null
+  run:
+    dir: logs/hydra/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  sweep:
+    dir: logs/hydra/multirun/${now:%Y-%m-%d}/${now:%H-%M-%S}

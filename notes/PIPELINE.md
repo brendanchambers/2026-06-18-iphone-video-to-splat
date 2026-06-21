@@ -21,12 +21,13 @@ pipeline.py                    # Main orchestrator
 │   ├── colmap_undistorter.py        # Undistort images & correct cameras
 │   └── opensplat_trainer.py         # Train 3D Gaussian splat
 └── config/
-    └── config.yaml                   # Hydra configuration (replaces .env)
+    ├── baseline.yaml                 # Baseline Hydra configuration
+    └── teensy.yaml                   # Minimal dev/test configuration
 ```
 
 ## Configuration
 
-All configuration is managed through `config/config.yaml` using Hydra + OmegaConf.
+All configuration is managed through YAML files in the `config/` directory using Hydra + OmegaConf. The default config is `config/baseline.yaml`.
 
 ### Key Configuration Sections
 

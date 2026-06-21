@@ -7,10 +7,10 @@
 | Main Pipeline | 1 | 9.4K | Orchestrator and entry point |
 | Utilities | 6 | 28.6K | Modular pipeline components |
 | Package | 1 | 0.5K | Package initialization |
-| Configuration | 1 | 7.2K | Hydra YAML configuration |
+| Configuration | 2 | 14.4K | Hydra YAML configurations (baseline + teensy) |
 | Testing | 1 | 6.9K | Comprehensive test suite |
 | Documentation | 3 | 24.1K | Documentation and reports |
-| **TOTAL** | **13** | **76.7K** | **Complete working pipeline** |
+| **TOTAL** | **14** | **84.0K** | **Complete working pipeline** |
 
 ---
 
@@ -138,9 +138,9 @@ def train_splat(
 
 ### Configuration
 
-**config/config.yaml** (7.2K)
+**config/baseline.yaml** (7.2K)
 
-Structure:
+Default configuration with 87 parameters:
 ```yaml
 project:                    # Project settings (3 parameters)
   dir, video_path, experiment_name
@@ -164,7 +164,12 @@ validation:                 # Validation settings (2 parameters)
   enabled, image
 ```
 
-Total: 87 configurable parameters organized in 6 sections
+**config/teensy.yaml** (7.2K)
+
+Minimal configuration for quick development iteration:
+- 50 OpenSplat training iterations (vs 1500 in baseline)
+- Validation uses frame_0000.jpg (first frame)
+- Same structure as baseline.yaml for easy comparison
 
 ---
 
@@ -257,7 +262,8 @@ root/
 │   └── opensplat_trainer.py
 │
 ├── config/                          (Configuration)
-│   └── config.yaml
+│   ├── baseline.yaml                (Default configuration)
+│   └── teensy.yaml                  (Dev/test configuration)
 │
 └── reports/                         (Documentation)
     ├── FILE_MANIFEST.md
@@ -342,8 +348,11 @@ No external Python dependencies needed beyond Hydra/OmegaConf.
 To use the pipeline:
 
 ```bash
-# Run full pipeline
+# Run full pipeline with baseline config (default)
 uv run python pipeline.py
+
+# Run with teensy config (quick iteration)
+uv run python pipeline.py --config-name teensy
 
 # Run tests first
 uv run python test_pipeline.py

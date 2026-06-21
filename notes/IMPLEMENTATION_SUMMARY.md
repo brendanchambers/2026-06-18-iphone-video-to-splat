@@ -22,7 +22,8 @@ pipeline.py                          # Main orchestrator (entry point)
 │   ├── colmap_undistorter.py       # COLMAP image undistortion
 │   └── opensplat_trainer.py        # OpenSplat training orchestration
 ├── config/
-│   └── config.yaml                 # Hydra configuration file
+│   ├── baseline.yaml               # Default Hydra configuration
+│   └── teensy.yaml                 # Minimal dev/test configuration
 ├── test_pipeline.py                # Comprehensive test suite
 ├── PIPELINE.md                     # Detailed pipeline documentation
 └── reports/
@@ -77,12 +78,17 @@ pipeline.py                          # Main orchestrator (entry point)
    - Package exports for all utilities
 
 ### Configuration
-- **config/config.yaml** (180 lines)
+- **config/baseline.yaml** (180 lines)
   - Project paths with Hydra interpolation
   - Frame extraction parameters
   - COLMAP parameters (feature extraction, matching, mapper, undistorter)
   - OpenSplat training parameters
   - Validation parameters
+
+- **config/teensy.yaml** (180 lines)
+  - Minimal dev configuration for quick iteration
+  - 50 OpenSplat training iterations (vs 1500 baseline)
+  - Validation uses first frame (frame_0000.jpg)
 
 ### Testing & Documentation
 - **test_pipeline.py** (280 lines)
@@ -102,7 +108,9 @@ pipeline.py                          # Main orchestrator (entry point)
 ## Configuration System
 
 ### Hydra + OmegaConf
-- **Centralized configuration**: All parameters in `config/config.yaml`
+- **Centralized configuration**: All parameters in YAML files in `config/` directory
+- **Default config**: `baseline.yaml` loaded when running `uv run python pipeline.py`
+- **Multiple configs**: `teensy.yaml` for dev iteration via `--config-name teensy`
 - **Path interpolation**: `${project.dir}` expands to project directory
 - **CLI overrides**: Override any config without editing files
 - **Type safety**: OmegaConf validates configuration structure

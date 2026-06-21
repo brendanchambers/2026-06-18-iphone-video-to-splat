@@ -33,7 +33,7 @@ def test_config_loading():
     logger.info("TEST 1: Configuration Loading")
     logger.info("=" * 60)
 
-    config = OmegaConf.load("config/config.yaml")
+    config = OmegaConf.load("config/baseline.yaml")
     OmegaConf.resolve(config)
 
     assert config.project.experiment_name == "testing"

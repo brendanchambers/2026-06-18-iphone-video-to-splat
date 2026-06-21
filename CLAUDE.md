@@ -7,7 +7,9 @@ We will be attempting to create a 3D gaussian splat from extracted frames and st
 
 ## Workflow info
 Please keep your plan, next steps, debugging notes, and other documentation for yourself in this file, CLAUDE.md.
-For other materials, e.g. run instructions, and other project info, maintain documentation in README.md
+For other materials, e.g. run instructions, and other project info, maintain documentation in README.md.
+Do not create new markdown files in the top level project directory. If needed, you may organize them under `reference` or `work_history`.
+Regularly clean up old work details from CLAUDE.md to maintain a concise markdown file.
 
 ## Inner and outer repo organization for rapid prototyping
 Notice there is an inner project repo named opensplat pasted into the project. Avoid modifying this repository unless absolutely necessary. We will do our work in the outer repository. The inner project, opensplat, is expected to be a key dependency and it's simpler to have its code available here in the repo where we can use it heavily with ease.
@@ -178,7 +180,8 @@ pipeline.py (main entry point)
 │   ├── colmap_undistorter.py        # COLMAP image undistortion
 │   └── opensplat_trainer.py         # OpenSplat training
 ├── config/
-│   └── config.yaml                  # 87 parameters, 6 sections
+│   ├── baseline.yaml                # Default 87 parameters, 6 sections
+│   └── teensy.yaml                  # Dev/test config with minimal iterations
 └── test_pipeline.py                 # 6 test suites (all passing)
 ```
 
@@ -197,14 +200,15 @@ pipeline.py (main entry point)
   - `run_full_pipeline()` - orchestrates all steps
   - `run_frame_extraction()` through `run_splat_training()` - individual steps
 
-**Configuration** (1 file, 7K)
-- `config/config.yaml` - Hydra configuration with 87 parameters organized in:
+**Configuration** (2 files, 14K)
+- `config/baseline.yaml` - Hydra configuration with 87 parameters organized in:
   - project (3 params)
   - paths (8 params, with interpolation)
   - frame_extraction (5 params)
   - colmap (56 params: feature_extraction, matching, mapper, undistorter)
   - opensplat (13 params)
   - validation (2 params)
+- `config/teensy.yaml` - Minimal dev config: 50 iterations, frame_0000.jpg validation
 
 **Testing & Documentation** (4 files, 44K)
 - `test_pipeline.py` - 6 test suites (all passing)
@@ -276,6 +280,7 @@ success = pipeline.run_full_pipeline()
 
 - See `PIPELINE.md` for usage and API reference
 - See `reports/IMPLEMENTATION_SUMMARY.md` for architecture details
-- See `config/config.yaml` for all 87 available parameters
+- See `config/baseline.yaml` for all 87 available parameters
+- See `config/teensy.yaml` for quick dev iteration (50 iters, minimal setup)
 - Run `uv run python test_pipeline.py` to verify setup
 - Run `uv run python pipeline.py` to execute the pipeline
