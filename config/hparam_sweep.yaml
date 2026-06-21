@@ -7,3 +7,4 @@ defaults:
 
 project:
   experiment_name: "densify_sz${opensplat.densify_size_thresh}_gr${opensplat.densify_grad_thresh}"
+  experiment_group: "sweep_densify_size_and_gradient_threshold"
