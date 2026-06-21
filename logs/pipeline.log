@@ -4559,3 +4559,58 @@
 2026-06-20 21:29:35,984 - __main__ - INFO - Pipeline is ready to use!
 2026-06-20 21:29:35,984 - __main__ - INFO - Run with: uv run python pipeline.py
 2026-06-20 21:29:35,984 - __main__ - INFO - 
+2026-06-21 12:17:24,460 - __main__ - INFO - ✓ Pipeline instantiated successfully
+2026-06-21 12:17:24,460 - __main__ - INFO -   Project dir: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat
+2026-06-21 12:17:24,460 - __main__ - INFO -   Log dir: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/logs
+2026-06-21 12:17:24,460 - __main__ - INFO -   Colmap log: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/logs/colmap_pipeline.log
+2026-06-21 12:17:24,460 - __main__ - INFO -   OpenSplat log: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/logs/opensplat_pipeline.log
+2026-06-21 12:17:24,460 - __main__ - INFO - 
+2026-06-21 12:17:24,460 - __main__ - INFO - ============================================================
+2026-06-21 12:17:24,460 - __main__ - INFO - TEST 3: Module Imports
+2026-06-21 12:17:24,460 - __main__ - INFO - ============================================================
+2026-06-21 12:17:24,460 - __main__ - INFO - ✓ frame_extractor: imported and callable
+2026-06-21 12:17:24,460 - __main__ - INFO - ✓ colmap_feature_extractor: imported and callable
+2026-06-21 12:17:24,460 - __main__ - INFO - ✓ colmap_feature_matcher: imported and callable
+2026-06-21 12:17:24,460 - __main__ - INFO - ✓ colmap_mapper: imported and callable
+2026-06-21 12:17:24,460 - __main__ - INFO - ✓ colmap_undistorter: imported and callable
+2026-06-21 12:17:24,460 - __main__ - INFO - ✓ opensplat_trainer: imported and callable
+2026-06-21 12:17:24,460 - __main__ - INFO - 
+2026-06-21 12:17:24,460 - __main__ - INFO - ============================================================
+2026-06-21 12:17:24,460 - __main__ - INFO - TEST 4: Config Parameter Coverage
+2026-06-21 12:17:24,460 - __main__ - INFO - ============================================================
+2026-06-21 12:17:24,460 - __main__ - INFO - ✓ Frame extraction parameters present
+2026-06-21 12:17:24,460 - __main__ - INFO - ✓ Feature extraction parameters present
+2026-06-21 12:17:24,460 - __main__ - INFO - ✓ Feature matching parameters present
+2026-06-21 12:17:24,460 - __main__ - INFO - ✓ Mapper parameters present
+2026-06-21 12:17:24,460 - __main__ - INFO - ✓ Undistorter parameters present
+2026-06-21 12:17:24,460 - __main__ - INFO - ✓ OpenSplat parameters present
+2026-06-21 12:17:24,460 - __main__ - INFO - ✓ Validation parameters present
+2026-06-21 12:17:24,460 - __main__ - INFO - 
+2026-06-21 12:17:24,460 - __main__ - INFO - ============================================================
+2026-06-21 12:17:24,460 - __main__ - INFO - TEST 5: Pipeline Methods
+2026-06-21 12:17:24,460 - __main__ - INFO - ============================================================
+2026-06-21 12:17:24,460 - __main__ - INFO - ✓ Pipeline.run_frame_extraction() exists and callable
+2026-06-21 12:17:24,460 - __main__ - INFO - ✓ Pipeline.run_feature_extraction() exists and callable
+2026-06-21 12:17:24,460 - __main__ - INFO - ✓ Pipeline.run_feature_matching() exists and callable
+2026-06-21 12:17:24,460 - __main__ - INFO - ✓ Pipeline.run_sparse_reconstruction() exists and callable
+2026-06-21 12:17:24,460 - __main__ - INFO - ✓ Pipeline.run_undistortion() exists and callable
+2026-06-21 12:17:24,460 - __main__ - INFO - ✓ Pipeline.run_splat_training() exists and callable
+2026-06-21 12:17:24,460 - __main__ - INFO - ✓ Pipeline.run_full_pipeline() exists and callable
+2026-06-21 12:17:24,460 - __main__ - INFO - 
+2026-06-21 12:17:24,460 - __main__ - INFO - ============================================================
+2026-06-21 12:17:24,460 - __main__ - INFO - TEST 6: Directory Structure
+2026-06-21 12:17:24,460 - __main__ - INFO - ============================================================
+2026-06-21 12:17:24,461 - __main__ - INFO - ✓ images: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/testing/images
+2026-06-21 12:17:24,461 - __main__ - INFO - ✓ sparse: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/testing/sparse
+2026-06-21 12:17:24,461 - __main__ - INFO - ✓ distortion_corrected: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/testing_distortion_corrected
+2026-06-21 12:17:24,461 - __main__ - INFO - ✓ opensplat_output: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/testing_distortion_corrected/splats
+2026-06-21 12:17:24,461 - __main__ - INFO - ✓ logs: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/logs
+2026-06-21 12:17:24,461 - __main__ - INFO - ✓ validation_renders: /Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat/data/intermediates/validation_renders
+2026-06-21 12:17:24,461 - __main__ - INFO - 
+2026-06-21 12:17:24,461 - __main__ - INFO - ╔==========================================================╗
+2026-06-21 12:17:24,461 - __main__ - INFO - ║                      All Tests Passed!                    ║
+2026-06-21 12:17:24,461 - __main__ - INFO - ╚==========================================================╝
+2026-06-21 12:17:24,461 - __main__ - INFO - 
+2026-06-21 12:17:24,461 - __main__ - INFO - Pipeline is ready to use!
+2026-06-21 12:17:24,461 - __main__ - INFO - Run with: uv run python pipeline.py
+2026-06-21 12:17:24,461 - __main__ - INFO - 

@@ -6,6 +6,8 @@ This script tests each component individually without running heavy computations
 import sys
 from pathlib import Path
 from omegaconf import OmegaConf
+from hydra.core.global_hydra import GlobalHydra
+from hydra import initialize, compose
 import logging
 
 # Setup path
@@ -33,8 +35,10 @@ def test_config_loading():
     logger.info("TEST 1: Configuration Loading")
     logger.info("=" * 60)
 
-    config = OmegaConf.load("config/baseline.yaml")
-    OmegaConf.resolve(config)
+    # Use Hydra to load config so resolvers (like ${now:...}) work
+    GlobalHydra.instance().clear()
+    with initialize(version_base=None, config_path="config"):
+        config = compose(config_name="baseline")
 
     assert config.project.experiment_name == "testing"
     assert "images_dir" in config.paths
