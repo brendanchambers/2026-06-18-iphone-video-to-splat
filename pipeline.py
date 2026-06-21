@@ -14,6 +14,7 @@ from src.colmap_feature_matcher import match_features
 from src.colmap_mapper import sparse_reconstruction
 from src.colmap_undistorter import undistort_images
 from src.opensplat_trainer import train_splat
+from scripts.analyze_training_loss import load_loss_records, analyze_loss, print_analysis, plot_loss
 
 
 logger = logging.getLogger(__name__)
@@ -63,11 +64,11 @@ class Pipeline:
         self.opensplat_log_file = self.log_dir / "opensplat_pipeline.log"
 
         # Create output directories
+        Path(config.paths.colmap_sfm_camera_model).mkdir(parents=True, exist_ok=True)
+        Path(config.paths.colmap_sfm_linearized).mkdir(parents=True, exist_ok=True)
         Path(config.paths.images_dir).mkdir(parents=True, exist_ok=True)
         Path(config.paths.sparse_dir).mkdir(parents=True, exist_ok=True)
-        Path(config.paths.distortion_corrected_dir).mkdir(parents=True, exist_ok=True)
         Path(config.paths.opensplat_output_dir).mkdir(parents=True, exist_ok=True)
-        Path(config.paths.val_render_dir).mkdir(parents=True, exist_ok=True)
 
         setup_logging(self.log_dir)
 
@@ -173,7 +174,7 @@ class Pipeline:
 
         image_path = Path(self.config.paths.images_dir)
         input_model_path = Path(self.config.paths.sparse_dir) / "0"
-        output_path = Path(self.config.paths.distortion_corrected_dir)
+        output_path = Path(self.config.paths.colmap_sfm_linearized)
 
         success = undistort_images(
             image_path=image_path,
@@ -196,8 +197,8 @@ class Pipeline:
         logger.info("STEP 6: OpenSplat Training")
         logger.info("=" * 60)
 
-        sparse_model_path = Path(self.config.paths.distortion_corrected_dir) / "sparse"
-        images_path = Path(self.config.paths.distortion_corrected_dir) / "images"
+        sparse_model_path = Path(self.config.paths.colmap_sfm_linearized) / "sparse"
+        images_path = Path(self.config.paths.colmap_sfm_linearized) / "images"
         output_dir = Path(self.config.paths.opensplat_output_dir)
         opensplat_bin = Path(self.config.paths.opensplat_bin)
 
@@ -213,10 +214,45 @@ class Pipeline:
 
         if success:
             logger.info("✓ Splat training completed")
+            # Analyze training loss
+            self.analyze_training_loss(output_dir)
         else:
             logger.error("✗ Splat training failed")
 
         return success
+
+    def analyze_training_loss(self, output_dir: Path) -> None:
+        """
+        Analyze and visualize training loss from JSONL log file.
+
+        Args:
+            output_dir: Directory containing the JSONL loss file
+        """
+        logger.info("=" * 60)
+        logger.info("Analyzing Training Loss")
+        logger.info("=" * 60)
+
+        # Find the most recent training loss JSONL file (train_*.jsonl, not val_*.jsonl)
+        jsonl_files = sorted(output_dir.glob("train_*.jsonl"))
+        if not jsonl_files:
+            logger.warning("No training loss log file found")
+            return
+
+        jsonl_file = jsonl_files[-1]  # Get the most recent file
+        records = load_loss_records(jsonl_file)
+
+        if not records:
+            logger.warning(f"No loss records found in {jsonl_file.name}")
+            return
+
+        # Print analysis
+        print_analysis(jsonl_file, records)
+
+        # Generate plot
+        try:
+            plot_loss(records, jsonl_file)
+        except Exception as e:
+            logger.warning(f"Could not generate plot: {e}")
 
     def run_full_pipeline(self, skip_steps: Optional[list] = None) -> bool:
         """
@@ -269,7 +305,9 @@ class Pipeline:
             logger.info("╔" + "=" * 58 + "╗")
             logger.info("║" + " " * 20 + "Pipeline Complete!" + " " * 20 + "║")
             logger.info("╚" + "=" * 58 + "╝")
-            logger.info(f"Output PLY: {self.config.paths.opensplat_output_dir}")
+            logger.info(f"Output directory: {self.config.paths.opensplat_output_dir}")
+            logger.info(f"  - PLY file: *.ply (3D Gaussian Splat)")
+            logger.info(f"  - Loss log: *.jsonl (Training loss per step)")
 
         return all_success
 

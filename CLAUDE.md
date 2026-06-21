@@ -20,6 +20,82 @@ Write console output and errors to a `logs` directory. Use a single logfile per 
 
 # Below: compressed log of past work
 
+## JSONL Training Loss Logging (2026-06-21)
+
+### Overview
+Enhanced training visibility by implementing real-time training loss recording to JSONL format. Each training step's loss is captured and stored alongside the PLY output, enabling post-training analysis and visualization.
+
+### Bug Fix (2026-06-21)
+**Issue:** JSONL files were being created but remained empty after first training run.
+**Root Cause:** Regex pattern was expecting `Step N: loss=X.XXX` but OpenSplat actually outputs `Step N: X.XXX (progress%)`
+**Solution:** Updated `parse_opensplat_loss()` to match actual format: `r"Step\s+(\d+):\s+([\d.]+)\s*\(\d+%\)"`
+**Verification:** All test cases updated and passing. Loss values successfully extracted from actual training log.
+
+### Implementation Details
+
+**Modified Files:**
+- `src/opensplat_trainer.py` - Added loss parsing and JSONL writing
+- `pipeline.py` - Updated output summary to mention loss file
+- `scripts/analyze_training_loss.py` - New utility for JSONL analysis
+- `test_loss_parsing.py` - Test suite for loss parsing (all tests passing)
+
+**Key Features:**
+- **Real-time parsing**: Extracts loss values from OpenSplat stdout during training
+- **Robust regex matching**: Handles various log line formats ("Step N: loss=X.XXX")
+- **JSONL format**: One JSON object per line with step, loss, and ISO timestamp
+- **Co-located output**: Loss file saved alongside PLY in same directory with matching timestamp
+- **Zero overhead**: Parsing happens during normal log capture loop
+
+### Usage
+
+**Automatic capture during training:**
+```bash
+uv run python pipeline.py
+```
+Produces:
+- `data/intermediates/current_scene/splats/current_scene_YYYYMMDD_HHMM.ply` (3D model)
+- `data/intermediates/current_scene/splats/current_scene_YYYYMMDD_HHMM.jsonl` (loss log)
+
+**Analyze loss file:**
+```bash
+# Show statistics
+uv run python scripts/analyze_training_loss.py <path_to_jsonl>
+
+# Generate plot
+uv run python scripts/analyze_training_loss.py --plot <path_to_jsonl>
+
+# Analyze all loss files in directory
+uv run python scripts/analyze_training_loss.py data/intermediates/current_scene/splats/
+```
+
+### JSONL Format
+
+Each line contains a JSON object:
+```json
+{"step": 0, "loss": 1.5, "timestamp": "2026-06-21T14:30:00.123456"}
+{"step": 100, "loss": 0.89234, "timestamp": "2026-06-21T14:30:10.456789"}
+{"step": 200, "loss": 0.45123, "timestamp": "2026-06-21T14:30:20.789012"}
+```
+
+Fields:
+- `step`: Training iteration number
+- `loss`: Loss value (float)
+- `timestamp`: ISO format timestamp when loss was recorded
+
+### Test Coverage
+
+All 8 tests passing in `test_loss_parsing.py`:
+- ✓ Parse standard format
+- ✓ Parse large step numbers
+- ✓ Parse zero step
+- ✓ Parse with spacing variations
+- ✓ Parse from middle of line
+- ✓ Reject invalid lines
+- ✓ Reject incomplete lines
+- ✓ JSONL read/write round-trip
+
+---
+
 ## Training Loss Visualization (2026-06-19)
 
 ### Implementation

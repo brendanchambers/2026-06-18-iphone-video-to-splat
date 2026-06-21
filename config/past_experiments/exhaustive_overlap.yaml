@@ -1,0 +1,9 @@
+defaults:
+  - baseline
+  - _self_
+
+project:
+  experiment_name: "exhaustive_overlap"
+
+feature_matching:
+  sequential_overlap: 10000

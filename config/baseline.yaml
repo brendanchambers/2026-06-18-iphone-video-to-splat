@@ -4,18 +4,18 @@
 project:
   dir: "/Users/bc/brendanchambers/2026-06-18-iphone-video-to-splat"
   video_path: "./data/incoming/movies/gardenbed_2026-06-17.mov"
-  experiment_name: "testing"
+  experiment_name: "current_scene"
 
 # Input/output paths
 paths:
-  images_dir: "${project.dir}/data/intermediates/${project.experiment_name}/images"
-  sparse_dir: "${project.dir}/data/intermediates/${project.experiment_name}/sparse"
-  database_path: "${project.dir}/data/intermediates/${project.experiment_name}/database.db"
-  distortion_corrected_dir: "${project.dir}/data/intermediates/${project.experiment_name}_distortion_corrected"
+  colmap_sfm_camera_model: "${project.dir}/data/intermediates/${project.experiment_name}/colmap_sfm_camera_model"
+  colmap_sfm_linearized: "${project.dir}/data/intermediates/${project.experiment_name}/colmap_sfm_linearized"
+  images_dir: "${paths.colmap_sfm_camera_model}/images"
+  sparse_dir: "${paths.colmap_sfm_camera_model}/sparse"
+  database_path: "${paths.colmap_sfm_camera_model}/database.db"
   log_dir: "${project.dir}/logs"
   opensplat_bin: "${project.dir}/opensplat/build/opensplat"
-  opensplat_output_dir: "${paths.distortion_corrected_dir}/splats"
-  val_render_dir: "${project.dir}/data/intermediates/validation_renders"
+  opensplat_output_dir: "${paths.colmap_sfm_linearized}/splats"
 
 # Frame extraction parameters
 frame_extraction:
@@ -36,7 +36,7 @@ colmap:
     sift_num_octaves: 4
     sift_octave_resolution: 3
     sift_peak_threshold: 0.00667
-    sift_edge_threshold: 15
+    sift_edge_threshold: 10
     sift_estimate_affine_shape: 0
     sift_max_num_orientations: 2
     sift_upright: 0
@@ -75,7 +75,7 @@ colmap:
     ba_global_max_num_iterations: 50
     ba_global_frames_freq: 500
     ba_global_points_freq: 250000
-    filter_max_reproj_error: 6
+    filter_max_reproj_error: 8
     filter_min_tri_angle: 1.5
     init_max_error: 4
     init_min_tri_angle: 16
@@ -97,16 +97,16 @@ opensplat:
   num_iters: 1500
   downscale_factor: 1
   num_downscales: 2
-  resolution_schedule: 3000
+  resolution_schedule: 1000
   sh_degree: 3
   sh_degree_interval: 1000
   ssim_weight: 0.2
   refine_every: 100
-  warmup_length: 500
+  warmup_length: 250
   reset_alpha_every: 30
   densify_grad_thresh: 0.0002
-  densify_size_thresh: 0.01
-  stop_screen_size_at: 4000
+  densify_size_thresh: 0.005
+  stop_screen_size_at: 1000
   split_screen_size: 0.05
 
 # Validation parameters

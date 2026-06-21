@@ -3,13 +3,63 @@ OpenSplat training utility.
 """
 import subprocess
 import logging
+import json
+import re
 from pathlib import Path
 from datetime import datetime
-from typing import Optional
+from typing import Optional, Tuple
 from omegaconf import DictConfig
 
 
 logger = logging.getLogger(__name__)
+
+
+def parse_opensplat_loss(line: str) -> Optional[Tuple[int, float]]:
+    """
+    Parse training loss from OpenSplat output line.
+
+    Expects format like: "Step 100: 0.12345 (50%)"
+
+    Args:
+        line: Output line from OpenSplat
+
+    Returns:
+        Tuple of (step, loss) if parsed successfully, None otherwise
+    """
+    # Try to match "Step N: X.XXX (progress%)" pattern
+    # OpenSplat outputs: "Step 10: 0.335803 (20%)"
+    match = re.search(r"Step\s+(\d+):\s+([\d.]+)\s*\(\d+%\)", line)
+    if match:
+        try:
+            step = int(match.group(1))
+            loss = float(match.group(2))
+            return step, loss
+        except (ValueError, AttributeError):
+            pass
+    return None
+
+
+def parse_opensplat_validation_loss(line: str) -> Optional[float]:
+    """
+    Parse final validation loss from OpenSplat output line.
+
+    Expects format like: "/path/to/image.jpg validation loss: 0.12345"
+
+    Args:
+        line: Output line from OpenSplat
+
+    Returns:
+        Validation loss value if parsed successfully, None otherwise
+    """
+    # Match "validation loss: X.XXXXX" pattern (file path can contain anything before it)
+    match = re.search(r"validation loss:\s+([\d.]+)", line)
+    if match:
+        try:
+            val_loss = float(match.group(1))
+            return val_loss
+        except (ValueError, AttributeError):
+            pass
+    return None
 
 
 def train_splat(
@@ -62,10 +112,20 @@ def train_splat(
         output_filename = f"{experiment_name}_{timestamp}.ply"
         output_path = output_dir / output_filename
 
+        # Generate JSONL loss file path (use "train" prefix)
+        loss_filename = f"train_{timestamp}.jsonl"
+        loss_path = output_dir / loss_filename
+
+        # Generate validation loss file path
+        val_loss_filename = f"val_{timestamp}.jsonl"
+        val_loss_path = output_dir / val_loss_filename
+
         logger.info(f"Training 3D Gaussian Splat")
         logger.info(f"Sparse model: {sparse_model_path}")
         logger.info(f"Images: {images_path}")
-        logger.info(f"Output: {output_path}")
+        logger.info(f"Output PLY: {output_path}")
+        logger.info(f"Training loss log: {loss_path}")
+        logger.info(f"Validation loss log: {val_loss_path}")
 
         # Build command with OpenSplat parameters
         cmd = [
@@ -104,10 +164,10 @@ def train_splat(
                     cmd.extend(["--val"])
                     if val_config.image != "random":
                         cmd.extend(["--val-image", val_config.image])
-                    if "val_render_dir" in config.paths:
-                        val_render = Path(config.paths.val_render_dir)
-                        val_render.mkdir(parents=True, exist_ok=True)
-                        cmd.extend(["--val-render", str(val_render)])
+                    # Save validation renders to the splat output directory
+                    val_render = output_dir / "validation_renders"
+                    val_render.mkdir(parents=True, exist_ok=True)
+                    cmd.extend(["--val-render", str(val_render)])
         else:
             # Use defaults
             cmd.extend([
@@ -129,8 +189,10 @@ def train_splat(
 
         logger.info(f"Running: opensplat")
 
-        # Run OpenSplat with output logging
-        with open(log_file, "w") if log_file else None as log_fh:
+        # Run OpenSplat with output logging and loss parsing
+        with open(log_file, "w") if log_file else None as log_fh, \
+             open(loss_path, "w") as loss_fh, \
+             open(val_loss_path, "w") as val_loss_fh:
             process = subprocess.Popen(
                 cmd,
                 stdout=subprocess.PIPE,
@@ -138,12 +200,43 @@ def train_splat(
                 text=True,
             )
 
+            loss_count = 0
+            val_loss = None
             for line in process.stdout:
                 logger.info(line.rstrip())
                 if log_fh:
                     log_fh.write(line + "\n")
 
+                # Try to parse training loss from this line
+                parsed = parse_opensplat_loss(line)
+                if parsed:
+                    step, loss = parsed
+                    # Write as JSONL (one JSON object per line)
+                    loss_record = {
+                        "step": step,
+                        "loss": loss,
+                        "timestamp": datetime.now().isoformat(),
+                    }
+                    loss_fh.write(json.dumps(loss_record) + "\n")
+                    loss_count += 1
+
+                # Try to parse validation loss from this line
+                val_loss_parsed = parse_opensplat_validation_loss(line)
+                if val_loss_parsed is not None:
+                    val_loss = val_loss_parsed
+                    # Write validation loss as JSONL record
+                    val_loss_record = {
+                        "validation_loss": val_loss,
+                        "timestamp": datetime.now().isoformat(),
+                    }
+                    val_loss_fh.write(json.dumps(val_loss_record) + "\n")
+
             returncode = process.wait()
+            logger.info(f"Parsed {loss_count} training loss values to {loss_path}")
+            if val_loss is not None:
+                logger.info(f"Captured validation loss: {val_loss} to {val_loss_path}")
+            else:
+                logger.info(f"No validation loss captured (validation may be disabled)")
 
         if returncode != 0:
             logger.error(f"opensplat failed with return code {returncode}")

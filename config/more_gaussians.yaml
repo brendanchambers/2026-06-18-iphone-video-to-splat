@@ -1,0 +1,10 @@
+defaults:
+  - baseline
+  - _self_
+
+project:
+  experiment_name: "more_gaussians"
+
+opensplat:
+  densify_grad_thresh: 0.00005
+  densify_size_thresh: 0.005

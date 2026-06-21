@@ -40,7 +40,7 @@ def test_config_loading():
     with initialize(version_base=None, config_path="config"):
         config = compose(config_name="baseline")
 
-    assert config.project.experiment_name == "testing"
+    assert config.project.experiment_name == "current_scene"
     assert "images_dir" in config.paths
     assert "opensplat_bin" in config.paths
     assert config.opensplat.num_iters == 1500
@@ -164,12 +164,12 @@ def test_directory_structure(pipeline):
     logger.info("=" * 60)
 
     dirs = [
+        ("colmap_sfm_camera_model", Path(pipeline.config.paths.colmap_sfm_camera_model)),
+        ("colmap_sfm_linearized", Path(pipeline.config.paths.colmap_sfm_linearized)),
         ("images", Path(pipeline.config.paths.images_dir)),
         ("sparse", Path(pipeline.config.paths.sparse_dir)),
-        ("distortion_corrected", Path(pipeline.config.paths.distortion_corrected_dir)),
         ("opensplat_output", Path(pipeline.config.paths.opensplat_output_dir)),
         ("logs", pipeline.log_dir),
-        ("validation_renders", Path(pipeline.config.paths.val_render_dir)),
     ]
 
     for dir_name, dir_path in dirs:
