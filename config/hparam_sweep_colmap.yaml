@@ -1,0 +1,11 @@
+defaults:
+  - baseline
+  - _self_
+
+# Teensy config for quick development iterations
+# Inherits all settings from baseline.yaml, overriding only what differs
+
+project:
+  experiment_name: "sweep_nFeat${colmap.feature_extraction.sift_max_num_features}_edgeThr${colmap.feature_extraction.sift_edge_threshold}_seqOver${colmap.feature_matching.sequential_overlap}_maxErr${colmap.mapper.filter_max_reproj_error}"
+  experiment_group: "sweep_colmap_features"
+

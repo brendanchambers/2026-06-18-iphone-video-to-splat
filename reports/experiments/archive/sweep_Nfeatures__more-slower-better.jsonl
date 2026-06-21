@@ -1,0 +1,2 @@
+{"experiment_name": "sweep_nFeat2048_edgeThr10_maxErr8_", "experiment_group": "sweep_Nfeatures", "timestamp": "2026-06-21T17:52:17.285505", "total_running_time": 137.76043057441711, "train_loss": 0.169384, "val_loss": 0.209213}
+{"experiment_name": "sweep_nFeat8192_edgeThr10_maxErr8_", "experiment_group": "sweep_Nfeatures", "timestamp": "2026-06-21T17:58:05.689752", "total_running_time": 348.37292194366455, "train_loss": 0.127699, "val_loss": 0.166882}
